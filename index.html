@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destinara - Curated Journeys | Explore the World</title>
+<meta name="description" content="Discover personalized travel experiences with Destinara Travel. Luxury cruises, curated hotels, group adventures. Journey beyond the ordinary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--color-primary:#0f766e;
+--color-primary-light:#14b8a6;
+--color-accent:#c9956b;
+--color-accent-light:#e0b48a;
+--color-dark:#1a1a2e;
+--color-text:#2d2d2d;
+--color-text-light:#6b7280;
+--color-bg:#faf8f5;
+--color-bg-alt:#f0ebe4;
+--color-white:#ffffff;
+--color-coral:#ff6b6b;
+--font-display:'Playfair Display',Georgia,serif;
+--font-body:'Inter',system-ui,sans-serif;
+--transition:0.3s cubic-bezier(0.4,0,0.2,1);
+--shadow-sm:0 1px 3px rgba(0,0,0,0.08);
+--shadow-md:0 4px 20px rgba(0,0,0,0.1);
+--shadow-lg:0 10px 40px rgba(0,0,0,0.15);
+--shadow-xl:0 20px 60px rgba(0,0,0,0.2);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* CURSOR GLOW */
+.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:9999;
+background:radial-gradient(circle,rgba(15,118,110,0.08) 0%,transparent 70%);
+transform:translate(-50%,-50%);transition:opacity 0.3s}
+
+/* LOADER */
+.page-loader{position:fixed;inset:0;z-index:10000;background:var(--color-dark);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s,visibility 0.6s}
+.page-loader.hidden{opacity:0;visibility:hidden}
+.loader-content{text-align:center}
+.loader-logo{font-family:var(--font-display);font-size:2.5rem;color:var(--color-white);letter-spacing:3px;opacity:0;animation:fadeInUp 0.8s 0.2s forwards}
+.loader-bar{width:200px;height:2px;background:rgba(255,255,255,0.15);margin:20px auto 0;border-radius:2px;overflow:hidden}
+.loader-bar-fill{height:100%;background:linear-gradient(90deg,var(--color-primary),var(--color-accent));width:0;animation:loadBar 1.5s 0.5s ease-out forwards}
+@keyframes loadBar{to{width:100%}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:all 0.4s}
+.nav.scrolled{background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);padding:12px 0;box-shadow:var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-icon{width:44px;height:44px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:24px;height:24px;fill:var(--color-white)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.5rem;color:var(--color-white);transition:color var(--transition)}
+.nav.scrolled .nav-logo-text{color:var(--color-dark)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;letter-spacing:0.3px;position:relative;transition:color var(--transition)}
+.nav.scrolled .nav-links a{color:var(--color-text)}
+.nav-links a:hover{color:var(--color-accent-light)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-accent);transition:width var(--transition)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--color-accent);color:var(--color-white) !important;padding:10px 24px;border-radius:50px;font-weight:600;transition:all var(--transition) !important}
+.nav-cta:hover{background:var(--color-accent-light);transform:translateY(-2px)}
+.nav-cta::after{display:none !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001;background:none;border:none}
+.hamburger span{width:24px;height:2px;background:var(--color-white);transition:all var(--transition)}
+.nav.scrolled .hamburger span{background:var(--color-dark)}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px;opacity:0;visibility:hidden;transition:all 0.4s}
+.mobile-menu.active{opacity:1;visibility:visible}
+.mobile-menu a{font-family:var(--font-display);font-size:2rem;color:var(--color-white);text-decoration:none;opacity:0;transform:translateY(20px);transition:all 0.4s}
+.mobile-menu.active a{opacity:1;transform:translateY(0)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--color-dark)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease-in-out}
+.hero-bg-slide.active{opacity:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,46,0.7) 0%,rgba(15,118,110,0.3) 100%)}
+.hero-content{position:relative;z-index:2;max-width:800px;padding-top:80px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);padding:8px 20px;border-radius:50px;margin-bottom:24px;opacity:0;transform:translateY(30px)}
+.hero-badge span{color:var(--color-accent-light);font-size:0.85rem;font-weight:500;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5.5vw,4.5rem);color:var(--color-white);line-height:1.1;margin-bottom:20px;opacity:0;transform:translateY(30px)}
+.hero h1 .accent{color:var(--color-accent-light);font-style:italic}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,0.8);max-width:540px;margin-bottom:36px;line-height:1.7;opacity:0;transform:translateY(30px)}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(30px)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all var(--transition);cursor:pointer;border:none;font-family:var(--font-body)}
+.btn-primary{background:var(--color-accent);color:var(--color-white)}
+.btn-primary:hover{background:var(--color-accent-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,149,107,0.4)}
+.btn-outline{background:transparent;color:var(--color-white);border:2px solid rgba(255,255,255,0.3)}
+.btn-outline:hover{border-color:var(--color-white);background:rgba(255,255,255,0.1);transform:translateY(-3px)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;animation:float 3s ease-in-out infinite}
+.hero-scroll .mouse{width:24px;height:38px;border:2px solid rgba(255,255,255,0.4);border-radius:12px;position:relative}
+.hero-scroll .mouse::after{content:'';position:absolute;top:8px;left:50%;width:3px;height:8px;background:rgba(255,255,255,0.6);border-radius:3px;transform:translateX(-50%);animation:scrollWheel 2s infinite}
+@keyframes scrollWheel{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(12px)}}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+
+.hero-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:4px;height:4px;background:rgba(255,255,255,0.3);border-radius:50%;animation:particleFloat linear infinite}
+@keyframes particleFloat{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+/* STATS TICKER */
+.stats-ticker{background:var(--color-primary);padding:16px 0;overflow:hidden}
+.ticker-track{display:flex;animation:ticker 30s linear infinite;width:max-content}
+.ticker-item{display:flex;align-items:center;gap:12px;padding:0 40px;white-space:nowrap;color:var(--color-white);font-size:0.9rem;font-weight:500}
+.ticker-item .num{font-family:var(--font-display);font-size:1.3rem;color:var(--color-accent-light)}
+.ticker-divider{width:4px;height:4px;background:rgba(255,255,255,0.3);border-radius:50%}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:100px 0}
+.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--color-primary);font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.section-label::before{content:'';width:30px;height:2px;background:var(--color-primary)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--color-dark);line-height:1.2;margin-bottom:20px}
+.section-subtitle{font-size:1.05rem;color:var(--color-text-light);max-width:600px;line-height:1.7}
+
+/* SERVICES */
+.services{background:var(--color-bg)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}
+.service-card{position:relative;background:var(--color-white);border-radius:20px;overflow:hidden;transition:all 0.5s;cursor:pointer;group:true}
+.service-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-xl)}
+.service-card-img{height:280px;overflow:hidden}
+.service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s}
+.service-card:hover .service-card-img img{transform:scale(1.1)}
+.service-card-body{padding:30px}
+.service-card-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));display:flex;align-items:center;justify-content:center;margin-bottom:16px;margin-top:-50px;position:relative;z-index:2;box-shadow:var(--shadow-md)}
+.service-card-icon svg{width:24px;height:24px;fill:var(--color-white)}
+.service-card h3{font-family:var(--font-display);font-size:1.4rem;margin-bottom:10px;color:var(--color-dark)}
+.service-card p{color:var(--color-text-light);font-size:0.95rem;line-height:1.6}
+.service-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--color-primary);font-weight:600;font-size:0.9rem;text-decoration:none;transition:gap var(--transition)}
+.service-card:hover .service-card-link{gap:12px}
+
+/* DESTINATIONS MAP */
+.destinations{background:var(--color-dark);color:var(--color-white);position:relative;overflow:hidden}
+.destinations .section-label{color:var(--color-accent-light)}
+.destinations .section-label::before{background:var(--color-accent)}
+.destinations .section-title{color:var(--color-white)}
+.destinations .section-subtitle{color:rgba(255,255,255,0.6)}
+.dest-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px;align-items:center}
+.dest-map{position:relative;aspect-ratio:16/10}
+.dest-map svg{width:100%;height:100%}
+.dest-map svg path{fill:rgba(255,255,255,0.08);stroke:rgba(255,255,255,0.15);stroke-width:0.5;transition:fill 0.3s}
+.dest-map svg path:hover{fill:rgba(20,184,166,0.3)}
+.map-pin{position:absolute;width:16px;height:16px;cursor:pointer;transform:translate(-50%,-50%)}
+.map-pin::before{content:'';position:absolute;inset:0;background:var(--color-accent);border-radius:50%;animation:ping 2s cubic-bezier(0,0,0.2,1) infinite}
+.map-pin::after{content:'';position:absolute;inset:3px;background:var(--color-accent-light);border-radius:50%;z-index:1}
+@keyframes ping{75%,100%{transform:scale(2.5);opacity:0}}
+.map-tooltip{position:absolute;background:var(--color-white);color:var(--color-dark);padding:16px 20px;border-radius:12px;box-shadow:var(--shadow-lg);pointer-events:none;opacity:0;transform:translateY(10px);transition:all 0.3s;z-index:10;width:220px}
+.map-tooltip.active{opacity:1;transform:translateY(0)}
+.map-tooltip h4{font-family:var(--font-display);font-size:1.1rem;margin-bottom:4px}
+.map-tooltip p{font-size:0.8rem;color:var(--color-text-light)}
+.dest-cards{display:flex;flex-direction:column;gap:20px}
+.dest-card{display:flex;gap:20px;padding:20px;border-radius:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);transition:all 0.3s;cursor:pointer}
+.dest-card:hover{background:rgba(255,255,255,0.1);border-color:var(--color-accent);transform:translateX(8px)}
+.dest-card-img{width:80px;height:80px;border-radius:12px;overflow:hidden;flex-shrink:0}
+.dest-card-img img{width:100%;height:100%;object-fit:cover}
+.dest-card h4{font-family:var(--font-display);color:var(--color-white);font-size:1.1rem;margin-bottom:4px}
+.dest-card p{font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.dest-card .tag{display:inline-block;padding:4px 10px;border-radius:20px;background:rgba(201,149,107,0.2);color:var(--color-accent-light);font-size:0.75rem;font-weight:600;margin-top:6px}
+
+/* PARTNERS MARQUEE */
+.partners{background:var(--color-bg-alt);padding:60px 0;overflow:hidden}
+.partners-title{text-align:center;font-family:var(--font-display);font-size:1.1rem;color:var(--color-text-light);margin-bottom:40px}
+.marquee{display:flex;overflow:hidden;gap:60px}
+.marquee-track{display:flex;gap:60px;animation:marquee 25s linear infinite;align-items:center}
+.marquee-item{flex-shrink:0;opacity:0.5;transition:opacity 0.3s;font-family:var(--font-display);font-size:1.4rem;color:var(--color-text);white-space:nowrap;padding:10px 20px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;background:var(--color-white)}
+.marquee-item:hover{opacity:1}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(calc(-100% - 60px))}}
+
+/* WHY SECTION */
+.why-section{background:var(--color-bg)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px;align-items:center}
+.why-visual{position:relative}
+.why-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-xl)}
+.why-img img{width:100%;display:block}
+.why-float-card{position:absolute;background:var(--color-white);border-radius:16px;padding:20px;box-shadow:var(--shadow-lg);animation:floatCard 4s ease-in-out infinite}
+.why-float-card.card-1{top:-20px;right:-20px}
+.why-float-card.card-2{bottom:-20px;left:-20px;animation-delay:2s}
+.why-float-card .num{font-family:var(--font-display);font-size:2rem;color:var(--color-primary);font-weight:700}
+.why-float-card .label{font-size:0.8rem;color:var(--color-text-light);margin-top:2px}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.why-features{display:flex;flex-direction:column;gap:30px}
+.why-feature{display:flex;gap:20px;padding:24px;border-radius:16px;transition:all 0.3s}
+.why-feature:hover{background:var(--color-white);box-shadow:var(--shadow-md);transform:translateX(8px)}
+.why-feature-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-feature-icon svg{width:22px;height:22px;fill:var(--color-white)}
+.why-feature h4{font-family:var(--font-display);font-size:1.15rem;margin-bottom:6px;color:var(--color-dark)}
+.why-feature p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}
+/* TEAM */
+.team{background:var(--color-bg)}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin-top:60px;max-width:800px;margin-left:auto;margin-right:auto}
+.team-card{position:relative;border-radius:24px;overflow:hidden;background:var(--color-white);box-shadow:var(--shadow-md);transition:all 0.5s}
+.team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl)}
+.team-card-img{height:320px;overflow:hidden;position:relative}
+.team-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s}
+.team-card:hover .team-card-img img{transform:scale(1.05)}
+.team-card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)}
+.team-card-info{padding:24px 28px}
+.team-card h3{font-family:var(--font-display);font-size:1.4rem;color:var(--color-dark)}
+.team-card .role{color:var(--color-primary);font-weight:600;font-size:0.85rem;letter-spacing:0.5px;text-transform:uppercase;margin-top:4px}
+.team-card p{margin-top:12px;font-size:0.9rem;color:var(--color-text-light);line-height:1.6}
+
+/* TESTIMONIALS */
+.testimonials{background:linear-gradient(135deg,var(--color-dark) 0%,#0f2027 100%);color:var(--color-white);position:relative;overflow:hidden}
+.testimonials .section-label{color:var(--color-accent-light)}
+.testimonials .section-label::before{background:var(--color-accent)}
+.testimonials .section-title{color:var(--color-white)}
+.test-slider{margin-top:60px;position:relative}
+.test-track{display:flex;transition:transform 0.6s ease}
+.test-card{min-width:100%;padding:0 40px}
+.test-card-inner{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:48px;max-width:700px;margin:0 auto}
+.test-stars{display:flex;gap:4px;margin-bottom:20px}
+.test-stars svg{width:20px;height:20px;fill:var(--color-accent)}
+.test-quote{font-family:var(--font-display);font-size:1.25rem;line-height:1.8;color:rgba(255,255,255,0.9);font-style:italic;margin-bottom:28px}
+.test-author{display:flex;align-items:center;gap:16px}
+.test-avatar{width:52px;height:52px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;color:var(--color-white)}
+.test-author-info h4{color:var(--color-white);font-size:1rem}
+.test-author-info p{color:rgba(255,255,255,0.5);font-size:0.85rem}
+.test-controls{display:flex;justify-content:center;gap:12px;margin-top:40px}
+.test-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);border:none;cursor:pointer;transition:all 0.3s}
+.test-dot.active{background:var(--color-accent);width:30px;border-radius:5px}
+
+/* CONTACT */
+.contact{background:var(--color-bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px}
+.contact-info{display:flex;flex-direction:column;gap:30px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-item-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item-icon svg{width:20px;height:20px;fill:var(--color-white)}
+.contact-item h4{font-size:0.95rem;color:var(--color-dark);margin-bottom:4px}
+.contact-item p,.contact-item a{font-size:0.9rem;color:var(--color-text-light);text-decoration:none}
+.contact-item a:hover{color:var(--color-primary)}
+.contact-social{display:flex;gap:12px;margin-top:20px}
+.contact-social a{width:44px;height:44px;border-radius:12px;background:var(--color-bg-alt);display:flex;align-items:center;justify-content:center;transition:all var(--transition);text-decoration:none}
+.contact-social a:hover{background:var(--color-primary);transform:translateY(-3px)}
+.contact-social a svg{width:18px;height:18px;fill:var(--color-text);transition:fill var(--transition)}
+.contact-social a:hover svg{fill:var(--color-white)}
+
+/* FORM */
+.contact-form{background:var(--color-white);border-radius:24px;padding:40px;box-shadow:var(--shadow-lg)}
+.form-step{display:none}
+.form-step.active{display:block;animation:fadeIn 0.4s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.form-progress{display:flex;gap:8px;margin-bottom:32px}
+.form-progress-step{flex:1;height:4px;border-radius:4px;background:var(--color-bg-alt);transition:background 0.3s}
+.form-progress-step.active{background:var(--color-primary)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:0.85rem;font-weight:600;color:var(--color-dark);margin-bottom:8px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 18px;border:2px solid var(--color-bg-alt);border-radius:12px;font-size:0.95rem;font-family:var(--font-body);transition:border-color 0.3s;background:var(--color-bg);color:var(--color-text)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--color-primary);background:var(--color-white)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-btn{width:100%;padding:14px;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all var(--transition);font-family:var(--font-body)}
+.form-btn-next{background:var(--color-primary);color:var(--color-white)}
+.form-btn-next:hover{background:var(--color-primary-light);transform:translateY(-2px)}
+.form-btn-back{background:transparent;color:var(--color-text-light);margin-bottom:12px}
+.form-btn-back:hover{color:var(--color-text)}
+.form-success{text-align:center;padding:40px 20px}
+.form-success svg{width:64px;height:64px;fill:var(--color-primary);margin-bottom:16px}
+.form-success h3{font-family:var(--font-display);font-size:1.5rem;margin-bottom:8px;color:var(--color-dark)}
+.form-success p{color:var(--color-text-light)}
+
+/* NEWSLETTER */
+.newsletter{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-light) 100%);padding:80px 0;text-align:center}
+.newsletter h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);color:var(--color-white);margin-bottom:12px}
+.newsletter p{color:rgba(255,255,255,0.8);margin-bottom:32px;font-size:1rem}
+.newsletter-form{display:flex;gap:12px;max-width:500px;margin:0 auto}
+.newsletter-form input{flex:1;padding:16px 24px;border:2px solid rgba(255,255,255,0.2);border-radius:50px;background:rgba(255,255,255,0.1);color:var(--color-white);font-size:1rem;font-family:var(--font-body)}
+.newsletter-form input::placeholder{color:rgba(255,255,255,0.5)}
+.newsletter-form input:focus{outline:none;border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.15)}
+.newsletter-form button{padding:16px 32px;background:var(--color-accent);color:var(--color-white);border:none;border-radius:50px;font-weight:600;cursor:pointer;transition:all var(--transition);font-family:var(--font-body);white-space:nowrap}
+.newsletter-form button:hover{background:var(--color-accent-light);transform:translateY(-2px)}
+
+/* FOOTER */
+.footer{background:var(--color-dark);color:rgba(255,255,255,0.6);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .footer-logo{font-family:var(--font-display);font-size:1.8rem;color:var(--color-white);margin-bottom:12px}
+.footer-brand .tagline{color:var(--color-accent-light);font-size:0.9rem;margin-bottom:16px}
+.footer-brand p{font-size:0.9rem;line-height:1.7;max-width:300px}
+.footer h4{color:var(--color-white);font-size:0.95rem;margin-bottom:20px;letter-spacing:0.5px;text-transform:uppercase}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer ul a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;transition:color 0.3s}
+.footer ul a:hover{color:var(--color-accent-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem}
+
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(0.9);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* RESPONSIVE */
+@media(max-width:968px){
+.services-grid{grid-template-columns:1fr}
+.dest-grid,.why-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+.team-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.hamburger{display:flex}
+.mobile-menu{display:flex}
+.hero-content{padding:120px 0 80px}
+.dest-map{display:none}
+.footer-grid{grid-template-columns:1fr 1fr}
+.form-row{grid-template-columns:1fr}
+.newsletter-form{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+<div class="loader-content">
+<div class="loader-logo">DESTINARA</div>
+<div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+<div class="container nav-inner">
+<a href="#" class="nav-logo">
+<div class="nav-logo-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+</div>
+<span class="nav-logo-text">Destinara</span>
+</a>
+<ul class="nav-links">
+<li><a href="#services">Services</a></li>
+<li><a href="#destinations">Destinations</a></li>
+<li><a href="#why">Why Us</a></li>
+<li><a href="#team">Our Team</a></li>
+<li><a href="#testimonials">Reviews</a></li>
+<li><a href="#contact" class="nav-cta">Contact Us</a></li>
+</ul>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<a href="#services" onclick="closeMobile()">Services</a>
+<a href="#destinations" onclick="closeMobile()">Destinations</a>
+<a href="#why" onclick="closeMobile()">Why Us</a>
+<a href="#team" onclick="closeMobile()">Our Team</a>
+<a href="#testimonials" onclick="closeMobile()">Reviews</a>
+<a href="#contact" onclick="closeMobile()">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="hero-bg">
+<div class="hero-bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80')"></div>
+<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80')"></div>
+<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80')"></div>
+<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?w=1920&q=80')"></div>
+</div>
+<div class="hero-overlay"></div>
+<div class="hero-particles" id="heroParticles"></div>
+<div class="container hero-content">
+<div class="hero-badge"><span>&#9992; Curated Journeys Await</span></div>
+<h1>Journey Beyond<br>the <span class="accent">Ordinary</span></h1>
+<p>Experience the world through Destinara's expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to you.</p>
+<div class="hero-buttons">
+<a href="#contact" class="btn btn-primary">Plan Your Journey &rarr;</a>
+<a href="#services" class="btn btn-outline">Explore Services</a>
+</div>
+</div>
+<div class="hero-scroll"><div class="mouse"></div><span>Scroll</span></div>
+</section>
+
+<!-- STATS TICKER -->
+<div class="stats-ticker">
+<div class="ticker-track">
+<div class="ticker-item"><span class="num">20+</span> Years of Experience</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">500+</span> Curated Journeys</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">50+</span> Destinations</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">100%</span> Personalized Service</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">5&#9733;</span> Rated on Facebook</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">20+</span> Years of Experience</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">500+</span> Curated Journeys</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">50+</span> Destinations</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">100%</span> Personalized Service</div>
+<div class="ticker-divider"></div>
+<div class="ticker-item"><span class="num">5&#9733;</span> Rated on Facebook</div>
+<div class="ticker-divider"></div>
+</div>
+</div>
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="container">
+<div class="reveal">
+<div class="section-label">What We Offer</div>
+<h2 class="section-title">Curated Travel Experiences</h2>
+<p class="section-subtitle">From ocean voyages to mountain retreats, we design journeys that transform the way you see the world.</p>
+</div>
+<div class="services-grid">
+<div class="service-card reveal" style="transition-delay:0.1s">
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&q=80" alt="Luxury Cruise" loading="lazy">
+</div>
+<div class="service-card-body">
+<div class="service-card-icon">
+<svg viewBox="0 0 24 24"><path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.14.52-.05.78L3.95 19zM6 6h12v3.97L12 8 6 9.97V6z"/></svg>
+</div>
+<h3>Luxury Cruises</h3>
+<p>Sail with Regent Seven Seas, Ritz-Carlton Yacht, Viking, and more. All-inclusive voyages with exclusive perks only available through Destinara.</p>
+<a href="#contact" class="service-card-link">Explore Cruises <span>&rarr;</span></a>
+</div>
+</div>
+<div class="service-card reveal" style="transition-delay:0.2s">
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Hotels and Resorts" loading="lazy">
+</div>
+<div class="service-card-body">
+<div class="service-card-icon">
+<svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+</div>
+<h3>Hotels & Resorts</h3>
+<p>Access the world's finest hotels with exclusive rates, complimentary upgrades, daily breakfast, resort credits, and personalized VIP treatment.</p>
+<a href="#contact" class="service-card-link">Find Your Stay <span>&rarr;</span></a>
+</div>
+</div>
+<div class="service-card reveal" style="transition-delay:0.3s">
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&q=80" alt="Group Travel" loading="lazy">
+</div>
+<div class="service-card-body">
+<div class="service-card-icon">
+<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+</div>
+<h3>Group Travel</h3>
+<p>Whether it's a family reunion, corporate retreat, or friends' adventure, we craft customized group experiences that create lasting memories.</p>
+<a href="#contact" class="service-card-link">Plan a Group Trip <span>&rarr;</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
+<div class="container">
+<div class="reveal">
+<div class="section-label">Explore the World</div>
+<h2 class="section-title">Featured Destinations</h2>
+<p class="section-subtitle">From Caribbean shores to Mediterranean gems, discover handpicked destinations for your next adventure.</p>
+</div>
+<div class="dest-grid">
+<div class="dest-map reveal-left">
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="400" cy="250" rx="380" ry="230" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+<ellipse cx="400" cy="250" rx="280" ry="170" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<ellipse cx="400" cy="250" rx="180" ry="110" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+<!-- Americas -->
+<circle cx="180" cy="200" r="40" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+<text x="180" y="205" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Americas</text>
+<!-- Europe -->
+<circle cx="420" cy="160" r="35" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+<text x="420" y="165" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Europe</text>
+<!-- Asia -->
+<circle cx="600" cy="200" r="45" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+<text x="600" y="205" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Asia</text>
+<!-- Africa -->
+<circle cx="440" cy="310" r="35" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+<text x="440" y="315" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Africa</text>
+<!-- Oceania -->
+<circle cx="660" cy="360" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+<text x="660" y="365" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Oceania</text>
+</svg>
+<div class="map-pin" style="left:22%;top:52%" data-dest="Caribbean"></div>
+<div class="map-pin" style="left:50%;top:28%" data-dest="Mediterranean"></div>
+<div class="map-pin" style="left:74%;top:38%" data-dest="Southeast Asia"></div>
+<div class="map-pin" style="left:82%;top:70%" data-dest="Australia"></div>
+<div class="map-pin" style="left:38%;top:42%" data-dest="Alaska"></div>
+</div>
+<div class="dest-cards reveal-right">
+<div class="dest-card" data-dest="Caribbean">
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80" alt="Caribbean" loading="lazy"></div>
+<div><h4>Caribbean Islands</h4><p>Crystal waters & white sand beaches</p><span class="tag">Popular</span></div>
+</div>
+<div class="dest-card" data-dest="Mediterranean">
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=200&q=80" alt="Mediterranean" loading="lazy"></div>
+<div><h4>Mediterranean</h4><p>Ancient history meets coastal charm</p><span class="tag">Cruise</span></div>
+</div>
+<div class="dest-card" data-dest="Southeast Asia">
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=80" alt="Southeast Asia" loading="lazy"></div>
+<div><h4>Southeast Asia</h4><p>Temples, beaches & vibrant culture</p><span class="tag">Adventure</span></div>
+</div>
+<div class="dest-card" data-dest="Alaska">
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1531176175280-109a4be14992?w=200&q=80" alt="Alaska" loading="lazy"></div>
+<div><h4>Alaska</h4><p>Glaciers, wildlife & wilderness</p><span class="tag">Expedition</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PARTNERS -->
+<div class="partners">
+<p class="partners-title">Trusted Cruise Line Partners</p>
+<div class="marquee">
+<div class="marquee-track">
+<div class="marquee-item">Regent Seven Seas</div>
+<div class="marquee-item">Ritz-Carlton Yacht</div>
+<div class="marquee-item">Viking Cruises</div>
+<div class="marquee-item">AMA Waterways</div>
+<div class="marquee-item">Royal Caribbean</div>
+<div class="marquee-item">MSC Cruises</div>
+<div class="marquee-item">Celebrity Cruises</div>
+<div class="marquee-item">Norwegian Cruise Line</div>
+<div class="marquee-item">Regent Seven Seas</div>
+<div class="marquee-item">Ritz-Carlton Yacht</div>
+<div class="marquee-item">Viking Cruises</div>
+<div class="marquee-item">AMA Waterways</div>
+<div class="marquee-item">Royal Caribbean</div>
+<div class="marquee-item">MSC Cruises</div>
+<div class="marquee-item">Celebrity Cruises</div>
+<div class="marquee-item">Norwegian Cruise Line</div>
+</div>
+</div>
+</div>
+
+<!-- WHY DESTINARA -->
+<section class="why-section" id="why">
+<div class="container">
+<div class="why-grid">
+<div class="why-visual reveal-left">
+<div class="why-img">
+<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel Planning" loading="lazy">
+</div>
+<div class="why-float-card card-1">
+<div class="num">20+</div>
+<div class="label">Years Experience</div>
+</div>
+<div class="why-float-card card-2">
+<div class="num">5.0</div>
+<div class="label">&#9733; Facebook Rating</div>
+</div>
+</div>
+<div class="reveal-right">
+<div class="section-label">Why Choose Us</div>
+<h2 class="section-title">Why Travel with Destinara?</h2>
+<p class="section-subtitle" style="margin-bottom:40px">While online booking offers convenience, Destinara delivers personalized expertise, insider access, and seamless planning you simply can't find online.</p>
+<div class="why-features">
+<div class="why-feature">
+<div class="why-feature-icon">
+<svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+</div>
+<div>
+<h4>Exclusive Access & Perks</h4>
+<p>Through our partnerships, enjoy exclusive rates, complimentary upgrades, resort credits, and VIP amenities not available to the public.</p>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">
+<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+</div>
+<div>
+<h4>Save Time & Stress</h4>
+<p>We handle all the intricate planning, logistics, and details — acting as your personal advocate from booking to return.</p>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+</div>
+<div>
+<h4>Custom Itineraries</h4>
+<p>Every journey is uniquely designed to match your preferences, budget, and travel dreams. No cookie-cutter vacations here.</p>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">
+<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+</div>
+<div>
+<h4>Loyalty Points Friendly</h4>
+<p>Keep earning and using your existing hotel loyalty points and elite status benefits when you book through us.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+<div class="container" style="text-align:center">
+<div class="reveal">
+<div class="section-label" style="justify-content:center">Meet the Team</div>
+<h2 class="section-title">The People Behind Your Journey</h2>
+<p class="section-subtitle" style="margin:0 auto">Our passionate team of travel experts is dedicated to crafting your perfect getaway.</p>
+</div>
+<div class="team-grid">
+<div class="team-card reveal" style="transition-delay:0.1s">
+<div class="team-card-img">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="Elizabeth Nichols" loading="lazy">
+</div>
+<div class="team-card-info">
+<h3>Elizabeth Nichols</h3>
+<div class="role">Co-Founder & Travel Advisor</div>
+<p>With decades of travel industry experience, Elizabeth brings unmatched expertise in luxury cruises and destination planning.</p>
+</div>
+</div>
+<div class="team-card reveal" style="transition-delay:0.2s">
+<div class="team-card-img">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80" alt="Jay Nichols" loading="lazy">
+</div>
+<div class="team-card-info">
+<h3>Jay Nichols</h3>
+<div class="role">Co-Founder & Travel Advisor</div>
+<p>Jay's passion for exploration and deep industry connections ensure every client receives insider access and extraordinary experiences.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+<div class="container" style="text-align:center">
+<div class="reveal">
+<div class="section-label" style="justify-content:center">Client Stories</div>
+<h2 class="section-title">What Our Travelers Say</h2>
+</div>
+<div class="test-slider reveal">
+<div class="test-track" id="testTrack">
+<div class="test-card">
+<div class="test-card-inner">
+<div class="test-stars">
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+</div>
+<p class="test-quote">"The whole process was seamless from start to finish. Jay and Elizabeth took our vague ideas and turned them into the perfect family cruise. We'll be coming back to Destinara from now on!"</p>
+<div class="test-author">
+<div class="test-avatar">DC</div>
+<div class="test-author-info">
+<h4>Dan Crowley</h4>
+<p>Family Cruise &bull; Massachusetts</p>
+</div>
+</div>
+</div>
+</div>
+<div class="test-card">
+<div class="test-card-inner">
+<div class="test-stars">
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+</div>
+<p class="test-quote">"Destinara found us a resort in Santorini with perks we never could have gotten on our own. The room upgrade alone was worth it! Their attention to detail is incredible."</p>
+<div class="test-author">
+<div class="test-avatar">SM</div>
+<div class="test-author-info">
+<h4>Sarah Mitchell</h4>
+<p>Honeymoon &bull; Greece</p>
+</div>
+</div>
+</div>
+</div>
+<div class="test-card">
+<div class="test-card-inner">
+<div class="test-stars">
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+</div>
+<p class="test-quote">"Our group trip to Italy was beyond anything we imagined. 15 people, zero stress. Destinara handled every detail and made everyone feel like a VIP."</p>
+<div class="test-author">
+<div class="test-avatar">RJ</div>
+<div class="test-author-info">
+<h4>Robert Johnson</h4>
+<p>Group Trip &bull; Italy</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="test-controls" id="testControls">
+<button class="test-dot active" data-slide="0"></button>
+<button class="test-dot" data-slide="1"></button>
+<button class="test-dot" data-slide="2"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
+<div class="reveal">
+<div class="section-label">Get In Touch</div>
+<h2 class="section-title">Start Planning Your Journey</h2>
+<p class="section-subtitle">Ready to explore? Fill out the form and our travel experts will craft a personalized itinerary just for you.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info reveal-left">
+<div class="contact-item">
+<div class="contact-item-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+</div>
+<div>
+<h4>Visit Us</h4>
+<p>3807 Arundel Ct<br>Greensboro, NC 27406</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-item-icon">
+<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+</div>
+<div>
+<h4>Email Us</h4>
+<a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-item-icon">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+</div>
+<div>
+<h4>Call Us</h4>
+<a href="tel:+19193486268">+1 (919) 348-6268</a>
+</div>
+</div>
+<div class="contact-social">
+<a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+<svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+</a>
+<a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+<svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+</a>
+<a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+</a>
+<a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
+<svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+</a>
+</div>
+</div>
+<div class="contact-form reveal-right">
+<div class="form-progress">
+<div class="form-progress-step active"></div>
+<div class="form-progress-step"></div>
+<div class="form-progress-step"></div>
+</div>
+<!-- Step 1 -->
+<div class="form-step active" data-step="1">
+<h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:20px;color:var(--color-dark)">Tell us about yourself</h3>
+<div class="form-row">
+<div class="form-group">
+<label for="firstName">First Name *</label>
+<input type="text" id="firstName" placeholder="John" required>
+</div>
+<div class="form-group">
+<label for="lastName">Last Name *</label>
+<input type="text" id="lastName" placeholder="Doe" required>
+</div>
+</div>
+<div class="form-group">
+<label for="email">Email *</label>
+<input type="email" id="email" placeholder="john@example.com" required>
+</div>
+<div class="form-group">
+<label for="phone">Phone</label>
+<input type="tel" id="phone" placeholder="(919) 555-0123">
+</div>
+<button class="form-btn form-btn-next" onclick="nextStep(2)">Continue &rarr;</button>
+</div>
+<!-- Step 2 -->
+<div class="form-step" data-step="2">
+<h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:20px;color:var(--color-dark)">What are you interested in?</h3>
+<div class="form-group">
+<label for="tripType">Trip Type</label>
+<select id="tripType">
+<option value="">Select a trip type...</option>
+<option>Cruise Vacation</option>
+<option>Hotel &amp; Resort Stay</option>
+<option>Group Travel</option>
+<option>Honeymoon / Anniversary</option>
+<option>Family Vacation</option>
+<option>Adventure Travel</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="travelers">Number of Travelers</label>
+<input type="number" id="travelers" placeholder="2" min="1">
+</div>
+<div class="form-group">
+<label for="budget">Budget Range</label>
+<select id="budget">
+<option value="">Select budget...</option>
+<option>Under $2,000</option>
+<option>$2,000 - $5,000</option>
+<option>$5,000 - $10,000</option>
+<option>$10,000 - $20,000</option>
+<option>$20,000+</option>
+</select>
+</div>
+</div>
+<button class="form-btn form-btn-back" onclick="nextStep(1)">&larr; Back</button>
+<button class="form-btn form-btn-next" onclick="nextStep(3)">Continue &rarr;</button>
+</div>
+<!-- Step 3 -->
+<div class="form-step" data-step="3">
+<h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:20px;color:var(--color-dark)">Tell us about your dream trip</h3>
+<div class="form-group">
+<label for="destination">Preferred Destination(s)</label>
+<input type="text" id="destination" placeholder="Caribbean, Mediterranean, Alaska...">
+</div>
+<div class="form-group">
+<label for="dates">Preferred Travel Dates</label>
+<input type="text" id="dates" placeholder="e.g., March 2026, Flexible">
+</div>
+<div class="form-group">
+<label for="message">Additional Details</label>
+<textarea id="message" placeholder="Tell us anything else about your dream trip..."></textarea>
+</div>
+<button class="form-btn form-btn-back" onclick="nextStep(2)">&larr; Back</button>
+<button class="form-btn form-btn-next" onclick="submitForm()">Submit Request &#10003;</button>
+</div>
+<!-- Success -->
+<div class="form-step" data-step="4">
+<div class="form-success">
+<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+<h3>Thank You!</h3>
+<p>Your request has been received. Our travel experts will be in touch within 24 hours to start planning your dream journey.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEWSLETTER -->
+<section class="newsletter">
+<div class="container reveal">
+<h2>Subscribe to Our Newsletter</h2>
+<p>Get exclusive travel deals, destination guides, and insider tips delivered to your inbox.</p>
+<div class="newsletter-form">
+<input type="email" placeholder="Enter your email address">
+<button onclick="this.textContent='Subscribed!';this.style.background='var(--color-primary)'">Subscribe</button>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">Destinara</div>
+<div class="tagline">Curated Journeys</div>
+<p>Experience the world through expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to your dreams.</p>
+</div>
+<div>
+<h4>Services</h4>
+<ul>
+<li><a href="#services">Luxury Cruises</a></li>
+<li><a href="#services">Hotels & Resorts</a></li>
+<li><a href="#services">Group Travel</a></li>
+<li><a href="#contact">Custom Itineraries</a></li>
+</ul>
+</div>
+<div>
+<h4>Cruise Lines</h4>
+<ul>
+<li><a href="#services">Regent Seven Seas</a></li>
+<li><a href="#services">Ritz-Carlton Yacht</a></li>
+<li><a href="#services">Viking Cruises</a></li>
+<li><a href="#services">AMA Waterways</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a></li>
+<li><a href="tel:+19193486268">+1 (919) 348-6268</a></li>
+<li><a href="#contact">Greensboro, NC 27406</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2025 Destinara Travel. All rights reserved.</span>
+<span>Curated with love in North Carolina</span>
+</div>
+</div>
+</footer>
+<script>
+// PAGE LOADER
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('pageLoader').classList.add('hidden');
+    animateHero();
+  }, 2000);
+});
+
+// HERO ANIMATIONS
+function animateHero() {
+  const els = document.querySelectorAll('.hero-badge, .hero h1, .hero p, .hero-buttons');
+  els.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      el.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    }, i * 200);
+  });
+}
+
+// HERO SLIDESHOW
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-bg-slide');
+setInterval(() => {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}, 5000);
+
+// PARTICLES
+const particlesContainer = document.getElementById('heroParticles');
+for (let i = 0; i < 30; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+  p.style.animationDelay = Math.random() * 10 + 's';
+  p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
+  particlesContainer.appendChild(p);
+}
+
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+function closeMobile() {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// CURSOR GLOW
+const glow = document.getElementById('cursorGlow');
+if (window.innerWidth > 768) {
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+}
+
+// SCROLL REVEAL
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  observer.observe(el);
+});
+
+// TESTIMONIAL SLIDER
+const testTrack = document.getElementById('testTrack');
+const testDots = document.querySelectorAll('.test-dot');
+let currentTest = 0;
+testDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    currentTest = parseInt(dot.dataset.slide);
+    updateTestSlider();
+  });
+});
+function updateTestSlider() {
+  testTrack.style.transform = 'translateX(-' + (currentTest * 100) + '%)';
+  testDots.forEach((d, i) => d.classList.toggle('active', i === currentTest));
+}
+// Auto-advance
+setInterval(() => {
+  currentTest = (currentTest + 1) % 3;
+  updateTestSlider();
+}, 6000);
+
+// MAP PIN HOVER
+document.querySelectorAll('.map-pin').forEach(pin => {
+  pin.addEventListener('mouseenter', e => {
+    const dest = e.target.dataset.dest;
+    // Highlight matching card
+    document.querySelectorAll('.dest-card').forEach(card => {
+      card.style.borderColor = card.dataset.dest === dest ? 'var(--color-accent)' : 'rgba(255,255,255,0.08)';
+      card.style.background = card.dataset.dest === dest ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.05)';
+    });
+  });
+});
+
+// DEST CARD HOVER - highlight matching pin
+document.querySelectorAll('.dest-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    const dest = card.dataset.dest;
+    document.querySelectorAll('.map-pin').forEach(pin => {
+      pin.style.transform = pin.dataset.dest === dest ? 'translate(-50%,-50%) scale(1.8)' : 'translate(-50%,-50%)';
+    });
+  });
+  card.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.map-pin').forEach(pin => {
+      pin.style.transform = 'translate(-50%,-50%)';
+    });
+  });
+});
+
+// MULTI-STEP FORM
+function nextStep(step) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.querySelector('[data-step="' + step + '"]').classList.add('active');
+  // Update progress
+  document.querySelectorAll('.form-progress-step').forEach((p, i) => {
+    p.classList.toggle('active', i < step);
+  });
+}
+function submitForm() {
+  nextStep(4);
+}
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// TILT EFFECT ON SERVICE CARDS
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
+    card.style.transform = 'translateY(-10px) perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'translateY(0) perspective(1000px) rotateX(0) rotateY(0)';
+  });
+});
+</script>
+</body>
+</html>
