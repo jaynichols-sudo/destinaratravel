@@ -10,11 +10,11 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
---color-primary:#0f766e;
---color-primary-light:#14b8a6;
---color-accent:#c9956b;
---color-accent-light:#e0b48a;
---color-dark:#1a1a2e;
+--color-primary:#0D5C5C;
+--color-primary-light:#1A7A7A;
+--color-accent:#C4956B;
+--color-accent-light:#D4A574;
+--color-dark:#0A4A4A;
 --color-text:#2d2d2d;
 --color-text-light:#6b7280;
 --color-bg:#faf8f5;
@@ -42,6 +42,7 @@ transform:translate(-50%,-50%);transition:opacity 0.3s}
 .page-loader{position:fixed;inset:0;z-index:10000;background:var(--color-dark);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s,visibility 0.6s}
 .page-loader.hidden{opacity:0;visibility:hidden}
 .loader-content{text-align:center}
+.loader-content img{display:block;margin:0 auto}
 .loader-logo{font-family:var(--font-display);font-size:2.5rem;color:var(--color-white);letter-spacing:3px;opacity:0;animation:fadeInUp 0.8s 0.2s forwards}
 .loader-bar{width:200px;height:2px;background:rgba(255,255,255,0.15);margin:20px auto 0;border-radius:2px;overflow:hidden}
 .loader-bar-fill{height:100%;background:linear-gradient(90deg,var(--color-primary),var(--color-accent));width:0;animation:loadBar 1.5s 0.5s ease-out forwards}
@@ -55,6 +56,8 @@ transform:translate(-50%,-50%);transition:opacity 0.3s}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
 .nav-logo-icon{width:44px;height:44px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center}
 .nav-logo-icon svg{width:24px;height:24px;fill:var(--color-white)}
+.nav-logo-img{height:48px;width:auto;border-radius:6px;transition:all var(--transition)}
+.nav.scrolled .nav-logo-img{height:40px}
 .nav-logo-text{font-family:var(--font-display);font-size:1.5rem;color:var(--color-white);transition:color var(--transition)}
 .nav.scrolled .nav-logo-text{color:var(--color-dark)}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
@@ -352,7 +355,7 @@ section{padding:100px 0}
 .dest-content-panel{display:none}
 .dest-content-panel.active{display:grid}
 /* DEALS */
-.deals-section{background:linear-gradient(135deg,#0f766e 0%,#134e4a 100%);padding:80px 0;color:white;position:relative;overflow:hidden}
+.deals-section{background:linear-gradient(135deg,#0D5C5C 0%,#0A4A4A 100%);padding:80px 0;color:white;position:relative;overflow:hidden}
 .deals-section::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;border-radius:50%;background:rgba(201,149,107,0.1)}
 .deals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;position:relative;z-index:2}
 .deal-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:32px;transition:all 0.4s}
@@ -469,6 +472,7 @@ section{padding:100px 0}
 <!-- PAGE LOADER -->
 <div class="page-loader" id="pageLoader">
 <div class="loader-content">
+<img src="destinara-logo.png" alt="Destinara" style="height:120px;width:auto;margin-bottom:20px;">
 <div class="loader-logo">DESTINARA</div>
 <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
@@ -478,9 +482,7 @@ section{padding:100px 0}
 <nav class="nav" id="nav">
 <div class="container nav-inner">
 <a href="#" class="nav-logo">
-<div class="nav-logo-icon">
-<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-</div>
+<img src="destinara-logo.png" alt="Destinara" class="nav-logo-img" style="height:48px;width:auto;">
 <span class="nav-logo-text">Destinara</span>
 </a>
 <ul class="nav-links">
@@ -1253,6 +1255,7 @@ Other</option>
 <div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
+<img src="destinara-logo.png" alt="Destinara" style="height:80px;width:auto;margin-bottom:8px;border-radius:8px;">
 <div class="footer-logo">Destinara</div>
 <div class="tagline">Curated Journeys</div>
 <p>Experience the world through expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to your dreams.</p>
@@ -1505,7 +1508,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 q.addEventListener('click',function(){
 var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');
 document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
-if(!wasOpen)item.classList.add('open');});});});});
+if(!wasOpen)item.classList.add('open');});});
 </script>
 </body>
 </html>
