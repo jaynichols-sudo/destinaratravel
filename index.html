@@ -1470,52 +1470,42 @@ document.querySelectorAll('.service-card').forEach(card => {
 
 // DESTINATION TABS
 document.querySelectorAll('.dest-tab').forEach(function(tab){
-  tab.addEventListener('click',function(){
-    document.querySelectorAll('.dest-tab').forEach(function(t){t.classList.remove('active')});
-    tab.classList.add('active');
-    document.querySelectorAll('.dest-content-panel').forEach(function(p){p.classList.remove('active')});
-    document.querySelector('[data-panel=' + JSON.stringify(tab.dataset.continent) + ']').classList.add('active');
-  });
-});
+tab.addEventListener('click',function(){
+document.querySelectorAll('.dest-tab').forEach(function(t){t.classList.remove('active')});
+tab.classList.add('active');
+document.querySelectorAll('.dest-content-panel').forEach(function(p){p.classList.remove('active')});
+var c=tab.dataset.continent;document.querySelector('.dest-content-panel[data-panel="'+c+'"]').classList.add('active');
+});});
 
 // QUIZ LOGIC
 var quizAnswers=[];
 document.querySelectorAll('.quiz-option').forEach(function(opt){
-  opt.addEventListener('click',function(){
-    this.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(function(o){o.classList.remove('selected')});
-    this.classList.add('selected');
-    quizAnswers.push(this.dataset.value);
-    var currentQ=this.closest('.quiz-question');
-    var qNum=parseInt(currentQ.dataset.q);
-    setTimeout(function(){
-      if(qNum<4){
-        currentQ.classList.remove('active');
-        document.querySelector('[data-q=' + JSON.stringify(String(qNum+1)) + ']').classList.add('active');
-        document.querySelectorAll('.quiz-progress-dot').forEach(function(dot,i){dot.classList.toggle('filled',i<=qNum)});
-      }else{currentQ.classList.remove('active');showQuizResult();}
-    },400);
-  });
-});
+opt.addEventListener('click',function(){
+this.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(function(o){o.classList.remove('selected')});
+this.classList.add('selected');quizAnswers.push(this.dataset.value);
+var currentQ=this.closest('.quiz-question');
+var qNum=parseInt(currentQ.dataset.q);
+setTimeout(function(){
+if(qNum<4){currentQ.classList.remove('active');
+var n=qNum+1;document.querySelector('.quiz-question[data-q="'+n+'"]').classList.add('active');
+document.querySelectorAll('.quiz-progress-dot').forEach(function(dot,i){dot.classList.toggle('filled',i<=qNum)});
+}else{currentQ.classList.remove('active');showQuizResult();}},400);});});
 
 function showQuizResult(){
-  var results={relaxation:{title:'The Luxury Relaxer',desc:'You crave serenity. We recommend the Maldives, Bora Bora, or a luxury Caribbean cruise.'},adventure:{title:'The Bold Explorer',desc:'You live for adrenaline. We recommend Patagonia, an African safari, or an Alaskan expedition.'},culture:{title:'The Cultural Connoisseur',desc:'You travel to learn. We recommend Japan, Italy, or a Mediterranean cruise.'},luxury:{title:'The Refined Traveler',desc:'You appreciate the finer things. We recommend the French Riviera, Dubai, or Regent Seven Seas.'}};
-  var type=quizAnswers[0]||'relaxation';
-  var r=results[type]||results.relaxation;
-  document.getElementById('resultTitle').textContent=r.title;
-  document.getElementById('resultDesc').textContent=r.desc;
-  document.getElementById('quizResult').classList.add('active');
-  document.querySelectorAll('.quiz-progress-dot').forEach(function(d){d.classList.add('filled')});
-}
+var t={relaxation:'The Luxury Relaxer',adventure:'The Bold Explorer',culture:'The Cultural Connoisseur',luxury:'The Refined Traveler'};
+var ds={relaxation:'You crave serenity. We recommend the Maldives, Bora Bora, or a luxury Caribbean cruise.',adventure:'You live for adrenaline. We recommend Patagonia, an African safari, or an Alaskan expedition.',culture:'You travel to learn. We recommend Japan, Italy, or a Mediterranean cruise.',luxury:'You appreciate the finer things. We recommend the French Riviera, Dubai, or Regent Seven Seas.'};
+var type=quizAnswers[0]||'relaxation';
+document.getElementById('resultTitle').textContent=t[type]||t.relaxation;
+document.getElementById('resultDesc').textContent=ds[type]||ds.relaxation;
+document.getElementById('quizResult').classList.add('active');
+document.querySelectorAll('.quiz-progress-dot').forEach(function(d){d.classList.add('filled')});}
 
 // FAQ ACCORDION
 document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click',function(){
-    var item=q.closest('.faq-item');
-    var wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
-    if(!wasOpen)item.classList.add('open');
-  });
-});});
+q.addEventListener('click',function(){
+var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');
+document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+if(!wasOpen)item.classList.add('open');});});});});
 </script>
 </body>
 </html>
