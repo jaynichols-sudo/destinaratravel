@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caribbean Islands Destination Guide | Destinara Travel</title>
+<meta name="description" content="Discover the Caribbean Islands with Destinara Travel. Crystal-clear waters, white sand beaches, and tropical paradise await. Plan your Caribbean vacation today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--color-primary:#0D5C5C;
+--color-primary-light:#1A7A7A;
+--color-accent:#C4956B;
+--color-accent-light:#D4A574;
+--color-dark:#0A4A4A;
+--color-text:#2d2d2d;
+--color-text-light:#6b7280;
+--color-bg:#faf8f5;
+--color-bg-alt:#f0ebe4;
+--color-white:#ffffff;
+--font-display:'Playfair Display',Georgia,serif;
+--font-body:'Inter',system-ui,sans-serif;
+--shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+--shadow-md:0 4px 6px rgba(0,0,0,0.07);
+--shadow-lg:0 10px 15px rgba(0,0,0,0.1);
+--shadow-xl:0 20px 25px rgba(0,0,0,0.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,92,92,0.95);backdrop-filter:blur(20px);transition:all 0.3s}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{width:40px;height:40px;border-radius:8px}
+.nav-logo span{font-family:var(--font-display);font-size:1.3rem;color:var(--color-white);font-weight:700}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--color-accent)}
+.nav-cta{background:var(--color-accent);color:var(--color-white)!important;padding:10px 24px;border-radius:50px;font-weight:600;transition:all 0.3s}
+.nav-cta:hover{background:var(--color-accent-light);transform:translateY(-2px)}
+
+/* HERO */
+.hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--color-white);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,74,74,0.6) 0%,rgba(10,74,74,0.4) 50%,rgba(10,74,74,0.7) 100%)}
+.hero-content{position:relative;z-index:2;max-width:800px;padding:0 20px}
+.hero-badge{display:inline-block;background:rgba(196,149,107,0.2);border:1px solid rgba(196,149,107,0.4);color:var(--color-accent-light);padding:8px 20px;border-radius:50px;font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:var(--font-display);font-size:3.5rem;font-weight:700;line-height:1.15;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--color-accent-light)}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 32px}
+.hero-btn{display:inline-block;background:var(--color-accent);color:var(--color-white);padding:14px 36px;border-radius:50px;font-weight:600;font-size:1rem;transition:all 0.3s;border:none;cursor:pointer}
+.hero-btn:hover{background:var(--color-accent-light);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+
+/* BREADCRUMB */
+.breadcrumb{padding:20px 40px;background:var(--color-bg-alt);font-size:0.85rem;color:var(--color-text-light)}
+.breadcrumb a{color:var(--color-primary);font-weight:500}
+.breadcrumb a:hover{color:var(--color-accent)}
+.breadcrumb span{margin:0 8px;color:#ccc}
+
+/* SECTIONS */
+.section{padding:80px 40px}
+.section-alt{background:var(--color-bg-alt)}
+.section-dark{background:var(--color-primary);color:var(--color-white)}
+.container{max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;color:var(--color-accent);font-weight:600;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:var(--font-display);font-size:2.5rem;font-weight:700;margin-bottom:16px;line-height:1.2}
+.section-subtitle{color:var(--color-text-light);font-size:1.05rem;max-width:700px;margin-bottom:48px}
+.section-dark .section-subtitle{color:rgba(255,255,255,0.7)}
+
+/* OVERVIEW */
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.overview-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-xl)}
+.overview-img img{width:100%;height:400px;object-fit:cover;display:block}
+.overview-text h3{font-family:var(--font-display);font-size:1.8rem;margin-bottom:16px;color:var(--color-primary)}
+.overview-text p{color:var(--color-text-light);margin-bottom:16px;line-height:1.8}
+
+/* QUICK FACTS */
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.fact-card{background:var(--color-white);border-radius:16px;padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.06);transition:all 0.3s}
+.fact-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.fact-icon{font-size:2rem;margin-bottom:12px}
+.fact-label{font-size:0.8rem;color:var(--color-text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.fact-value{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--color-primary)}
+
+/* EXPERIENCES */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.exp-card{background:var(--color-white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.06);transition:all 0.3s}
+.exp-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.exp-card-img{height:220px;background-size:cover;background-position:center;position:relative}
+.exp-card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,0.3))}
+.exp-card-body{padding:24px}
+.exp-card-body h3{font-family:var(--font-display);font-size:1.3rem;margin-bottom:8px;color:var(--color-primary)}
+.exp-card-body p{color:var(--color-text-light);font-size:0.95rem;line-height:1.7}
+
+/* BEST TIME */
+.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.time-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:28px 20px;text-align:center;transition:all 0.3s}
+.time-card:hover{background:rgba(255,255,255,0.12);transform:translateY(-4px)}
+.time-card.recommended{background:rgba(196,149,107,0.15);border-color:var(--color-accent)}
+.time-month{font-size:0.85rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.time-card.recommended .time-month{color:var(--color-accent-light)}
+.time-temp{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:4px}
+.time-desc{font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.time-card.recommended .time-desc{color:rgba(255,255,255,0.7)}
+.time-badge{display:inline-block;background:var(--color-accent);color:var(--color-white);padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:8px}
+
+/* TRAVEL TIPS */
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.tip-card{display:flex;gap:20px;background:var(--color-white);border-radius:16px;padding:28px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.06);transition:all 0.3s}
+.tip-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.tip-icon{font-size:1.8rem;flex-shrink:0}
+.tip-card h3{font-size:1.05rem;font-weight:600;margin-bottom:6px;color:var(--color-primary)}
+.tip-card p{color:var(--color-text-light);font-size:0.9rem;line-height:1.7}
+
+/* CTA */
+.cta-section{text-align:center;padding:100px 40px}
+.cta-section h2{font-family:var(--font-display);font-size:2.8rem;color:var(--color-white);margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,0.8);font-size:1.1rem;max-width:600px;margin:0 auto 36px}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:1;cursor:pointer;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.1)}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+
+/* FOOTER */
+.footer{background:var(--color-dark);color:rgba(255,255,255,0.7);padding:60px 40px 30px;text-align:center}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
+.footer-logo img{width:36px;height:36px;border-radius:8px}
+.footer-logo span{font-family:var(--font-display);font-size:1.2rem;color:var(--color-white);font-weight:700}
+.footer p{font-size:0.85rem;margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:24px}
+.footer-links a{color:rgba(255,255,255,0.6);font-size:0.85rem;transition:color 0.3s}
+.footer-links a:hover{color:var(--color-accent)}
+.footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.4);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;margin-top:20px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+.facts-grid,.time-grid{grid-template-columns:repeat(2,1fr)}
+.exp-grid{grid-template-columns:repeat(2,1fr)}
+.overview-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+.nav{padding:16px 20px}
+.nav-links{display:none}
+.hero h1{font-size:2.5rem}
+.section{padding:60px 20px}
+.facts-grid{grid-template-columns:1fr 1fr}
+.exp-grid{grid-template-columns:1fr}
+.tips-grid{grid-template-columns:1fr}
+.time-grid{grid-template-columns:1fr 1fr}
+.gallery-grid{grid-template-columns:repeat(2,1fr)}
+.breadcrumb{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<a href="../index.html" class="nav-logo">
+<img src="../destinara-logo.png" alt="Destinara">
+<span>Destinara</span>
+</a>
+<div class="nav-links">
+<a href="../index.html#services">Services</a>
+<a href="../index.html#destinations">Destinations</a>
+<a href="../index.html#deals">Deals</a>
+<a href="../index.html#team">Our Team</a>
+<a href="../index.html#contact" class="nav-cta">Contact Us</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1920&q=80')"></div>
+<div class="hero-content">
+<div class="hero-badge">Destination Guide</div>
+<h1>Caribbean <em>Islands</em></h1>
+<p>Crystal-clear turquoise waters, powdery white sand beaches, and vibrant island culture await in the Caribbean.</p>
+<a href="../index.html#contact" class="hero-btn">Plan Your Caribbean Trip &rarr;</a>
+</div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>&rsaquo;</span>
+<a href="../index.html#destinations">Destinations</a>
+<span>&rsaquo;</span>
+Caribbean Islands
+</div>
+
+<!-- OVERVIEW -->
+<section class="section">
+<div class="container">
+<div class="overview-grid">
+<div class="overview-img">
+<img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80" alt="Caribbean beach with palm trees">
+</div>
+<div class="overview-text">
+<div class="section-label">Overview</div>
+<h3>Paradise Found in the Caribbean</h3>
+<p>The Caribbean is a tapestry of over 700 islands, each offering its own unique blend of natural beauty, culture, and adventure. From the luxurious resorts of the Turks and Caicos to the lush rainforests of Dominica, the vibrant streets of Havana to the serene beaches of Anguilla, there is a Caribbean island for every traveler.</p>
+<p>Whether you are seeking a romantic getaway, a family-friendly resort experience, an all-inclusive cruise, or an off-the-beaten-path adventure, the Caribbean delivers with warm hospitality, year-round sunshine, and some of the most breathtaking scenery on Earth.</p>
+<p>At Destinara, we specialize in crafting bespoke Caribbean vacations that go beyond the typical resort experience, connecting you with the authentic heart and soul of island life.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- QUICK FACTS -->
+<section class="section section-alt">
+<div class="container">
+<div class="section-label">Quick Facts</div>
+<div class="section-title">Essential Information</div>
+<div class="section-subtitle">Everything you need to know before planning your Caribbean escape.</div>
+<div class="facts-grid">
+<div class="fact-card">
+<div class="fact-icon">&#9728;&#65039;</div>
+<div class="fact-label">Best Season</div>
+<div class="fact-value">Dec &ndash; April</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#127777;&#65039;</div>
+<div class="fact-label">Avg Temperature</div>
+<div class="fact-value">80&ndash;88&deg;F</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#128176;</div>
+<div class="fact-label">Budget Range</div>
+<div class="fact-value">$$$</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#9992;&#65039;</div>
+<div class="fact-label">Flight Time</div>
+<div class="fact-value">3&ndash;5 hrs from US</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#128498;&#65039;</div>
+<div class="fact-label">Language</div>
+<div class="fact-value">English & more</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#128178;</div>
+<div class="fact-label">Currency</div>
+<div class="fact-value">USD widely accepted</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#128274;</div>
+<div class="fact-label">Visa</div>
+<div class="fact-value">Passport required</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">&#128247;</div>
+<div class="fact-label">Best For</div>
+<div class="fact-value">Beach & Romance</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TOP EXPERIENCES -->
+<section class="section">
+<div class="container">
+<div class="section-label">Top Experiences</div>
+<div class="section-title">Unforgettable Caribbean Moments</div>
+<div class="section-subtitle">From underwater adventures to cultural immersion, the Caribbean offers experiences to fill a lifetime of memories.</div>
+<div class="exp-grid">
+<div class="exp-card">
+<div class="exp-card-img" style="background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80')"></div>
+<div class="exp-card-body">
+<h3>Snorkeling & Diving</h3>
+<p>Explore vibrant coral reefs, swim with sea turtles, and discover shipwrecks in some of the clearest waters on the planet. The Caribbean is home to world-class dive sites across Bonaire, Cayman Islands, and Belize.</p>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-card-img" style="background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80')"></div>
+<div class="exp-card-body">
+<h3>Pristine Beach Retreats</h3>
+<p>Sink your toes into powdery white sand at legendary beaches like Grace Bay in Turks and Caicos, Seven Mile Beach in Grand Cayman, and Pink Sands Beach in Harbour Island, Bahamas.</p>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-card-img" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80')"></div>
+<div class="exp-card-body">
+<h3>Island-Hopping Cruises</h3>
+<p>Sail between multiple islands on a luxury cruise, waking up to a new paradise each morning. Visit bustling ports, hidden coves, and private island retreats with cruise lines like Royal Caribbean and Celebrity.</p>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-card-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80')"></div>
+<div class="exp-card-body">
+<h3>Caribbean Cuisine</h3>
+<p>Savor the incredible flavors of the Caribbean, from fresh-caught seafood and jerk chicken to rum cocktails and tropical fruits. Each island brings its own culinary traditions and specialties.</p>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-card-img" style="background-image:url('https://images.unsplash.com/photo-1482192505345-5655af888cc4?w=600&q=80')"></div>
+<div class="exp-card-body">
+<h3>Rainforest Adventures</h3>
+<p>Venture beyond the beach to explore lush tropical rainforests, dramatic waterfalls, and volcanic peaks. Hike through El Yunque in Puerto Rico or the Pitons in St. Lucia for stunning panoramic views.</p>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-card-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80')"></div>
+<div class="exp-card-body">
+<h3>Sunset Sailing</h3>
+<p>Set sail on a catamaran at golden hour and watch the Caribbean sun melt into the sea. Many sailings include rum punch, snorkeling stops, and the chance to spot dolphins along the way.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BEST TIME TO VISIT -->
+<section class="section section-dark">
+<div class="container">
+<div class="section-label">When to Go</div>
+<div class="section-title">Best Time to Visit</div>
+<div class="section-subtitle">The Caribbean enjoys warm weather year-round, but timing your visit can make a big difference in price, crowds, and weather conditions.</div>
+<div class="time-grid">
+<div class="time-card recommended">
+<div class="time-month">Dec &ndash; Feb</div>
+<div class="time-temp">78&ndash;84&deg;F</div>
+<div class="time-desc">Peak season, perfect weather, festive vibes</div>
+<div class="time-badge">&#11088; Best Time</div>
+</div>
+<div class="time-card recommended">
+<div class="time-month">Mar &ndash; Apr</div>
+<div class="time-temp">80&ndash;86&deg;F</div>
+<div class="time-desc">Warm & sunny, spring break season</div>
+<div class="time-badge">&#11088; Great Choice</div>
+</div>
+<div class="time-card">
+<div class="time-month">May &ndash; Aug</div>
+<div class="time-temp">82&ndash;88&deg;F</div>
+<div class="time-desc">Hot & humid, lower prices, some rain</div>
+</div>
+<div class="time-card">
+<div class="time-month">Sep &ndash; Nov</div>
+<div class="time-temp">80&ndash;86&deg;F</div>
+<div class="time-desc">Hurricane season, best deals available</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRAVEL TIPS -->
+<section class="section">
+<div class="container">
+<div class="section-label">Travel Tips</div>
+<div class="section-title">Know Before You Go</div>
+<div class="section-subtitle">Insider tips from our Caribbean travel experts to help you plan the perfect island getaway.</div>
+<div class="tips-grid">
+<div class="tip-card">
+<div class="tip-icon">&#128176;</div>
+<div>
+<h3>Book Early for Peak Season</h3>
+<p>December through April is peak season. Book your resort or cruise at least 6&ndash;9 months ahead for the best availability and rates, especially over the holidays.</p>
+</div>
+</div>
+<div class="tip-card">
+<div class="tip-icon">&#127754;</div>
+<div>
+<h3>Consider Shoulder Season</h3>
+<p>May and early June offer great weather with significantly lower prices. Many resorts run promotions, and you will avoid the peak crowds.</p>
+</div>
+</div>
+<div class="tip-card">
+<div class="tip-icon">&#128692;</div>
+<div>
+<h3>Island Hopping is Easy</h3>
+<p>Many Caribbean islands are connected by short flights and ferry services. Consider visiting multiple islands on a single trip for a richer experience.</p>
+</div>
+</div>
+<div class="tip-card">
+<div class="tip-icon">&#128214;</div>
+<div>
+<h3>All-Inclusive vs. Independent</h3>
+<p>All-inclusive resorts offer great value and convenience, but independent stays let you explore local restaurants and hidden gems. We can help you decide which is right for you.</p>
+</div>
+</div>
+<div class="tip-card">
+<div class="tip-icon">&#127774;</div>
+<div>
+<h3>Pack Reef-Safe Sunscreen</h3>
+<p>Many Caribbean islands have banned harmful sunscreen chemicals to protect coral reefs. Bring reef-safe sunscreen to help preserve these fragile ecosystems.</p>
+</div>
+</div>
+<div class="tip-card">
+<div class="tip-icon">&#128137;</div>
+<div>
+<h3>Travel Insurance is Essential</h3>
+<p>We always recommend comprehensive travel insurance for Caribbean trips, especially during hurricane season. We can help you select the right coverage.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="section section-alt">
+<div class="container">
+<div class="section-label">Visual Inspiration</div>
+<div class="section-title">Caribbean Gallery</div>
+<div class="section-subtitle">A glimpse into the beauty that awaits you in the Caribbean Islands.</div>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800&q=80" alt="Caribbean aerial view"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=400&q=80" alt="Palm-lined beach"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" alt="Underwater reef"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1580541631950-7282082b03f5?w=400&q=80" alt="Caribbean sunset"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" alt="Beach scene"></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark cta-section">
+<h2>Ready to Explore the Caribbean?</h2>
+<p>Let our travel experts craft your perfect Caribbean getaway with exclusive perks and insider access you will not find anywhere else.</p>
+<a href="../index.html#contact" class="hero-btn">Start Planning &rarr;</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-logo">
+<img src="../destinara-logo.png" alt="Destinara">
+<span>Destinara</span>
+</div>
+<p>Curated Journeys</p>
+<div class="footer-links">
+<a href="../index.html">Home</a>
+<a href="../index.html#services">Services</a>
+<a href="../index.html#destinations">Destinations</a>
+<a href="../index.html#deals">Deals</a>
+<a href="../index.html#contact">Contact</a>
+</div>
+<div class="footer-copy">&copy; 2025 Destinara Travel. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
