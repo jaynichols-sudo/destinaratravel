@@ -1469,54 +1469,53 @@ document.querySelectorAll('.service-card').forEach(card => {
 
 
 // DESTINATION TABS
-document.querySelectorAll(".dest-tab").forEach(tab=>{
-  tab.addEventListener("click",()=>{
-    document.querySelectorAll(".dest-tab").forEach(t=>t.classList.remove("active"));
-    tab.classList.add("active");
-    document.querySelectorAll(".dest-content-panel").forEach(p=>p.classList.remove("active"));
-    document.querySelector("[data-panel=""+tab.dataset.continent+""]").classList.add("active");
+document.querySelectorAll('.dest-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.dest-tab').forEach(function(t){t.classList.remove('active')});
+    tab.classList.add('active');
+    document.querySelectorAll('.dest-content-panel').forEach(function(p){p.classList.remove('active')});
+    document.querySelector('[data-panel=' + JSON.stringify(tab.dataset.continent) + ']').classList.add('active');
   });
 });
 
 // QUIZ LOGIC
-let quizAnswers=[];
-document.querySelectorAll(".quiz-option").forEach(opt=>{
-  opt.addEventListener("click",function(){
-    this.closest(".quiz-options").querySelectorAll(".quiz-option").forEach(o=>o.classList.remove("selected"));
-    this.classList.add("selected");
+var quizAnswers=[];
+document.querySelectorAll('.quiz-option').forEach(function(opt){
+  opt.addEventListener('click',function(){
+    this.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(function(o){o.classList.remove('selected')});
+    this.classList.add('selected');
     quizAnswers.push(this.dataset.value);
-    const currentQ=this.closest(".quiz-question");
-    const qNum=parseInt(currentQ.dataset.q);
-    setTimeout(()=>{
+    var currentQ=this.closest('.quiz-question');
+    var qNum=parseInt(currentQ.dataset.q);
+    setTimeout(function(){
       if(qNum<4){
-        currentQ.classList.remove("active");
-        document.querySelector("[data-q=""+(qNum+1)+""]").classList.add("active");
-        document.querySelectorAll(".quiz-progress-dot").forEach((dot,i)=>{dot.classList.toggle("filled",i<=qNum);});
-      }else{currentQ.classList.remove("active");showQuizResult();}
+        currentQ.classList.remove('active');
+        document.querySelector('[data-q=' + JSON.stringify(String(qNum+1)) + ']').classList.add('active');
+        document.querySelectorAll('.quiz-progress-dot').forEach(function(dot,i){dot.classList.toggle('filled',i<=qNum)});
+      }else{currentQ.classList.remove('active');showQuizResult();}
     },400);
   });
 });
 
 function showQuizResult(){
-  const results={relaxation:{icon:"&#x1F3DD;",title:"The Luxury Relaxer",desc:"You crave serenity. We recommend the Maldives, Bora Bora, or a luxury Caribbean cruise."},adventure:{icon:"&#x26F0;",title:"The Bold Explorer",desc:"You live for adrenaline. We recommend Patagonia, an African safari, or an Alaskan expedition."},culture:{icon:"&#x1F30D;",title:"The Cultural Connoisseur",desc:"You travel to learn. We recommend Japan, Italy, or a Mediterranean cruise."},luxury:{icon:"&#x2728;",title:"The Refined Traveler",desc:"You appreciate the finer things. We recommend the French Riviera, Dubai, or Regent Seven Seas."}};
-  let type=quizAnswers[0]||"relaxation";
-  const r=results[type]||results.relaxation;
-  document.getElementById("resultIcon").innerHTML=r.icon;
-  document.getElementById("resultTitle").textContent=r.title;
-  document.getElementById("resultDesc").textContent=r.desc;
-  document.getElementById("quizResult").classList.add("active");
-  document.querySelectorAll(".quiz-progress-dot").forEach(d=>d.classList.add("filled"));
+  var results={relaxation:{title:'The Luxury Relaxer',desc:'You crave serenity. We recommend the Maldives, Bora Bora, or a luxury Caribbean cruise.'},adventure:{title:'The Bold Explorer',desc:'You live for adrenaline. We recommend Patagonia, an African safari, or an Alaskan expedition.'},culture:{title:'The Cultural Connoisseur',desc:'You travel to learn. We recommend Japan, Italy, or a Mediterranean cruise.'},luxury:{title:'The Refined Traveler',desc:'You appreciate the finer things. We recommend the French Riviera, Dubai, or Regent Seven Seas.'}};
+  var type=quizAnswers[0]||'relaxation';
+  var r=results[type]||results.relaxation;
+  document.getElementById('resultTitle').textContent=r.title;
+  document.getElementById('resultDesc').textContent=r.desc;
+  document.getElementById('quizResult').classList.add('active');
+  document.querySelectorAll('.quiz-progress-dot').forEach(function(d){d.classList.add('filled')});
 }
 
 // FAQ ACCORDION
-document.querySelectorAll(".faq-q").forEach(q=>{
-  q.addEventListener("click",()=>{
-    const item=q.closest(".faq-item");
-    const wasOpen=item.classList.contains("open");
-    document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
-    if(!wasOpen)item.classList.add("open");
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.closest('.faq-item');
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!wasOpen)item.classList.add('open');
   });
-});
+});});
 </script>
 </body>
 </html>
