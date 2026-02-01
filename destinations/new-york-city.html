@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>New York City Destination Guide | Destinara Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}:root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#1a1a2e;--color-light:#F5F1EB;--color-text:#333;--color-text-light:#666}body{font-family:'Inter',sans-serif;color:var(--color-text);line-height:1.6}h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600}a{text-decoration:none;color:inherit}.nav{position:fixed;top:0;width:100%;background:rgba(13,92,92,0.97);backdrop-filter:blur(10px);z-index:1000;padding:1rem 5%}.nav-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:white}.nav-logo img{height:40px}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:rgba(255,255,255,0.9);font-size:0.9rem;font-weight:400;transition:color 0.3s}.nav-links a:hover{color:var(--color-accent)}.hero-destination{height:70vh;min-height:500px;background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;margin-top:60px}.hero-destination h1{font-size:3.5rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}.hero-destination p{font-size:1.2rem;max-width:600px;opacity:0.9}.breadcrumb{padding:1rem 5%;background:var(--color-light);font-size:0.85rem;color:var(--color-text-light)}.breadcrumb a{color:var(--color-primary);font-weight:500}.breadcrumb span{margin:0 0.5rem;color:#ccc}.section{padding:5rem 5%}.section-alt{background:var(--color-light)}.section-dark{background:var(--color-dark);color:white}.container{max-width:1100px;margin:0 auto}.section-label{color:var(--color-accent);font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem}.section-title{font-size:2.2rem;margin-bottom:1rem;color:var(--color-dark)}.section-dark .section-title{color:white}.section-subtitle{color:var(--color-text-light);font-size:1.05rem;max-width:700px;margin-bottom:2.5rem}.section-dark .section-subtitle{color:rgba(255,255,255,0.7)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.overview-image{width:100%;height:400px;object-fit:cover;border-radius:12px}.overview-text p{margin-bottom:1rem;color:var(--color-text-light);line-height:1.8}.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.fact-card{background:white;padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.06)}.fact-card .fact-icon{font-size:1.5rem;margin-bottom:0.5rem}.fact-card .fact-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-light);margin-bottom:0.25rem}.fact-card .fact-value{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--color-dark)}.experiences-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.experience-card{height:280px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer}.experience-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.experience-card:hover img{transform:scale(1.05)}.experience-card .overlay{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:white}.experience-card .overlay h3{font-size:1.1rem;margin-bottom:0.25rem}.experience-card .overlay p{font-size:0.8rem;opacity:0.85}.times-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.time-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.5rem;text-align:center}.time-card.recommended{border-color:var(--color-accent);background:rgba(196,149,107,0.1)}.time-badge{display:inline-block;background:var(--color-accent);color:white;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:20px;margin-bottom:0.5rem;font-weight:600}.time-card h3{font-size:1rem;margin-bottom:0.5rem}.time-card p{font-size:0.85rem;opacity:0.8;line-height:1.6}.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.tip-card{background:white;padding:2rem;border-radius:10px;box-shadow:0 2px 15px rgba(0,0,0,0.06)}.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}.tip-card h3{font-size:1rem;margin-bottom:0.5rem;color:var(--color-dark)}.tip-card p{font-size:0.85rem;color:var(--color-text-light);line-height:1.7}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:1rem}.gallery-grid .gallery-item:first-child{grid-column:span 2;grid-row:span 2}.gallery-item{border-radius:10px;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.gallery-item:hover img{transform:scale(1.05)}.cta-section{text-align:center;padding:5rem 5%}.cta-section h2{font-size:2.2rem;margin-bottom:1rem}.cta-section p{max-width:600px;margin:0 auto 2rem;opacity:0.85}.hero-btn{display:inline-block;padding:1rem 2.5rem;background:var(--color-accent);color:white;border-radius:50px;font-weight:600;font-size:0.95rem;transition:all 0.3s;border:none;cursor:pointer}.hero-btn:hover{background:#b8895f;transform:translateY(-2px)}.footer{background:#0a0a1a;color:rgba(255,255,255,0.6);padding:3rem 5%;text-align:center;font-size:0.85rem}.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:0.5rem}.footer a{color:var(--color-accent)}.footer-links{display:flex;justify-content:center;gap:2rem;margin:1rem 0;list-style:none}.footer-links a{color:rgba(255,255,255,0.6);font-size:0.8rem;transition:color 0.3s}.footer-links a:hover{color:var(--color-accent)}@media(max-width:1024px){.facts-grid,.times-grid{grid-template-columns:repeat(2,1fr)}.experiences-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,180px)}}@media(max-width:768px){.hero-destination h1{font-size:2.2rem}.overview-grid{grid-template-columns:1fr}.nav-links{display:none}.experiences-grid,.tips-grid{grid-template-columns:1fr}.facts-grid,.times-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-grid .gallery-item:first-child{grid-column:span 1;grid-row:span 1}}
+    </style>
+  </head>
+  <body>
+
+    <nav class="nav"><div class="nav-content"><a href="../index.html" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara"></a>a><ul class="nav-links"><li><a href="../index.html#destinations">Destinations</a>a></li><li><a href="../index.html#experiences">Experiences</a>a></li><li><a href="../index.html#about">About</a>a></li><li><a href="../index.html#contact">Contact</a>a></li></ul>ul></div>div></nav>nav>
+  
+  <section class="hero-destination">
+  <div><h1>New York City</h1><p>The city that never sleeps, where iconic landmarks, world-class culture, and endless energy converge on every block.</p></div>
+  </section>section>
+  
+  <div class="breadcrumb"><div class="container"><a href="../index.html">Home</a>a><span>/</span><a href="../index.html#destinations">Destinations</a>a><span>/</span>New York City</div></div>
+  
+  <section class="section">
+  <div class="container">
+  <div class="overview-grid">
+  <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&q=80" alt="New York City" class="overview-image">
+  <div class="overview-text">
+  <div class="section-label">Overview</div>
+  <h3 class="section-title">The Capital of the World</h3>
+  <p>New York City is a destination unlike any other, a sprawling metropolis of five boroughs that pulses with an energy felt nowhere else on Earth. From the neon glow of Times Square to the serene pathways of Central Park, the city offers an extraordinary range of experiences that cater to every interest, passion, and curiosity imaginable.</p>
+  <p>The cultural offerings are unmatched: world-renowned museums like the Metropolitan Museum of Art and MoMA, the bright lights of Broadway, jazz clubs in Greenwich Village, and galleries in Chelsea create an arts scene that has inspired generations. Each neighborhood tells its own story, from the brownstones of Brooklyn to the historic streets of Harlem and the trendy enclaves of the Lower East Side.</p>
+  <p>New York is also a culinary capital of the highest order, with everything from Michelin-starred restaurants to legendary pizza slices, dim sum in Chinatown, and bagels that have achieved near-mythical status. Whether you are gazing at the skyline from the Top of the Rock, catching a ferry to the Statue of Liberty, or simply people-watching in Washington Square Park, NYC delivers moments that become lifelong memories.</p>
+  </div>
+  </div>
+  </div>
+  </section>section>
+  
+  <section class="section section-alt">
+  <div class="container">
+  <div class="section-label">Essential Information</div>
+  <h3 class="section-title">Quick Facts</h3>
+  <div class="facts-grid">
+  <div class="fact-card"><div class="fact-icon">&#9728;</div><div class="fact-label">Best Season</div><div class="fact-value">Apr-Jun / Sep-Nov</div></div>
+  <div class="fact-card"><div class="fact-icon">&#127777;</div><div class="fact-label">Avg Temperature</div><div class="fact-value">0-30&#176;C / 32-86&#176;F</div></div>
+  <div class="fact-card"><div class="fact-icon">&#128176;</div><div class="fact-label">Budget Range</div><div class="fact-value">$200-500/day</div></div>
+  <div class="fact-card"><div class="fact-icon">&#9992;</div><div class="fact-label">Flight Time</div><div class="fact-value">1-6h within US</div></div>
+  <div class="fact-card"><div class="fact-icon">&#127463;</div><div class="fact-label">Language</div><div class="fact-value">English</div></div>
+  <div class="fact-card"><div class="fact-icon">&#128178;</div><div class="fact-label">Currency</div><div class="fact-value">US Dollar (USD)</div></div>
+  <div class="fact-card"><div class="fact-icon">&#128196;</div><div class="fact-label">Visa</div><div class="fact-value">Varies by nationality</div></div>
+  <div class="fact-card"><div class="fact-icon">&#11088;</div><div class="fact-label">Best For</div><div class="fact-value">Culture, Food, Shopping</div></div>
+  </div>
+  </div>
+  </section>section>
+  
+  <section class="section">
+  <div class="container">
+  <div class="section-label">Must-Do Activities</div>
+  <h3 class="section-title">Top Experiences</h3>
+  <div class="section-subtitle">Discover the most unforgettable experiences New York City has to offer.</div>
+  <div class="experiences-grid">
+  <div class="experience-card"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80" alt="Central Park"><div class="overlay"><h3>Central Park</h3><p>Stroll through 843 acres of urban paradise in Manhattan</p></div></div>
+  <div class="experience-card"><img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80" alt="Statue of Liberty"><div class="overlay"><h3>Statue of Liberty</h3><p>Visit the iconic symbol of freedom on Liberty Island</p></div></div>
+  <div class="experience-card"><img src="https://images.unsplash.com/photo-1518235506717-e1ed3306a89b?w=600&q=80" alt="Brooklyn Bridge"><div class="overlay"><h3>Brooklyn Bridge</h3><p>Walk across the historic bridge with stunning skyline views</p></div></div>
+  <div class="experience-card"><img src="https://images.unsplash.com/photo-1543536448-d209d2d13a1c?w=600&q=80" alt="Broadway"><div class="overlay"><h3>Broadway Shows</h3><p>Experience world-class theater in the Theater District</p></div></div>
+  <div class="experience-card"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="Times Square"><div class="overlay"><h3>Times Square</h3><p>Marvel at the dazzling lights of the Crossroads of the World</p></div></div>
+  <div class="experience-card"><img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=600&q=80" alt="Metropolitan Museum"><div class="overlay"><h3>The Met Museum</h3><p>Explore 5,000 years of art from around the globe</p></div></div>
+  </div>
+  </div>
+  </section>section>
+  
+  <section class="section section-dark">
+  <div class="container">
+  <div class="section-label">Plan Your Visit</div>
+  <h3 class="section-title">Best Time to Visit</h3>
+  <div class="section-subtitle">New York is spectacular year-round, but spring and autumn offer the most pleasant weather for exploring.</div>
+  <div class="times-grid">
+  <div class="time-card recommended"><span class="time-badge">Recommended</span><h3>September - November</h3><p>Crisp fall weather, stunning foliage in Central Park, and the return of Broadway and cultural seasons. Perfect temperatures for walking.</p></div>
+  <div class="time-card recommended"><span class="time-badge">Recommended</span><h3>April - June</h3><p>Spring blooms fill the parks, outdoor dining returns, and comfortable temperatures make sightseeing a pleasure.</p></div>
+  <div class="time-card"><h3>December - February</h3><p>Magical holiday season with Rockefeller Center tree, ice skating, and festive window displays. Cold but atmospheric. Great hotel deals in January.</p></div>
+  <div class="time-card"><h3>July - August</h3><p>Hot and humid but alive with outdoor festivals, free concerts in the park, and rooftop bars. Peak tourist season with higher prices.</p></div>
+  </div>
+  </div>
+  </section>section>
+  
+  <section class="section section-alt">
+  <div class="container">
+  <div class="section-label">Practical Advice</div>
+  <h3 class="section-title">Travel Tips</h3>
+  <div class="tips-grid">
+  <div class="tip-card"><div class="tip-icon">&#128647;</div><div><h3>Master the Subway</h3><p>The NYC subway runs 24/7 and is the fastest way around the city. Get an OMNY-compatible card or use contactless payment for easy access.</p></div></div>
+  <div class="tip-card"><div class="tip-icon">&#128694;</div><div><h3>Walk Everywhere</h3><p>New York is best explored on foot. Wear comfortable shoes and plan routes that let you discover neighborhoods organically between major sights.</p></div></div>
+  <div class="tip-card"><div class="tip-icon">&#127915;</div><div><h3>Get Broadway Tickets</h3><p>Visit the TKTS booth in Times Square for same-day discounted tickets, or try the Broadway lottery for popular shows at a fraction of the price.</p></div></div>
+  <div class="tip-card"><div class="tip-icon">&#128176;</div><div><h3>Budget Wisely</h3><p>NYC is expensive but many attractions are free: Central Park, Brooklyn Bridge, Staten Island Ferry, and many museums have free hours.</p></div></div>
+  <div class="tip-card"><div class="tip-icon">&#127860;</div><div><h3>Eat Like a Local</h3><p>Skip tourist traps near Times Square. The best food is in neighborhoods like the East Village, Williamsburg, Jackson Heights, and Flushing.</p></div></div>
+  <div class="tip-card"><div class="tip-icon">&#128197;</div><div><h3>Book in Advance</h3><p>Reserve popular attractions like the Statue of Liberty crown, Empire State Building, and top restaurants well ahead of your visit.</p></div></div>
+  </div>
+  </div>
+  </section>section>
+  
+  <section class="section section-alt">
+  <div class="container">
+  <div class="section-label">Visual Inspiration</div>
+  <h3 class="section-title">New York City Gallery</h3>
+  <div class="section-subtitle">A glimpse into the energy and beauty of the city that never sleeps.</div>
+  <div class="gallery-grid">
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80" alt="NYC Skyline"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&q=80" alt="Times Square"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518235506717-e1ed3306a89b?w=400&q=80" alt="Brooklyn Bridge"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=400&q=80" alt="Statue of Liberty"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=400&q=80" alt="Museum"></div>
+  </div>
+  </div>
+  </section>section>
+  
+  <section class="section section-dark cta-section">
+  <div class="container">
+  <h2>Ready to Explore New York City?</h2>
+  <p>Let our travel experts craft your perfect NYC getaway, from luxury Manhattan stays to immersive borough-hopping adventures.</p>
+  <a href="../index.html#contact" class="hero-btn">Start Planning &rarr;</a>a>
+  </div>
+  </section>section>
+  
+  <footer class="footer"><div class="container"><div class="footer-logo"><img src="../destinara-logo.png" alt="Destinara"></div><p>Curated Journeys to Extraordinary Destinations</p><ul class="footer-links"><li><a href="../index.html#destinations">Destinations</a>a></li><li><a href="../index.html#experiences">Experiences</a>a></li><li><a href="../index.html#about">About</a>a></li><li><a href="../index.html#contact">Contact</a>a></li></ul>ul><p>&copy; 2025 Destinara Travel. All rights reserved.</p></div></footer>footer>
+  
+  </body>
+</html>html></p></li></li></p></p></span></span></p></h1></div></li></li>
+  </body>
+  </style></title>
+  </head>
