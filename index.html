@@ -1413,8 +1413,10 @@ Other</option>
 <div class="container reveal">
 <h2>Subscribe to Our Newsletter</h2>
 <p>Get exclusive travel deals, destination guides, and insider tips delivered to your inbox.</p>
-<div class="newsletter-form">
-<input type="email" placeholder="Enter your email address">
+<form action="https://formsubmit.co/info@destinaratravel.com" method="POST" class="newsletter-form">
+<input type="email" name="newsletter_email" placeholder="Enter your email address" required>
+            <input type="hidden" name="_subject" value="New Newsletter Subscription">
+            <input type="hidden" name="_template" value="table">
 <button onclick="this.textContent='Subscribed!';this.style.background='var(--color-primary)'">Subscribe</button>
 </div>
 </div>
