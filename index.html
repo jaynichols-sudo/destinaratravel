@@ -480,10 +480,41 @@ section{padding:100px 0}
     @media(max-width:768px){.browse-dest-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
   
     
+
+/* HOW IT WORKS */
+.how-it-works{background:var(--color-bg-alt);padding:100px 0}
+.hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:50px;position:relative}
+.hiw-step{text-align:center;position:relative}
+.hiw-number{width:60px;height:60px;border-radius:50%;background:var(--color-primary);color:#fff;font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.hiw-icon{font-size:2.5rem;margin-bottom:15px}
+.hiw-step h4{font-family:var(--font-display);font-size:1.2rem;margin-bottom:10px;color:var(--color-dark)}
+.hiw-step p{color:var(--color-text-light);font-size:0.95rem;line-height:1.6}
+.hiw-connector{position:absolute;top:30px;left:calc(50% + 40px);width:calc(100% - 80px);height:2px;background:linear-gradient(90deg,var(--color-accent),var(--color-primary));opacity:0.3}
+.hiw-step:last-child .hiw-connector{display:none}
+@media(max-width:768px){.hiw-grid{grid-template-columns:1fr 1fr;gap:30px}.hiw-connector{display:none}}
+@media(max-width:480px){.hiw-grid{grid-template-columns:1fr}}
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:30px;right:30px;z-index:900;background:var(--color-accent);color:#fff;border:none;padding:16px 24px;border-radius:50px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;cursor:pointer;box-shadow:0 4px 20px rgba(196,149,107,0.4);transition:all 0.3s;text-decoration:none;display:flex;align-items:center;gap:8px}
+.sticky-cta:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(196,149,107,0.5)}
+.sticky-cta .cta-pulse{width:10px;height:10px;border-radius:50%;background:#fff;animation:ctaPulse 2s infinite}
+@keyframes ctaPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+/* TOOL CARDS INTERACTIVE */
+.tool-card{cursor:pointer;transition:all 0.3s}
+.tool-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.1);border-color:var(--color-accent)}
+.tool-card-link{color:var(--color-accent);font-size:0.85rem;font-weight:600;margin-top:10px;display:inline-block;opacity:0;transition:opacity 0.3s}
+.tool-card:hover .tool-card-link{opacity:1}
+
 .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:10000;transition:top 0.3s;font-size:14px;text-decoration:none;border-radius:0 0 4px 0}
 .skip-link:focus{top:0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}.marquee-track{animation:none !important}.hero-bg-slide{transition:none !important}}
 </style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Destinara Travel","description":"Curated luxury travel experiences including cruises, resort vacations, honeymoons, and group travel.","url":"https://www.destinaratravel.com","telephone":"+19193486268","email":"info@destinaratravel.com","address":{"@type":"PostalAddress","streetAddress":"3807 Arundel Ct","addressLocality":"Greensboro","addressRegion":"NC","postalCode":"27406","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200","bestRating":"5"},"sameAs":["https://instagram.com/destinara.travel","https://facebook.com/DestinaraTravel","https://tiktok.com/@destinaratravel","https://linkedin.com/company/destinara-travel"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is booking with Destinara different from booking online?","acceptedAnswer":{"@type":"Answer","text":"When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities."}},{"@type":"Question","name":"Do you charge a fee for your services?","acceptedAnswer":{"@type":"Answer","text":"Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost."}},{"@type":"Question","name":"Can I still earn hotel loyalty points when booking through you?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits."}},{"@type":"Question","name":"How far in advance should I book my trip?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking 6-12 months in advance for peak-season destinations, cruises, and popular resort stays."}},{"@type":"Question","name":"Do you offer travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage."}}]}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -525,6 +556,7 @@ section{padding:100px 0}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
+<a href="#how-it-works" onclick="closeMobile()">How It Works</a>
 <a href="#services" onclick="closeMobile()">Services</a>
 <a href="#destinations" onclick="closeMobile()">Destinations</a>
 <a href="#why" onclick="closeMobile()">Why Us</a>
@@ -585,6 +617,45 @@ section{padding:100px 0}
 </div>
 </div>
 <!-- SERVICES -->
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+<div class="container" style="text-align:center">
+<div class="section-label reveal" style="justify-content:center">Simple Process</div>
+<h2 class="section-title reveal">How It Works</h2>
+<p class="section-subtitle reveal" style="margin:0 auto">From your first idea to your dream trip — here's how Destinara makes it effortless.</p>
+<div class="hiw-grid reveal">
+<div class="hiw-step">
+<div class="hiw-number">1</div>
+<div class="hiw-icon">💬</div>
+<h4>Share Your Vision</h4>
+<p>Tell us where you dream of going, your travel style, budget, and dates. No idea is too big or too vague — we love starting from scratch.</p>
+<div class="hiw-connector"></div>
+</div>
+<div class="hiw-step">
+<div class="hiw-number">2</div>
+<div class="hiw-icon">✨</div>
+<h4>We Design Your Trip</h4>
+<p>Our experts craft a personalized itinerary with exclusive perks, hand-picked hotels, insider experiences, and seamless logistics.</p>
+<div class="hiw-connector"></div>
+</div>
+<div class="hiw-step">
+<div class="hiw-number">3</div>
+<div class="hiw-icon">🔍</div>
+<h4>Review &amp; Refine</h4>
+<p>We walk you through every detail. Want to swap a hotel? Add an excursion? We fine-tune until it's exactly right.</p>
+<div class="hiw-connector"></div>
+</div>
+<div class="hiw-step">
+<div class="hiw-number">4</div>
+<div class="hiw-icon">🌍</div>
+<h4>Travel with Confidence</h4>
+<p>Book with peace of mind knowing we're your advocate before, during, and after your trip. 24/7 support wherever you go.</p>
+</div>
+</div>
+</div>
+</section>
+
 <section class="services" id="services">
 <div class="container">
 <div class="reveal">
@@ -1078,6 +1149,10 @@ section{padding:100px 0}
 <div class="quiz-question" data-q="3"><h3>Your dream dinner abroad is...</h3><p>What dining experience excites you most?</p><div class="quiz-options"><div class="quiz-option" data-value="street"><span class="quiz-emoji">&#x1F35C;</span>Street food in a night market</div><div class="quiz-option" data-value="fine"><span class="quiz-emoji">&#x1F37D;&#xFE0F;</span>Michelin-star fine dining</div><div class="quiz-option" data-value="local"><span class="quiz-emoji">&#x1F3E0;</span>A home-cooked local meal</div><div class="quiz-option" data-value="scenic"><span class="quiz-emoji">&#x1F305;</span>Dinner with an epic view</div></div></div>
 <div class="quiz-question" data-q="4"><h3>Your must-have travel item is...</h3><p>You never leave home without...</p><div class="quiz-options"><div class="quiz-option" data-value="camera"><span class="quiz-emoji">&#x1F4F8;</span>My camera for epic shots</div><div class="quiz-option" data-value="book"><span class="quiz-emoji">&#x1F4D6;</span>A good book to unwind</div><div class="quiz-option" data-value="hiking"><span class="quiz-emoji">&#x1F97E;</span>Hiking boots for exploring</div><div class="quiz-option" data-value="journal"><span class="quiz-emoji">&#x1F4D3;</span>A journal to document it all</div></div></div>
 <div class="quiz-result" id="quizResult"><div class="quiz-result-icon" id="resultIcon"></div><h3 id="resultTitle"></h3><p id="resultDesc"></p><a href="#contact" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--color-primary);color:white;text-decoration:none;font-weight:600;">Let Us Plan Your Perfect Trip &#8594;</a></div>
+<div id="quizRecommendations" style="display:none;margin-top:30px">
+<p style="font-size:1.1rem;color:var(--color-text-light);margin-bottom:20px">Based on your answers, we think you'd love:</p>
+<div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap" id="quizDestCards"></div>
+</div>
 </div>
 </div>
 </section>
@@ -1108,14 +1183,14 @@ section{padding:100px 0}
 <h2 class="section-title reveal">Travel Planning Tools</h2>
 <p class="section-subtitle reveal">Everything you need to prepare for your journey.</p>
 <div class="tools-grid">
-<div class="tool-card reveal"><div class="tool-icon">&#x1F4B1;</div><h4>Currency Converter</h4><p>Check live exchange rates for your destination before you travel.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x1F324;&#xFE0F;</div><h4>Destination Weather</h4><p>See current conditions and forecasts for any destination worldwide.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x1F4CB;</div><h4>Packing Checklist</h4><p>Customizable packing lists for cruises, beach vacations, adventure trips &amp; more.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x1F6C2;</div><h4>Visa &amp; Passport Info</h4><p>Quick reference for visa requirements and passport validity by destination.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x23F0;</div><h4>Time Zone Checker</h4><p>Never miss a call home. Check time differences for any destination.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x1F3E5;</div><h4>Travel Insurance Guide</h4><p>Understand coverage types and find the right travel insurance for your trip.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x1F5E3;&#xFE0F;</div><h4>Language Phrasebook</h4><p>Essential phrases in 20+ languages to help you connect with locals.</p></div>
-<div class="tool-card reveal"><div class="tool-icon">&#x1F50C;</div><h4>Power Adapter Guide</h4><p>Know which plug type and voltage you&#39;ll need at your destination.</p></div>
+<div class="tool-card reveal" onclick="window.open('https://www.xe.com/currencyconverter/','_blank')" role="link" tabindex="0"><div class="tool-icon">&#x1F4B1;</div><h4>Currency Converter</h4><p>Check live exchange rates for your destination before you travel.</p><span class="tool-card-link">Open Converter →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x1F324;&#xFE0F;</div><h4>Destination Weather</h4><p>See current conditions and forecasts for any destination worldwide.</p><span class="tool-card-link">Check Weather →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x1F4CB;</div><h4>Packing Checklist</h4><p>Customizable packing lists for cruises, beach vacations, adventure trips &amp; more.</p><span class="tool-card-link">Get Checklist →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x1F6C2;</div><h4>Visa &amp; Passport Info</h4><p>Quick reference for visa requirements and passport validity by destination.</p><span class="tool-card-link">Check Requirements →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x23F0;</div><h4>Time Zone Checker</h4><p>Never miss a call home. Check time differences for any destination.</p><span class="tool-card-link">Check Time Zones →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x1F3E5;</div><h4>Travel Insurance Guide</h4><p>Understand coverage types and find the right travel insurance for your trip.</p><span class="tool-card-link">Learn More →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x1F5E3;&#xFE0F;</div><h4>Language Phrasebook</h4><p>Essential phrases in 20+ languages to help you connect with locals.</p><span class="tool-card-link">Browse Phrases →</span></div>
+<div class="tool-card reveal"><div class="tool-icon">&#x1F50C;</div><h4>Power Adapter Guide</h4><p>Know which plug type and voltage you&#39;ll need at your destination.</p><span class="tool-card-link">Check Adapters →</span></div>
 </div>
 </div>
 </section>
@@ -1297,13 +1372,13 @@ section{padding:100px 0}
 </div>
 </div>
 <div class="contact-social">
-<a href="https://instagram.com/destinaratravel" target="_blank" rel="noopener" aria-label="Instagram">
+<a href="https://instagram.com/destinara.travel" target="_blank" rel="noopener" aria-label="Instagram">
 <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
 </a>
-<a href="https://facebook.com/destinaratravel" target="_blank" rel="noopener" aria-label="Facebook">
+<a href="https://facebook.com/DestinaraTravel" target="_blank" rel="noopener" aria-label="Facebook">
 <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
 </a>
-<a href="https://linkedin.com/company/destinaratravel" target="_blank" rel="noopener" aria-label="LinkedIn">
+<a href="https://linkedin.com/company/destinara-travel" target="_blank" rel="noopener" aria-label="LinkedIn">
 <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
 </a>
 <a href="https://tiktok.com/@destinaratravel" target="_blank" rel="noopener" aria-label="TikTok">
@@ -1429,6 +1504,13 @@ Other</option>
 </section>
 
 <!-- FOOTER -->
+
+<!-- STICKY CTA -->
+<a href="#contact" class="sticky-cta" id="stickyCta" style="opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s" aria-label="Get a free travel quote">
+<span class="cta-pulse"></span>
+Get a Free Quote
+</a>
+
 </main>
 
     <footer class="footer">
@@ -1474,7 +1556,7 @@ Other</option>
 </div>
 <div class="footer-bottom">
 <span>&copy; 2026 Destinara Travel. All rights reserved.</span>
-<span>Curated with love in North Carolina</span>
+<span>Curated with love in North Carolina | Last updated: February 2026</span>
 </div>
 </div>
 </footer>
@@ -1737,6 +1819,129 @@ this.setAttribute('aria-expanded',expanded);
 this.setAttribute('aria-label',expanded?'Close menu':'Open menu');
 });
 }
+
+
+
+// STICKY CTA - show after scrolling past hero
+var stickyCta = document.getElementById('stickyCta');
+if(stickyCta){
+  window.addEventListener('scroll',function(){
+    if(window.scrollY > 800){
+      stickyCta.style.opacity='1';
+      stickyCta.style.pointerEvents='auto';
+    } else {
+      stickyCta.style.opacity='0';
+      stickyCta.style.pointerEvents='none';
+    }
+  });
+  // Hide when near contact form
+  var contactSection = document.getElementById('contact');
+  if(contactSection){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          stickyCta.style.opacity='0';
+          stickyCta.style.pointerEvents='none';
+        }
+      });
+    },{threshold:0.3});
+    observer.observe(contactSection);
+  }
+}
+
+// QUIZ DESTINATION RECOMMENDATIONS
+var quizRecs = {
+  'beach-romance': ['Maldives','Santorini, Greece','Fiji','Seychelles'],
+  'beach-family': ['Caribbean Islands','Hawaii','Costa Rica','Mexico'],
+  'beach-friends': ['Thailand','Bali, Indonesia','Caribbean Islands','Barcelona, Spain'],
+  'beach-solo': ['Bali, Indonesia','Thailand','Sri Lanka','Portugal'],
+  'adventure-romance': ['Iceland','New Zealand','Patagonia','Costa Rica'],
+  'adventure-family': ['Costa Rica','Alaska','Australia','New Zealand'],
+  'adventure-friends': ['Peru','Iceland','South Africa','Vietnam'],
+  'adventure-solo': ['New Zealand','Iceland','Vietnam','Peru'],
+  'culture-romance': ['Paris, France','Tuscany, Italy','Japan','Jordan'],
+  'culture-family': ['Japan','Egypt','Peru','India'],
+  'culture-friends': ['Japan','Morocco','Cambodia','Barcelona, Spain'],
+  'culture-solo': ['Japan','Morocco','India','Cambodia'],
+  'luxury-romance': ['Maldives','French Polynesia','Amalfi Coast, Italy','Santorini, Greece'],
+  'luxury-family': ['Dubai, UAE','Hawaii','Caribbean Islands','Australia'],
+  'luxury-friends': ['French Riviera','Dubai, UAE','Barcelona, Spain','Amalfi Coast, Italy'],
+  'luxury-solo': ['Japan','French Riviera','Bali, Indonesia','Dubai, UAE']
+};
+// Override the quiz result to show recommendations
+var origQuizFunc = window.showQuizResult;
+function enhanceQuizResult(style, companion){
+  var key = style + '-' + companion;
+  var recs = quizRecs[key] || quizRecs['beach-romance'];
+  var container = document.getElementById('quizRecommendations');
+  var cards = document.getElementById('quizDestCards');
+  if(container && cards){
+    cards.innerHTML = '';
+    recs.forEach(function(dest){
+      var slug = dest.toLowerCase().replace(/,\s*/g,'-').replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+      var card = document.createElement('a');
+      card.href = 'destinations/' + slug + '.html';
+      card.style.cssText = 'background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:15px 20px;color:white;text-decoration:none;font-weight:600;font-family:var(--font-display);transition:all 0.3s;min-width:150px;text-align:center';
+      card.textContent = dest;
+      card.onmouseover = function(){this.style.background='var(--color-accent)';this.style.borderColor='var(--color-accent)'};
+      card.onmouseout = function(){this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.15)'};
+      cards.appendChild(card);
+    });
+    container.style.display = 'block';
+  }
+}
+
+// Hook into the quiz completion
+var quizSteps = document.querySelectorAll('.quiz-step');
+var quizOptions = document.querySelectorAll('.quiz-option');
+var userAnswers = {style:'beach',companion:'romance',dining:'',item:''};
+var answerMap = {
+  'Relaxing on a beautiful beach':'beach',
+  'Exploring rugged landscapes':'adventure',
+  'Discovering history & culture':'culture',
+  'Discovering history \u0026 culture':'culture',
+  'Being pampered in luxury':'luxury',
+  'My significant other':'romance',
+  'The whole family':'family',
+  'My best friends':'friends',
+  'Just me, myself & I':'solo',
+  'Just me, myself \u0026 I':'solo'
+};
+quizOptions.forEach(function(opt){
+  opt.addEventListener('click',function(){
+    var text = this.textContent.trim();
+    Object.keys(answerMap).forEach(function(key){
+      if(text.includes(key.substring(0,15))){
+        var val = answerMap[key];
+        if(['beach','adventure','culture','luxury'].indexOf(val) !== -1) userAnswers.style = val;
+        if(['romance','family','friends','solo'].indexOf(val) !== -1) userAnswers.companion = val;
+      }
+    });
+  });
+});
+// Watch for quiz result display
+var quizObserver = new MutationObserver(function(mutations){
+  mutations.forEach(function(m){
+    if(m.target.style && m.target.style.display !== 'none'){
+      var resultHeading = m.target.querySelector('h2');
+      if(resultHeading && resultHeading.textContent.includes('You')){
+        setTimeout(function(){enhanceQuizResult(userAnswers.style, userAnswers.companion)},500);
+      }
+    }
+  });
+});
+quizSteps.forEach(function(step){
+  quizObserver.observe(step,{attributes:true,attributeFilter:['style','class']});
+});
+
+// TOOL CARD KEYBOARD SUPPORT
+document.querySelectorAll('.tool-card').forEach(function(card){
+  if(!card.getAttribute('tabindex')) card.setAttribute('tabindex','0');
+  if(!card.getAttribute('role')) card.setAttribute('role','button');
+  card.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}
+  });
+});
 
 </script>
 </body>
