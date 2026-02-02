@@ -479,9 +479,14 @@ section{padding:100px 0}
     .browse-dest-pill:hover{background:var(--color-primary);color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(13,92,92,0.3)}
     @media(max-width:768px){.browse-dest-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
   
-    </style>
+    
+.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:10000;transition:top 0.3s;font-size:14px;text-decoration:none;border-radius:0 0 4px 0}
+.skip-link:focus{top:0}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}.marquee-track{animation:none !important}.hero-bg-slide{transition:none !important}}
+</style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <!-- CURSOR GLOW -->
 <div class="cursor-glow" id="cursorGlow"></div>
 
@@ -532,7 +537,8 @@ section{padding:100px 0}
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
+<main id="main-content">
+    <section class="hero" id="hero">
 <div class="hero-bg">
 <div class="hero-bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80')"></div>
 <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80')"></div>
@@ -685,20 +691,20 @@ section{padding:100px 0}
 <div class="map-pin" style="left:38%;top:42%" data-dest="Alaska"></div>
 </div>
 <div class="dest-cards reveal-right">
-<div class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean.html'" style="cursor:pointer" role="link" tabindex="0">
+<div class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80" alt="Caribbean" loading="lazy"></div>
 <div><h4>Caribbean Islands</h4><p>Crystal waters & white sand beaches</p><span class="tag">Popular</span></div>
 </div>
-<div class="dest-card" data-dest="Mediterranean" onclick="window.location='destinations/mediterranean.html'" style="cursor:pointer" role="link" tabindex="0">
+<div class="dest-card" data-dest="Mediterranean" onclick="window.location='destinations/mediterranean.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=200&q=80" alt="Mediterranean" loading="lazy"></div>
 <div><h4>Mediterranean</h4><p>Ancient history meets coastal charm</p><span class="tag">Cruise</span></div>
 </div>
-<div class="dest-card" data-dest="Southeast Asia" onclick="window.location='destinations/southeast-asia.html'" style="cursor:pointer" role="link" tabindex="0">
+<div class="dest-card" data-dest="Southeast Asia" onclick="window.location='destinations/southeast-asia.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=80" alt="Southeast Asia" loading="lazy"></div>
 <div><h4>Southeast Asia</h4><p>Temples, beaches & vibrant culture</p><span class="tag">Adventure</span></div>
 </div>
-<div class="dest-card" data-dest="Alaska" onclick="window.location='destinations/alaska.html'" style="cursor:pointer" role="link" tabindex="0">
-<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507041957456-9c397ce39c97?w=200&q=80" alt="Alaska" loading="lazy"></div>
+<div class="dest-card" data-dest="Alaska" onclick="window.location='destinations/alaska.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=200&q=80" alt="Alaska" loading="lazy"></div>
 <div><h4>Alaska</h4><p>Glaciers, wildlife & wilderness</p><span class="tag">Expedition</span></div>
 </div>
 </div>
@@ -714,7 +720,7 @@ section{padding:100px 0}
         <p class="section-subtitle reveal">Quick trips to charming cities, pristine beaches, and mountain retreats across the Southeast</p>
         <div class="browse-dest-grid reveal">
           <a href="destinations/charleston-sc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=400&q=80" alt="Charleston SC" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=400&q=80" alt="Charleston SC" loading="lazy">
             <div class="browse-dest-name">Charleston SC</div>
           </a>
           <a href="destinations/savannah-ga.html" class="browse-dest-card">
@@ -722,7 +728,7 @@ section{padding:100px 0}
             <div class="browse-dest-name">Savannah GA</div>
           </a>
           <a href="destinations/outer-banks-nc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Outer Banks NC" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?w=400&q=80" alt="Outer Banks NC" loading="lazy">
             <div class="browse-dest-name">Outer Banks NC</div>
           </a>
           <a href="destinations/washington-dc.html" class="browse-dest-card">
@@ -734,7 +740,7 @@ section{padding:100px 0}
             <div class="browse-dest-name">Hilton Head SC</div>
           </a>
           <a href="destinations/asheville-nc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&q=80" alt="Asheville NC" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=80" alt="Asheville NC" loading="lazy">
             <div class="browse-dest-name">Asheville NC</div>
           </a>
           <a href="destinations/nashville-tn.html" class="browse-dest-card">
@@ -956,56 +962,56 @@ section{padding:100px 0}
 <button class="dest-tab" data-continent="middle-east">Middle East</button>
 </div>
 <div class="dest-cards-grid dest-content-panel active" data-panel="americas">
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=600&h=400&fit=crop" alt="Caribbean Islands"><div class="dest-exp-overlay"><h4>Caribbean Islands</h4><p>Crystal waters &amp; white sand beaches</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1507041957456-9c397ce39c97?w=600&h=400&fit=crop" alt="Alaska"><div class="dest-exp-overlay"><h4>Alaska</h4><p>Glaciers, wildlife &amp; wilderness</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1507876466758-bc54f384809c?w=600&h=400&fit=crop" alt="Hawaii"><div class="dest-exp-overlay"><h4>Hawaii</h4><p>Tropical paradise &amp; volcanic beauty</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&h=400&fit=crop" alt="Costa Rica"><div class="dest-exp-overlay"><h4>Costa Rica</h4><p>Rainforests, volcanoes &amp; beaches</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=600&h=400&fit=crop" alt="Mexico"><div class="dest-exp-overlay"><h4>Mexico</h4><p>Ancient ruins, beaches &amp; cuisine</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1531761535209-180857e963b9?w=600&h=400&fit=crop" alt="Patagonia"><div class="dest-exp-overlay"><h4>Patagonia</h4><p>Epic glaciers &amp; mountain trails</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1543385426-191664295b58?w=600&h=400&fit=crop" alt="Peru"><div class="dest-exp-overlay"><h4>Peru</h4><p>Machu Picchu &amp; Andean wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&h=400&fit=crop" alt="New York City"><div class="dest-exp-overlay"><h4>New York City</h4><p>The city that never sleeps</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=600&h=400&fit=crop" alt="Caribbean Islands"><div class="dest-exp-overlay"><h4>Caribbean Islands</h4><p>Crystal waters &amp; white sand beaches</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&h=400&fit=crop" alt="Alaska"><div class="dest-exp-overlay"><h4>Alaska</h4><p>Glaciers, wildlife &amp; wilderness</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1507876466758-bc54f384809c?w=600&h=400&fit=crop" alt="Hawaii"><div class="dest-exp-overlay"><h4>Hawaii</h4><p>Tropical paradise &amp; volcanic beauty</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&h=400&fit=crop" alt="Costa Rica"><div class="dest-exp-overlay"><h4>Costa Rica</h4><p>Rainforests, volcanoes &amp; beaches</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=600&h=400&fit=crop" alt="Mexico"><div class="dest-exp-overlay"><h4>Mexico</h4><p>Ancient ruins, beaches &amp; cuisine</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1531761535209-180857e963b9?w=600&h=400&fit=crop" alt="Patagonia"><div class="dest-exp-overlay"><h4>Patagonia</h4><p>Epic glaciers &amp; mountain trails</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1543385426-191664295b58?w=600&h=400&fit=crop" alt="Peru"><div class="dest-exp-overlay"><h4>Peru</h4><p>Machu Picchu &amp; Andean wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&h=400&fit=crop" alt="New York City"><div class="dest-exp-overlay"><h4>New York City</h4><p>The city that never sleeps</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="europe">
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&h=400&fit=crop" alt="Santorini, Greece"><div class="dest-exp-overlay"><h4>Santorini, Greece</h4><p>Iconic sunsets &amp; whitewashed villages</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&h=400&fit=crop" alt="Amalfi Coast, Italy"><div class="dest-exp-overlay"><h4>Amalfi Coast, Italy</h4><p>Cliffside villages &amp; Italian charm</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&h=400&fit=crop" alt="Paris, France"><div class="dest-exp-overlay"><h4>Paris, France</h4><p>City of light, art &amp; gastronomy</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&h=400&fit=crop" alt="Rhine River, Germany"><div class="dest-exp-overlay"><h4>Rhine River, Germany</h4><p>Castles, vineyards &amp; river cruises</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?w=600&h=400&fit=crop" alt="French Riviera"><div class="dest-exp-overlay"><h4>French Riviera</h4><p>Glamorous coastline &amp; azure waters</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&h=400&fit=crop" alt="Tuscany, Italy"><div class="dest-exp-overlay"><h4>Tuscany, Italy</h4><p>Rolling hills, wine &amp; renaissance art</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?w=600&h=400&fit=crop" alt="Iceland"><div class="dest-exp-overlay"><h4>Iceland</h4><p>Northern lights &amp; otherworldly landscapes</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=600&h=400&fit=crop" alt="Barcelona, Spain"><div class="dest-exp-overlay"><h4>Barcelona, Spain</h4><p>Architecture, tapas &amp; vibrant nightlife</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&h=400&fit=crop" alt="Santorini, Greece"><div class="dest-exp-overlay"><h4>Santorini, Greece</h4><p>Iconic sunsets &amp; whitewashed villages</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&h=400&fit=crop" alt="Amalfi Coast, Italy"><div class="dest-exp-overlay"><h4>Amalfi Coast, Italy</h4><p>Cliffside villages &amp; Italian charm</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&h=400&fit=crop" alt="Paris, France"><div class="dest-exp-overlay"><h4>Paris, France</h4><p>City of light, art &amp; gastronomy</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&h=400&fit=crop" alt="Rhine River, Germany"><div class="dest-exp-overlay"><h4>Rhine River, Germany</h4><p>Castles, vineyards &amp; river cruises</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?w=600&h=400&fit=crop" alt="French Riviera"><div class="dest-exp-overlay"><h4>French Riviera</h4><p>Glamorous coastline &amp; azure waters</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&h=400&fit=crop" alt="Tuscany, Italy"><div class="dest-exp-overlay"><h4>Tuscany, Italy</h4><p>Rolling hills, wine &amp; renaissance art</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?w=600&h=400&fit=crop" alt="Iceland"><div class="dest-exp-overlay"><h4>Iceland</h4><p>Northern lights &amp; otherworldly landscapes</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=600&h=400&fit=crop" alt="Barcelona, Spain"><div class="dest-exp-overlay"><h4>Barcelona, Spain</h4><p>Architecture, tapas &amp; vibrant nightlife</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="asia">
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop" alt="Bali, Indonesia"><div class="dest-exp-overlay"><h4>Bali, Indonesia</h4><p>Temples, rice terraces &amp; spiritual retreats</p><span class="dest-exp-tag tag-wellness">Wellness</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&h=400&fit=crop" alt="Japan"><div class="dest-exp-overlay"><h4>Japan</h4><p>Ancient traditions meet futuristic cities</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=400&fit=crop" alt="Thailand"><div class="dest-exp-overlay"><h4>Thailand</h4><p>Golden temples, street food &amp; islands</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop" alt="Maldives"><div class="dest-exp-overlay"><h4>Maldives</h4><p>Overwater villas &amp; pristine coral reefs</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&h=400&fit=crop" alt="Vietnam"><div class="dest-exp-overlay"><h4>Vietnam</h4><p>Ha Long Bay, lantern towns &amp; cuisine</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&h=400&fit=crop" alt="Sri Lanka"><div class="dest-exp-overlay"><h4>Sri Lanka</h4><p>Tea plantations, safaris &amp; ancient cities</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&h=400&fit=crop" alt="India"><div class="dest-exp-overlay"><h4>India</h4><p>Taj Mahal, palaces &amp; vibrant culture</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?w=600&h=400&fit=crop" alt="Cambodia"><div class="dest-exp-overlay"><h4>Cambodia</h4><p>Angkor Wat &amp; Khmer heritage</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop" alt="Bali, Indonesia"><div class="dest-exp-overlay"><h4>Bali, Indonesia</h4><p>Temples, rice terraces &amp; spiritual retreats</p><span class="dest-exp-tag tag-wellness">Wellness</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&h=400&fit=crop" alt="Japan"><div class="dest-exp-overlay"><h4>Japan</h4><p>Ancient traditions meet futuristic cities</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=600&h=400&fit=crop" alt="Thailand"><div class="dest-exp-overlay"><h4>Thailand</h4><p>Golden temples, street food &amp; islands</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop" alt="Maldives"><div class="dest-exp-overlay"><h4>Maldives</h4><p>Overwater villas &amp; pristine coral reefs</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&h=400&fit=crop" alt="Vietnam"><div class="dest-exp-overlay"><h4>Vietnam</h4><p>Ha Long Bay, lantern towns &amp; cuisine</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&h=400&fit=crop" alt="Sri Lanka"><div class="dest-exp-overlay"><h4>Sri Lanka</h4><p>Tea plantations, safaris &amp; ancient cities</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&h=400&fit=crop" alt="India"><div class="dest-exp-overlay"><h4>India</h4><p>Taj Mahal, palaces &amp; vibrant culture</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?w=600&h=400&fit=crop" alt="Cambodia"><div class="dest-exp-overlay"><h4>Cambodia</h4><p>Angkor Wat &amp; Khmer heritage</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="africa">
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop" alt="Kenya Safari"><div class="dest-exp-overlay"><h4>Kenya Safari</h4><p>The Big Five &amp; Masai Mara</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&h=400&fit=crop" alt="South Africa"><div class="dest-exp-overlay"><h4>South Africa</h4><p>Cape Town, wine country &amp; wildlife</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=600&h=400&fit=crop" alt="Morocco"><div class="dest-exp-overlay"><h4>Morocco</h4><p>Medinas, Sahara dunes &amp; spice markets</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=400&fit=crop" alt="Tanzania"><div class="dest-exp-overlay"><h4>Tanzania</h4><p>Serengeti, Kilimanjaro &amp; Zanzibar</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&h=400&fit=crop" alt="Egypt"><div class="dest-exp-overlay"><h4>Egypt</h4><p>Pyramids, Nile cruises &amp; ancient wonders</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=600&h=400&fit=crop" alt="Madagascar"><div class="dest-exp-overlay"><h4>Madagascar</h4><p>Unique wildlife &amp; baobab forests</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&h=400&fit=crop" alt="Seychelles"><div class="dest-exp-overlay"><h4>Seychelles</h4><p>Pristine beaches &amp; island luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?w=600&h=400&fit=crop" alt="Botswana"><div class="dest-exp-overlay"><h4>Botswana</h4><p>Okavango Delta &amp; exclusive safaris</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop" alt="Kenya Safari"><div class="dest-exp-overlay"><h4>Kenya Safari</h4><p>The Big Five &amp; Masai Mara</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&h=400&fit=crop" alt="South Africa"><div class="dest-exp-overlay"><h4>South Africa</h4><p>Cape Town, wine country &amp; wildlife</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=600&h=400&fit=crop" alt="Morocco"><div class="dest-exp-overlay"><h4>Morocco</h4><p>Medinas, Sahara dunes &amp; spice markets</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=400&fit=crop" alt="Tanzania"><div class="dest-exp-overlay"><h4>Tanzania</h4><p>Serengeti, Kilimanjaro &amp; Zanzibar</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&h=400&fit=crop" alt="Egypt"><div class="dest-exp-overlay"><h4>Egypt</h4><p>Pyramids, Nile cruises &amp; ancient wonders</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=600&h=400&fit=crop" alt="Madagascar"><div class="dest-exp-overlay"><h4>Madagascar</h4><p>Unique wildlife &amp; baobab forests</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&h=400&fit=crop" alt="Seychelles"><div class="dest-exp-overlay"><h4>Seychelles</h4><p>Pristine beaches &amp; island luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?w=600&h=400&fit=crop" alt="Botswana"><div class="dest-exp-overlay"><h4>Botswana</h4><p>Okavango Delta &amp; exclusive safaris</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="oceania">
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600&h=400&fit=crop" alt="Australia"><div class="dest-exp-overlay"><h4>Australia</h4><p>Great Barrier Reef, Sydney &amp; outback</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=600&h=400&fit=crop" alt="New Zealand"><div class="dest-exp-overlay"><h4>New Zealand</h4><p>Fjords, mountains &amp; Hobbiton</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=600&h=400&fit=crop" alt="Fiji"><div class="dest-exp-overlay"><h4>Fiji</h4><p>Tropical islands &amp; crystal lagoons</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1516108317508-6788f6a160e4?w=600&h=400&fit=crop" alt="French Polynesia"><div class="dest-exp-overlay"><h4>French Polynesia</h4><p>Bora Bora, Tahiti &amp; overwater luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600&h=400&fit=crop" alt="Australia"><div class="dest-exp-overlay"><h4>Australia</h4><p>Great Barrier Reef, Sydney &amp; outback</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=600&h=400&fit=crop" alt="New Zealand"><div class="dest-exp-overlay"><h4>New Zealand</h4><p>Fjords, mountains &amp; Hobbiton</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=600&h=400&fit=crop" alt="Fiji"><div class="dest-exp-overlay"><h4>Fiji</h4><p>Tropical islands &amp; crystal lagoons</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1516108317508-6788f6a160e4?w=600&h=400&fit=crop" alt="French Polynesia"><div class="dest-exp-overlay"><h4>French Polynesia</h4><p>Bora Bora, Tahiti &amp; overwater luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="middle-east">
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop" alt="Dubai, UAE"><div class="dest-exp-overlay"><h4>Dubai, UAE</h4><p>Futuristic skyline &amp; desert luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&h=400&fit=crop" alt="Jordan"><div class="dest-exp-overlay"><h4>Jordan</h4><p>Petra, Dead Sea &amp; ancient wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=600&h=400&fit=crop" alt="Oman"><div class="dest-exp-overlay"><h4>Oman</h4><p>Dramatic fjords, forts &amp; desert camps</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale"><img src="https://images.unsplash.com/photo-1547234935-80c7145ec969?w=600&h=400&fit=crop" alt="Israel"><div class="dest-exp-overlay"><h4>Israel</h4><p>Holy sites, Tel Aviv &amp; culinary scene</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop" alt="Dubai, UAE"><div class="dest-exp-overlay"><h4>Dubai, UAE</h4><p>Futuristic skyline &amp; desert luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&h=400&fit=crop" alt="Jordan"><div class="dest-exp-overlay"><h4>Jordan</h4><p>Petra, Dead Sea &amp; ancient wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=600&h=400&fit=crop" alt="Oman"><div class="dest-exp-overlay"><h4>Oman</h4><p>Dramatic fjords, forts &amp; desert camps</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0"><img src="https://images.unsplash.com/photo-1547234935-80c7145ec969?w=600&h=400&fit=crop" alt="Israel"><div class="dest-exp-overlay"><h4>Israel</h4><p>Holy sites, Tel Aviv &amp; culinary scene</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
 </div>
 </div>
 </section>
@@ -1032,10 +1038,10 @@ section{padding:100px 0}
 <div class="blog-grid">
 <div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=300&fit=crop" alt="Top 10 Mediterranean Cruise Ports You Can&#39;t Miss"><span class="blog-card-cat">Cruise Guide</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Jan 15, 2026</span><span>&#x2022;</span><span>8 min read</span></div><h3>Top 10 Mediterranean Cruise Ports You Can&#39;t Miss</h3><p>From the ancient ruins of Ephesus to the glamorous shores of Monte Carlo, discover the must-visit ports that make a Mediterranean cruise truly unforgettable.</p><a href="destinations/mediterranean.html" class="read-more">Read More &#8594;</a></div></div>
 <div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&h=300&fit=crop" alt="When Is the Best Time to Visit Alaska?"><span class="blog-card-cat">Destination Guide</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Jan 8, 2026</span><span>&#x2022;</span><span>6 min read</span></div><h3>When Is the Best Time to Visit Alaska?</h3><p>Timing is everything for an Alaska trip. We break down the best months for whale watching, Northern Lights, salmon runs, and glacier excursions.</p><a href="destinations/alaska.html" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&h=300&fit=crop" alt="The Ultimate Cruise Packing Checklist"><span class="blog-card-cat" style="background:var(--color-accent)">Travel Tips</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 20, 2025</span><span>&#x2022;</span><span>5 min read</span></div><h3>The Ultimate Cruise Packing Checklist</h3><p>Never overpack (or underpack) again. Our comprehensive packing guide covers formal nights, shore excursions, and everything in between.</p><a href="#services" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&h=300&fit=crop" alt="5 Dreamy Honeymoon Destinations for 2026"><span class="blog-card-cat" style="background:#e91e63">Romance</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 12, 2025</span><span>&#x2022;</span><span>7 min read</span></div><h3>5 Dreamy Honeymoon Destinations for 2026</h3><p>From the overwater bungalows of Bora Bora to the cliffside suites of Santorini, these romantic escapes are perfect for newlyweds.</p><a href="#services" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=300&fit=crop" alt="Your First African Safari: What to Expect"><span class="blog-card-cat" style="background:#ff9800">Safari</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 28, 2025</span><span>&#x2022;</span><span>9 min read</span></div><h3>Your First African Safari: What to Expect</h3><p>Everything you need to know before your first safari &#8212; from what to pack and when to go, to choosing between Kenya, Tanzania, and South Africa.</p><a href="destinations/kenya.html" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=300&fit=crop" alt="Do You Really Need Travel Insurance?"><span class="blog-card-cat" style="background:#607d8b">Planning</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 15, 2025</span><span>&#x2022;</span><span>4 min read</span></div><h3>Do You Really Need Travel Insurance?</h3><p>We break down the types of travel insurance, what they cover, and why we always recommend it &#8212; especially for international and cruise vacations.</p><a href="#services" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&h=300&fit=crop" alt="The Ultimate Cruise Packing Checklist"><span class="blog-card-cat" style="background:var(--color-accent)">Travel Tips</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 20, 2025</span><span>&#x2022;</span><span>5 min read</span></div><h3>The Ultimate Cruise Packing Checklist</h3><p>Never overpack (or underpack) again. Our comprehensive packing guide covers formal nights, shore excursions, and everything in between.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&h=300&fit=crop" alt="5 Dreamy Honeymoon Destinations for 2026"><span class="blog-card-cat" style="background:#e91e63">Romance</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 12, 2025</span><span>&#x2022;</span><span>7 min read</span></div><h3>5 Dreamy Honeymoon Destinations for 2026</h3><p>From the overwater bungalows of Bora Bora to the cliffside suites of Santorini, these romantic escapes are perfect for newlyweds.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=300&fit=crop" alt="Your First African Safari: What to Expect"><span class="blog-card-cat" style="background:#ff9800">Safari</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 28, 2025</span><span>&#x2022;</span><span>9 min read</span></div><h3>Your First African Safari: What to Expect</h3><p>Everything you need to know before your first safari &#8212; from what to pack and when to go, to choosing between Kenya, Tanzania, and South Africa.</p><a href="destinations/kenya-safari.html" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=300&fit=crop" alt="Do You Really Need Travel Insurance?"><span class="blog-card-cat" style="background:#607d8b">Planning</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 15, 2025</span><span>&#x2022;</span><span>4 min read</span></div><h3>Do You Really Need Travel Insurance?</h3><p>We break down the types of travel insurance, what they cover, and why we always recommend it &#8212; especially for international and cruise vacations.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
 </div>
 </div>
 </section>
@@ -1134,14 +1140,14 @@ section{padding:100px 0}
 <h2 class="section-title reveal">Frequently Asked Questions</h2>
 <p class="section-subtitle reveal" style="margin:0 auto">Everything you need to know about booking with Destinara.</p>
 <div class="faq-grid">
-<div class="faq-item"><button class="faq-q">How is booking with Destinara different from booking online? <span class="faq-icon">+</span></button><div class="faq-a"><p>When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities that you simply can&#39;t get by booking directly online.</p></div></div>
-<div class="faq-item"><button class="faq-q">Do you charge a fee for your services? <span class="faq-icon">+</span></button><div class="faq-a"><p>Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost. For custom itineraries, a modest planning fee may apply. We&#39;ll always be transparent about fees upfront.</p></div></div>
-<div class="faq-item"><button class="faq-q">Can I still earn hotel loyalty points when booking through you? <span class="faq-icon">+</span></button><div class="faq-a"><p>Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits when you book through Destinara.</p></div></div>
-<div class="faq-item"><button class="faq-q">How far in advance should I book my trip? <span class="faq-icon">+</span></button><div class="faq-a"><p>We recommend booking 6&#8211;12 months in advance for peak-season destinations, cruises, and popular resort stays. For off-peak travel, 3&#8211;6 months is typically sufficient. Destination weddings should ideally be planned 12&#8211;18 months ahead.</p></div></div>
-<div class="faq-item"><button class="faq-q">Do you offer travel insurance? <span class="faq-icon">+</span></button><div class="faq-a"><p>Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage. We work with top-rated insurance providers to offer comprehensive plans covering trip cancellation, medical emergencies, lost luggage, and more.</p></div></div>
-<div class="faq-item"><button class="faq-q">What types of trips do you specialize in? <span class="faq-icon">+</span></button><div class="faq-a"><p>We specialize in luxury cruises (ocean and river), resort vacations, honeymoons, destination weddings, group trips, adventure travel, family vacations, and solo travel experiences.</p></div></div>
-<div class="faq-item"><button class="faq-q">What happens if I need to cancel or change my trip? <span class="faq-icon">+</span></button><div class="faq-a"><p>We&#39;ll work with you and our travel partners to make cancellations or modifications as smooth as possible. Having a personal travel advisor means we advocate for you every step of the way.</p></div></div>
-<div class="faq-item"><button class="faq-q">Do you handle passport and visa requirements? <span class="faq-icon">+</span></button><div class="faq-a"><p>We&#39;ll advise you on passport and visa requirements for every destination in your itinerary and can guide you through the application process to ensure all documents are in order before departure.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">How is booking with Destinara different from booking online? <span class="faq-icon">+</span></button><div class="faq-a"><p>When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities that you simply can&#39;t get by booking directly online.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Do you charge a fee for your services? <span class="faq-icon">+</span></button><div class="faq-a"><p>Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost. For custom itineraries, a modest planning fee may apply. We&#39;ll always be transparent about fees upfront.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Can I still earn hotel loyalty points when booking through you? <span class="faq-icon">+</span></button><div class="faq-a"><p>Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits when you book through Destinara.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">How far in advance should I book my trip? <span class="faq-icon">+</span></button><div class="faq-a"><p>We recommend booking 6&#8211;12 months in advance for peak-season destinations, cruises, and popular resort stays. For off-peak travel, 3&#8211;6 months is typically sufficient. Destination weddings should ideally be planned 12&#8211;18 months ahead.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Do you offer travel insurance? <span class="faq-icon">+</span></button><div class="faq-a"><p>Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage. We work with top-rated insurance providers to offer comprehensive plans covering trip cancellation, medical emergencies, lost luggage, and more.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">What types of trips do you specialize in? <span class="faq-icon">+</span></button><div class="faq-a"><p>We specialize in luxury cruises (ocean and river), resort vacations, honeymoons, destination weddings, group trips, adventure travel, family vacations, and solo travel experiences.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">What happens if I need to cancel or change my trip? <span class="faq-icon">+</span></button><div class="faq-a"><p>We&#39;ll work with you and our travel partners to make cancellations or modifications as smooth as possible. Having a personal travel advisor means we advocate for you every step of the way.</p></div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false">Do you handle passport and visa requirements? <span class="faq-icon">+</span></button><div class="faq-a"><p>We&#39;ll advise you on passport and visa requirements for every destination in your itinerary and can guide you through the application process to ensure all documents are in order before departure.</p></div></div>
 </div>
 </div>
 </section>
@@ -1246,9 +1252,9 @@ section{padding:100px 0}
 </div>
 </div>
 <div class="test-controls" id="testControls">
-<button class="test-dot active" data-slide="0"></button>
-<button class="test-dot" data-slide="1"></button>
-<button class="test-dot" data-slide="2"></button>
+<button class="test-dot active" data-slide="0" aria-label="Show testimonial 1"></button>
+<button class="test-dot" data-slide="1" aria-label="Show testimonial 2"></button>
+<button class="test-dot" data-slide="2" aria-label="Show testimonial 3"></button>
 </div>
 </div>
 </div>
@@ -1291,16 +1297,16 @@ section{padding:100px 0}
 </div>
 </div>
 <div class="contact-social">
-<a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+<a href="https://instagram.com/destinaratravel" target="_blank" rel="noopener" aria-label="Instagram">
 <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
 </a>
-<a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+<a href="https://facebook.com/destinaratravel" target="_blank" rel="noopener" aria-label="Facebook">
 <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
 </a>
-<a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+<a href="https://linkedin.com/company/destinaratravel" target="_blank" rel="noopener" aria-label="LinkedIn">
 <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
 </a>
-<a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
+<a href="https://tiktok.com/@destinaratravel" target="_blank" rel="noopener" aria-label="TikTok">
 <svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
 </a>
 </div>
@@ -1414,7 +1420,7 @@ Other</option>
 <h2>Subscribe to Our Newsletter</h2>
 <p>Get exclusive travel deals, destination guides, and insider tips delivered to your inbox.</p>
 <form action="https://formsubmit.co/info@destinaratravel.com" method="POST" class="newsletter-form">
-<input type="email" name="newsletter_email" placeholder="Enter your email address" required>
+<input type="email" name="newsletter_email" placeholder="Enter your email address" aria-label="Email address for newsletter subscription" required>
             <input type="hidden" name="_subject" value="New Newsletter Subscription">
             <input type="hidden" name="_template" value="table">
 <button onclick="this.textContent='Subscribed!';this.style.background='var(--color-primary)'">Subscribe</button>
@@ -1423,7 +1429,9 @@ Other</option>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+</main>
+
+    <footer class="footer">
 <div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
@@ -1681,6 +1689,55 @@ q.addEventListener('click',function(){
 var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');
 document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
 if(!wasOpen)item.classList.add('open');});});
+
+
+// ACCESSIBILITY ENHANCEMENTS
+// FAQ aria-expanded toggle
+document.querySelectorAll('.faq-q').forEach(function(btn){
+btn.addEventListener('click',function(){
+var expanded=this.getAttribute('aria-expanded')==='true';
+document.querySelectorAll('.faq-q').forEach(function(b){b.setAttribute('aria-expanded','false')});
+this.setAttribute('aria-expanded',expanded?'false':'true');
+});
+});
+// dest-exp-card keyboard and click navigation
+document.querySelectorAll('.dest-exp-card').forEach(function(card){
+var h4=card.querySelector('h4');
+if(h4){
+var name=h4.textContent.trim().toLowerCase().replace(/,\s*/g,'-').replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+card.style.cursor='pointer';
+card.addEventListener('click',function(){window.location='destinations/'+name+'.html';});
+card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});
+}
+});
+// Fix continent tabs z-index and re-attach handlers
+document.querySelectorAll('.dest-tab').forEach(function(tab){
+tab.style.position='relative';
+tab.style.zIndex='10';
+tab.addEventListener('click',function(e){
+e.stopPropagation();
+var continent=this.dataset.continent;
+document.querySelectorAll('.dest-tab').forEach(function(t){t.classList.remove('active')});
+document.querySelectorAll('.dest-content-panel').forEach(function(p){p.classList.remove('active')});
+this.classList.add('active');
+var panel=document.querySelector('[data-panel="'+continent+'"]');
+if(panel)panel.classList.add('active');
+});
+});
+// Mobile menu fix
+var menuBtn=document.querySelector('.menu-btn');
+var navLinks=document.querySelector('.nav-links');
+if(menuBtn&&navLinks){
+menuBtn.addEventListener('click',function(e){
+e.stopPropagation();
+navLinks.classList.toggle('active');
+this.classList.toggle('active');
+var expanded=navLinks.classList.contains('active');
+this.setAttribute('aria-expanded',expanded);
+this.setAttribute('aria-label',expanded?'Close menu':'Open menu');
+});
+}
+
 </script>
 </body>
 </html>
