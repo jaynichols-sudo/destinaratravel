@@ -718,7 +718,7 @@ section{padding:100px 0}
             <div class="browse-dest-name">Charleston SC</div>
           </a>
           <a href="destinations/savannah-ga.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1597528380214-aa94d68b065e?w=400&q=80" alt="Savannah GA" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1586158291800-2665f07bba79?w=400&q=80" alt="Savannah GA" loading="lazy">
             <div class="browse-dest-name">Savannah GA</div>
           </a>
           <a href="destinations/outer-banks-nc.html" class="browse-dest-card">
@@ -738,7 +738,7 @@ section{padding:100px 0}
             <div class="browse-dest-name">Asheville NC</div>
           </a>
           <a href="destinations/nashville-tn.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1545419913-b1e0a5e4cfab?w=400&q=80" alt="Nashville TN" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=400&q=80" alt="Nashville TN" loading="lazy">
             <div class="browse-dest-name">Nashville TN</div>
           </a>
         </div>
@@ -757,7 +757,7 @@ section{padding:100px 0}
             <div class="browse-dest-name">Brussels Christmas Market</div>
           </a>
           <a href="destinations/budapest-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1577948000101-9c970dfe3743?w=400&q=80" alt="Budapest Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1541343672885-9be56236302a?w=400&q=80" alt="Budapest Christmas Market" loading="lazy">
             <div class="browse-dest-name">Budapest Christmas Market</div>
           </a>
           <a href="destinations/cologne-christmas-market.html" class="browse-dest-card">
@@ -781,7 +781,7 @@ section{padding:100px 0}
             <div class="browse-dest-name">Strasbourg Christmas Market</div>
           </a>
           <a href="destinations/vienna-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a814?w=400&q=80" alt="Vienna Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1609856878074-cf31e21ccb6b?w=400&q=80" alt="Vienna Christmas Market" loading="lazy">
             <div class="browse-dest-name">Vienna Christmas Market</div>
           </a>
         </div>
@@ -1157,7 +1157,7 @@ section{padding:100px 0}
 <div class="team-grid">
 <div class="team-card reveal" style="transition-delay:0.1s">
 <div class="team-card-img">
-<img src="elizabeth-nichols.jpg" alt="Elizabeth Nichols" loading="lazy">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Elizabeth Nichols" loading="lazy">
 </div>
 <div class="team-card-info">
 <h3>Elizabeth Nichols</h3>
@@ -1167,7 +1167,7 @@ section{padding:100px 0}
 </div>
 <div class="team-card reveal" style="transition-delay:0.2s">
 <div class="team-card-img">
-<img src="jay-nichols.jpg" alt="Jay Nichols" loading="lazy">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Jay Nichols" loading="lazy">
 </div>
 <div class="team-card-info">
 <h3>Jay Nichols</h3>
@@ -1306,6 +1306,7 @@ section{padding:100px 0}
 </div>
 </div>
 <div class="contact-form reveal-right">
+<form action="https://formsubmit.co/info@destinaratravel.com" method="POST">
 <div class="form-progress">
 <div class="form-progress-step active"></div>
 <div class="form-progress-step"></div>
@@ -1317,20 +1318,20 @@ section{padding:100px 0}
 <div class="form-row">
 <div class="form-group">
 <label for="firstName">First Name *</label>
-<input type="text" id="firstName" placeholder="John" required>
+<input type="text" id="firstName" placeholder="John" name="first_name" required>
 </div>
 <div class="form-group">
 <label for="lastName">Last Name *</label>
-<input type="text" id="lastName" placeholder="Doe" required>
+<input type="text" id="lastName" placeholder="Doe" name="last_name" required>
 </div>
 </div>
 <div class="form-group">
 <label for="email">Email *</label>
-<input type="email" id="email" placeholder="john@example.com" required>
+<input type="email" id="email" placeholder="john@example.com" name="email" required>
 </div>
 <div class="form-group">
 <label for="phone">Phone</label>
-<input type="tel" id="phone" placeholder="(919) 555-0123">
+<input type="tel" id="phone" placeholder="(919) 555-0123" name="phone">
 </div>
 <button class="form-btn form-btn-next" onclick="nextStep(2)">Continue &rarr;</button>
 </div>
@@ -1359,7 +1360,7 @@ Other</option>
 <div class="form-row">
 <div class="form-group">
 <label for="travelers">Number of Travelers</label>
-<input type="number" id="travelers" placeholder="2" min="1">
+<input type="number" id="travelers" placeholder="2" name="travelers" min="1">
 </div>
 <div class="form-group">
 <label for="budget">Budget Range</label>
@@ -1381,15 +1382,15 @@ Other</option>
 <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:20px;color:var(--color-dark)">Tell us about your dream trip</h3>
 <div class="form-group">
 <label for="destination">Preferred Destination(s)</label>
-<input type="text" id="destination" placeholder="Caribbean, Mediterranean, Alaska...">
+<input type="text" id="destination" placeholder="Caribbean, Mediterranean, Alaska..." name="destinations">
 </div>
 <div class="form-group">
 <label for="dates">Preferred Travel Dates</label>
-<input type="text" id="dates" placeholder="e.g., March 2026, Flexible">
+<input type="text" id="dates" placeholder="e.g., March 2026, Flexible" name="travel_dates">
 </div>
 <div class="form-group">
 <label for="message">Additional Details</label>
-<textarea id="message" placeholder="Tell us anything else about your dream trip..."></textarea>
+<textarea id="message" placeholder="Tell us anything else about your dream trip..." name="details"></textarea>
 </div>
 <button class="form-btn form-btn-back" onclick="nextStep(2)">&larr; Back</button>
 <button class="form-btn form-btn-next" onclick="submitForm()">Submit Request &#10003;</button>
@@ -1402,6 +1403,7 @@ Other</option>
 <p>Your request has been received. Our travel experts will be in touch within 24 hours to start planning your dream journey.</p>
 </div>
 </div>
+</form>
 </div>
 </div>
 </div>
