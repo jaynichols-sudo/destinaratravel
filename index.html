@@ -149,12 +149,18 @@ section{padding:100px 0}
 .dest-map svg{width:100%;height:100%}
 .dest-map svg path{fill:rgba(255,255,255,0.08);stroke:rgba(255,255,255,0.15);stroke-width:0.5;transition:fill 0.3s}
 .dest-map svg path:hover{fill:rgba(20,184,166,0.3)}
+.continent{fill:rgba(255,255,255,0.08);stroke:rgba(255,255,255,0.18);stroke-width:0.5;transition:fill 0.4s,stroke 0.4s}.continent:hover{fill:rgba(196,149,107,0.25);stroke:rgba(196,149,107,0.4)}
+.map-pin-link{position:absolute;transform:translate(-50%,-50%);z-index:5;text-decoration:none;display:block;width:16px;height:16px}
+.map-pin-link:hover .map-tooltip,.map-pin-link:focus .map-tooltip{opacity:1;transform:translateY(0);pointer-events:auto}
+.tooltip-cta{display:inline-block;margin-top:8px;color:var(--color-accent);font-weight:600;font-size:0.85rem}
+.map-tooltip p{margin:4px 0 0;font-size:0.85rem;color:var(--color-text-light)}
+.map-tooltip strong{color:var(--color-primary);font-size:1rem}
 .map-pin{position:absolute;width:16px;height:16px;cursor:pointer;transform:translate(-50%,-50%)}
 .map-pin::before{content:'';position:absolute;inset:0;background:var(--color-accent);border-radius:50%;animation:ping 2s cubic-bezier(0,0,0.2,1) infinite}
 .map-pin::after{content:'';position:absolute;inset:3px;background:var(--color-accent-light);border-radius:50%;z-index:1}
 @keyframes ping{75%,100%{transform:scale(2.5);opacity:0}}
-.map-tooltip{position:absolute;background:var(--color-white);color:var(--color-dark);padding:16px 20px;border-radius:12px;box-shadow:var(--shadow-lg);pointer-events:none;opacity:0;transform:translateY(10px);transition:all 0.3s;z-index:10;width:220px}
-.map-tooltip.active{opacity:1;transform:translateY(0)}
+.map-tooltip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(10px);background:var(--color-white);color:var(--color-dark);padding:16px 20px;border-radius:12px;box-shadow:var(--shadow-lg);pointer-events:none;opacity:0;transition:all 0.3s;z-index:10;width:220px}
+.map-tooltip.active{opacity:1;transform:translateX(-50%) translateY(0)}
 .map-tooltip h4{font-family:var(--font-display);font-size:1.1rem;margin-bottom:4px}
 .map-tooltip p{font-size:0.8rem;color:var(--color-text-light)}
 .dest-cards{display:flex;flex-direction:column;gap:20px}
@@ -510,7 +516,7 @@ section{padding:100px 0}
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TravelAgency","name":"Destinara Travel","description":"Curated luxury travel experiences including cruises, resort vacations, honeymoons, and group travel.","url":"https://www.destinaratravel.com","telephone":"+19193486268","email":"info@destinaratravel.com","address":{"@type":"PostalAddress","streetAddress":"3807 Arundel Ct","addressLocality":"Greensboro","addressRegion":"NC","postalCode":"27406","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200","bestRating":"5"},"sameAs":["https://instagram.com/destinara.travel","https://facebook.com/DestinaraTravel","https://tiktok.com/@destinaratravel","https://linkedin.com/company/destinara-travel"]}
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Destinara Travel","description":"Curated luxury travel experiences including cruises, resort vacations, honeymoons, and group travel.","url":"https://www.destinaratravel.com","telephone":"+19193486268","email":"info@destinaratravel.com","address":{"@type":"PostalAddress","addressLocality":"Greensboro","addressRegion":"NC","postalCode":"27406","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200","bestRating":"5"},"sameAs":["https://instagram.com/destinara.travel","https://facebook.com/DestinaraTravel","https://tiktok.com/@destinaratravel","https://linkedin.com/company/destinara-travel"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is booking with Destinara different from booking online?","acceptedAnswer":{"@type":"Answer","text":"When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities."}},{"@type":"Question","name":"Do you charge a fee for your services?","acceptedAnswer":{"@type":"Answer","text":"Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost."}},{"@type":"Question","name":"Can I still earn hotel loyalty points when booking through you?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits."}},{"@type":"Question","name":"How far in advance should I book my trip?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking 6-12 months in advance for peak-season destinations, cruises, and popular resort stays."}},{"@type":"Question","name":"Do you offer travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage."}}]}
@@ -735,31 +741,74 @@ section{padding:100px 0}
 </div>
 <div class="dest-grid">
 <div class="dest-map reveal-left">
-<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="400" cy="250" rx="380" ry="230" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-<ellipse cx="400" cy="250" rx="280" ry="170" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-<ellipse cx="400" cy="250" rx="180" ry="110" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-<!-- Americas -->
-<circle cx="180" cy="200" r="40" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-<text x="180" y="205" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Americas</text>
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" class="world-svg">
+<!-- World Map Grid Lines -->
+<line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" stroke-dasharray="4,4"/>
+<line x1="500" y1="0" x2="500" y2="500" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" stroke-dasharray="4,4"/>
+<line x1="0" y1="125" x2="1000" y2="125" stroke="rgba(255,255,255,0.03)" stroke-width="0.3" stroke-dasharray="2,6"/>
+<line x1="0" y1="375" x2="1000" y2="375" stroke="rgba(255,255,255,0.03)" stroke-width="0.3" stroke-dasharray="2,6"/>
+<line x1="250" y1="0" x2="250" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="0.3" stroke-dasharray="2,6"/>
+<line x1="750" y1="0" x2="750" y2="500" stroke="rgba(255,255,255,0.03)" stroke-width="0.3" stroke-dasharray="2,6"/>
+
+<!-- North America -->
+<path d="M120,80 L155,72 L185,78 L210,95 L235,85 L260,92 L275,110 L268,130 L258,145 L250,160 L242,175 L235,190 L228,200 L220,210 L210,218 L198,225 L185,228 L175,232 L168,240 L160,248 L152,252 L145,250 L140,242 L135,230 L130,218 L125,205 L120,190 L115,175 L112,160 L110,145 L108,130 L110,115 L112,100 L115,90 Z" class="continent" data-name="North America"/>
+<!-- USA/Mexico -->
+<path d="M125,205 L130,218 L135,230 L140,242 L145,250 L152,252 L160,248 L168,240 L175,232 L185,228 L198,225 L210,218 L220,225 L230,235 L232,248 L228,258 L220,265 L210,270 L200,275 L188,278 L175,282 L165,288 L158,295 L152,300 L145,298 L138,290 L132,280 L128,268 L125,255 L122,240 L120,225 Z" class="continent" data-name="Central America"/>
+
+<!-- South America -->
+<path d="M220,295 L232,290 L245,292 L258,298 L270,310 L278,325 L282,340 L280,358 L275,375 L268,390 L260,402 L250,412 L240,418 L232,425 L228,435 L230,445 L225,452 L218,448 L212,438 L208,425 L205,410 L202,395 L200,378 L198,362 L200,345 L202,330 L205,318 L210,308 L215,300 Z" class="continent" data-name="South America"/>
+
 <!-- Europe -->
-<circle cx="420" cy="160" r="35" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-<text x="420" y="165" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Europe</text>
-<!-- Asia -->
-<circle cx="600" cy="200" r="45" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-<text x="600" y="205" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Asia</text>
+<path d="M440,82 L455,78 L470,80 L485,76 L500,80 L512,85 L520,92 L525,100 L528,110 L530,120 L528,130 L525,138 L520,145 L512,152 L505,158 L498,162 L490,165 L482,168 L475,172 L468,168 L460,164 L452,160 L445,155 L440,148 L435,140 L432,130 L430,120 L432,110 L435,100 L438,90 Z" class="continent" data-name="Europe"/>
+
 <!-- Africa -->
-<circle cx="440" cy="310" r="35" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-<text x="440" y="315" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Africa</text>
-<!-- Oceania -->
-<circle cx="660" cy="360" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-<text x="660" y="365" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Inter,sans-serif">Oceania</text>
+<path d="M445,195 L458,188 L472,185 L488,188 L502,195 L515,205 L525,218 L530,232 L532,248 L530,265 L528,280 L525,295 L520,310 L515,322 L508,332 L500,340 L490,345 L480,348 L470,345 L462,340 L455,330 L450,318 L448,305 L445,290 L442,275 L440,260 L438,245 L440,230 L442,215 L444,205 Z" class="continent" data-name="Africa"/>
+
+<!-- Asia -->
+<path d="M530,65 L555,60 L580,55 L610,58 L640,62 L670,68 L700,72 L725,78 L745,85 L760,95 L770,108 L775,120 L778,135 L775,150 L770,162 L762,172 L750,180 L738,188 L725,195 L710,200 L695,205 L680,208 L665,210 L650,212 L635,210 L620,205 L608,198 L598,188 L588,178 L580,168 L572,158 L565,148 L558,138 L552,128 L548,118 L545,108 L540,98 L535,88 L532,78 Z" class="continent" data-name="Asia"/>
+<!-- South/SE Asia -->
+<path d="M650,212 L665,210 L680,215 L698,222 L715,230 L728,242 L735,255 L732,268 L725,278 L715,285 L702,288 L688,285 L675,280 L665,272 L658,262 L652,250 L648,238 L648,225 Z" class="continent" data-name="South Asia"/>
+
+<!-- Australia -->
+<path d="M755,330 L775,325 L798,328 L818,335 L835,345 L845,358 L848,372 L845,388 L838,400 L828,408 L815,412 L800,410 L788,405 L778,398 L770,388 L765,375 L762,362 L758,348 L755,338 Z" class="continent" data-name="Oceania"/>
+
+<!-- Greenland (small) -->
+<path d="M310,50 L330,45 L348,48 L358,58 L355,70 L345,78 L332,80 L320,75 L312,65 L310,55 Z" class="continent" data-name="Greenland"/>
 </svg>
-<div class="map-pin" style="left:22%;top:52%" data-dest="Caribbean"></div>
-<div class="map-pin" style="left:50%;top:28%" data-dest="Mediterranean"></div>
-<div class="map-pin" style="left:74%;top:38%" data-dest="Southeast Asia"></div>
-<div class="map-pin" style="left:82%;top:70%" data-dest="Australia"></div>
-<div class="map-pin" style="left:38%;top:42%" data-dest="Alaska"></div>
+
+<!-- Clickable Map Pins -->
+<a href="destinations/caribbean.html" class="map-pin-link" style="left:19%;top:55%;" data-dest="Caribbean Islands" data-desc="Crystal waters & white sand beaches">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>Caribbean Islands</strong><p>Crystal waters & white sand beaches</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/mediterranean.html" class="map-pin-link" style="left:48%;top:32%;" data-dest="Mediterranean" data-desc="Ancient history meets coastal charm">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>Mediterranean</strong><p>Ancient history meets coastal charm</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/southeast-asia.html" class="map-pin-link" style="left:72%;top:48%;" data-dest="Southeast Asia" data-desc="Temples, beaches & vibrant culture">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>Southeast Asia</strong><p>Temples, beaches & vibrant culture</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/australia.html" class="map-pin-link" style="left:82%;top:72%;" data-dest="Australia & Oceania" data-desc="Natural wonders & unique wildlife">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>Australia & Oceania</strong><p>Natural wonders & unique wildlife</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/alaska.html" class="map-pin-link" style="left:13%;top:18%;" data-dest="Alaska" data-desc="Glaciers, wildlife & wilderness">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>Alaska</strong><p>Glaciers, wildlife & wilderness</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/kenya-safari.html" class="map-pin-link" style="left:52%;top:58%;" data-dest="East Africa" data-desc="Safari adventures & stunning landscapes">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>East Africa</strong><p>Safari adventures & stunning landscapes</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/paris-france.html" class="map-pin-link" style="left:46%;top:22%;" data-dest="Europe" data-desc="Rich culture, history & romance">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>Europe</strong><p>Rich culture, history & romance</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
+<a href="destinations/peru.html" class="map-pin-link" style="left:22%;top:72%;" data-dest="South America" data-desc="Ancient ruins, rainforests & peaks">
+  <div class="map-pin"></div>
+  <div class="map-tooltip"><strong>South America</strong><p>Ancient ruins, rainforests & peaks</p><span class="tooltip-cta">Explore &rarr;</span></div>
+</a>
 </div>
 <div class="dest-cards reveal-right">
 <div class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
@@ -1344,15 +1393,6 @@ section{padding:100px 0}
 </div>
 <div class="contact-grid">
 <div class="contact-info reveal-left">
-<div class="contact-item">
-<div class="contact-item-icon">
-<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-</div>
-<div>
-<h4>Visit Us</h4>
-<p>3807 Arundel Ct<br>Greensboro, NC 27406</p>
-</div>
-</div>
 <div class="contact-item">
 <div class="contact-item-icon">
 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -1943,6 +1983,20 @@ document.querySelectorAll('.tool-card').forEach(function(card){
   });
 });
 
+
+// MAP PIN TOUCH SUPPORT
+document.querySelectorAll('.map-pin-link').forEach(pin => {
+  pin.addEventListener('touchstart', function(e) {
+    document.querySelectorAll('.map-pin-link .map-tooltip').forEach(t => t.classList.remove('active'));
+    this.querySelector('.map-tooltip').classList.add('active');
+  });
+  pin.addEventListener('mouseenter', function() {
+    this.querySelector('.map-tooltip').classList.add('active');
+  });
+  pin.addEventListener('mouseleave', function() {
+    this.querySelector('.map-tooltip').classList.remove('active');
+  });
+});
 </script>
 </body>
 </html>
