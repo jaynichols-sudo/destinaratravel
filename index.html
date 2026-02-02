@@ -463,7 +463,23 @@ section{padding:100px 0}
 .faq-a p{color:var(--color-text-light);font-size:0.9rem;line-height:1.7}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){.services-ext-grid,.deals-grid,.blog-grid,.reviews-grid{grid-template-columns:1fr}.dest-cards-grid,.calendar-grid,.tools-grid{grid-template-columns:repeat(2,1fr)}.quiz-options{grid-template-columns:1fr}.quiz-wrapper{padding:28px 20px}.gallery-item{flex:0 0 260px;height:300px}}
-</style>
+
+    /* Browse Destination Sections */
+    .browse-section{padding:80px 0}
+    .browse-section.christmas-section{background:var(--color-bg-alt)}
+    .browse-all-section{background:var(--color-bg)}
+    .browse-dest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-top:30px}
+    .browse-dest-card{display:block;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:all 0.3s ease;text-decoration:none;color:var(--color-text);background:#fff}
+    .browse-dest-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.15)}
+    .browse-dest-card img{width:100%;height:160px;object-fit:cover;transition:transform 0.3s ease}
+    .browse-dest-card:hover img{transform:scale(1.05)}
+    .browse-dest-name{padding:12px 15px;font-family:'Playfair Display',serif;font-weight:600;font-size:1rem}
+    .browse-dest-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;justify-content:center}
+    .browse-dest-pill{display:inline-block;padding:10px 20px;border-radius:25px;background:#fff;border:1px solid var(--color-primary);color:var(--color-primary);text-decoration:none;font-size:0.9rem;transition:all 0.3s ease;font-weight:500}
+    .browse-dest-pill:hover{background:var(--color-primary);color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(13,92,92,0.3)}
+    @media(max-width:768px){.browse-dest-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+  
+    </style>
 </head>
 <body>
 <!-- CURSOR GLOW -->
@@ -481,7 +497,7 @@ section{padding:100px 0}
 <!-- NAVIGATION -->
 <nav class="nav" id="nav">
 <div class="container nav-inner">
-<a href="#" class="nav-logo">
+<a href="#hero" class="nav-logo">
 <img src="destinara-logo.png" alt="Destinara" class="nav-logo-img" style="height:48px;width:auto;">
 <span class="nav-logo-text">Destinara</span>
 </a>
@@ -666,19 +682,19 @@ section{padding:100px 0}
 <div class="map-pin" style="left:38%;top:42%" data-dest="Alaska"></div>
 </div>
 <div class="dest-cards reveal-right">
-<div class="dest-card" data-dest="Caribbean">
+<div class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean.html'" style="cursor:pointer" role="link" tabindex="0">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80" alt="Caribbean" loading="lazy"></div>
 <div><h4>Caribbean Islands</h4><p>Crystal waters & white sand beaches</p><span class="tag">Popular</span></div>
 </div>
-<div class="dest-card" data-dest="Mediterranean">
+<div class="dest-card" data-dest="Mediterranean" onclick="window.location='destinations/mediterranean.html'" style="cursor:pointer" role="link" tabindex="0">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=200&q=80" alt="Mediterranean" loading="lazy"></div>
 <div><h4>Mediterranean</h4><p>Ancient history meets coastal charm</p><span class="tag">Cruise</span></div>
 </div>
-<div class="dest-card" data-dest="Southeast Asia">
+<div class="dest-card" data-dest="Southeast Asia" onclick="window.location='destinations/southeast-asia.html'" style="cursor:pointer" role="link" tabindex="0">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=80" alt="Southeast Asia" loading="lazy"></div>
 <div><h4>Southeast Asia</h4><p>Temples, beaches & vibrant culture</p><span class="tag">Adventure</span></div>
 </div>
-<div class="dest-card" data-dest="Alaska">
+<div class="dest-card" data-dest="Alaska" onclick="window.location='destinations/alaska.html'" style="cursor:pointer" role="link" tabindex="0">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1531176175280-109a4be14992?w=200&q=80" alt="Alaska" loading="lazy"></div>
 <div><h4>Alaska</h4><p>Glaciers, wildlife & wilderness</p><span class="tag">Expedition</span></div>
 </div>
@@ -686,7 +702,156 @@ section{padding:100px 0}
 </div>
 </div>
 </section>
-<!-- PARTNERS -->
+
+    <!-- WEEKEND GETAWAYS -->
+    <section class="browse-section" id="weekend-getaways">
+      <div class="container">
+        <div class="section-label reveal">Weekend Getaways</div>
+        <h2 class="section-title reveal">Southeast Escapes</h2>
+        <p class="section-subtitle reveal">Quick trips to charming cities, pristine beaches, and mountain retreats across the Southeast</p>
+        <div class="browse-dest-grid reveal">
+          <a href="destinations/charleston-sc.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=400&q=80" alt="Charleston SC" loading="lazy">
+            <div class="browse-dest-name">Charleston SC</div>
+          </a>
+          <a href="destinations/savannah-ga.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1615288350659-ef624b8fcd84?w=400&q=80" alt="Savannah GA" loading="lazy">
+            <div class="browse-dest-name">Savannah GA</div>
+          </a>
+          <a href="destinations/outer-banks-nc.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Outer Banks NC" loading="lazy">
+            <div class="browse-dest-name">Outer Banks NC</div>
+          </a>
+          <a href="destinations/washington-dc.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=400&q=80" alt="Washington DC" loading="lazy">
+            <div class="browse-dest-name">Washington DC</div>
+          </a>
+          <a href="destinations/hilton-head-sc.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" alt="Hilton Head SC" loading="lazy">
+            <div class="browse-dest-name">Hilton Head SC</div>
+          </a>
+          <a href="destinations/asheville-nc.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&q=80" alt="Asheville NC" loading="lazy">
+            <div class="browse-dest-name">Asheville NC</div>
+          </a>
+          <a href="destinations/nashville-tn.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1545419913-b1e0a5e4cfab?w=400&q=80" alt="Nashville TN" loading="lazy">
+            <div class="browse-dest-name">Nashville TN</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EUROPEAN CHRISTMAS MARKETS -->
+    <section class="browse-section christmas-section" id="christmas-markets">
+      <div class="container">
+        <div class="section-label reveal">Seasonal Specials</div>
+        <h2 class="section-title reveal">European Christmas Markets</h2>
+        <p class="section-subtitle reveal">Experience the magic of the holidays at Europe's most enchanting Christmas markets</p>
+        <div class="browse-dest-grid reveal">
+          <a href="destinations/brussels-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1514828260101-bfc6e737890b?w=400&q=80" alt="Brussels Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Brussels Christmas Market</div>
+          </a>
+          <a href="destinations/budapest-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1520986606214-8b456906c813?w=400&q=80" alt="Budapest Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Budapest Christmas Market</div>
+          </a>
+          <a href="destinations/cologne-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=400&q=80" alt="Cologne Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Cologne Christmas Market</div>
+          </a>
+          <a href="destinations/nuremberg-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=400&q=80" alt="Nuremberg Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Nuremberg Christmas Market</div>
+          </a>
+          <a href="destinations/prague-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1513805959324-96eb66ca8713?w=400&q=80" alt="Prague Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Prague Christmas Market</div>
+          </a>
+          <a href="destinations/salzburg-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=400&q=80" alt="Salzburg Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Salzburg Christmas Market</div>
+          </a>
+          <a href="destinations/strasbourg-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=400&q=80" alt="Strasbourg Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Strasbourg Christmas Market</div>
+          </a>
+          <a href="destinations/vienna-christmas-market.html" class="browse-dest-card">
+            <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a814?w=400&q=80" alt="Vienna Christmas Market" loading="lazy">
+            <div class="browse-dest-name">Vienna Christmas Market</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BROWSE ALL DESTINATIONS -->
+    <section class="browse-section browse-all-section" id="all-destinations">
+      <div class="container">
+        <div class="section-label reveal">Explore</div>
+        <h2 class="section-title reveal">Browse All Destinations</h2>
+        <p class="section-subtitle reveal">From tropical islands to arctic adventures, find your perfect destination</p>
+        <div class="browse-dest-pills reveal">
+          <a href="destinations/alaska.html" class="browse-dest-pill">Alaska</a>
+          <a href="destinations/amalfi-coast-italy.html" class="browse-dest-pill">Amalfi Coast Italy</a>
+          <a href="destinations/asheville-nc.html" class="browse-dest-pill">Asheville NC</a>
+          <a href="destinations/australia.html" class="browse-dest-pill">Australia</a>
+          <a href="destinations/bali-indonesia.html" class="browse-dest-pill">Bali Indonesia</a>
+          <a href="destinations/barcelona-spain.html" class="browse-dest-pill">Barcelona Spain</a>
+          <a href="destinations/botswana.html" class="browse-dest-pill">Botswana</a>
+          <a href="destinations/brussels-christmas-market.html" class="browse-dest-pill">Brussels Christmas Market</a>
+          <a href="destinations/budapest-christmas-market.html" class="browse-dest-pill">Budapest Christmas Market</a>
+          <a href="destinations/cambodia.html" class="browse-dest-pill">Cambodia</a>
+          <a href="destinations/caribbean-islands.html" class="browse-dest-pill">Caribbean Islands</a>
+          <a href="destinations/charleston-sc.html" class="browse-dest-pill">Charleston SC</a>
+          <a href="destinations/cologne-christmas-market.html" class="browse-dest-pill">Cologne Christmas Market</a>
+          <a href="destinations/costa-rica.html" class="browse-dest-pill">Costa Rica</a>
+          <a href="destinations/dubai-uae.html" class="browse-dest-pill">Dubai UAE</a>
+          <a href="destinations/egypt.html" class="browse-dest-pill">Egypt</a>
+          <a href="destinations/fiji.html" class="browse-dest-pill">Fiji</a>
+          <a href="destinations/french-polynesia.html" class="browse-dest-pill">French Polynesia</a>
+          <a href="destinations/french-riviera.html" class="browse-dest-pill">French Riviera</a>
+          <a href="destinations/hawaii.html" class="browse-dest-pill">Hawaii</a>
+          <a href="destinations/hilton-head-sc.html" class="browse-dest-pill">Hilton Head SC</a>
+          <a href="destinations/iceland.html" class="browse-dest-pill">Iceland</a>
+          <a href="destinations/india.html" class="browse-dest-pill">India</a>
+          <a href="destinations/israel.html" class="browse-dest-pill">Israel</a>
+          <a href="destinations/japan.html" class="browse-dest-pill">Japan</a>
+          <a href="destinations/jordan.html" class="browse-dest-pill">Jordan</a>
+          <a href="destinations/kenya-safari.html" class="browse-dest-pill">Kenya Safari</a>
+          <a href="destinations/madagascar.html" class="browse-dest-pill">Madagascar</a>
+          <a href="destinations/maldives.html" class="browse-dest-pill">Maldives</a>
+          <a href="destinations/mexico.html" class="browse-dest-pill">Mexico</a>
+          <a href="destinations/morocco.html" class="browse-dest-pill">Morocco</a>
+          <a href="destinations/nashville-tn.html" class="browse-dest-pill">Nashville TN</a>
+          <a href="destinations/new-york-city.html" class="browse-dest-pill">New York City</a>
+          <a href="destinations/new-zealand.html" class="browse-dest-pill">New Zealand</a>
+          <a href="destinations/nuremberg-christmas-market.html" class="browse-dest-pill">Nuremberg Christmas Market</a>
+          <a href="destinations/oman.html" class="browse-dest-pill">Oman</a>
+          <a href="destinations/outer-banks-nc.html" class="browse-dest-pill">Outer Banks NC</a>
+          <a href="destinations/paris-france.html" class="browse-dest-pill">Paris France</a>
+          <a href="destinations/patagonia.html" class="browse-dest-pill">Patagonia</a>
+          <a href="destinations/peru.html" class="browse-dest-pill">Peru</a>
+          <a href="destinations/prague-christmas-market.html" class="browse-dest-pill">Prague Christmas Market</a>
+          <a href="destinations/rhine-river-germany.html" class="browse-dest-pill">Rhine River Germany</a>
+          <a href="destinations/salzburg-christmas-market.html" class="browse-dest-pill">Salzburg Christmas Market</a>
+          <a href="destinations/santorini-greece.html" class="browse-dest-pill">Santorini Greece</a>
+          <a href="destinations/savannah-ga.html" class="browse-dest-pill">Savannah GA</a>
+          <a href="destinations/seychelles.html" class="browse-dest-pill">Seychelles</a>
+          <a href="destinations/south-africa.html" class="browse-dest-pill">South Africa</a>
+          <a href="destinations/sri-lanka.html" class="browse-dest-pill">Sri Lanka</a>
+          <a href="destinations/strasbourg-christmas-market.html" class="browse-dest-pill">Strasbourg Christmas Market</a>
+          <a href="destinations/tanzania.html" class="browse-dest-pill">Tanzania</a>
+          <a href="destinations/thailand.html" class="browse-dest-pill">Thailand</a>
+          <a href="destinations/tuscany-italy.html" class="browse-dest-pill">Tuscany Italy</a>
+          <a href="destinations/vienna-christmas-market.html" class="browse-dest-pill">Vienna Christmas Market</a>
+          <a href="destinations/vietnam.html" class="browse-dest-pill">Vietnam</a>
+          <a href="destinations/washington-dc.html" class="browse-dest-pill">Washington DC</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
 <div class="partners">
 <p class="partners-title">Trusted Cruise Line Partners</p>
 <div class="marquee">
@@ -748,7 +913,7 @@ section{padding:100px 0}
 </div>
 <div>
 <h4>Save Time & Stress</h4>
-<p>We handle all the intricate planning, logistics, and details — acting as your personal advocate from booking to return.</p>
+<p>We handle all the intricate planning, logistics, and details â acting as your personal advocate from booking to return.</p>
 </div>
 </div>
 <div class="why-feature">
@@ -862,12 +1027,12 @@ section{padding:100px 0}
 <h2 class="section-title reveal">Travel Blog &amp; Insider Tips</h2>
 <p class="section-subtitle reveal">Expert guides, packing tips, and destination insights from our seasoned travel advisors.</p>
 <div class="blog-grid">
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=300&fit=crop" alt="Top 10 Mediterranean Cruise Ports You Can&#39;t Miss"><span class="blog-card-cat">Cruise Guide</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Jan 15, 2026</span><span>&#x2022;</span><span>8 min read</span></div><h3>Top 10 Mediterranean Cruise Ports You Can&#39;t Miss</h3><p>From the ancient ruins of Ephesus to the glamorous shores of Monte Carlo, discover the must-visit ports that make a Mediterranean cruise truly unforgettable.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&h=300&fit=crop" alt="When Is the Best Time to Visit Alaska?"><span class="blog-card-cat">Destination Guide</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Jan 8, 2026</span><span>&#x2022;</span><span>6 min read</span></div><h3>When Is the Best Time to Visit Alaska?</h3><p>Timing is everything for an Alaska trip. We break down the best months for whale watching, Northern Lights, salmon runs, and glacier excursions.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&h=300&fit=crop" alt="The Ultimate Cruise Packing Checklist"><span class="blog-card-cat" style="background:var(--color-accent)">Travel Tips</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 20, 2025</span><span>&#x2022;</span><span>5 min read</span></div><h3>The Ultimate Cruise Packing Checklist</h3><p>Never overpack (or underpack) again. Our comprehensive packing guide covers formal nights, shore excursions, and everything in between.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&h=300&fit=crop" alt="5 Dreamy Honeymoon Destinations for 2026"><span class="blog-card-cat" style="background:#e91e63">Romance</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 12, 2025</span><span>&#x2022;</span><span>7 min read</span></div><h3>5 Dreamy Honeymoon Destinations for 2026</h3><p>From the overwater bungalows of Bora Bora to the cliffside suites of Santorini, these romantic escapes are perfect for newlyweds.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=300&fit=crop" alt="Your First African Safari: What to Expect"><span class="blog-card-cat" style="background:#ff9800">Safari</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 28, 2025</span><span>&#x2022;</span><span>9 min read</span></div><h3>Your First African Safari: What to Expect</h3><p>Everything you need to know before your first safari &#8212; from what to pack and when to go, to choosing between Kenya, Tanzania, and South Africa.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
-<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=300&fit=crop" alt="Do You Really Need Travel Insurance?"><span class="blog-card-cat" style="background:#607d8b">Planning</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 15, 2025</span><span>&#x2022;</span><span>4 min read</span></div><h3>Do You Really Need Travel Insurance?</h3><p>We break down the types of travel insurance, what they cover, and why we always recommend it &#8212; especially for international and cruise vacations.</p><a href="#contact" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=300&fit=crop" alt="Top 10 Mediterranean Cruise Ports You Can&#39;t Miss"><span class="blog-card-cat">Cruise Guide</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Jan 15, 2026</span><span>&#x2022;</span><span>8 min read</span></div><h3>Top 10 Mediterranean Cruise Ports You Can&#39;t Miss</h3><p>From the ancient ruins of Ephesus to the glamorous shores of Monte Carlo, discover the must-visit ports that make a Mediterranean cruise truly unforgettable.</p><a href="destinations/mediterranean.html" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&h=300&fit=crop" alt="When Is the Best Time to Visit Alaska?"><span class="blog-card-cat">Destination Guide</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Jan 8, 2026</span><span>&#x2022;</span><span>6 min read</span></div><h3>When Is the Best Time to Visit Alaska?</h3><p>Timing is everything for an Alaska trip. We break down the best months for whale watching, Northern Lights, salmon runs, and glacier excursions.</p><a href="destinations/alaska.html" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&h=300&fit=crop" alt="The Ultimate Cruise Packing Checklist"><span class="blog-card-cat" style="background:var(--color-accent)">Travel Tips</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 20, 2025</span><span>&#x2022;</span><span>5 min read</span></div><h3>The Ultimate Cruise Packing Checklist</h3><p>Never overpack (or underpack) again. Our comprehensive packing guide covers formal nights, shore excursions, and everything in between.</p><a href="#services" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&h=300&fit=crop" alt="5 Dreamy Honeymoon Destinations for 2026"><span class="blog-card-cat" style="background:#e91e63">Romance</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Dec 12, 2025</span><span>&#x2022;</span><span>7 min read</span></div><h3>5 Dreamy Honeymoon Destinations for 2026</h3><p>From the overwater bungalows of Bora Bora to the cliffside suites of Santorini, these romantic escapes are perfect for newlyweds.</p><a href="#services" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=300&fit=crop" alt="Your First African Safari: What to Expect"><span class="blog-card-cat" style="background:#ff9800">Safari</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 28, 2025</span><span>&#x2022;</span><span>9 min read</span></div><h3>Your First African Safari: What to Expect</h3><p>Everything you need to know before your first safari &#8212; from what to pack and when to go, to choosing between Kenya, Tanzania, and South Africa.</p><a href="destinations/kenya.html" class="read-more">Read More &#8594;</a></div></div>
+<div class="blog-card reveal"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=300&fit=crop" alt="Do You Really Need Travel Insurance?"><span class="blog-card-cat" style="background:#607d8b">Planning</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>&#x1F4C5; Nov 15, 2025</span><span>&#x2022;</span><span>4 min read</span></div><h3>Do You Really Need Travel Insurance?</h3><p>We break down the types of travel insurance, what they cover, and why we always recommend it &#8212; especially for international and cruise vacations.</p><a href="#services" class="read-more">Read More &#8594;</a></div></div>
 </div>
 </div>
 </section>
@@ -1293,7 +1458,7 @@ Other</option>
 </div>
 </div>
 <div class="footer-bottom">
-<span>&copy; 2025 Destinara Travel. All rights reserved.</span>
+<span>&copy; 2026 Destinara Travel. All rights reserved.</span>
 <span>Curated with love in North Carolina</span>
 </div>
 </div>
@@ -1304,7 +1469,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('pageLoader').classList.add('hidden');
     animateHero();
-  }, 2000);
+  }, 500);
 });
 
 // HERO ANIMATIONS
