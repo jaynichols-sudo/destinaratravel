@@ -1,8 +1,0 @@
-{
-    "name": "destinaratravel",
-    "compatibility_date": "2026-01-31",
-    "assets": {
-          "directory": "./"
-  "main": "_worker.js",
-    }
-}
