@@ -571,6 +571,34 @@ section{padding:100px 0}
     .partners-stat-bar .stat-num{font-family:var(--font-display);font-size:2rem;color:var(--color-accent);font-weight:700}
     .partners-stat-bar .stat-label{color:rgba(255,255,255,0.6);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px}
 
+
+    /* LAND VACATIONS SHOWCASE */
+    .land-showcase{padding:80px 0;background:var(--color-bg-alt)}
+    .land-showcase .section-label{color:var(--color-accent);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:0.85rem;margin-bottom:8px}
+    .land-showcase h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--color-dark);margin-bottom:16px}
+    .land-showcase .section-subtitle{color:var(--color-text-light);font-size:1.05rem;max-width:700px;margin-bottom:48px}
+    .land-category{margin-bottom:60px}
+    .land-category-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--color-accent)}
+    .land-category-header h3{font-family:var(--font-display);font-size:1.5rem;color:var(--color-dark);margin:0}
+    .land-category-header .cat-badge{background:var(--color-accent);color:var(--color-dark);padding:4px 14px;border-radius:20px;font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+    .land-category-header .cat-desc{color:var(--color-text-light);font-size:0.9rem;margin-left:auto}
+    .land-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+    .land-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);transition:all 0.3s}
+    .land-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.12);border-color:var(--color-accent)}
+    .land-card-img{height:180px;overflow:hidden;position:relative}
+    .land-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+    .land-card:hover .land-card-img img{transform:scale(1.05)}
+    .land-card-img .card-badge{position:absolute;top:12px;left:12px;background:var(--color-accent);color:var(--color-dark);padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+    .land-card-body{padding:20px}
+    .land-card-body h4{font-family:var(--font-display);font-size:1.15rem;color:var(--color-dark);margin-bottom:4px}
+    .land-card-body .card-tagline{font-size:0.8rem;color:var(--color-accent);font-weight:500;margin-bottom:10px}
+    .land-card-body p{font-size:0.88rem;color:var(--color-text-light);line-height:1.6;margin-bottom:14px}
+    .land-card-body .card-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+    .land-card-body .feature-tag{background:var(--color-bg-alt);color:var(--color-text);padding:3px 10px;border-radius:20px;font-size:0.73rem;font-weight:500}
+    .land-card-body .card-cta{display:inline-flex;align-items:center;gap:6px;color:var(--color-primary);font-weight:600;font-size:0.85rem;text-decoration:none;transition:gap 0.3s}
+    .land-card-body .card-cta:hover{gap:10px}
+    @media(max-width:768px){.land-card-grid{grid-template-columns:1fr}.land-category-header{flex-direction:column;align-items:flex-start;gap:8px}.land-category-header .cat-desc{margin-left:0}}
+
 </style>
 
 <script type="application/ld+json">
@@ -612,12 +640,16 @@ section{padding:100px 0}
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#land-vacations">Land Vacations></a>
-                                    <ul class="dropdown-menu">
-                                                            <li><a href="#hotels-resorts">Hotels & Resorts></a></li>
-                                                            <li><a href="#adventure-travel">Adventure Travel></a></li>
-                                                            <li><a href="#wellness-retreats">Wellness Retreats></a></li>
-                                                            <li><a href="#safari-wildlife">Safari & Wildlife></a></li>
-                                    </ul>
+                    <ul class="dropdown-menu">
+                        <li><a href="#land-vacations">All Land Vacations></a></li>
+                        <li><a href="#land-vacations">Hotels & Resorts></a></li>
+                        <li><a href="#land-vacations">Adventure Travel></a></li>
+                        <li><a href="#land-vacations">Wellness Retreats></a></li>
+                        <li><a href="#land-vacations">Romance & Honeymoons></a></li>
+                        <li><a href="#land-vacations">Cultural & Culinary></a></li>
+                        <li><a href="#land-vacations">Safari & Wildlife></a></li>
+                        <li><a href="#land-vacations">Group Travel></a></li>
+                    </ul>
                 </li>
 <li><a href="#destinations">Destinations</a></li>
             <li><a href="#deals">Deals</a></li>
@@ -1220,6 +1252,391 @@ section{padding:100px 0}
 
     </div>
     </section>
+
+    <!-- ====== COMPREHENSIVE LAND VACATIONS SHOWCASE ====== -->
+    <section class="land-showcase" id="land-vacations">
+    <div class="container">
+    <p class="section-label">Land Vacations</p>
+    <h2>Unforgettable Stays. Handcrafted Experiences.</h2>
+    <p class="section-subtitle">From five-star resorts and boutique hotels to safari lodges and wellness retreats — we design every land vacation with exclusive perks, insider access, and personal touches you won’t find online.</p>
+
+    <!-- LUXURY HOTELS & RESORTS -->
+    <div class="land-category">
+    <div class="land-category-header">
+    <h3>🏨 Luxury Hotels & Resorts</h3>
+    <span class="cat-badge">Premium Stays</span>
+    <span class="cat-desc">Exclusive rates, VIP amenities, complimentary upgrades</span>
+    </div>
+    <div class="land-card-grid">
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=360&fit=crop" alt="Luxury resort pool" loading="lazy"><span class="card-badge">Luxury</span></div>
+    <div class="land-card-body">
+    <h4>All-Inclusive Luxury Resorts</h4>
+    <p class="card-tagline">Everything Included, Nothing Compromised</p>
+    <p>World-class all-inclusive resorts in the Caribbean, Mexico, and beyond. Premium dining, top-shelf beverages, water sports, spa credits, and butler service — all included in one seamless price.</p>
+    <div class="card-features"><span class="feature-tag">Sandals</span><span class="feature-tag">Secrets</span><span class="feature-tag">Excellence</span><span class="feature-tag">Hyatt Ziva</span><span class="feature-tag">Club Med</span></div>
+    <a href="#contact" class="card-cta">Plan an All-Inclusive Escape →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=360&fit=crop" alt="Boutique hotel room" loading="lazy"><span class="card-badge">Boutique</span></div>
+    <div class="land-card-body">
+    <h4>Boutique & Design Hotels</h4>
+    <p class="card-tagline">Unique Stays with Character</p>
+    <p>Handpicked boutique properties with distinctive design, local flavor, and intimate atmospheres. From converted palaces in Europe to clifftop villas in Bali — no two stays are alike.</p>
+    <div class="card-features"><span class="feature-tag">Small Luxury Hotels</span><span class="feature-tag">Design Hotels</span><span class="feature-tag">Relais & Châteaux</span></div>
+    <a href="#contact" class="card-cta">Find a Boutique Hotel →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=360&fit=crop" alt="Five star hotel" loading="lazy"><span class="card-badge">5-Star</span></div>
+    <div class="land-card-body">
+    <h4>Five-Star Hotel Collections</h4>
+    <p class="card-tagline">The World’s Finest Addresses</p>
+    <p>Access the most prestigious hotel brands worldwide with exclusive Destinara perks: complimentary breakfast, room upgrades, spa credits, late checkout, and VIP welcome amenities.</p>
+    <div class="card-features"><span class="feature-tag">Four Seasons</span><span class="feature-tag">Ritz-Carlton</span><span class="feature-tag">St. Regis</span><span class="feature-tag">Aman</span><span class="feature-tag">Mandarin Oriental</span></div>
+    <a href="#contact" class="card-cta">Book a Luxury Hotel →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&h=360&fit=crop" alt="Overwater bungalow" loading="lazy"><span class="card-badge">Iconic</span></div>
+    <div class="land-card-body">
+    <h4>Overwater & Private Villas</h4>
+    <p class="card-tagline">Your Own Slice of Paradise</p>
+    <p>Overwater bungalows in the Maldives and Bora Bora, private pool villas in Bali and Thailand, and secluded island retreats. The ultimate in privacy, luxury, and romance.</p>
+    <div class="card-features"><span class="feature-tag">Maldives</span><span class="feature-tag">Bora Bora</span><span class="feature-tag">Bali</span><span class="feature-tag">Private Pools</span><span class="feature-tag">Butler Service</span></div>
+    <a href="#contact" class="card-cta">Plan a Villa Getaway →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=360&fit=crop" alt="Family resort" loading="lazy"><span class="card-badge">Family</span></div>
+    <div class="land-card-body">
+    <h4>Family-Friendly Resorts</h4>
+    <p class="card-tagline">Memories for Every Generation</p>
+    <p>Kid-friendly resorts with water parks, kids’ clubs, teen activities, and adult relaxation zones. Multi-generational travel planning with something for every age group.</p>
+    <div class="card-features"><span class="feature-tag">Beaches Resorts</span><span class="feature-tag">Atlantis</span><span class="feature-tag">Great Wolf Lodge</span><span class="feature-tag">Disney Resorts</span></div>
+    <a href="#contact" class="card-cta">Plan Family Fun →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&h=360&fit=crop" alt="Adults only resort" loading="lazy"><span class="card-badge">Adults Only</span></div>
+    <div class="land-card-body">
+    <h4>Adults-Only Escapes</h4>
+    <p class="card-tagline">Refined Relaxation, No Interruptions</p>
+    <p>Curated adults-only resorts for couples, friends, and solo travelers seeking tranquility. Infinity pools, gourmet dining, premium bars, and sophisticated entertainment.</p>
+    <div class="card-features"><span class="feature-tag">Sandals</span><span class="feature-tag">Secrets</span><span class="feature-tag">Breathless</span><span class="feature-tag">Excellence Playa</span></div>
+    <a href="#contact" class="card-cta">Plan an Adult Getaway →</a>
+    </div>
+    </div>
+
+    <!-- ADVENTURE TRAVEL -->
+    <div class="land-category">
+    <div class="land-category-header">
+    <h3>🏔️ Adventure Travel</h3>
+    <span class="cat-badge">Active</span>
+    <span class="cat-desc">Guided expeditions, trekking, diving, and wildlife encounters</span>
+    </div>
+    <div class="land-card-grid">
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=360&fit=crop" alt="Mountain trekking" loading="lazy"><span class="card-badge">Trekking</span></div>
+    <div class="land-card-body">
+    <h4>Mountain Treks & Hiking</h4>
+    <p class="card-tagline">Conquer Peaks, Discover Yourself</p>
+    <p>Guided treks to Machu Picchu, Kilimanjaro base camp, the Himalayas, Patagonia’s Torres del Paine, and Europe’s iconic trails. All fitness levels, expert local guides, and premium lodges.</p>
+    <div class="card-features"><span class="feature-tag">Machu Picchu</span><span class="feature-tag">Kilimanjaro</span><span class="feature-tag">Patagonia</span><span class="feature-tag">Nepal</span><span class="feature-tag">Alps</span></div>
+    <a href="#contact" class="card-cta">Plan a Trek →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=360&fit=crop" alt="Scuba diving" loading="lazy"><span class="card-badge">Diving</span></div>
+    <div class="land-card-body">
+    <h4>Scuba Diving & Snorkeling</h4>
+    <p class="card-tagline">Explore the World Beneath the Waves</p>
+    <p>Dive trips to the Great Barrier Reef, Maldives, Raja Ampat, Galapagos, Red Sea, and Cenotes of Mexico. PADI-certified operators, liveaboard options, and beginner-friendly excursions.</p>
+    <div class="card-features"><span class="feature-tag">Great Barrier Reef</span><span class="feature-tag">Maldives</span><span class="feature-tag">Galapagos</span><span class="feature-tag">Liveaboards</span></div>
+    <a href="#contact" class="card-cta">Plan a Dive Trip →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=360&fit=crop" alt="Safari adventure" loading="lazy"><span class="card-badge">Safari</span></div>
+    <div class="land-card-body">
+    <h4>Safari & Wildlife Adventures</h4>
+    <p class="card-tagline">Face to Face with the Wild</p>
+    <p>Luxury tented safaris in Kenya’s Masai Mara, Tanzania’s Serengeti, Botswana’s Okavango Delta, South Africa’s Kruger, and Rwanda’s gorilla treks. Private game drives, bush dinners, and balloon safaris.</p>
+    <div class="card-features"><span class="feature-tag">Big Five</span><span class="feature-tag">Gorilla Trekking</span><span class="feature-tag">Balloon Safari</span><span class="feature-tag">Private Camps</span></div>
+    <a href="#contact" class="card-cta">Plan a Safari →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=600&h=360&fit=crop" alt="Northern lights" loading="lazy"><span class="card-badge">Expedition</span></div>
+    <div class="land-card-body">
+    <h4>Polar & Arctic Adventures</h4>
+    <p class="card-tagline">Journey to the Ends of the Earth</p>
+    <p>Northern Lights viewing in Iceland and Norway, Arctic dog sledding, Antarctic camping, Greenland ice fjord tours, and Svalbard polar bear expeditions. Once-in-a-lifetime wilderness experiences.</p>
+    <div class="card-features"><span class="feature-tag">Northern Lights</span><span class="feature-tag">Dog Sledding</span><span class="feature-tag">Iceland</span><span class="feature-tag">Arctic Circle</span></div>
+    <a href="#contact" class="card-cta">Plan an Arctic Adventure →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&h=360&fit=crop" alt="Cycling through countryside" loading="lazy"><span class="card-badge">Active</span></div>
+    <div class="land-card-body">
+    <h4>Cycling & Active Journeys</h4>
+    <p class="card-tagline">Pedal Through Paradise</p>
+    <p>Guided cycling tours through Tuscany’s vineyards, Provence’s lavender fields, Vietnam’s countryside, and New Zealand’s trails. E-bike options, luxury hotel stays, and luggage transfers.</p>
+    <div class="card-features"><span class="feature-tag">Tuscany</span><span class="feature-tag">Provence</span><span class="feature-tag">Vietnam</span><span class="feature-tag">E-Bikes</span><span class="feature-tag">Backroads</span></div>
+    <a href="#contact" class="card-cta">Plan an Active Trip →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1517931524326-bdd55a541177?w=600&h=360&fit=crop" alt="White water rafting" loading="lazy"><span class="card-badge">Thrill</span></div>
+    <div class="land-card-body">
+    <h4>Extreme & Adrenaline Trips</h4>
+    <p class="card-tagline">Push Your Limits</p>
+    <p>White water rafting in Costa Rica, bungee jumping in New Zealand, skydiving over Dubai, zip-lining through cloud forests, and volcano boarding in Nicaragua. Safely managed thrills with expert operators.</p>
+    <div class="card-features"><span class="feature-tag">Rafting</span><span class="feature-tag">Skydiving</span><span class="feature-tag">Zip-lining</span><span class="feature-tag">Costa Rica</span><span class="feature-tag">New Zealand</span></div>
+    <a href="#contact" class="card-cta">Plan an Adventure →</a>
+    </div>
+    </div>
+
+    <!-- WELLNESS & SPA RETREATS -->
+    <div class="land-category">
+    <div class="land-category-header">
+    <h3>🧘 Wellness & Spa Retreats</h3>
+    <span class="cat-badge">Wellness</span>
+    <span class="cat-desc">Rejuvenate mind, body, and spirit in world-class sanctuaries</span>
+    </div>
+    <div class="land-card-grid">
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=360&fit=crop" alt="Spa treatment" loading="lazy"><span class="card-badge">Spa</span></div>
+    <div class="land-card-body">
+    <h4>Luxury Spa Resorts</h4>
+    <p class="card-tagline">Total Renewal in Paradise</p>
+    <p>Immersive spa resorts in Bali, Thailand, the Maldives, and Costa Rica. Daily treatments, hydrotherapy circuits, meditation sessions, and holistic healing programs.</p>
+    <div class="card-features"><span class="feature-tag">Bali</span><span class="feature-tag">Thailand</span><span class="feature-tag">Maldives</span><span class="feature-tag">Hydrotherapy</span><span class="feature-tag">Ayurveda</span></div>
+    <a href="#contact" class="card-cta">Plan a Spa Retreat →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop" alt="Yoga retreat" loading="lazy"><span class="card-badge">Yoga</span></div>
+    <div class="land-card-body">
+    <h4>Yoga & Meditation Retreats</h4>
+    <p class="card-tagline">Find Your Inner Peace</p>
+    <p>Transformative yoga retreats in Ubud, Rishikesh, Tulum, and Sedona. Expert instructors, daily practice, mindfulness workshops, organic cuisine, and spiritual journeys.</p>
+    <div class="card-features"><span class="feature-tag">Ubud</span><span class="feature-tag">Rishikesh</span><span class="feature-tag">Tulum</span><span class="feature-tag">Sedona</span><span class="feature-tag">Mindfulness</span></div>
+    <a href="#contact" class="card-cta">Plan a Yoga Retreat →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?w=600&h=360&fit=crop" alt="Thermal baths" loading="lazy"><span class="card-badge">Thermal</span></div>
+    <div class="land-card-body">
+    <h4>Thermal Baths & Hot Springs</h4>
+    <p class="card-tagline">Nature’s Healing Waters</p>
+    <p>Soak in Iceland’s Blue Lagoon, Budapest’s historic baths, Japan’s onsen ryokans, New Zealand’s geothermal pools, and Switzerland’s Alpine thermal spas.</p>
+    <div class="card-features"><span class="feature-tag">Blue Lagoon</span><span class="feature-tag">Budapest</span><span class="feature-tag">Japanese Onsen</span><span class="feature-tag">Swiss Alps</span></div>
+    <a href="#contact" class="card-cta">Plan a Thermal Escape →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=360&fit=crop" alt="Fitness retreat" loading="lazy"><span class="card-badge">Fitness</span></div>
+    <div class="land-card-body">
+    <h4>Fitness & Detox Programs</h4>
+    <p class="card-tagline">Reset, Recharge, Transform</p>
+    <p>Results-driven wellness programs at elite fitness resorts. Boot camps, detox cleanses, weight management, personalized nutrition, and post-program support plans.</p>
+    <div class="card-features"><span class="feature-tag">SHA Wellness</span><span class="feature-tag">Canyon Ranch</span><span class="feature-tag">Kamalaya</span><span class="feature-tag">Detox</span></div>
+    <a href="#contact" class="card-cta">Plan a Wellness Program →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- ROMANCE & HONEYMOONS -->
+    <div class="land-category">
+    <div class="land-category-header">
+    <h3>💑 Romance & Honeymoons</h3>
+    <span class="cat-badge">Romance</span>
+    <span class="cat-desc">Honeymoons, anniversaries, proposals, and couples escapes</span>
+    </div>
+    <div class="land-card-grid">
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=360&fit=crop" alt="Santorini sunset" loading="lazy"><span class="card-badge">Honeymoon</span></div>
+    <div class="land-card-body">
+    <h4>Classic Honeymoon Escapes</h4>
+    <p class="card-tagline">Begin Your Forever in Paradise</p>
+    <p>Romantic honeymoon packages to Santorini, Amalfi Coast, Bora Bora, Maldives, and Fiji. Private sunset dinners, couples’ spa treatments, champagne on arrival, and surprise romance touches.</p>
+    <div class="card-features"><span class="feature-tag">Santorini</span><span class="feature-tag">Maldives</span><span class="feature-tag">Bora Bora</span><span class="feature-tag">Amalfi Coast</span><span class="feature-tag">Fiji</span></div>
+    <a href="#contact" class="card-cta">Plan Your Honeymoon →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=360&fit=crop" alt="Destination wedding" loading="lazy"><span class="card-badge">Wedding</span></div>
+    <div class="land-card-body">
+    <h4>Destination Weddings</h4>
+    <p class="card-tagline">Say “I Do” in Paradise</p>
+    <p>Full-service destination wedding planning in Mexico, Caribbean, Italy, Hawaii, and Greece. We coordinate venues, guest accommodations, excursions, welcome parties, and group logistics.</p>
+    <div class="card-features"><span class="feature-tag">Cancún</span><span class="feature-tag">Jamaica</span><span class="feature-tag">Italy</span><span class="feature-tag">Hawaii</span><span class="feature-tag">Group Coordination</span></div>
+    <a href="#contact" class="card-cta">Plan Your Wedding →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=600&h=360&fit=crop" alt="Anniversary trip" loading="lazy"><span class="card-badge">Anniversary</span></div>
+    <div class="land-card-body">
+    <h4>Anniversary & Milestone Trips</h4>
+    <p class="card-tagline">Celebrate Your Love Story</p>
+    <p>Mark milestones with unforgettable getaways. Surprise upgrades, private excursions, wine country tours, castle stays in Europe, and special celebration packages.</p>
+    <div class="card-features"><span class="feature-tag">Wine Country</span><span class="feature-tag">Paris</span><span class="feature-tag">Castle Hotels</span><span class="feature-tag">Surprise Planning</span></div>
+    <a href="#contact" class="card-cta">Plan a Celebration →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- CULTURAL & CULINARY -->
+    <div class="land-category">
+    <div class="land-category-header">
+    <h3>🏛️ Cultural & Culinary Journeys</h3>
+    <span class="cat-badge">Culture</span>
+    <span class="cat-desc">Immersive tours, cooking classes, wine regions, and historic explorations</span>
+    </div>
+    <div class="land-card-grid">
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Culinary experience" loading="lazy"><span class="card-badge">Culinary</span></div>
+    <div class="land-card-body">
+    <h4>Food & Wine Experiences</h4>
+    <p class="card-tagline">Taste the World, One Dish at a Time</p>
+    <p>Culinary tours through Italy, France, Spain, Japan, and Thailand. Cooking classes with local chefs, market tours, vineyard visits, Michelin dining, and wine-pairing experiences.</p>
+    <div class="card-features"><span class="feature-tag">Tuscany</span><span class="feature-tag">Bordeaux</span><span class="feature-tag">Tokyo</span><span class="feature-tag">Bangkok</span><span class="feature-tag">Cooking Classes</span></div>
+    <a href="#contact" class="card-cta">Plan a Culinary Tour →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=360&fit=crop" alt="Ancient temple" loading="lazy"><span class="card-badge">History</span></div>
+    <div class="land-card-body">
+    <h4>Historical & Archaeological Tours</h4>
+    <p class="card-tagline">Walk Through Millennia of History</p>
+    <p>Expert-guided tours of Egypt’s pyramids, Rome’s Colosseum, Angkor Wat, Petra, the Acropolis, and Machu Picchu. Private guides, skip-the-line access, and behind-the-scenes experiences.</p>
+    <div class="card-features"><span class="feature-tag">Egypt</span><span class="feature-tag">Rome</span><span class="feature-tag">Angkor Wat</span><span class="feature-tag">Petra</span><span class="feature-tag">Private Guides</span></div>
+    <a href="#contact" class="card-cta">Plan a Cultural Tour →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&h=360&fit=crop" alt="Wine tasting" loading="lazy"><span class="card-badge">Wine</span></div>
+    <div class="land-card-body">
+    <h4>Wine Country Getaways</h4>
+    <p class="card-tagline">Sip, Savor, and Stay</p>
+    <p>Wine-focused vacations in Napa Valley, Bordeaux, Tuscany, Mendoza, Stellenbosch, and the Douro Valley. Private tastings, vineyard tours, harvest experiences, and luxury wine estate stays.</p>
+    <div class="card-features"><span class="feature-tag">Napa Valley</span><span class="feature-tag">Bordeaux</span><span class="feature-tag">Tuscany</span><span class="feature-tag">Argentina</span><span class="feature-tag">South Africa</span></div>
+    <a href="#contact" class="card-cta">Plan a Wine Trip →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=360&fit=crop" alt="Japan temple" loading="lazy"><span class="card-badge">Immersive</span></div>
+    <div class="land-card-body">
+    <h4>Immersive Cultural Stays</h4>
+    <p class="card-tagline">Live Like a Local, Travel Like a Guest</p>
+    <p>Stay in a Japanese ryokan, a Moroccan riad, an Italian agriturismo, or an Indian haveli. Authentic cultural immersion with traditional meals, local ceremonies, and community connections.</p>
+    <div class="card-features"><span class="feature-tag">Ryokan</span><span class="feature-tag">Riad</span><span class="feature-tag">Agriturismo</span><span class="feature-tag">Haveli</span><span class="feature-tag">Authentic Stays</span></div>
+    <a href="#contact" class="card-cta">Plan a Cultural Stay →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- GROUP & SPECIAL OCCASIONS -->
+    <div class="land-category">
+    <div class="land-category-header">
+    <h3>👪 Group & Special Occasions</h3>
+    <span class="cat-badge">Groups</span>
+    <span class="cat-desc">Family reunions, corporate retreats, milestone celebrations, solo travel</span>
+    </div>
+    <div class="land-card-grid">
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=360&fit=crop" alt="Family reunion" loading="lazy"><span class="card-badge">Family</span></div>
+    <div class="land-card-body">
+    <h4>Multi-Generational Family Trips</h4>
+    <p class="card-tagline">Three Generations, One Incredible Journey</p>
+    <p>Plan trips that work for grandparents, parents, and kids alike. Accessible accommodations, diverse activity levels, connecting rooms, and group dining arrangements.</p>
+    <div class="card-features"><span class="feature-tag">Family Reunions</span><span class="feature-tag">Connecting Suites</span><span class="feature-tag">All Ages</span><span class="feature-tag">Group Dining</span></div>
+    <a href="#contact" class="card-cta">Plan a Family Trip →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=360&fit=crop" alt="Corporate retreat" loading="lazy"><span class="card-badge">Corporate</span></div>
+    <div class="land-card-body">
+    <h4>Corporate Retreats & Incentive Travel</h4>
+    <p class="card-tagline">Elevate Your Team</p>
+    <p>Team-building retreats, executive off-sites, and incentive travel programs. Conference facilities, adventure activities, gala dinners, and customized group experiences.</p>
+    <div class="card-features"><span class="feature-tag">Team Building</span><span class="feature-tag">Conference</span><span class="feature-tag">Incentive</span><span class="feature-tag">Executive</span></div>
+    <a href="#contact" class="card-cta">Plan a Corporate Retreat →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=600&h=360&fit=crop" alt="Solo traveler" loading="lazy"><span class="card-badge">Solo</span></div>
+    <div class="land-card-body">
+    <h4>Solo Travel Experiences</h4>
+    <p class="card-tagline">Your Journey, Your Rules</p>
+    <p>Safe, enriching solo travel itineraries with guided tours, social excursions, and meet-ups. No single supplements at select properties, and 24/7 support wherever you go.</p>
+    <div class="card-features"><span class="feature-tag">No Single Supplement</span><span class="feature-tag">Guided Tours</span><span class="feature-tag">Social Meetups</span><span class="feature-tag">24/7 Support</span></div>
+    <a href="#contact" class="card-cta">Plan Solo Travel →</a>
+    </div>
+    </div>
+
+    <div class="land-card">
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=360&fit=crop" alt="Friends celebration" loading="lazy"><span class="card-badge">Celebrations</span></div>
+    <div class="land-card-body">
+    <h4>Friends Getaways & Celebrations</h4>
+    <p class="card-tagline">Your Crew, Your Adventure</p>
+    <p>Bachelor and bachelorette trips, milestone birthday celebrations, girls’ weekends, and guys’ trips. Villas, private chefs, adventure activities, and nightlife experiences.</p>
+    <div class="card-features"><span class="feature-tag">Villas</span><span class="feature-tag">Private Chef</span><span class="feature-tag">Nightlife</span><span class="feature-tag">Group Activities</span></div>
+    <a href="#contact" class="card-cta">Plan a Group Trip →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+    <p style="color:var(--color-text-light);font-size:1.05rem;margin-bottom:20px">Every land vacation is custom-designed for you. Tell us your dream and we’ll make it happen.</p>
+    <a href="#contact" class="btn btn-primary" style="display:inline-block;padding:14px 36px;background:var(--color-accent);color:var(--color-dark);border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.3s">Design My Land Vacation →</a>
+    </div>
+
+    </div>
+    </section>
+
+
+    </div>
+    </div>
+
+    </div>
+    </div>
 
 
     </div>
@@ -2100,19 +2517,20 @@ Get a Free Quote
 <p>Experience the world through expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to your dreams.</p>
 </div>
 <div>
-<h4>Services</h4>
-<ul>
-<li><a href="#services">Luxury Cruises</a></li>
-<li><a href="#services">Hotels & Resorts</a></li>
-<li><a href="#services">Group Travel</a></li>
-<li><a href="#contact">Custom Itineraries</a></li>
-          <li><a href="#more-services">Honeymoon &amp; Romance</a></li>
-          <li><a href="#more-services">Adventure Travel</a></li>
-          <li><a href="#more-services">Destination Weddings</a></li>
-          <li><a href="#more-services">Wellness Retreats</a></li>
-          <li><a href="#more-services">River Cruises</a></li>
-</ul>
-</div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#cruise-lines">Luxury Cruises</a></li>
+                        <li><a href="#land-vacations">Hotels & Resorts</a></li>
+                        <li><a href="#land-vacations">Adventure Travel</a></li>
+                        <li><a href="#land-vacations">Wellness Retreats</a></li>
+                        <li><a href="#land-vacations">Romance & Honeymoons</a></li>
+                        <li><a href="#land-vacations">Cultural & Culinary</a></li>
+                        <li><a href="#land-vacations">Destination Weddings</a></li>
+                        <li><a href="#land-vacations">Group Travel</a></li>
+                        <li><a href="#cruise-lines">River Cruises</a></li>
+                    </ul>
+                </div>
                 <div>
                     <h4>Cruise Lines</h4>
                     <ul>
