@@ -599,6 +599,48 @@ section{padding:100px 0}
     .land-card-body .card-cta:hover{gap:10px}
     @media(max-width:768px){.land-card-grid{grid-template-columns:1fr}.land-category-header{flex-direction:column;align-items:flex-start;gap:8px}.land-category-header .cat-desc{margin-left:0}}
 
+
+    /* DISNEY VACATIONS SECTION */
+    .disney-showcase{padding:80px 0;background:linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);position:relative;overflow:hidden}
+    .disney-showcase::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:0.5}
+    .disney-showcase .container{position:relative;z-index:1}
+    .disney-showcase .section-label{color:#f9a825}
+    .disney-showcase h2{color:#fff;font-size:2.5rem}
+    .disney-showcase .section-subtitle{color:rgba(255,255,255,0.7)}
+    .disney-intro{display:flex;align-items:center;gap:40px;margin:40px 0 50px;padding:30px;background:rgba(255,255,255,0.05);border-radius:16px;border:1px solid rgba(255,255,255,0.1)}
+    .disney-intro-text{flex:1;color:rgba(255,255,255,0.85);font-size:1.05rem;line-height:1.7}
+    .disney-intro-text strong{color:#f9a825}
+    .disney-stats{display:flex;gap:30px;flex-shrink:0}
+    .disney-stat{text-align:center;padding:15px 20px;background:rgba(255,255,255,0.08);border-radius:12px}
+    .disney-stat-num{font-family:var(--font-display);font-size:1.8rem;color:#f9a825;display:block}
+    .disney-stat-label{font-size:0.75rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px}
+    .disney-category{margin-bottom:50px}
+    .disney-category-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid rgba(249,168,37,0.4)}
+    .disney-category-header h3{font-family:var(--font-display);font-size:1.5rem;color:#fff;margin:0}
+    .disney-badge{background:#f9a825;color:#1a1a2e;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+    .disney-cat-desc{color:rgba(255,255,255,0.6);font-size:0.9rem;margin-left:auto}
+    .disney-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+    .disney-card{background:rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s}
+    .disney-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(249,168,37,0.15);border-color:rgba(249,168,37,0.3)}
+    .disney-card-img{height:200px;overflow:hidden}
+    .disney-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+    .disney-card:hover .disney-card-img img{transform:scale(1.05)}
+    .disney-card-badge{position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:6px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+    .disney-card-img{position:relative}
+    .disney-card-badge{background:#f9a825;color:#1a1a2e}
+    .disney-card-content{padding:20px}
+    .disney-card-content h4{font-family:var(--font-display);font-size:1.15rem;color:#fff;margin:0 0 6px}
+    .disney-card-content .card-subtitle{color:#f9a825;font-size:0.8rem;margin-bottom:10px}
+    .disney-card-content p{color:rgba(255,255,255,0.7);font-size:0.85rem;line-height:1.6;margin-bottom:14px}
+    .disney-card .card-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+    .disney-card .feature-tag{background:rgba(249,168,37,0.15);color:#f9a825;padding:3px 8px;border-radius:4px;font-size:0.7rem;border:1px solid rgba(249,168,37,0.2)}
+    .disney-card .card-cta{color:#f9a825;font-size:0.85rem;text-decoration:none;font-weight:600;transition:all 0.3s}
+    .disney-card .card-cta:hover{color:#fdd835}
+    .disney-section-cta{text-align:center;margin-top:50px;padding:40px;background:rgba(249,168,37,0.08);border-radius:16px;border:1px solid rgba(249,168,37,0.2)}
+    .disney-section-cta p{color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:20px}
+    .disney-section-cta a{display:inline-block;padding:14px 40px;background:#f9a825;color:#1a1a2e;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.3s}
+    .disney-section-cta a:hover{background:#fdd835;transform:translateY(-2px)}
+
 </style>
 
 <script type="application/ld+json">
@@ -649,6 +691,19 @@ section{padding:100px 0}
                         <li><a href="#land-vacations">Cultural & Culinary></a></li>
                         <li><a href="#land-vacations">Safari & Wildlife></a></li>
                         <li><a href="#land-vacations">Group Travel></a></li>
+                    </ul>
+                </li>
+<li class="has-dropdown">
+                    <a href="#disney-vacations">Disney Vacations></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#disney-vacations">All Disney Vacations></a></li>
+                        <li><a href="#disney-vacations">Disney Cruise Line></a></li>
+                        <li><a href="#disney-vacations">Walt Disney World></a></li>
+                        <li><a href="#disney-vacations">Disneyland Resort></a></li>
+                        <li><a href="#disney-vacations">International Parks></a></li>
+                        <li><a href="#disney-vacations">Aulani Hawaii></a></li>
+                        <li><a href="#disney-vacations">Adventures by Disney></a></li>
+                        <li><a href="#disney-vacations">Disney Vacation Club></a></li>
                     </ul>
                 </li>
 <li><a href="#destinations">Destinations</a></li>
@@ -1048,17 +1103,7 @@ section{padding:100px 0}
     <a href="#contact" class="brand-cta">Plan a Princess Cruise →</a>
     </div>
 
-    <div class="cruise-brand-card">
-    <div class="brand-header">
-    <div class="brand-icon">🛥</div>
-    <div><div class="brand-name">Disney Cruise Line</div><div class="brand-tagline">Where Magic Meets the Sea</div></div>
-    </div>
-    <p class="brand-desc">The ultimate family cruise experience with Disney character meet-and-greets, Broadway-caliber shows, adult-exclusive areas, and the brand new Disney Treasure.</p>
-    <div class="brand-highlights"><span class="brand-tag">Disney Characters</span><span class="brand-tag">Castaway Cay</span><span class="brand-tag">AquaMouse</span><span class="brand-tag">Adult-Only Areas</span></div>
-    <a href="#contact" class="brand-cta">Plan a Disney Cruise →</a>
-    </div>
-
-    </div>
+        </div>
     </div>
 
     <!-- RIVER CRUISE TIER -->
@@ -1640,6 +1685,499 @@ section{padding:100px 0}
     </div>
     </div>
 
+
+    <!-- ==================== DISNEY VACATIONS ==================== -->
+    <section class="disney-showcase" id="disney-vacations">
+    <div class="container">
+    <p class="section-label reveal">✨ The Most Magical Vacations on Earth</p>
+    <h2 class="reveal">Disney Vacations</h2>
+    <p class="section-subtitle reveal">From theme parks to cruise ships, from tropical resorts to guided adventures around the globe — we plan every detail of your Disney dream vacation.</p>
+
+    <div class="disney-intro reveal">
+    <div class="disney-intro-text">
+    As <strong>Authorized Disney Vacation Planners</strong>, we offer complimentary planning services for all Disney destinations worldwide. Our Disney specialists have experienced every park, sailed every ship, and stayed at every resort — so we can match you with your perfect Disney vacation. From first-timers to annual passholders, we make the magic effortless.
+    </div>
+    <div class="disney-stats">
+    <div class="disney-stat"><span class="disney-stat-num">6</span><span class="disney-stat-label">Destinations</span></div>
+    <div class="disney-stat"><span class="disney-stat-num">5</span><span class="disney-stat-label">Cruise Ships</span></div>
+    <div class="disney-stat"><span class="disney-stat-num">50+</span><span class="disney-stat-label">Resorts</span></div>
+    </div>
+    </div>
+
+    <!-- DISNEY CRUISE LINE -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🚢 Disney Cruise Line</h3>
+    <span class="disney-badge">Cruise</span>
+    <span class="disney-cat-desc">Magical voyages for the whole family aboard Disney's world-class fleet</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600" alt="Disney cruise ship" loading="lazy">
+    <span class="disney-card-badge">FLAGSHIP</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disney Wish</h4>
+    <p class="card-subtitle">Where Enchantment Awaits</p>
+    <p>Disney's newest ship featuring the AquaMouse water coaster, Star Wars Hyperspace Lounge, Worlds of Marvel dining, the Grand Hall inspired by Cinderella, and Frozen-themed entertainment throughout.</p>
+    <div class="card-features"><span class="feature-tag">AquaMouse</span><span class="feature-tag">Star Wars Lounge</span><span class="feature-tag">Worlds of Marvel</span><span class="feature-tag">Grand Hall</span></div>
+    <a href="#contact" class="card-cta">Plan a Disney Wish Voyage →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1559599746-8823b38544c6?w=600" alt="Disney Treasure cruise" loading="lazy">
+    <span class="disney-card-badge">NEWEST</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disney Treasure</h4>
+    <p class="card-subtitle">Adventure Awaits Beyond Every Horizon</p>
+    <p>The newest addition to the fleet, themed around adventure and exploration. Features the Haunted Mansion Parlor, Plaza de Coco dining, Periscope Pub, and the all-new Lookout Cay at Lighthouse Point private island.</p>
+    <div class="card-features"><span class="feature-tag">Haunted Mansion Bar</span><span class="feature-tag">Plaza de Coco</span><span class="feature-tag">Lookout Cay</span><span class="feature-tag">Adventure Theme</span></div>
+    <a href="#contact" class="card-cta">Sail on Disney Treasure →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600" alt="Disney Fantasy cruise" loading="lazy">
+    <span class="disney-card-badge">CLASSIC</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disney Fantasy & Dream</h4>
+    <p class="card-subtitle">Classic Disney Magic at Sea</p>
+    <p>Fan-favorite ships featuring the AquaDuck water coaster, Animator's Palate interactive dining, Bibbidi Bobbidi Boutique, Pirates Night celebrations, and stops at Castaway Cay private island.</p>
+    <div class="card-features"><span class="feature-tag">AquaDuck</span><span class="feature-tag">Castaway Cay</span><span class="feature-tag">Animator's Palate</span><span class="feature-tag">Bibbidi Bobbidi</span></div>
+    <a href="#contact" class="card-cta">Plan a Classic Disney Cruise →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="Castaway Cay island" loading="lazy">
+    <span class="disney-card-badge">PRIVATE ISLAND</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Castaway Cay & Lookout Cay</h4>
+    <p class="card-subtitle">Disney's Private Island Paradises</p>
+    <p>Exclusive private islands in the Bahamas. Castaway Cay features pristine beaches, water slides, and snorkeling. Lookout Cay at Lighthouse Point celebrates Bahamian culture with stunning design and exclusive experiences.</p>
+    <div class="card-features"><span class="feature-tag">Private Beaches</span><span class="feature-tag">Snorkeling</span><span class="feature-tag">Water Slides</span><span class="feature-tag">Bahamian Culture</span></div>
+    <a href="#contact" class="card-cta">Explore Disney's Islands →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Caribbean cruise destination" loading="lazy">
+    <span class="disney-card-badge">ITINERARIES</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Cruise Destinations</h4>
+    <p class="card-subtitle">Magical Itineraries Worldwide</p>
+    <p>Sail to the Caribbean, Bahamas, Alaska, Mediterranean, Northern Europe, and beyond. 3-night getaways to 14-night voyages. Holiday sailings, Halloween on the High Seas, and Very Merrytime Cruises available.</p>
+    <div class="card-features"><span class="feature-tag">Caribbean</span><span class="feature-tag">Alaska</span><span class="feature-tag">Mediterranean</span><span class="feature-tag">Holiday Sailings</span></div>
+    <a href="#contact" class="card-cta">Browse Disney Sailings →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600" alt="Disney cruise dining" loading="lazy">
+    <span class="disney-card-badge">ONBOARD</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Onboard Experiences</h4>
+    <p class="card-subtitle">Entertainment, Dining & Relaxation</p>
+    <p>Broadway-caliber shows, character meet-and-greets, Oceaneers Club kids' program, Senses Spa adult-only retreat, rotational dining, fireworks at sea, and themed deck parties. Something magical for every age.</p>
+    <div class="card-features"><span class="feature-tag">Broadway Shows</span><span class="feature-tag">Characters</span><span class="feature-tag">Kids Club</span><span class="feature-tag">Adult Spa</span></div>
+    <a href="#contact" class="card-cta">Plan Your Disney Cruise →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+
+    <!-- WALT DISNEY WORLD -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🏰 Walt Disney World Resort</h3>
+    <span class="disney-badge">Theme Parks</span>
+    <span class="disney-cat-desc">The most magical place on Earth — Orlando, Florida</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=600" alt="Magic Kingdom castle" loading="lazy">
+    <span class="disney-card-badge">ICONIC</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Magic Kingdom</h4>
+    <p class="card-subtitle">Where Dreams Come True</p>
+    <p>The iconic park featuring Cinderella Castle, Space Mountain, Pirates of the Caribbean, Haunted Mansion, Tron Lightcycle Run, and the legendary fireworks spectacular. Six themed lands of pure magic.</p>
+    <div class="card-features"><span class="feature-tag">Cinderella Castle</span><span class="feature-tag">Space Mountain</span><span class="feature-tag">TRON</span><span class="feature-tag">Fireworks</span></div>
+    <a href="#contact" class="card-cta">Plan a Magic Kingdom Day →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1575285113814-f770cb8c796e?w=600" alt="EPCOT" loading="lazy">
+    <span class="disney-card-badge">INNOVATION</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>EPCOT</h4>
+    <p class="card-subtitle">Discover the Wonder of the World</p>
+    <p>Experience Guardians of the Galaxy: Cosmic Rewind, Test Track, Frozen Ever After, Remy's Ratatouille Adventure, and the World Showcase featuring 11 country pavilions with authentic cuisine, culture, and entertainment.</p>
+    <div class="card-features"><span class="feature-tag">World Showcase</span><span class="feature-tag">Cosmic Rewind</span><span class="feature-tag">Test Track</span><span class="feature-tag">Food Festivals</span></div>
+    <a href="#contact" class="card-cta">Explore EPCOT →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=600" alt="Hollywood Studios" loading="lazy">
+    <span class="disney-card-badge">THRILLS</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Hollywood Studios</h4>
+    <p class="card-subtitle">Lights, Camera, Action!</p>
+    <p>Home to Star Wars: Galaxy's Edge with Millennium Falcon and Rise of the Resistance, Toy Story Land with Slinky Dog Dash, Tower of Terror, Mickey & Minnie's Runaway Railway, and Fantasmic nighttime show.</p>
+    <div class="card-features"><span class="feature-tag">Galaxy's Edge</span><span class="feature-tag">Toy Story Land</span><span class="feature-tag">Tower of Terror</span><span class="feature-tag">Fantasmic</span></div>
+    <a href="#contact" class="card-cta">Visit Hollywood Studios →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1584722065001-cd260e3b0a07?w=600" alt="Animal Kingdom" loading="lazy">
+    <span class="disney-card-badge">NATURE</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Animal Kingdom</h4>
+    <p class="card-subtitle">Nahtazu — Welcome</p>
+    <p>Pandora — The World of Avatar with Flight of Passage, Kilimanjaro Safaris, Expedition Everest, and the Tree of Life. A celebration of nature, conservation, and imagination. Don't miss the nighttime experiences.</p>
+    <div class="card-features"><span class="feature-tag">Pandora</span><span class="feature-tag">Safaris</span><span class="feature-tag">Expedition Everest</span><span class="feature-tag">Tree of Life</span></div>
+    <a href="#contact" class="card-cta">Explore Animal Kingdom →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600" alt="Disney resort pool" loading="lazy">
+    <span class="disney-card-badge">RESORTS</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disney World Resorts</h4>
+    <p class="card-subtitle">Stay in the Magic</p>
+    <p>Over 25 themed resorts from Value to Deluxe. Grand Floridian's Victorian elegance, Polynesian Village's tropical paradise, Animal Kingdom Lodge's savanna views, and Star Wars: Galactic Starcruiser immersive experience.</p>
+    <div class="card-features"><span class="feature-tag">Grand Floridian</span><span class="feature-tag">Polynesian</span><span class="feature-tag">AK Lodge</span><span class="feature-tag">Contemporary</span></div>
+    <a href="#contact" class="card-cta">Browse Disney Resorts →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1564429238961-bf8ae5e9d853?w=600" alt="Disney water park" loading="lazy">
+    <span class="disney-card-badge">WATER PARKS</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Water Parks & Disney Springs</h4>
+    <p class="card-subtitle">Beyond the Theme Parks</p>
+    <p>Typhoon Lagoon and Blizzard Beach water parks, Disney Springs shopping and dining district, championship golf courses, ESPN Wide World of Sports Complex, and special experiences like dessert parties and VIP tours.</p>
+    <div class="card-features"><span class="feature-tag">Typhoon Lagoon</span><span class="feature-tag">Blizzard Beach</span><span class="feature-tag">Disney Springs</span><span class="feature-tag">VIP Tours</span></div>
+    <a href="#contact" class="card-cta">Plan Your WDW Vacation →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+
+    <!-- DISNEYLAND RESORT -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🎢 Disneyland Resort</h3>
+    <span class="disney-badge">California</span>
+    <span class="disney-cat-desc">The original Happiest Place on Earth — Anaheim, California</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=600" alt="Disneyland Sleeping Beauty Castle" loading="lazy">
+    <span class="disney-card-badge">ORIGINAL</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disneyland Park</h4>
+    <p class="card-subtitle">The Happiest Place on Earth</p>
+    <p>Walt's original park featuring Sleeping Beauty Castle, Matterhorn Bobsleds, Indiana Jones Adventure, Rise of the Resistance, Haunted Mansion, and the beloved "it's a small world." Nine themed lands of nostalgia and innovation.</p>
+    <div class="card-features"><span class="feature-tag">Sleeping Beauty Castle</span><span class="feature-tag">Matterhorn</span><span class="feature-tag">Indiana Jones</span><span class="feature-tag">Galaxy's Edge</span></div>
+    <a href="#contact" class="card-cta">Plan a Disneyland Visit →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?w=600" alt="Disney California Adventure" loading="lazy">
+    <span class="disney-card-badge">ADVENTURE</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disney California Adventure</h4>
+    <p class="card-subtitle">Let the Adventure Begin</p>
+    <p>Avengers Campus with Spider-Man and Guardians of the Galaxy, Radiator Springs Racers in Cars Land, Pixar Pier with the Incredicoaster, and the spectacular World of Color nighttime show on Paradise Bay.</p>
+    <div class="card-features"><span class="feature-tag">Avengers Campus</span><span class="feature-tag">Cars Land</span><span class="feature-tag">Pixar Pier</span><span class="feature-tag">World of Color</span></div>
+    <a href="#contact" class="card-cta">Explore DCA →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600" alt="Disneyland Resort hotel" loading="lazy">
+    <span class="disney-card-badge">STAY</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disneyland Resort Hotels</h4>
+    <p class="card-subtitle">Magic Steps from the Parks</p>
+    <p>Three on-property hotels: the classic Disneyland Hotel, Disney's Grand Californian Hotel & Spa with its stunning Craftsman architecture, and Pixar Place Hotel. Plus Downtown Disney District for dining and shopping.</p>
+    <div class="card-features"><span class="feature-tag">Grand Californian</span><span class="feature-tag">Disneyland Hotel</span><span class="feature-tag">Pixar Place</span><span class="feature-tag">Downtown Disney</span></div>
+    <a href="#contact" class="card-cta">Book Disneyland Resorts →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- INTERNATIONAL DISNEY PARKS -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🌍 International Disney Parks</h3>
+    <span class="disney-badge">Global</span>
+    <span class="disney-cat-desc">Disney magic around the world</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600" alt="Tokyo Disneyland" loading="lazy">
+    <span class="disney-card-badge">JAPAN</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Tokyo Disney Resort</h4>
+    <p class="card-subtitle">Where Dreams Come to Life</p>
+    <p>Tokyo Disneyland and Tokyo DisneySea — widely considered the most beautiful Disney park in the world. Fantasy Springs expansion with Frozen, Tangled, and Peter Pan. Japanese precision meets Disney magic.</p>
+    <div class="card-features"><span class="feature-tag">DisneySea</span><span class="feature-tag">Fantasy Springs</span><span class="feature-tag">Journey to Center</span><span class="feature-tag">Popcorn Flavors</span></div>
+    <a href="#contact" class="card-cta">Plan a Tokyo Disney Trip →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=600" alt="Disneyland Paris" loading="lazy">
+    <span class="disney-card-badge">FRANCE</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Disneyland Paris</h4>
+    <p class="card-subtitle">The Magic is Closer Than You Think</p>
+    <p>Two parks, seven Disney hotels, and Disney Village. Disneyland Park with its stunning castle and Walt Disney Studios Park featuring Avengers Campus. Perfect addition to a European vacation.</p>
+    <div class="card-features"><span class="feature-tag">Castle Park</span><span class="feature-tag">Studios Park</span><span class="feature-tag">Disney Hotels</span><span class="feature-tag">Avengers Campus</span></div>
+    <a href="#contact" class="card-cta">Add Disneyland Paris →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=600" alt="Hong Kong Disneyland" loading="lazy">
+    <span class="disney-card-badge">ASIA</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Hong Kong & Shanghai Disney</h4>
+    <p class="card-subtitle">Eastern Magic, Disney Style</p>
+    <p>Hong Kong Disneyland with World of Frozen and Shanghai Disneyland featuring the breathtaking Enchanted Storybook Castle — the largest Disney castle ever built — and the thrilling TRON Lightcycle Power Run.</p>
+    <div class="card-features"><span class="feature-tag">World of Frozen</span><span class="feature-tag">Storybook Castle</span><span class="feature-tag">TRON Original</span><span class="feature-tag">Zootopia</span></div>
+    <a href="#contact" class="card-cta">Plan an Asia Disney Trip →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+
+    <!-- AULANI & ADVENTURES BY DISNEY -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🌺 Aulani, A Disney Resort & Spa</h3>
+    <span class="disney-badge">Hawaii</span>
+    <span class="disney-cat-desc">Disney's tropical paradise on O'ahu's beautiful Ko Olina coast</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1507876466758-bc54f384809c?w=600" alt="Aulani resort Hawaii" loading="lazy">
+    <span class="disney-card-badge">RESORT</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Aulani Resort Experience</h4>
+    <p class="card-subtitle">Where Hawaiian Culture Meets Disney Magic</p>
+    <p>A stunning oceanfront resort celebrating Hawaiian heritage. Waikolohe Valley pool area with volcanic water slides, lazy river, snorkeling lagoon, Aunty's Beach House kids' club, Laniwai Spa, and Disney character experiences on the beach.</p>
+    <div class="card-features"><span class="feature-tag">Ko Olina Beach</span><span class="feature-tag">Volcanic Slides</span><span class="feature-tag">Laniwai Spa</span><span class="feature-tag">Luau Show</span></div>
+    <a href="#contact" class="card-cta">Plan an Aulani Vacation →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600" alt="Hawaii ocean activities" loading="lazy">
+    <span class="disney-card-badge">EXPERIENCES</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Aulani Experiences</h4>
+    <p class="card-subtitle">Hawaiian Adventures with Disney Magic</p>
+    <p>Catamaran snorkel sails, outrigger canoe excursions, stand-up paddleboarding, starlit movie nights on the lawn, 'Ōlelo Room craft cocktails, Ka Wa'a Luau cultural celebration, and exclusive Disney character breakfasts with ocean views.</p>
+    <div class="card-features"><span class="feature-tag">Snorkel Sails</span><span class="feature-tag">Ka Wa'a Luau</span><span class="feature-tag">Character Dining</span><span class="feature-tag">Ocean Sports</span></div>
+    <a href="#contact" class="card-cta">Explore Aulani Activities →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600" alt="Hawaii family vacation" loading="lazy">
+    <span class="disney-card-badge">DVC</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Aulani Disney Vacation Club</h4>
+    <p class="card-subtitle">Your Home in Paradise</p>
+    <p>DVC villas at Aulani offer spacious 1, 2, and 3-bedroom accommodations with full kitchens and laundry. Lock-off configurations perfect for extended family stays. All resort amenities included with villa-exclusive pool area.</p>
+    <div class="card-features"><span class="feature-tag">Villa Suites</span><span class="feature-tag">Full Kitchen</span><span class="feature-tag">DVC Points</span><span class="feature-tag">Extended Stay</span></div>
+    <a href="#contact" class="card-cta">Learn About DVC Aulani →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- ADVENTURES BY DISNEY -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🗺️ Adventures by Disney</h3>
+    <span class="disney-badge">Guided Tours</span>
+    <span class="disney-cat-desc">Expertly guided group vacations to extraordinary destinations worldwide</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600" alt="Italy guided tour" loading="lazy">
+    <span class="disney-card-badge">EUROPE</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>European Adventures</h4>
+    <p class="card-subtitle">Discover Europe, Disney Style</p>
+    <p>Guided adventures through Italy, Scotland, Germany, Greece, Norway, Iceland, Spain, and more. VIP access to landmarks, authentic local experiences, and Disney-quality storytelling woven into every destination.</p>
+    <div class="card-features"><span class="feature-tag">Italy</span><span class="feature-tag">Scotland</span><span class="feature-tag">Iceland</span><span class="feature-tag">Norway</span></div>
+    <a href="#contact" class="card-cta">Explore European Adventures →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600" alt="African safari adventure" loading="lazy">
+    <span class="disney-card-badge">AFRICA & ASIA</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Africa, Asia & South America</h4>
+    <p class="card-subtitle">Adventures Beyond Imagination</p>
+    <p>South African safaris, Egyptian pyramids, Peruvian Machu Picchu, Costa Rican rainforests, Australian outback, Chinese cultural journeys, and Cambodian temple explorations. Two Adventure Guides per trip ensure seamless experiences.</p>
+    <div class="card-features"><span class="feature-tag">Safari</span><span class="feature-tag">Machu Picchu</span><span class="feature-tag">Egypt</span><span class="feature-tag">Australia</span></div>
+    <a href="#contact" class="card-cta">Browse Global Adventures →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1502920514313-52581002a659?w=600" alt="Disney river cruise" loading="lazy">
+    <span class="disney-card-badge">RIVER CRUISE</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>Adventures by Disney River Cruises</h4>
+    <p class="card-subtitle">Sail Through History and Culture</p>
+    <p>Luxury river cruises through the Rhine, Danube, Seine, and Rhône aboard AmaWaterways ships. Disney-exclusive itineraries with family-friendly excursions, onboard activities, and VIP access to castles, vineyards, and cultural sites.</p>
+    <div class="card-features"><span class="feature-tag">Rhine</span><span class="feature-tag">Danube</span><span class="feature-tag">Seine</span><span class="feature-tag">AmaWaterways</span></div>
+    <a href="#contact" class="card-cta">Plan a Disney River Cruise →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- DISNEY VACATION CLUB -->
+    <div class="disney-category reveal">
+    <div class="disney-category-header">
+    <h3>🏡 Disney Vacation Club</h3>
+    <span class="disney-badge">Membership</span>
+    <span class="disney-cat-desc">A lifetime of magical vacations at Disney's home resorts</span>
+    </div>
+    <div class="disney-card-grid">
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600" alt="Disney vacation club resort" loading="lazy">
+    <span class="disney-card-badge">DVC</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>DVC Resorts at Walt Disney World</h4>
+    <p class="card-subtitle">Your Home Away From Home</p>
+    <p>16 DVC resort properties including Riviera Resort, Grand Floridian Villas, Polynesian Villas, Bay Lake Tower, BoardWalk Villas, Beach Club Villas, Animal Kingdom Villas, Boulder Ridge, and Copper Creek at Wilderness Lodge.</p>
+    <div class="card-features"><span class="feature-tag">Riviera</span><span class="feature-tag">Grand Floridian</span><span class="feature-tag">Polynesian</span><span class="feature-tag">Bay Lake Tower</span></div>
+    <a href="#contact" class="card-cta">Explore DVC Resorts →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" alt="DVC vacation planning" loading="lazy">
+    <span class="disney-card-badge">OWNERSHIP</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>DVC Membership & Benefits</h4>
+    <p class="card-subtitle">Invest in Magical Memories</p>
+    <p>Flexible points-based vacation ownership. Stay at any DVC resort worldwide, exchange for Disney cruises, Adventures by Disney, or non-Disney destinations. Annual Passholder discounts, Moonlight Magic events, and member-exclusive perks.</p>
+    <div class="card-features"><span class="feature-tag">Points System</span><span class="feature-tag">Flexibility</span><span class="feature-tag">Member Events</span><span class="feature-tag">AP Discounts</span></div>
+    <a href="#contact" class="card-cta">Learn About DVC →</a>
+    </div>
+    </div>
+
+    <div class="disney-card">
+    <div class="disney-card-img">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600" alt="DVC rental" loading="lazy">
+    <span class="disney-card-badge">RENTALS</span>
+    </div>
+    <div class="disney-card-content">
+    <h4>DVC Rental & Resale</h4>
+    <p class="card-subtitle">Experience DVC Without Ownership</p>
+    <p>Not ready to buy? Rent DVC points for deluxe villa accommodations at a fraction of rack rate. Or explore resale options for significant savings on direct purchase. We help you navigate every option.</p>
+    <div class="card-features"><span class="feature-tag">Point Rentals</span><span class="feature-tag">Resale Market</span><span class="feature-tag">Savings</span><span class="feature-tag">Villa Access</span></div>
+    <a href="#contact" class="card-cta">Explore DVC Options →</a>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- DISNEY SECTION CTA -->
+    <div class="disney-section-cta reveal">
+    <p>From theme parks to cruise ships, from Hawaiian sunsets to European river cruises — let our Disney specialists plan your perfect magical vacation.</p>
+    <a href="#contact">Start Planning Your Disney Vacation →</a>
+    </div>
+
+    </div>
+    </section>
+
 <section class="services-extended" id="more-services">
   <div class="container">
     <div class="section-label reveal">More Ways to Travel</div>
@@ -1932,7 +2470,7 @@ section{padding:100px 0}
     <div class="partner-logo-item"><span class="partner-emoji">🌍</span><span class="partner-name">MSC Cruises</span><span class="partner-type">Contemporary</span></div>
     <div class="partner-logo-item"><span class="partner-emoji">🎉</span><span class="partner-name">Carnival</span><span class="partner-type">Contemporary</span></div>
     <div class="partner-logo-item"><span class="partner-emoji">🎵</span><span class="partner-name">Princess</span><span class="partner-type">Contemporary</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🛥</span><span class="partner-name">Disney Cruise Line</span><span class="partner-type">Contemporary</span></div>
+    <div class="partner-logo-item"><span class="partner-emoji">✨</span><span class="partner-name">Disney Vacations</span><span class="partner-type">Parks & Cruises</span></div>
     <div class="partner-logo-item"><span class="partner-emoji">🏞</span><span class="partner-name">AMA Waterways</span><span class="partner-type">River</span></div>
     <div class="partner-logo-item"><span class="partner-emoji">🏛</span><span class="partner-name">Viking River</span><span class="partner-type">River</span></div>
     <div class="partner-logo-item"><span class="partner-emoji">🍷</span><span class="partner-name">Avalon Waterways</span><span class="partner-type">River</span></div>
@@ -1951,7 +2489,7 @@ section{padding:100px 0}
     <div class="partner-logo-item"><span class="partner-emoji">🌊</span><span class="partner-name">Star Clippers</span><span class="partner-type">Expedition</span></div>
     </div>
     <div class="partners-stat-bar">
-    <div class="stat"><div class="stat-num">36+</div><div class="stat-label">Cruise Brands</div></div>
+    <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Cruise Brands</div></div>
     <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Ships Worldwide</div></div>
     <div class="stat"><div class="stat-num">2,000+</div><div class="stat-label">Itineraries</div></div>
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Continents</div></div>
@@ -2582,9 +3120,22 @@ Get a Free Quote
                         <li><a href="#cruise-lines">Norwegian Cruise Line</a></li>
                         <li><a href="#cruise-lines">Disney Cruise Line</a></li>
                         <li><a href="#cruise-lines">AMA Waterways</a></li>
-                        <li><a href="#cruise-lines">View All 36+ Lines</a></li>
+                        <li><a href="#cruise-lines">View All 35+ Lines</a></li>
                     </ul>
                 </div>
+<div>
+<h4>Disney Vacations</h4>
+<ul>
+<li><a href="#disney-vacations">Disney Cruise Line</a></li>
+<li><a href="#disney-vacations">Walt Disney World</a></li>
+<li><a href="#disney-vacations">Disneyland Resort</a></li>
+<li><a href="#disney-vacations">Aulani Hawaii</a></li>
+<li><a href="#disney-vacations">Adventures by Disney</a></li>
+<li><a href="#disney-vacations">International Parks</a></li>
+<li><a href="#disney-vacations">Disney Vacation Club</a></li>
+</ul>
+</div>
+
 <div>
 <h4>Contact</h4>
 <ul>
