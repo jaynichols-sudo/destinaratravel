@@ -29,8 +29,8 @@
 --shadow-lg:0 10px 40px rgba(0,0,0,0.15);
 --shadow-xl:0 20px 60px rgba(0,0,0,0.2);
 }
-h<ul class="menu">tml{scroll-behavior:smooth;overflow-x:hidden}Page_Down
-<<li><a href="#cruises">Cruises>a href="#how-it-works">How It Works</a>body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* Enhanced Dropdown Navigation */
@@ -48,100 +48,7 @@ h<ul class="menu">tml{scroll-behavior:smooth;overflow-x:hidden}Page_Down
           nav li { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     }
     img { max-width: 100%; height: auto; display: block; }
-    <script>
-    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-          toggle.addEventListener('click', function(e) {
-                  if (window.innerWidth <= 768) {
-                            e.preventDefault();
-                            const dropdown = this.parentElement;
-                            dropdown.classList.toggle('active');
-                            document.querySelectorAll('.dropdown').forEach(d => {
-                                        if (d !== dropdown) d.classList.remove('active');
-                                });
-                  }
-          });
-    });
-    
-    const menuButton = document.querySelector('button[aria-label*="Menu"]');
-    const navMenu = document.querySelector('nav ul.menu');
-    
-    if (menuButton && navMenu) {
-          menuButton.addEventListener('click', function() {
-                  navMenu.classList.toggle('mobile-open');
-                  this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
-              });
-                navMenu.querySelectorAll('a').forEach(link => {
-                          link.addEventListener('click', function() {
-                                    navMenu.classList.remove('mobile-open');
-                                    if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
-                              });
-                  });
-          }
-        
-        document.addEventListener('click', function(e) {
-              if (!e.target.closest('nav')) {
-                      document.querySelectorAll('.dropdown').forEach(d => {
-                                d.classList.remove('active');
-                          });
-              }
-        });
-        
-        const newsletterForm = document.querySelector('form[data-newsletter]');
-        if (newsletterForm) {
-              newsletterForm.addEventListener('submit', function(e) {
-                      e.preventDefault();
-                      const email = this.querySelector('input[type="email"]').value;
-                      if (email) {
-                                const button = this.querySelector('button');
-                                const originalText = button.textContent;
-                                button.textContent = '✓ Subscribed!';
-                                button.style.backgroundColor = '#4CAF50';
-                                button.style.color = 'white';
-                                setTimeout(() => {
-                                            button.textContent = originalText;
-                                            button.style.backgroundColor = '';
-                                            button.style.color = '';
-                                            this.reset();
-                                    }, 2000);
-                                    }
-                      });
-              }
-            
-            document.querySelectorAll('[data-destination]').forEach(card => {
-                  card.style.cursor = 'pointer';
-                  card.addEventListener('click', function() {
-                          const contact = document.querySelector('#contact');
-                          if (contact) contact.scrollIntoView({ behavior: 'smooth' });
-                  });
-            });
-            
-            document.querySelectorAll('[data-deal-inquiry]').forEach(btn => {
-                  btn.addEventListener('click', function(e) {
-                          e.preventDefault();
-                          const contact = document.querySelector('#contact');
-                          if (contact) contact.scrollIntoView({ behavior: 'smooth' });
-                  });
-            });
-            
-            const contactForm = document.querySelector('[data-contact-form]');
-            if (contactForm) {
-                  const fields = {
-                          email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                          phone: /^\d{10,}/
-                  };
-                  contactForm.querySelectorAll('input').forEach(input => {
-                          input.addEventListener('blur', function() {
-                                    const type = this.type === 'email' ? 'email' : this.type === 'tel' ? 'phone' : null;
-                                    if (type && fields[type] && this.value) {
-                                                const isValid = fields[type].test(this.value);
-                                                this.style.borderColor = isValid ? '#4CAF50' : '#f44336';
-                                                this.style.backgroundColor = isValid ? 'rgba(76,175,80,0.1)' : 'rgba(244,67,54,0.1)';
-                                        }
-                          });
-                  });
-        }
-        </script>
-        /<img src="Page_UpPage_UpPage_UpPage_UpPage_Up</body></style>* CURSOR GLOW *
+    /* CURSOR GLOW */
 .cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:9999;
 background:radial-gradient(circle,rgba(15,118,110,0.08) 0%,transparent 70%);
 transform:translate(-50%,-50%);transition:opacity 0.3s}
@@ -2113,5 +2020,98 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
   });
 });
 </script>
+    <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.addEventListener('click', function(e) {
+                  if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            const dropdown = this.parentElement;
+                            dropdown.classList.toggle('active');
+                            document.querySelectorAll('.dropdown').forEach(d => {
+                                        if (d !== dropdown) d.classList.remove('active');
+                                });
+                  }
+          });
+    });
+    
+    const menuButton = document.querySelector('button[aria-label*="Menu"]');
+    const navMenu = document.querySelector('nav ul.menu');
+    
+    if (menuButton && navMenu) {
+          menuButton.addEventListener('click', function() {
+                  navMenu.classList.toggle('mobile-open');
+                  this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+              });
+                navMenu.querySelectorAll('a').forEach(link => {
+                          link.addEventListener('click', function() {
+                                    navMenu.classList.remove('mobile-open');
+                                    if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
+                              });
+                  });
+          }
+        
+        document.addEventListener('click', function(e) {
+              if (!e.target.closest('nav')) {
+                      document.querySelectorAll('.dropdown').forEach(d => {
+                                d.classList.remove('active');
+                          });
+              }
+        });
+        
+        const newsletterForm = document.querySelector('form[data-newsletter]');
+        if (newsletterForm) {
+              newsletterForm.addEventListener('submit', function(e) {
+                      e.preventDefault();
+                      const email = this.querySelector('input[type="email"]').value;
+                      if (email) {
+                                const button = this.querySelector('button');
+                                const originalText = button.textContent;
+                                button.textContent = '✓ Subscribed!';
+                                button.style.backgroundColor = '#4CAF50';
+                                button.style.color = 'white';
+                                setTimeout(() => {
+                                            button.textContent = originalText;
+                                            button.style.backgroundColor = '';
+                                            button.style.color = '';
+                                            this.reset();
+                                    }, 2000);
+                                    }
+                      });
+              }
+            
+            document.querySelectorAll('[data-destination]').forEach(card => {
+                  card.style.cursor = 'pointer';
+                  card.addEventListener('click', function() {
+                          const contact = document.querySelector('#contact');
+                          if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+                  });
+            });
+            
+            document.querySelectorAll('[data-deal-inquiry]').forEach(btn => {
+                  btn.addEventListener('click', function(e) {
+                          e.preventDefault();
+                          const contact = document.querySelector('#contact');
+                          if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+                  });
+            });
+            
+            const contactForm = document.querySelector('[data-contact-form]');
+            if (contactForm) {
+                  const fields = {
+                          email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          phone: /^\d{10,}/
+                  };
+                  contactForm.querySelectorAll('input').forEach(input => {
+                          input.addEventListener('blur', function() {
+                                    const type = this.type === 'email' ? 'email' : this.type === 'tel' ? 'phone' : null;
+                                    if (type && fields[type] && this.value) {
+                                                const isValid = fields[type].test(this.value);
+                                                this.style.borderColor = isValid ? '#4CAF50' : '#f44336';
+                                                this.style.backgroundColor = isValid ? 'rgba(76,175,80,0.1)' : 'rgba(244,67,54,0.1)';
+                                        }
+                          });
+                  });
+        }
+        </script>
 </body>
 </html>
