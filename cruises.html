@@ -1207,10 +1207,10 @@ section{padding:100px 0}
 </footer>
 
 <script>
-// PAGE LOADER
+setTimeout(function(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.hero-badge,.hero h1,.hero p,.hero-buttons').forEach(function(e){e.style.opacity='1';e.style.transform='none'})},2000);// PAGE LOADER
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.getElementById('pageLoader').classList.add('hidden');
+    var pl=document.getElementById('pageLoader');if(pl)pl.classList.add('hidden');
     animateHero();
   }, 500);
 });
@@ -1230,7 +1230,7 @@ function animateHero() {
 // HERO SLIDESHOW
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-bg-slide');
-setInterval(() => {
+setInterval(() => { if(slides.length===0)return;
   slides[currentSlide].classList.remove('active');
   currentSlide = (currentSlide + 1) % slides.length;
   slides[currentSlide].classList.add('active');
@@ -1245,7 +1245,7 @@ for (let i = 0; i < 30; i++) {
   p.style.animationDuration = (Math.random() * 10 + 8) + 's';
   p.style.animationDelay = Math.random() * 10 + 's';
   p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
-  particlesContainer.appendChild(p);
+  if(particlesContainer)particlesContainer.appendChild(p);
 }
 
 // NAV SCROLL
@@ -1301,7 +1301,7 @@ testDots.forEach(dot => {
   });
 });
 function updateTestSlider() {
-  testTrack.style.transform = 'translateX(-' + (currentTest * 100) + '%)';
+  if(testTrack)testTrack.style.transform = 'translateX(-' + (currentTest * 100) + '%)';
   testDots.forEach((d, i) => d.classList.toggle('active', i === currentTest));
 }
 // Auto-advance
