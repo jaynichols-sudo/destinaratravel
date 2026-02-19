@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D5C5C">
+  <meta name="description" content="Travel tips, destination guides, and luxury journey inspiration from Jay &amp; Elizabeth Nichols at Destinara Travel. Your concierge travel advisors in Greensboro, NC.">
+  <meta name="robots" content="index, follow">
+  <title>Travel Journal | Tips & Inspiration | Destinara Travel</title>
+  <link rel="canonical" href="https://destinaratravel.com/blog/">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Travel Journal | Destinara Travel">
+  <meta property="og:description" content="Luxury travel inspiration, destination guides, and expert tips from your personal travel advisors.">
+  <meta property="og:url" content="https://destinaratravel.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80">
+
+  <!-- JSON-LD Blog Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Destinara Travel Journal",
+    "description": "Luxury travel inspiration, destination guides, and expert tips from Jay & Elizabeth Nichols.",
+    "url": "https://destinaratravel.com/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Destinara Travel",
+      "url": "https://destinaratravel.com"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #0D5C5C;
+      --color-accent: #C4956B;
+      --color-dark: #0A4A4A;
+      --color-bg: #faf8f5;
+      --color-bg-alt: #f0ebe4;
+      --color-text: #2c2c2c;
+      --color-text-light: #6b7280;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
+
+    /* NAV */
+    nav { background: var(--color-primary); padding: 0 2rem; position: sticky; top: 0; z-index: 1000; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-brand { color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+    .nav-brand span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.88); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
+    .nav-cta { background: var(--color-accent); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #b8845a !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .blog-hero { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%); padding: 5rem 2rem 4rem; text-align: center; }
+    .blog-hero .label { color: var(--color-accent); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+    .blog-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; margin-bottom: 1rem; }
+    .blog-hero p { color: rgba(255,255,255,0.75); font-size: 1.125rem; max-width: 560px; margin: 0 auto; }
+
+    /* CONTENT */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .blog-grid-section { padding: 5rem 2rem; }
+    .section-label { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; }
+    .section-title { font-family: var(--font-heading); font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--color-primary); margin-bottom: 3rem; }
+
+    /* BLOG CARDS */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; }
+    .blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(13,92,92,0.12); }
+    .blog-card-img { height: 220px; overflow: hidden; }
+    .blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .blog-card:hover .blog-card-img img { transform: scale(1.04); }
+    .blog-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-category { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; }
+    .blog-card-body h2 { font-family: var(--font-heading); font-size: 1.3125rem; color: var(--color-primary); margin-bottom: 0.75rem; line-height: 1.4; }
+    .blog-card-body p { color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.65; flex: 1; }
+    .blog-meta { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--color-bg-alt); font-size: 0.8125rem; color: var(--color-text-light); }
+    .blog-meta .dot { color: var(--color-accent); }
+    .blog-read-more { display: inline-block; margin-top: 1.25rem; color: var(--color-primary); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .blog-read-more:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+    /* CTA BAND */
+    .cta-band { background: var(--color-primary); padding: 5rem 2rem; text-align: center; }
+    .cta-band h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; }
+    .cta-band p { color: rgba(255,255,255,0.75); font-size: 1.0625rem; max-width: 500px; margin: 0 auto 2rem; }
+    .btn-accent { background: var(--color-accent); color: #fff; padding: 0.9rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block; transition: background 0.2s; }
+    .btn-accent:hover { background: #b8845a; }
+
+    /* FOOTER */
+    footer { background: var(--color-dark); color: rgba(255,255,255,0.7); padding: 2.5rem 2rem; text-align: center; font-size: 0.875rem; line-height: 1.8; }
+    footer a { color: var(--color-accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Destinara<span>Travel</span></a>
+      <ul class="nav-links">
+        <li><a href="/cruises">Cruises</a></li>
+        <li><a href="/vacations">Vacations</a></li>
+        <li><a href="/disney">Disney</a></li>
+        <li><a href="/destinations">Destinations</a></li>
+        <li><a href="/#deals">Deals</a></li>
+        <li><a href="/blog/" class="active">Journal</a></li>
+        <li><a href="/#contact" class="nav-cta">Plan My Trip</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="label">Insights &amp; Inspiration</div>
+    <h1>The Destinara Travel Journal</h1>
+    <p>Destination guides, packing tips, travel trends, and luxury journey ideas from Jay &amp; Elizabeth Nichols.</p>
+  </header>
+
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="section-label">Latest Articles</div>
+      <h2 class="section-title">Stories from the Road</h2>
+
+      <div class="blog-grid">
+
+        <!-- Article 1: Honeymoon Destinations -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Overwater bungalows at a tropical resort for honeymooners" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Romance &amp; Honeymoons</div>
+            <h2>Top Honeymoon Destinations for 2026</h2>
+            <p>From overwater bungalows in the Maldives to private villa retreats in Tuscany — the world's most romantic destinations for newlyweds this year.</p>
+            <div class="blog-meta">
+              <span>Elizabeth Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Feb 2026</span>
+              <span class="dot">&bull;</span>
+              <span>8 min read</span>
+            </div>
+            <a href="/blog/honeymoon-destinations-2026.html" class="blog-read-more" aria-label="Read Top Honeymoon Destinations for 2026">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 2: Travel Insurance -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80" alt="Traveler reviewing travel insurance documents before a trip" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Travel Planning</div>
+            <h2>Do You Really Need Travel Insurance?</h2>
+            <p>Medical emergencies abroad, trip cancellations, lost luggage — here's an honest breakdown of when travel insurance is essential and how to choose the right plan.</p>
+            <div class="blog-meta">
+              <span>Jay Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Feb 2026</span>
+              <span class="dot">&bull;</span>
+              <span>7 min read</span>
+            </div>
+            <a href="/blog/do-you-need-travel-insurance.html" class="blog-read-more" aria-label="Read Do You Really Need Travel Insurance">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 3: Placeholder - Coming Soon -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80" alt="Luxury cruise ship at sea during golden hour" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Cruise Travel</div>
+            <h2>River Cruises vs. Ocean Cruises: Which Is Right for You?</h2>
+            <p>Both offer extraordinary experiences, but the right choice depends on your travel style. We break down the key differences to help you choose your perfect voyage.</p>
+            <div class="blog-meta">
+              <span>Jay Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Coming Soon</span>
+            </div>
+            <a href="/#contact" class="blog-read-more" aria-label="Contact us to discuss cruise options">Ask Us About Cruises &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to Turn Inspiration Into Reality?</h2>
+      <p>Let Jay &amp; Elizabeth handle every detail of your dream journey — from the first idea to the final boarding pass.</p>
+      <a href="/#contact" class="btn-accent">Start Planning My Trip</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Destinara Travel &mdash; Jay &amp; Elizabeth Nichols, Greensboro, NC &mdash;
+    <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a> &mdash;
+    <a href="/privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
