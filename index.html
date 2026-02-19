@@ -676,6 +676,40 @@ section{padding:100px 0}
 .search-section h2{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.2rem);color:#ffffff;margin-bottom:8px;font-weight:700}
 .search-section .search-sub{color:rgba(255,255,255,0.65);font-size:0.95rem;margin-bottom:28px}
 .widgety-wrap{background:rgba(255,255,255,0.97);border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.35)}
+
+/* ===== GALLERY LIGHTBOX ===== */
+.gallery-item { cursor: zoom-in; }
+.gallery-item:hover img { transform: scale(1.05); }
+#lightbox-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(5,25,25,0.96); align-items: center; justify-content: center; flex-direction: column;
+}
+#lightbox-overlay.active { display: flex; }
+#lightbox-img {
+  max-width: 90vw; max-height: 80vh; border-radius: 8px;
+  object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transition: opacity 0.25s;
+}
+#lightbox-caption {
+  margin-top: 1rem; color: rgba(255,255,255,0.85); font-family: var(--font-body);
+  font-size: 0.9375rem; text-align: center; letter-spacing: 0.02em;
+}
+#lightbox-close {
+  position: fixed; top: 1.25rem; right: 1.5rem; background: none; border: none;
+  color: #fff; font-size: 2rem; cursor: pointer; line-height: 1;
+  opacity: 0.7; transition: opacity 0.2s; z-index: 10000;
+}
+#lightbox-close:hover { opacity: 1; }
+.lb-nav {
+  position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.12);
+  border: none; color: #fff; font-size: 2rem; cursor: pointer; padding: 0.75rem 1.1rem;
+  border-radius: 50%; transition: background 0.2s; z-index: 10000; line-height: 1;
+}
+.lb-nav:hover { background: rgba(196,149,107,0.55); }
+#lb-prev { left: 1rem; }
+#lb-next { right: 1rem; }
+#lb-counter { color: rgba(255,255,255,0.5); font-size: 0.8125rem; margin-top: 0.4rem; font-family: var(--font-body); }
+@media (max-width: 640px) { .lb-nav { font-size: 1.4rem; padding: 0.5rem 0.75rem; } }
 </style>
 
 <script type="application/ld+json">
@@ -743,6 +777,8 @@ section{padding:100px 0}
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="#deals">Deals</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="/blog/">Journal</a></li>
+                <li><a href="/blog/">Journal</a></li>
                 <li><a href="#contact" class="nav-cta">Contact Us</a></li>
             </ul>
 <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1103,18 +1139,18 @@ section{padding:100px 0}
 <p class="section-subtitle reveal" style="color:rgba(255,255,255,0.6)">A glimpse into the extraordinary journeys we&#39;ve crafted. Scroll through moments captured by our travelers.</p>
 </div>
 <div class="gallery-scroll" style="padding-left:max(24px,calc((100vw - 1200px)/2))">
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500&h=600&fit=crop" alt="Santorini Sunset, Greece"><div class="gallery-item-overlay"><p>Santorini Sunset, Greece</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=600&fit=crop" alt="Mediterranean Cruise"><div class="gallery-item-overlay"><p>Mediterranean Cruise</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=600&fit=crop" alt="Kenya Safari Adventure"><div class="gallery-item-overlay"><p>Kenya Safari Adventure</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&h=600&fit=crop" alt="Bali Temple, Indonesia"><div class="gallery-item-overlay"><p>Bali Temple, Indonesia</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=600&fit=crop" alt="Dubai Skyline, UAE"><div class="gallery-item-overlay"><p>Dubai Skyline, UAE</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=500&h=600&fit=crop" alt="Glacier Bay, Alaska"><div class="gallery-item-overlay"><p>Glacier Bay, Alaska</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=500&h=600&fit=crop" alt="Venice Canals, Italy"><div class="gallery-item-overlay"><p>Venice Canals, Italy</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=500&h=600&fit=crop" alt="Overwater Villa, Maldives"><div class="gallery-item-overlay"><p>Overwater Villa, Maldives</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&h=600&fit=crop" alt="Tokyo Tower, Japan"><div class="gallery-item-overlay"><p>Tokyo Tower, Japan</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=500&h=600&fit=crop" alt="Milford Sound, New Zealand"><div class="gallery-item-overlay"><p>Milford Sound, New Zealand</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=500&h=600&fit=crop" alt="Caribbean Paradise"><div class="gallery-item-overlay"><p>Caribbean Paradise</p></div></div>
-<div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=500&h=600&fit=crop" alt="Marrakech, Morocco"><div class="gallery-item-overlay"><p>Marrakech, Morocco</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500&h=600&fit=crop" alt="Santorini Sunset, Greece"><div class="gallery-item-overlay"><p>Santorini Sunset, Greece</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=600&fit=crop" alt="Mediterranean Cruise"><div class="gallery-item-overlay"><p>Mediterranean Cruise</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=600&fit=crop" alt="Kenya Safari Adventure"><div class="gallery-item-overlay"><p>Kenya Safari Adventure</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&h=600&fit=crop" alt="Bali Temple, Indonesia"><div class="gallery-item-overlay"><p>Bali Temple, Indonesia</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=600&fit=crop" alt="Dubai Skyline, UAE"><div class="gallery-item-overlay"><p>Dubai Skyline, UAE</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=500&h=600&fit=crop" alt="Glacier Bay, Alaska"><div class="gallery-item-overlay"><p>Glacier Bay, Alaska</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=500&h=600&fit=crop" alt="Venice Canals, Italy"><div class="gallery-item-overlay"><p>Venice Canals, Italy</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=500&h=600&fit=crop" alt="Overwater Villa, Maldives"><div class="gallery-item-overlay"><p>Overwater Villa, Maldives</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&h=600&fit=crop" alt="Tokyo Tower, Japan"><div class="gallery-item-overlay"><p>Tokyo Tower, Japan</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=500&h=600&fit=crop" alt="Milford Sound, New Zealand"><div class="gallery-item-overlay"><p>Milford Sound, New Zealand</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=500&h=600&fit=crop" alt="Caribbean Paradise"><div class="gallery-item-overlay"><p>Caribbean Paradise</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=500&h=600&fit=crop" alt="Marrakech, Morocco"><div class="gallery-item-overlay"><p>Marrakech, Morocco</p></div></div>
 </div>
 </section>
     <section class="tools-section" id="travel-tools">
@@ -2061,5 +2097,82 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
                   });
         }
         </script>
+
+<!-- GALLERY LIGHTBOX OVERLAY -->
+<div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+  <button id="lightbox-close" aria-label="Close lightbox">&times;</button>
+  <button class="lb-nav" id="lb-prev" aria-label="Previous photo">&#8592;</button>
+  <img id="lightbox-img" src="" alt="" loading="lazy">
+  <div id="lightbox-caption"></div>
+  <div id="lb-counter"></div>
+  <button class="lb-nav" id="lb-next" aria-label="Next photo">&#8594;</button>
+</div>
+
+<script>
+(function() {
+  var items = Array.from(document.querySelectorAll('.gallery-item'));
+  var current = 0;
+  var overlay = document.getElementById('lightbox-overlay');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbCap = document.getElementById('lightbox-caption');
+  var lbCounter = document.getElementById('lb-counter');
+
+  function getImgData(item) {
+    var img = item.querySelector('img');
+    if (!img) return { src: '', alt: '' };
+    // Use a high-res version by bumping w param
+    var src = img.src.replace(/[?&]w=\d+/, '').replace(/[?&]q=\d+/, '');
+    src = src + (src.includes('unsplash.com') ? '?w=1400&q=85' : '');
+    return { src: src, alt: img.alt || '' };
+  }
+
+  function openLightbox(idx) {
+    current = idx;
+    var data = getImgData(items[idx]);
+    lbImg.style.opacity = '0';
+    lbImg.src = data.src;
+    lbImg.alt = data.alt;
+    lbCap.textContent = data.alt;
+    lbCounter.textContent = (idx + 1) + ' / ' + items.length;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbImg.onload = function() { lbImg.style.opacity = '1'; };
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function showPrev() { openLightbox((current - 1 + items.length) % items.length); }
+  function showNext() { openLightbox((current + 1) % items.length); }
+
+  items.forEach(function(item, idx) {
+    item.addEventListener('click', function() { openLightbox(idx); });
+    item.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(idx); } });
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', showPrev);
+  document.getElementById('lb-next').addEventListener('click', showNext);
+
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLightbox(); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+
+  // Touch swipe support
+  var touchStartX = 0;
+  overlay.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  overlay.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) { if (dx < 0) showNext(); else showPrev(); }
+  });
+})();
+</script>
 </body>
 </html>
