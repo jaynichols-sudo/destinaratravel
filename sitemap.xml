@@ -360,4 +360,28 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
+    <url>
+          <loc>https://destinaratravel.com/packing-checklist.html</loc>
+          <lastmod>2026-02-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/honeymoon-destinations-2026.html</loc>
+          <lastmod>2026-02-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/do-you-need-travel-insurance.html</loc>
+          <lastmod>2026-02-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/privacy-policy.html</loc>
+          <lastmod>2026-02-19</lastmod>
+          <changefreq>yearly</changefreq>
+          <priority>0.3</priority>
+    </url>
 </urlset>
