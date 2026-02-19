@@ -661,6 +661,17 @@ section{padding:100px 0}
     .disney-section-cta a{display:inline-block;padding:14px 40px;background:#f9a825;color:#1a1a2e;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.3s}
     .disney-section-cta a:hover{background:#fdd835;transform:translateY(-2px)}
 
+
+/* SEARCH WIDGET SECTION */
+.search-section{background:var(--color-dark);padding:48px 0 52px;position:relative}
+.search-section::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=60') center/cover;opacity:0.12;pointer-events:none}
+.search-inner{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 24px}
+.search-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.search-eyebrow span{display:inline-block;width:32px;height:2px;background:var(--color-accent)}
+.search-eyebrow p{color:var(--color-accent-light);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+.search-section h2{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.2rem);color:#ffffff;margin-bottom:8px;font-weight:700}
+.search-section .search-sub{color:rgba(255,255,255,0.65);font-size:0.95rem;margin-bottom:28px}
+.widgety-wrap{background:rgba(255,255,255,0.97);border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.35)}
 </style>
 
 <script type="application/ld+json">
@@ -796,6 +807,21 @@ section{padding:100px 0}
 </div>
 </div>
 <!-- SERVICES -->
+
+<!-- SEARCH WIDGET -->
+<section class="search-section" aria-label="Search cruises and tours">
+  <div class="search-inner">
+    <div class="search-eyebrow"><span></span><p>Find Your Journey</p></div>
+    <h2>Search Cruises &amp; Land Tours</h2>
+    <p class="search-sub">Browse hundreds of curated sailings and tours — filter by destination, dates, duration, and more.</p>
+    <div class="widgety-wrap">
+      <iframe class="widgety-cruise-tour-search" frameborder="0" height="600" preview-nav="true" results-nav="true" src="//www.widgety.co.uk/widgets/691Y6PTXsxqNTngRcLUU.widget" tabs="true" width="100%"></iframe>
+      <script data-widgety="true" src="https://www.widgety.co.uk/assets/widgety_iframe-338e444fa45e2af836a1c162ed7b7fa3b57d6267f6e30c026f7d582a77e34dd7.js"></script>
+      <script data-widgety="true" src="https://www.widgety.co.uk/assets/deep_linking_iframe-96ca31e40c8ae6e4a72211018719c609dddc638f8767b1df287e76832e4b953e.js"></script>
+      <script src="https://www.widgety.co.uk/assets/widgety_cruise_tour_search_navigation_script-e5c46a5521b82182ecdc1564d7f90c5cfb653f3ffed29c4220e85749607af1de.js"></script>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="how-it-works" id="how-it-works">
