@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D5C5C">
+  <meta name="description" content="Thank you for contacting Destinara Travel. We'll be in touch within 24 hours to start planning your perfect journey.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Thank You | Destinara Travel</title>
+  <link rel="canonical" href="https://destinaratravel.com/thank-you.html">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thank You | Destinara Travel">
+  <meta property="og:description" content="We've received your request and will be in touch within 24 hours.">
+  <meta property="og:url" content="https://destinaratravel.com/thank-you.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://destinaratravel.com/assets/images/og-image.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #0D5C5C;
+      --color-accent: #C4956B;
+      --color-dark: #0A4A4A;
+      --color-bg: #faf8f5;
+      --color-bg-alt: #f0ebe4;
+      --color-text: #2c2c2c;
+      --color-text-light: #6b7280;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* NAV */
+    nav { background: var(--color-primary); padding: 0 2rem; position: sticky; top: 0; z-index: 1000; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-brand { color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; text-decoration: none; letter-spacing: 0.02em; }
+    .nav-brand span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.88); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-cta { background: var(--color-accent); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #b8845a; color: #fff !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO / CONFIRMATION SECTION */
+    .confirm-section { flex: 1; display: flex; align-items: center; justify-content: center; padding: 5rem 2rem; background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%); }
+    .confirm-card { background: #fff; border-radius: 16px; padding: 4rem 3rem; max-width: 640px; width: 100%; text-align: center; box-shadow: 0 8px 40px rgba(13,92,92,0.10); border-top: 5px solid var(--color-accent); }
+    .confirm-icon { width: 80px; height: 80px; margin: 0 auto 2rem; background: rgba(13,92,92,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .confirm-icon svg { width: 40px; height: 40px; }
+    .confirm-card h1 { font-family: var(--font-heading); font-size: 2.25rem; color: var(--color-primary); margin-bottom: 1rem; }
+    .confirm-card p { font-size: 1.0625rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 1rem; }
+    .confirm-card .highlight { color: var(--color-primary); font-weight: 600; }
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+    .btn-primary { background: var(--color-primary); color: #fff; padding: 0.875rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--color-dark); }
+    .btn-outline { border: 2px solid var(--color-primary); color: var(--color-primary); padding: 0.825rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: all 0.2s; }
+    .btn-outline:hover { background: var(--color-primary); color: #fff; }
+    .next-steps { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-bg-alt); }
+    .next-steps h2 { font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.25rem; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .step { padding: 1rem; background: var(--color-bg); border-radius: 8px; }
+    .step-num { width: 28px; height: 28px; background: var(--color-accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; margin: 0 auto 0.5rem; }
+    .step p { font-size: 0.8125rem; color: var(--color-text-light); line-height: 1.5; }
+    @media (max-width: 600px) { .confirm-card { padding: 2.5rem 1.5rem; } .confirm-card h1 { font-size: 1.75rem; } .steps-grid { grid-template-columns: 1fr; } }
+
+    /* FOOTER */
+    footer { background: var(--color-dark); color: rgba(255,255,255,0.7); padding: 2rem; text-align: center; font-size: 0.875rem; }
+    footer a { color: var(--color-accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Destinara<span>Travel</span></a>
+      <ul class="nav-links">
+        <li><a href="/cruises">Cruises</a></li>
+        <li><a href="/vacations">Vacations</a></li>
+        <li><a href="/disney">Disney</a></li>
+        <li><a href="/destinations">Destinations</a></li>
+        <li><a href="/#deals">Deals</a></li>
+        <li><a href="/#contact" class="nav-cta">Plan My Trip</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="confirm-section">
+    <div class="confirm-card">
+
+      <div class="confirm-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+
+      <h1>Your Journey Begins!</h1>
+      <p>Thank you for reaching out to Destinara Travel. We've received your request and <span class="highlight">Jay or Elizabeth will be in touch within 24 hours</span> to start crafting your perfect itinerary.</p>
+      <p>While you wait, feel free to explore our curated destinations and get inspired for your upcoming adventure.</p>
+
+      <div class="cta-group">
+        <a href="/" class="btn-primary">Back to Homepage</a>
+        <a href="/destinations" class="btn-outline">Explore Destinations</a>
+      </div>
+
+      <div class="next-steps">
+        <h2>What Happens Next</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <p>We review your travel vision and preferences</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <p>We craft a personalized itinerary just for you</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <p>You sit back while we handle every detail</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Destinara Travel &mdash; Jay &amp; Elizabeth Nichols, Greensboro, NC &mdash; <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a> &mdash; <a href="/privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
