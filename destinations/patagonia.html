@@ -1,125 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Patagonia Destination Guide | Destinara Travel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}:root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#1a1a2e;--color-light:#F5F1EB;--color-text:#333;--color-text-light:#666}body{font-family:'Inter',sans-serif;color:var(--color-text);line-height:1.6}h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600}a{text-decoration:none;color:inherit}.nav{position:fixed;top:0;width:100%;background:rgba(13,92,92,0.97);backdrop-filter:blur(10px);z-index:1000;padding:1rem 5%}.nav-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:white}.nav-logo img{height:40px}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:rgba(255,255,255,0.9);font-size:0.9rem;font-weight:400;transition:color 0.3s}.nav-links a:hover{color:var(--color-accent)}.hero-destination{height:70vh;min-height:500px;background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1531761535209-180857e963b9?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;margin-top:60px}.hero-destination h1{font-size:3.5rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}.hero-destination p{font-size:1.2rem;max-width:600px;opacity:0.9}.breadcrumb{padding:1rem 5%;background:var(--color-light);font-size:0.85rem;color:var(--color-text-light)}.breadcrumb a{color:var(--color-primary);font-weight:500}.breadcrumb span{margin:0 0.5rem;color:#ccc}.section{padding:5rem 5%}.section-alt{background:var(--color-light)}.section-dark{background:var(--color-dark);color:white}.container{max-width:1100px;margin:0 auto}.section-label{color:var(--color-accent);font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem}.section-title{font-size:2.2rem;margin-bottom:1rem;color:var(--color-dark)}.section-dark .section-title{color:white}.section-subtitle{color:var(--color-text-light);font-size:1.05rem;max-width:700px;margin-bottom:2.5rem}.section-dark .section-subtitle{color:rgba(255,255,255,0.7)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.overview-image{width:100%;height:400px;object-fit:cover;border-radius:12px}.overview-text p{margin-bottom:1rem;color:var(--color-text-light);line-height:1.8}.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.fact-card{background:white;padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.06)}.fact-card .fact-icon{font-size:1.5rem;margin-bottom:0.5rem}.fact-card .fact-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-light);margin-bottom:0.25rem}.fact-card .fact-value{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--color-dark)}.experiences-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.experience-card{height:280px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer}.experience-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.experience-card:hover img{transform:scale(1.05)}.experience-card .overlay{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:white}.experience-card .overlay h3{font-size:1.1rem;margin-bottom:0.25rem}.experience-card .overlay p{font-size:0.8rem;opacity:0.85}.times-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.time-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.5rem;text-align:center}.time-card.recommended{border-color:var(--color-accent);background:rgba(196,149,107,0.1)}.time-badge{display:inline-block;background:var(--color-accent);color:white;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:20px;margin-bottom:0.5rem;font-weight:600}.time-card h3{font-size:1rem;margin-bottom:0.5rem}.time-card p{font-size:0.85rem;opacity:0.8;line-height:1.6}.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.tip-card{background:white;padding:2rem;border-radius:10px;box-shadow:0 2px 15px rgba(0,0,0,0.06)}.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}.tip-card h3{font-size:1rem;margin-bottom:0.5rem;color:var(--color-dark)}.tip-card p{font-size:0.85rem;color:var(--color-text-light);line-height:1.7}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:1rem}.gallery-grid .gallery-item:first-child{grid-column:span 2;grid-row:span 2}.gallery-item{border-radius:10px;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.gallery-item:hover img{transform:scale(1.05)}.cta-section{text-align:center;padding:5rem 5%}.cta-section h2{font-size:2.2rem;margin-bottom:1rem}.cta-section p{max-width:600px;margin:0 auto 2rem;opacity:0.85}.hero-btn{display:inline-block;padding:1rem 2.5rem;background:var(--color-accent);color:white;border-radius:50px;font-weight:600;font-size:0.95rem;transition:all 0.3s;border:none;cursor:pointer}.hero-btn:hover{background:#b8895f;transform:translateY(-2px)}.footer{background:#0a0a1a;color:rgba(255,255,255,0.6);padding:3rem 5%;text-align:center;font-size:0.85rem}.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:0.5rem}.footer a{color:var(--color-accent)}.footer-links{display:flex;justify-content:center;gap:2rem;margin:1rem 0;list-style:none}.footer-links a{color:rgba(255,255,255,0.6);font-size:0.8rem;transition:color 0.3s}.footer-links a:hover{color:var(--color-accent)}@media(max-width:1024px){.facts-grid,.times-grid{grid-template-columns:repeat(2,1fr)}.experiences-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,180px)}}@media(max-width:768px){.hero-destination h1{font-size:2.2rem}.overview-grid{grid-template-columns:1fr}.nav-links{display:none}.experiences-grid,.tips-grid{grid-template-columns:1fr}.facts-grid,.times-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-grid .gallery-item:first-child{grid-column:span 1;grid-row:span 1}}
-    </style>
-  </head>
-  <body>
-
-    <nav class="nav"><div class="nav-content"><a href="../index.html" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara"></a><ul class="nav-links"><li><a href="../index.html#destinations">Destinations</a></li><li><a href="../index.html#experiences">Experiences</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#contact">Contact</a></li></ul></div></nav>
-  
-  <section class="hero-destination">
-  <div><h1>Patagonia</h1><p>Untamed wilderness at the edge of the world, where glaciers meet granite peaks and endless steppes stretch beneath vast southern skies.</p></div>
-  </section>
-  
-  <div class="breadcrumb"><div class="container"><a href="../index.html">Home</a><span>/</span><a href="../index.html#destinations">Destinations</a><span>/</span>Patagonia</div></div>
-  
-  <section class="section">
-  <div class="container">
-  <div class="overview-grid">
-  <img src="https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=800&q=80" alt="Patagonia landscape" class="overview-image">
-  <div class="overview-text">
-  <div class="section-label">Overview</div>
-  <h3 class="section-title">The Last Great Wilderness on Earth</h3>
-  <p>Patagonia, spanning the southern reaches of both Argentina and Chile, is one of the most awe-inspiring wilderness regions on the planet. This vast territory of over 400,000 square miles encompasses dramatic landscapes that range from the jagged granite towers of Torres del Paine to the immense Southern Patagonian Ice Field, the third largest reserve of fresh water on Earth.</p>
-  <p>The region is a paradise for adventurers and nature lovers alike. Trekkers come from around the world to hike through ancient lenga forests, past turquoise lakes fed by glacial meltwater, and along windswept ridges offering panoramic views that defy description. The Perito Moreno Glacier, one of the few advancing glaciers in the world, provides a thunderous spectacle as house-sized chunks of ice calve into Lake Argentino.</p>
-  <p>Beyond the mountains and glaciers, Patagonia offers encounters with remarkable wildlife including guanacos, condors, pumas, and Magellanic penguins. The steppe lands reveal a quieter beauty, with estancias offering authentic gaucho culture, horseback riding across open plains, and some of the most spectacular stargazing on Earth.</p>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patagonia Travel Guide | Destinara Travel</title>
+<meta name="description" content="Explore Patagonia with Destinara Travel. Where the World's Wildest Landscapes Meet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--color-primary:#0D5C5C;--color-dark:#0A4A4A;--color-accent:#C4956B;--color-accent-light:#d4a97e;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-text:#2c2c2c;--color-text-light:#6b6b6b}
+body{font-family:'Inter',sans-serif;background:var(--color-bg);color:var(--color-text)}
+nav{background:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.nav-logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--color-text);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--color-primary)}
+.nav-cta{background:var(--color-primary);color:#fff!important;padding:.5rem 1.25rem;border-radius:4px}
+.nav-cta:hover{background:var(--color-dark)!important}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:25px;height:2px;background:var(--color-text);transition:.3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.5rem;text-decoration:none;color:var(--color-text);font-weight:500}
+.mobile-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;cursor:pointer;background:none;border:none}
+.hero{position:relative;height:70vh;min-height:500px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.55))}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:2rem}
+.breadcrumb{font-size:.85rem;opacity:.85;margin-bottom:1rem}
+.breadcrumb a{color:#fff;text-decoration:none}
+.category-badge{background:var(--color-accent);color:#fff;padding:.3rem .9rem;border-radius:20px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem;display:inline-block}
+.hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;margin-bottom:.75rem;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.hero-tagline{font-size:clamp(1rem,2.5vw,1.4rem);opacity:.92;font-weight:300}
+.dest-main{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+.dest-lead{font-size:1.15rem;line-height:1.85;color:var(--color-text-light);margin-bottom:3rem;max-width:800px}
+.info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+.info-card{background:#fff;border-radius:12px;padding:1.75rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.info-card-icon{font-size:2rem;margin-bottom:.75rem}
+.info-card-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-light);margin-bottom:.4rem}
+.info-card-value{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--color-primary)}
+.highlights-section{background:#fff;border-radius:16px;padding:2.5rem;margin-bottom:3rem;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.highlights-section h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--color-primary);margin-bottom:1.75rem}
+.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.highlight-item{display:flex;align-items:flex-start;gap:.75rem;padding:1rem;background:var(--color-bg);border-radius:8px}
+.highlight-icon{color:var(--color-accent);font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+.highlight-item span:last-child{font-weight:500;line-height:1.4}
+.cta-block{background:linear-gradient(135deg,var(--color-primary),var(--color-dark));border-radius:16px;padding:3rem;text-align:center;color:#fff}
+.cta-block h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+.cta-block p{opacity:.88;margin-bottom:2rem;font-size:1.05rem}
+.cta-btn{background:var(--color-accent);color:#fff;padding:1rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.05rem;display:inline-block;transition:background .2s}
+.cta-btn:hover{background:var(--color-accent-light)}
+footer{background:var(--color-dark);color:#fff;text-align:center;padding:2.5rem 2rem}
+footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 1rem;font-size:.9rem}
+footer a:hover{color:#fff}
+footer p{margin-top:1rem;opacity:.5;font-size:.8rem}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.info-cards{grid-template-columns:1fr}.highlights-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara Travel"></a>
+  <ul class="nav-links">
+    <li><a href="../cruises.html">Cruises</a></li>
+    <li><a href="../vacations.html">Vacations</a></li>
+    <li><a href="../disney.html">Disney</a></li>
+    <li><a href="../destinations.html">Destinations</a></li>
+    <li><a href="../blog/">Journal</a></li>
+    <li><a href="../#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
   </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()">✕</button>
+  <a href="../" onclick="closeMobile()">Home</a>
+  <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
+  <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
+  <a href="../disney.html" onclick="closeMobile()">Disney</a>
+  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <a href="../blog/" onclick="closeMobile()">Journal</a>
+  <a href="../#contact" onclick="closeMobile()">Contact Us</a>
+</div>
+<script>function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}</script>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1400&q=80&auto=format&fit=crop" alt="Patagonia">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../destinations.html">Destinations</a> &rsaquo; Patagonia</div>
+    <div class="category-badge">Adventure</div>
+    <h1>Patagonia</h1>
+    <p class="hero-tagline">Where the World's Wildest Landscapes Meet</p>
   </div>
+</section>
+<main class="dest-main">
+  <p class="dest-lead">Patagonia, shared between Argentina and Chile at the southern tip of South America, is a vast and awe-inspiring wilderness of jagged granite peaks, enormous glaciers, turquoise lakes, and windswept steppes. It is the ultimate destination for adventurous travelers seeking raw, untouched nature on a grand scale. From trekking in Torres del Paine to watching Perito Moreno Glacier calve into a milky-blue lake, Patagonia will leave you humbled and breathless.</p>
+  <div class="info-cards">
+    <div class="info-card"><div class="info-card-icon">🌍</div><div class="info-card-label">Region</div><div class="info-card-value">South America</div></div>
+    <div class="info-card"><div class="info-card-icon">✦</div><div class="info-card-label">Category</div><div class="info-card-value">Adventure</div></div>
+    <div class="info-card"><div class="info-card-icon">👥</div><div class="info-card-label">Your Experts</div><div class="info-card-value">Jay &amp; Elizabeth Nichols</div></div>
   </div>
-  </section>
-  
-  <section class="section section-alt">
-  <div class="container">
-  <div class="section-label">Essential Information</div>
-  <h3 class="section-title">Quick Facts</h3>
-  <div class="facts-grid">
-  <div class="fact-card"><div class="fact-icon">&#9728;</div><div class="fact-label">Best Season</div><div class="fact-value">Oct - March</div></div>
-  <div class="fact-card"><div class="fact-icon">&#127777;</div><div class="fact-label">Avg Temperature</div><div class="fact-value">5-18&#176;C / 41-64&#176;F</div></div>
-  <div class="fact-card"><div class="fact-icon">&#128176;</div><div class="fact-label">Budget Range</div><div class="fact-value">$120-350/day</div></div>
-  <div class="fact-card"><div class="fact-icon">&#9992;</div><div class="fact-label">Flight Time</div><div class="fact-value">13-16h from US</div></div>
-  <div class="fact-card"><div class="fact-icon">&#127463;</div><div class="fact-label">Language</div><div class="fact-value">Spanish</div></div>
-  <div class="fact-card"><div class="fact-icon">&#128178;</div><div class="fact-label">Currency</div><div class="fact-value">ARS / CLP</div></div>
-  <div class="fact-card"><div class="fact-icon">&#128196;</div><div class="fact-label">Visa</div><div class="fact-value">Not required (90 days)</div></div>
-  <div class="fact-card"><div class="fact-icon">&#11088;</div><div class="fact-label">Best For</div><div class="fact-value">Trekking, Glaciers, Wildlife</div></div>
+  <div class="highlights-section">
+    <h2>Highlights &amp; Experiences</h2>
+    <div class="highlights-grid"><div class="highlight-item"><span class="highlight-icon">✦</span><span>Torres del Paine W Trek</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Perito Moreno Glacier Walk</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>El Chaltén Hiking Base</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Los Glaciares National Park</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Chilean Fjords Cruise</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Tierra del Fuego Explorer</span></div></div>
   </div>
+  <div class="cta-block">
+    <h2>Ready to Explore Patagonia?</h2>
+    <p>Let Jay &amp; Elizabeth Nichols craft your perfect itinerary — personalized, stress-free, and unforgettable.</p>
+    <a href="../#contact" class="cta-btn">Start Planning Your Trip</a>
   </div>
-  </section>
-  
-  <section class="section">
-  <div class="container">
-  <div class="section-label">Must-Do Activities</div>
-  <h3 class="section-title">Top Experiences</h3>
-  <div class="section-subtitle">Discover the most unforgettable experiences Patagonia has to offer.</div>
-  <div class="experiences-grid">
-  <div class="experience-card"><img src="https://images.unsplash.com/photo-1531761535209-180857e963b9?w=600&q=80" alt="Torres del Paine"><div class="overlay"><h3>Trek Torres del Paine</h3><p>Hike the famous W Trek through granite towers and glacial lakes</p></div></div>
-  <div class="experience-card"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Perito Moreno"><div class="overlay"><h3>Perito Moreno Glacier</h3><p>Witness ice calving from this advancing glacier wonder</p></div></div>
-  <div class="experience-card"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Mount Fitz Roy"><div class="overlay"><h3>Mount Fitz Roy</h3><p>Marvel at the iconic granite spire of El Chalten</p></div></div>
-  <div class="experience-card"><img src="https://images.unsplash.com/photo-1517783999520-f068d7431571?w=600&q=80" alt="Penguin Colony"><div class="overlay"><h3>Penguin Colonies</h3><p>Meet thousands of Magellanic penguins at Isla Magdalena</p></div></div>
-  <div class="experience-card"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80" alt="Horseback Riding"><div class="overlay"><h3>Gaucho Estancia Life</h3><p>Ride horses across the steppe with local gauchos</p></div></div>
-  <div class="experience-card"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Camping"><div class="overlay"><h3>Wilderness Camping</h3><p>Camp beneath the stars in pristine national parks</p></div></div>
-  </div>
-  </div>
-  </section>
-  
-  <section class="section section-dark">
-  <div class="container">
-  <div class="section-label">Plan Your Visit</div>
-  <h3 class="section-title">Best Time to Visit</h3>
-  <div class="section-subtitle">Patagonian weather is famously unpredictable, but summer offers the longest days and mildest conditions.</div>
-  <div class="times-grid">
-  <div class="time-card recommended"><span class="time-badge">Recommended</span><h3>Dec - February</h3><p>Peak summer with the warmest temperatures and up to 17 hours of daylight. Best for trekking and wildlife. Book well in advance.</p></div>
-  <div class="time-card recommended"><span class="time-badge">Recommended</span><h3>Oct - November</h3><p>Spring brings wildflowers and fewer crowds. Slightly cooler but excellent for photography with snow-capped peaks.</p></div>
-  <div class="time-card"><h3>March - April</h3><p>Autumn colors transform the forests into spectacular gold and red. Fewer tourists and cooler temperatures. Some facilities begin closing.</p></div>
-  <div class="time-card"><h3>May - September</h3><p>Winter brings snow, short days, and closures of many trails and lodges. Ideal for those seeking solitude and winter landscapes.</p></div>
-  </div>
-  </div>
-  </section>
-  
-  <section class="section section-alt">
-  <div class="container">
-  <div class="section-label">Practical Advice</div>
-  <h3 class="section-title">Travel Tips</h3>
-  <div class="tips-grid">
-  <div class="tip-card"><div class="tip-icon">&#127744;</div><div><h3>Layer Your Clothing</h3><p>Patagonian weather changes rapidly. Pack windproof and waterproof layers, thermal base layers, and be ready for four seasons in one day.</p></div></div>
-  <div class="tip-card"><div class="tip-icon">&#128085;</div><div><h3>Book Campsites Early</h3><p>National park campsites and refugios in Torres del Paine fill up months in advance during peak season. Reserve as early as possible.</p></div></div>
-  <div class="tip-card"><div class="tip-icon">&#128176;</div><div><h3>Carry Cash</h3><p>ATMs are scarce in remote Patagonian towns. Bring sufficient cash in local currency. Credit cards are accepted in larger establishments only.</p></div></div>
-  <div class="tip-card"><div class="tip-icon">&#128663;</div><div><h3>Rent a Vehicle</h3><p>A rental car gives you the freedom to explore at your own pace. Distances are vast, so plan fuel stops carefully as stations can be far apart.</p></div></div>
-  <div class="tip-card"><div class="tip-icon">&#9889;</div><div><h3>Prepare for Wind</h3><p>Patagonian winds can reach 100+ km/h. Secure your tent properly, carry trekking poles for balance, and protect camera equipment from dust.</p></div></div>
-  <div class="tip-card"><div class="tip-icon">&#128205;</div><div><h3>Cross Both Borders</h3><p>Patagonia spans Argentina and Chile. Check visa requirements for both countries and plan border crossings, which can be time-consuming.</p></div></div>
-  </div>
-  </div>
-  </section>
-  
-  <section class="section section-alt">
-  <div class="container">
-  <div class="section-label">Visual Inspiration</div>
-  <h3 class="section-title">Patagonia Gallery</h3>
-  <div class="section-subtitle">A glimpse into the raw beauty and dramatic landscapes of Patagonia.</div>
-  <div class="gallery-grid">
-  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1531761535209-180857e963b9?w=800&q=80" alt="Torres del Paine"></div>
-  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" alt="Glacier"></div>
-  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" alt="Mountain peak"></div>
-  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=400&q=80" alt="Lake"></div>
-  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=80" alt="Steppe landscape"></div>
-  </div>
-  </div>
-  </section>
-  
-  <section class="section section-dark cta-section">
-  <div class="container">
-  <h2>Ready to Explore Patagonia?</h2>
-  <p>Let our travel experts craft your perfect Patagonian adventure, from luxury lodge treks to rugged wilderness expeditions.</p>
-  <a href="../index.html#contact" class="hero-btn">Start Planning &rarr;</a>
-  </div>
-  </section>
-  
-  <footer class="footer"><div class="container"><div class="footer-logo"><img src="../destinara-logo.png" alt="Destinara"></div><p>Curated Journeys to Extraordinary Destinations</p><ul class="footer-links"><li><a href="../index.html#destinations">Destinations</a></li><li><a href="../index.html#experiences">Experiences</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#contact">Contact</a></li></ul><p>&copy; 2025 Destinara Travel. All rights reserved.</p></div></footer>
-  
-  </body>
+</main>
+<footer>
+  <a href="../">Home</a>
+  <a href="../destinations.html">Destinations</a>
+  <a href="../blog/">Journal</a>
+  <a href="../privacy-policy.html">Privacy Policy</a>
+  <p>&copy; 2025 Destinara Travel. All rights reserved.</p>
+</footer>
+</body>
 </html>
