@@ -1,25 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width,initial-scale=1.0">
-          <title>Vietnam Destination Guide | Destinara Travel</title>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-        <style>
-          *{margin:0;padding:0;box-sizing:border-box}:root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#1a1a2e;--color-light:#F5F1EB;--color-white:#ffffff;--color-text:#333333;--color-text-light:#666666}body{font-family:'Inter',sans-serif;color:var(--color-text);background:var(--color-white)}.nav{background:rgba(26,26,46,0.95);padding:1rem 2rem;position:fixed;width:100%;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center}.nav-logo img{height:40px}.nav-content{display:flex;gap:2rem;align-items:center}.nav-content a{color:var(--color-white);text-decoration:none;font-size:0.9rem;transition:color 0.3s}.nav-content a:hover{color:var(--color-accent)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}.hero-destination{height:70vh;background:linear-gradient(rgba(26,26,46,0.4),rgba(26,26,46,0.6)),url('https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--color-white);margin-top:60px}.hero-destination h1{font-family:'Playfair Display',serif;font-size:3.5rem;margin-bottom:1rem}.hero-destination p{font-size:1.2rem;max-width:600px;opacity:0.9}.breadcrumb{padding:1.5rem 0;font-size:0.9rem}.breadcrumb a{color:var(--color-primary);text-decoration:none}.breadcrumb span{margin:0 0.5rem;color:var(--color-text-light)}.section{padding:5rem 0}.section-alt{background:var(--color-light)}.section-dark{background:var(--color-dark);color:var(--color-white)}.section-label{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--color-accent);margin-bottom:1rem}.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:2rem;color:var(--color-dark)}.section-dark .section-title{color:var(--color-white)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.overview-grid img{width:100%;height:400px;object-fit:cover;border-radius:12px}.overview-text p{margin-bottom:1rem;line-height:1.8;color:var(--color-text-light)}.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.fact-card{background:var(--color-white);padding:2rem;border-radius:12px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.05)}.fact-card .fact-icon{font-size:1.5rem;margin-bottom:0.5rem}.fact-card h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.5rem;color:var(--color-dark)}.fact-card p{font-size:0.85rem;color:var(--color-text-light)}.experiences-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.experience-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,0.08)}.experience-card img{width:100%;height:250px;object-fit:cover}.experience-card .card-content{padding:1.5rem}.experience-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;color:var(--color-dark)}.experience-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.seasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.season-card{background:rgba(255,255,255,0.1);padding:2rem;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}.season-card.recommended{border-color:var(--color-accent);background:rgba(196,149,107,0.15)}.season-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem}.season-card .temp{font-size:1.5rem;color:var(--color-accent);font-weight:600;margin:0.5rem 0}.season-card p{font-size:0.85rem;opacity:0.8;line-height:1.6}.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.tip-card{padding:2rem;border-radius:12px;border:1px solid #e0d5c9}.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}.tip-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem;color:var(--color-dark)}.tip-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:1rem}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:8px;transition:transform 0.3s}.gallery-grid img:first-child{grid-column:span 2;grid-row:span 2}.gallery-grid img:hover{transform:scale(1.02)}.cta-section{text-align:center;padding:5rem 0}.cta-section h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}.cta-section p{opacity:0.8;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}.btn-primary{display:inline-block;background:var(--color-accent);color:var(--color-white);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:500;transition:all 0.3s}.btn-primary:hover{background:#b8895f;transform:translateY(-2px)}.footer{background:var(--color-dark);color:var(--color-white);padding:3rem 0;text-align:center}.footer-logo img{height:30px;margin-bottom:1rem}.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem}.footer p{font-size:0.8rem;opacity:0.5}@media(max-width:1024px){.overview-grid,.facts-grid,.seasons-grid{grid-template-columns:repeat(2,1fr)}.experiences-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.hero-destination h1{font-size:2.2rem}.overview-grid,.facts-grid,.experiences-grid,.seasons-grid,.tips-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-grid img:first-child{grid-column:span 1;grid-row:span 1}.nav-content{display:none}}
-              </style>
-    </head>
-    <body>
-          <nav class="nav"><div class="nav-content"><a href="../index.html" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara"></a><a href="../index.html#destinations">Destinations</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></div></nav>
-          <section class="hero-destination"><div><h1>Vietnam</h1><p>A mesmerizing land of emerald waters, ancient towns, and a cuisine that will captivate your soul from north to south.</p></div></section>
-        <div class="breadcrumb"><div class="container"><a href="../index.html">Home</a><span>/</span><a href="../index.html#destinations">Destinations</a><span>/</span>Vietnam</div></div>
-        <section class="section"><div class="container"><div class="overview-grid"><img src="https://images.unsplash.com/photo-1557750255-c76072a7aee1?w=800&q=80" alt="Ha Long Bay"><div class="overview-text"><div class="section-label">Overview</div><h3 class="section-title">A Journey Through Time</h3><p>Vietnam is a country of staggering natural beauty and rich cultural heritage that stretches over 1,600 kilometers from the misty mountains of the north to the lush Mekong Delta in the south. Each region offers distinctly different landscapes, flavors, and traditions.</p><p>The country captivates travelers with its remarkable contrasts, from the limestone karsts of Ha Long Bay and the terraced rice paddies of Sapa to the ancient lantern-lit streets of Hoi An and the bustling energy of Ho Chi Minh City.</p><p>Vietnamese cuisine is a revelation of fresh flavors, aromatic herbs, and regional specialties that change dramatically as you travel from Hanoi pho in the north to banh mi in the central coast and the vibrant curries of the south.</p></div></div></div></section>
-        <section class="section section-alt"><div class="container"><div class="section-label">Essential Information</div><h3 class="section-title">Quick Facts</h3><div class="facts-grid"><div class="fact-card"><div class="fact-icon">âï¸</div><h4>Best Season</h4><p>Feb-Apr and Aug-Oct</p></div><div class="fact-card"><div class="fact-icon">ð¡ï¸</div><h4>Avg Temperature</h4><p>70-90F (21-32C)</p></div><div class="fact-card"><div class="fact-icon">ð°</div><h4>Budget Range</h4><p>$25 - $150/day</p></div><div class="fact-card"><div class="fact-icon">âï¸</div><h4>Flight Time</h4><p>16-20 hrs from US</p></div><div class="fact-card"><div class="fact-icon">ð£ï¸</div><h4>Language</h4><p>Vietnamese</p></div><div class="fact-card"><div class="fact-icon">ðµ</div><h4>Currency</h4><p>Vietnamese Dong (VND)</p></div><div class="fact-card"><div class="fact-icon">ð</div><h4>Visa</h4><p>E-visa 90 days</p></div><div class="fact-card"><div class="fact-icon">ð¯</div><h4>Best For</h4><p>Food and Adventure</p></div></div></div></section>
-        <section class="section"><div class="container"><div class="section-label">Must-Do Activities</div><h3 class="section-title">Top Experiences</h3><div class="experiences-grid"><div class="experience-card"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Ha Long Bay"><div class="card-content"><h3>Ha Long Bay Cruise</h3><p>Sail through thousands of limestone islands and islets rising from emerald waters on a traditional junk boat, exploring hidden caves and floating villages.</p></div></div><div class="experience-card"><img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80" alt="Hoi An"><div class="card-content"><h3>Hoi An Ancient Town</h3><p>Wander through this beautifully preserved trading port illuminated by colorful silk lanterns, with tailor shops, art galleries, and incredible riverside dining.</p></div></div><div class="experience-card"><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80" alt="Sapa rice terraces"><div class="card-content"><h3>Sapa Rice Terraces</h3><p>Trek through spectacular terraced rice paddies in the northern highlands, staying with ethnic minority families and experiencing their rich cultural traditions.</p></div></div><div class="experience-card"><img src="https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80" alt="Street food"><div class="card-content"><h3>Street Food Journey</h3><p>Embark on a culinary adventure through Vietnam, from steaming bowls of pho in Hanoi to crispy banh xeo in Saigon and fresh seafood in Da Nang.</p></div></div><div class="experience-card"><img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?w=600&q=80" alt="Mekong Delta"><div class="card-content"><h3>Mekong Delta</h3><p>Cruise through the intricate waterways of the Mekong, visiting floating markets, coconut candy workshops, and lush fruit orchards along the river banks.</p></div></div><div class="experience-card"><img src="https://images.unsplash.com/photo-1557750255-c76072a7aee1?w=600&q=80" alt="Ninh Binh"><div class="card-content"><h3>Ninh Binh Landscape</h3><p>Explore the breathtaking karst scenery of Tam Coc by sampan boat, gliding through limestone caves and past ancient temples surrounded by rice paddies.</p></div></div></div></div></section>
-        <section class="section section-dark"><div class="container"><div class="section-label">Plan Your Visit</div><h3 class="section-title">Best Time to Visit</h3><div class="seasons-grid"><div class="season-card recommended"><h4>Spring (Feb-Apr)</h4><div class="temp">75F</div><p>Pleasant temperatures across the country with spring blooms. Ideal for visiting the north and central regions before the summer heat arrives.</p></div><div class="season-card"><h4>Summer (May-Jul)</h4><div class="temp">90F</div><p>Hot and humid with occasional rain. Best time for the central highlands and beach destinations. Avoid the northern monsoon regions.</p></div><div class="season-card recommended"><h4>Autumn (Aug-Oct)</h4><div class="temp">82F</div><p>Golden rice harvest season in the north creates stunning landscapes. Good weather in the south with fewer tourists overall.</p></div><div class="season-card"><h4>Winter (Nov-Jan)</h4><div class="temp">68F</div><p>Cool and dry in the north, warm in the south. Best time for southern Vietnam and beach destinations along the coast.</p></div></div></div></section>
-        <section class="section section-alt"><div class="container"><div class="section-label">Practical Advice</div><h3 class="section-title">Travel Tips</h3><div class="tips-grid"><div class="tip-card"><div class="tip-icon">ðï¸</div><h4>Cross Streets Carefully</h4><p>Traffic in Vietnamese cities can seem chaotic. Walk at a steady pace and let motorbikes flow around you. Do not stop or run suddenly.</p></div><div class="tip-card"><div class="tip-icon">ð</div><h4>Eat Where Locals Eat</h4><p>The best food is found at busy street stalls and small family-run restaurants. Plastic stools on the sidewalk often mean incredible authentic meals.</p></div><div class="tip-card"><div class="tip-icon">ð°</div><h4>Carry Small Bills</h4><p>Many vendors cannot break large notes. Keep small denominations of dong handy for street food, taxis, and market purchases throughout your trip.</p></div><div class="tip-card"><div class="tip-icon">ð</div><h4>Try the Reunification Express</h4><p>The scenic train journey from Hanoi to Ho Chi Minh City is an incredible way to see the country. Book soft sleeper berths for overnight comfort.</p></div><div class="tip-card"><div class="tip-icon">âï¸</div><h4>Pack for All Weather</h4><p>Vietnam stretches across climate zones. Pack layers for the cool north, rain gear for monsoon season, and light clothing for the tropical south.</p></div><div class="tip-card"><div class="tip-icon">ð®</div><h4>Visit During Festivals</h4><p>Tet Lunar New Year and the Mid-Autumn Festival offer incredible cultural experiences. Plan ahead as many businesses close during Tet celebrations.</p></div></div></div></section>
-        <section class="section"><div class="container"><div class="section-label">Visual Inspiration</div><h3 class="section-title">Gallery</h3><div class="gallery-grid"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="Ha Long Bay"><img src="https://images.unsplash.com/photo-1557750255-c76072a7aee1?w=600&q=80" alt="Ninh Binh"><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80" alt="Sapa terraces"><img src="https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80" alt="Street food"><img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?w=600&q=80" alt="Mekong Delta"></div></div></section>
-        <section class="section section-dark cta-section"><div class="container"><h2>Ready to Explore Vietnam?</h2><p>Let our travel experts craft your perfect Vietnam itinerary with insider access and curated experiences.</p><a href="../index.html#contact" class="btn-primary">Start Planning</a></div></section>
-        <footer class="footer"><div class="container"><div class="footer-logo"><img src="../destinara-logo.png" alt="Destinara"></div><div class="footer-links"><a href="../index.html">Home</a><a href="../index.html#destinations">Destinations</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></div><p>&copy; 2025 Destinara Travel. All rights reserved.</p></div></footer>
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Travel Guide | Destinara Travel</title>
+<meta name="description" content="Explore Vietnam with Destinara Travel. Ancient Traditions & Breathtaking Natural Beauty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--color-primary:#0D5C5C;--color-dark:#0A4A4A;--color-accent:#C4956B;--color-accent-light:#d4a97e;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-text:#2c2c2c;--color-text-light:#6b6b6b}
+body{font-family:'Inter',sans-serif;background:var(--color-bg);color:var(--color-text)}
+nav{background:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.nav-logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--color-text);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--color-primary)}
+.nav-cta{background:var(--color-primary);color:#fff!important;padding:.5rem 1.25rem;border-radius:4px}
+.nav-cta:hover{background:var(--color-dark)!important}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:25px;height:2px;background:var(--color-text);transition:.3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.5rem;text-decoration:none;color:var(--color-text);font-weight:500}
+.mobile-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;cursor:pointer;background:none;border:none}
+.hero{position:relative;height:70vh;min-height:500px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.55))}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:2rem}
+.breadcrumb{font-size:.85rem;opacity:.85;margin-bottom:1rem}
+.breadcrumb a{color:#fff;text-decoration:none}
+.category-badge{background:var(--color-accent);color:#fff;padding:.3rem .9rem;border-radius:20px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem;display:inline-block}
+.hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;margin-bottom:.75rem;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.hero-tagline{font-size:clamp(1rem,2.5vw,1.4rem);opacity:.92;font-weight:300}
+.dest-main{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+.dest-lead{font-size:1.15rem;line-height:1.85;color:var(--color-text-light);margin-bottom:3rem;max-width:800px}
+.info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+.info-card{background:#fff;border-radius:12px;padding:1.75rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.info-card-icon{font-size:2rem;margin-bottom:.75rem}
+.info-card-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-light);margin-bottom:.4rem}
+.info-card-value{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--color-primary)}
+.highlights-section{background:#fff;border-radius:16px;padding:2.5rem;margin-bottom:3rem;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.highlights-section h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--color-primary);margin-bottom:1.75rem}
+.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.highlight-item{display:flex;align-items:flex-start;gap:.75rem;padding:1rem;background:var(--color-bg);border-radius:8px}
+.highlight-icon{color:var(--color-accent);font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+.highlight-item span:last-child{font-weight:500;line-height:1.4}
+.cta-block{background:linear-gradient(135deg,var(--color-primary),var(--color-dark));border-radius:16px;padding:3rem;text-align:center;color:#fff}
+.cta-block h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+.cta-block p{opacity:.88;margin-bottom:2rem;font-size:1.05rem}
+.cta-btn{background:var(--color-accent);color:#fff;padding:1rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.05rem;display:inline-block;transition:background .2s}
+.cta-btn:hover{background:var(--color-accent-light)}
+footer{background:var(--color-dark);color:#fff;text-align:center;padding:2.5rem 2rem}
+footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 1rem;font-size:.9rem}
+footer a:hover{color:#fff}
+footer p{margin-top:1rem;opacity:.5;font-size:.8rem}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.info-cards{grid-template-columns:1fr}.highlights-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara Travel"></a>
+  <ul class="nav-links">
+    <li><a href="../cruises.html">Cruises</a></li>
+    <li><a href="../vacations.html">Vacations</a></li>
+    <li><a href="../disney.html">Disney</a></li>
+    <li><a href="../destinations.html">Destinations</a></li>
+    <li><a href="../blog/">Journal</a></li>
+    <li><a href="../#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()">✕</button>
+  <a href="../" onclick="closeMobile()">Home</a>
+  <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
+  <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
+  <a href="../disney.html" onclick="closeMobile()">Disney</a>
+  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <a href="../blog/" onclick="closeMobile()">Journal</a>
+  <a href="../#contact" onclick="closeMobile()">Contact Us</a>
+</div>
+<script>function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}</script>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1559592413-7c0eff3fde08?w=1400&q=80&auto=format&fit=crop" alt="Vietnam">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../destinations.html">Destinations</a> &rsaquo; Vietnam</div>
+    <div class="category-badge">Cultural</div>
+    <h1>Vietnam</h1>
+    <p class="hero-tagline">Ancient Traditions & Breathtaking Natural Beauty</p>
+  </div>
+</section>
+<main class="dest-main">
+  <p class="dest-lead">Vietnam stretches like a slender S-curve along the South China Sea, offering travelers an extraordinary range of experiences in one country. From the lantern-lit streets of Hội An and the imperial grandeur of Huế, to the emerald waters of Hạ Long Bay and the vibrant energy of Ho Chi Minh City, Vietnam captivates with its rich culture, extraordinary cuisine, and stunning landscapes. Add in the terraced rice paddies of Sapa and the limestone karsts of Ninh Bình, and Vietnam becomes one of Southeast Asia's most rewarding journeys.</p>
+  <div class="info-cards">
+    <div class="info-card"><div class="info-card-icon">🌍</div><div class="info-card-label">Region</div><div class="info-card-value">Asia</div></div>
+    <div class="info-card"><div class="info-card-icon">✦</div><div class="info-card-label">Category</div><div class="info-card-value">Cultural</div></div>
+    <div class="info-card"><div class="info-card-icon">👥</div><div class="info-card-label">Your Experts</div><div class="info-card-value">Jay &amp; Elizabeth Nichols</div></div>
+  </div>
+  <div class="highlights-section">
+    <h2>Highlights &amp; Experiences</h2>
+    <div class="highlights-grid"><div class="highlight-item"><span class="highlight-icon">✦</span><span>Hạ Long Bay Overnight Cruise</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Hội An Ancient Town Lanterns</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Sapa Terraced Rice Paddies</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Ho Chi Minh City Street Food Tour</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Huế Imperial Citadel</span></div><div class="highlight-item"><span class="highlight-icon">✦</span><span>Mekong Delta Boat Journey</span></div></div>
+  </div>
+  <div class="cta-block">
+    <h2>Ready to Explore Vietnam?</h2>
+    <p>Let Jay &amp; Elizabeth Nichols craft your perfect itinerary — personalized, stress-free, and unforgettable.</p>
+    <a href="../#contact" class="cta-btn">Start Planning Your Trip</a>
+  </div>
+</main>
+<footer>
+  <a href="../">Home</a>
+  <a href="../destinations.html">Destinations</a>
+  <a href="../blog/">Journal</a>
+  <a href="../privacy-policy.html">Privacy Policy</a>
+  <p>&copy; 2025 Destinara Travel. All rights reserved.</p>
+</footer>
+</body>
 </html>
