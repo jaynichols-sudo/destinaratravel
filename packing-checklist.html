@@ -7,6 +7,7 @@
 <title>Packing Checklist | Travel Tools | Destinara Travel</title>
 <meta name="description" content="Free printable packing checklists for cruises, beach vacations, adventure trips, business travel, and more. Curated by Destinara Travel experts.">
 <link rel="canonical" href="https://destinaratravel.com/packing-checklist.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="icon" type="image/png" href="destinara-logo.png">
 <link rel="apple-touch-icon" href="destinaralogo.png">
 <meta property="og:type" content="website">
@@ -134,6 +135,14 @@ footer a:hover{color:var(--color-accent)}
   body{background:white}
 }
 </style>
+<!-- Google Analytics 4 (replace G-XXXXXXXXXX with your Measurement ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 
@@ -151,7 +160,8 @@ footer a:hover{color:var(--color-accent)}
       <a href="destinations.html">Destinations</a>
       <a href="index.html#deals">Deals</a>
       <a href="index.html#reviews">Reviews</a>
-      <a href="index.html#contact" class="nav-cta">Contact Us</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact" class="nav-cta">Plan My Trip</a>
     </div>
   </div>
 </nav>
@@ -782,5 +792,9 @@ function updateProgress(card) {
   if (bar) bar.style.background = pct === 100 ? '#16a34a' : 'var(--color-primary)';
 }
 </script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a2e2a;color:#fff;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);"><p style="margin:0;font-size:0.875rem;max-width:700px;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy.html" style="color:#c9a96e;text-decoration:underline;">Privacy Policy</a>.</p><div style="display:flex;gap:10px;flex-shrink:0;"><button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.875rem;">Decline</button><button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','accepted');" style="background:#c9a96e;border:none;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.875rem;font-weight:600;">Accept</button></div></div>
+<script>if(!localStorage.getItem('cookieConsent')){document.getElementById('cookieBanner').style.display='flex';}</script>
 </body>
 </html>
