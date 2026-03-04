@@ -86,20 +86,23 @@
     .btn-outline:hover{background:var(--color-accent);color:#fff}
     .affiliations{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;margin-top:2rem}
     .aff-badge{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:0.75rem 1.25rem;font-size:0.85rem;font-weight:600;color:var(--color-dark)}
-    footer{background:var(--color-dark);color:rgba(255,255,255,0.8);padding:60px 0 30px}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
-    .footer-brand .logo-text{font-family:var(--font-display);font-size:1.5rem;color:#fff;margin-bottom:0.5rem}
-    .footer-tagline{color:var(--color-accent);font-size:0.85rem;font-weight:600;margin-bottom:1rem}
-    .footer-desc{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7}
-    .footer-col h4{color:#fff;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem}
-    .footer-col ul{list-style:none}
-    .footer-col ul li{margin-bottom:0.6rem}
-    .footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;transition:color 0.2s}
-    .footer-col ul li a:hover{color:var(--color-accent)}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    .footer-bottom span{color:rgba(255,255,255,0.4);font-size:0.85rem}
-    .footer-bottom a{color:rgba(255,255,255,0.4);text-decoration:underline}
+    /* FOOTER */
+    .footer{background:var(--color-dark,#0d3b35);color:rgba(255,255,255,0.6);padding:48px 0 0}
+    .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:48px;padding-bottom:40px}
+    .footer-brand .footer-logo{font-family:Georgia,serif;font-size:1.8rem;color:#fff;margin-bottom:8px}
+    .footer-brand .tagline{color:#c9a96e;font-size:0.85rem;margin-bottom:14px}
+    .footer-brand p{font-size:0.85rem;line-height:1.6;max-width:280px;margin-bottom:20px}
+    .footer-contact-inline{display:flex;flex-direction:column;gap:6px}
+    .footer-contact-inline a,.footer-contact-inline span{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem}
+    .footer-contact-inline a:hover{color:#c9a96e}
+    .footer h4{color:#fff;font-size:0.8rem;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+    .footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer ul a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.875rem;transition:color 0.3s}
+    .footer ul a:hover{color:#c9a96e}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;flex-wrap:wrap;gap:12px}
+    .footer-bottom a{color:rgba(255,255,255,0.5);text-decoration:none}
+    .footer-bottom a:hover{color:#c9a96e}
+    .footer-legal{display:flex;gap:20px}
   </style>
 </head>
 <body>
@@ -261,51 +264,48 @@
   </section>
 </main>
 
-<footer>
+<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-text">Destinara</div>
-        <div class="footer-tagline">Curated Journeys</div>
-        <p class="footer-desc">Experience the world through expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to your dreams.</p>
+        <div class="footer-logo">Destinara</div>
+        <div class="tagline">Curated Journeys</div>
+        <p>Expertly curated travel experiences crafted by Jay &amp; Elizabeth Nichols, your dedicated travel advisors in Greensboro, NC.</p>
+        <div class="footer-contact-inline">
+          <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a>
+          <a href="tel:+19193486268">+1 (919) 348-6268</a>
+          <span>Greensboro, NC 27406</span>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
+      <div>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="cruises.html">Luxury Cruises</a></li>
-          <li><a href="vacations.html">Hotels &amp; Resorts</a></li>
-          <li><a href="vacations.html">Honeymoons</a></li>
-          <li><a href="vacations.html">Group Travel</a></li>
-          <li><a href="disney.html">Disney Vacations</a></li>
-          <li><a href="/blog/">Journal</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="cruises.html">Cruises</a></li>
+          <li><a href="vacations.html">Vacations</a></li>
+          <li><a href="disney.html">Disney</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="index.html#deals">Deals</a></li>
+          <li><a href="blog/index.html">Journal</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Destinations</h4>
+      <div>
+        <h4>Plan Your Trip</h4>
         <ul>
-          <li><a href="destinations.html">Mediterranean</a></li>
-          <li><a href="destinations.html">Caribbean</a></li>
-          <li><a href="destinations.html">Alaska</a></li>
-          <li><a href="destinations.html">Maldives</a></li>
-          <li><a href="destinations.html">Africa Safaris</a></li>
-          <li><a href="destinations.html">All Destinations</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a></li>
-          <li><a href="tel:+19193486268">+1 (919) 348-6268</a></li>
-          <li><a href="https://maps.google.com/?q=Greensboro,+NC+27406">Greensboro, NC 27406</a></li>
-          <li><a href="https://instagram.com/destinara.travel">Instagram</a></li>
-          <li><a href="https://facebook.com/DestinaraTravel">Facebook</a></li>
+          <li><a href="index.html#contact">Get a Free Quote</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#reviews">Client Reviews</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="packing-checklist.html">Packing Checklist</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Destinara Travel. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a></span>
-      <span>Curated with love in North Carolina</span>
+      <span>&copy; 2026 Destinara Travel. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
     </div>
   </div>
 </footer>
