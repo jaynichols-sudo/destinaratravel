@@ -7,7 +7,16 @@
   <meta name="description" content="Thank you for contacting Destinara Travel. We'll be in touch within 24 hours to start planning your perfect journey.">
   <meta name="robots" content="noindex, nofollow">
   <title>Thank You | Destinara Travel</title>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <link rel="canonical" href="https://destinaratravel.com/thank-you.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
 
   <!-- Open Graph -->
@@ -87,6 +96,7 @@
         <li><a href="/disney">Disney</a></li>
         <li><a href="/destinations">Destinations</a></li>
         <li><a href="/#deals">Deals</a></li>
+        <li><a href="/about.html">About</a></li>
         <li><a href="/#contact" class="nav-cta">Plan My Trip</a></li>
       </ul>
     </div>
@@ -133,8 +143,26 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Destinara Travel &mdash; Jay &amp; Elizabeth Nichols, Greensboro, NC &mdash; <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a> &mdash; <a href="/privacy-policy.html">Privacy Policy</a></p>
+    <p>&copy; 2026 Destinara Travel &mdash; Jay &amp; Elizabeth Nichols, Greensboro, NC &mdash; <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a> &mdash; <a href="/privacy-policy.html">Privacy Policy</a> &middot; <a href="/terms-of-service.html">Terms of Service</a></p>
   </footer>
 
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a3a2a;color:#fff;display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1rem 2rem;gap:1rem;box-shadow:0 -2px 12px rgba(0,0,0,0.25);">
+    <p style="font-size:0.88rem;line-height:1.5;flex:1 1 300px;">We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="/privacy-policy.html" style="color:#d4af37;text-decoration:underline;">Privacy Policy</a>.</p>
+    <button onclick="acceptCookies()" style="background:#d4af37;color:#1a3a2a;border:none;border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;">Accept</button>
+  </div>
+  <script>
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    (function() {
+      if (localStorage.getItem('cookieConsent') !== 'accepted') {
+        var b = document.getElementById('cookie-banner');
+        b.style.display = 'flex';
+      }
+    })();
+  </script>
 </body>
 </html>
