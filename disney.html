@@ -329,17 +329,22 @@ section{padding:100px 0}
 .newsletter-form button:hover{background:var(--color-accent-light);transform:translateY(-2px)}
 
 /* FOOTER */
-.footer{background:var(--color-dark);color:rgba(255,255,255,0.6);padding:60px 0 30px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand .footer-logo{font-family:var(--font-display);font-size:1.8rem;color:var(--color-white);margin-bottom:12px}
-.footer-brand .tagline{color:var(--color-accent-light);font-size:0.9rem;margin-bottom:16px}
-.footer-brand p{font-size:0.9rem;line-height:1.7;max-width:300px}
-.footer h4{color:var(--color-white);font-size:0.95rem;margin-bottom:20px;letter-spacing:0.5px;text-transform:uppercase}
-.footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer ul a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;transition:color 0.3s}
+.footer{background:var(--color-dark);color:rgba(255,255,255,0.6);padding:48px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:48px;padding-bottom:40px}
+.footer-brand .footer-logo{font-family:var(--font-display);font-size:1.8rem;color:var(--color-white);margin-bottom:8px}
+.footer-brand .tagline{color:var(--color-accent-light);font-size:0.85rem;margin-bottom:14px}
+.footer-brand p{font-size:0.85rem;line-height:1.6;max-width:280px;margin-bottom:20px}
+.footer-contact-inline{display:flex;flex-direction:column;gap:6px}
+.footer-contact-inline a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.footer-contact-inline a:hover{color:var(--color-accent-light)}
+.footer h4{color:var(--color-white);font-size:0.8rem;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer ul a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.875rem;transition:color 0.3s}
 .footer ul a:hover{color:var(--color-accent-light)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem}
-
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s}
+.footer-bottom a:hover{color:var(--color-accent-light)}
+.footer-legal{display:flex;gap:20px}
 /* REVEAL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -1220,72 +1225,49 @@ section{padding:100px 0}
     </div>
     </section>
 <footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<img loading="eager" src="destinara-logo.png" alt="Destinara" style="height:80px;width:auto;margin-bottom:8px;border-radius:8px;">
-<div class="footer-logo">Destinara</div>
-<div class="tagline">Curated Journeys</div>
-<p>Experience the world through expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to your dreams.</p>
-</div>
-<div>
-                <div>
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="cruises.html">Luxury Cruises</a></li>
-                        <li><a href="vacations.html">Hotels & Resorts</a></li>
-                        <li><a href="vacations.html">Adventure Travel</a></li>
-                        <li><a href="vacations.html">Wellness Retreats</a></li>
-                        <li><a href="vacations.html">Romance & Honeymoons</a></li>
-                        <li><a href="vacations.html">Cultural & Culinary</a></li>
-                        <li><a href="vacations.html">Group Travel</a></li>
-                        <li><a href="cruises.html">River Cruises</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Cruise Lines</h4>
-                    <ul>
-                        <li><a href="cruises.html">Regent Seven Seas</a></li>
-                        <li><a href="cruises.html">Silversea Cruises</a></li>
-                        <li><a href="cruises.html">Ritz-Carlton Yacht</a></li>
-                        <li><a href="cruises.html">Viking Cruises</a></li>
-                        <li><a href="cruises.html">Celebrity Cruises</a></li>
-                        <li><a href="cruises.html">Royal Caribbean</a></li>
-                        <li><a href="cruises.html">Norwegian Cruise Line</a></li>
-                        <li><a href="cruises.html">Disney Cruise Line</a></li>
-                        <li><a href="cruises.html">AMA Waterways</a></li>
-                        <li><a href="cruises.html">View All 35+ Lines</a></li>
-                    </ul>
-                </div>
-<div>
-<h4>Disney Vacations</h4>
-<ul>
-<li><a href="disney.html">Disney Cruise Line</a></li>
-<li><a href="disney.html">Walt Disney World</a></li>
-<li><a href="disney.html">Disneyland Resort</a></li>
-<li><a href="disney.html">Aulani Hawaii</a></li>
-<li><a href="disney.html">Adventures by Disney</a></li>
-<li><a href="disney.html">International Parks</a></li>
-<li><a href="disney.html">Disney Vacation Club</a></li>
-</ul>
-</div>
-
-<div>
-<h4>Contact</h4>
-<ul>
-<li><a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a></li>
-<li><a href="tel:+19193486268">+1 (919) 348-6268</a></li>
-<li><a href="index.html#contact">Greensboro, NC 27406</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<span>&copy; 2026 Destinara Travel. All rights reserved.</span>
-    &bull; <a href="/privacy-policy.html" style="color:var(--color-accent);text-decoration:none;">Privacy Policy</a> &middot; <a href="/terms-of-service.html" style="color:inherit;text-decoration:underline;">Terms of Service</a>
-
-<span>Curated with love in North Carolina | Last updated: February 2026</span>
-</div>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Destinara</div>
+        <div class="tagline">Curated Journeys</div>
+        <p>Expertly curated travel experiences crafted by Jay &amp; Elizabeth Nichols, your dedicated travel advisors in Greensboro, NC.</p>
+        <div class="footer-contact-inline">
+          <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a>
+          <a href="tel:+19193486268">+1 (919) 348-6268</a>
+          <span>Greensboro, NC 27406</span>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="cruises.html">Cruises</a></li>
+          <li><a href="vacations.html">Vacations</a></li>
+          <li><a href="disney.html">Disney</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="index.html#deals">Deals</a></li>
+          <li><a href="blog/index.html">Journal</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Plan Your Trip</h4>
+        <ul>
+          <li><a href="index.html#contact">Get a Free Quote</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#reviews">Client Reviews</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="packing-checklist.html">Packing Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Destinara Travel. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
