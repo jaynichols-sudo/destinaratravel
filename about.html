@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>About Us | Jay &amp; Elizabeth Nichols | Destinara Travel</title>
+  <meta name="description" content="Meet Jay and Elizabeth Nichols, co-founders of Destinara Travel. With decades of experience crafting luxury cruises, honeymoons, and bespoke itineraries from Greensboro, NC.">
+  <link rel="canonical" href="https://destinaratravel.com/about.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/png" href="destinara-logo.png">
+  <link rel="apple-touch-icon" href="destinaralogo.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://destinaratravel.com/about.html">
+  <meta property="og:title" content="About Destinara Travel | Jay &amp; Elizabeth Nichols">
+  <meta property="og:description" content="Meet the travel advisors behind Destinara — Jay and Elizabeth Nichols. Two decades of expertise crafting unforgettable luxury journeys.">
+  <meta property="og:image" content="https://destinaratravel.com/destinara-logo.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Destinara Travel | Jay &amp; Elizabeth Nichols">
+  <meta name="twitter:description" content="Meet the travel advisors behind Destinara — Jay and Elizabeth Nichols.">
+  <meta name="twitter:image" content="https://destinaratravel.com/destinara-logo.png">
+  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with your Measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap">
+  <style>
+    :root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#0A4A4A;--color-bg:#faf8f5;--color-text:#374151;--color-text-light:#6b7280;--font-display:'Playfair Display',serif;--font-body:'Inter',sans-serif}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.7}
+    a{color:var(--color-primary)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(13,92,92,0.08);padding:0 2rem}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+    .nav-logo{display:flex;align-items:center;gap:0.75rem;font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--color-primary);text-decoration:none}
+    .nav-logo img{width:40px;height:40px;border-radius:8px}
+    .nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
+    .nav-links a{font-size:0.9rem;color:var(--color-text);font-weight:500;transition:color 0.2s;text-decoration:none}
+    .nav-links a:hover{color:var(--color-primary)}
+    .nav-cta{background:var(--color-accent);color:#fff!important;padding:10px 24px;border-radius:50px;font-weight:600!important}
+    .nav-cta:hover{background:var(--color-dark)!important;color:#fff!important}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--color-primary);margin:5px 0;transition:0.3s}
+    @media(max-width:768px){.nav-links{display:none}.hamburger{display:block}}
+    .page-hero{background:var(--color-dark);padding:140px 2rem 80px;text-align:center;color:#fff}
+    .page-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem}
+    .page-hero h1 em{color:var(--color-accent);font-style:italic}
+    .page-hero p{opacity:0.85;font-size:1.1rem;max-width:600px;margin:0 auto}
+    .container{max-width:1100px;margin:0 auto;padding:0 2rem}
+    .section{padding:80px 0}
+    .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-accent);margin-bottom:0.75rem}
+    .section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--color-dark);margin-bottom:1rem}
+    .section-subtitle{color:var(--color-text-light);font-size:1.05rem;line-height:1.8;max-width:680px}
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem;margin-top:3rem}
+    .team-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 30px rgba(0,0,0,0.08)}
+    .team-card img{width:100%;height:320px;object-fit:cover;object-position:top}
+    .team-card-body{padding:2rem}
+    .team-card h3{font-family:var(--font-display);font-size:1.6rem;color:var(--color-dark);margin-bottom:0.25rem}
+    .team-card .role{color:var(--color-accent);font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+    .team-card p{color:var(--color-text-light);line-height:1.8;margin-bottom:1rem}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:3rem}
+    .value-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 2px 20px rgba(0,0,0,0.06);border-top:4px solid var(--color-accent)}
+    .value-card .icon{font-size:2.5rem;margin-bottom:1rem}
+    .value-card h3{font-family:var(--font-display);font-size:1.3rem;color:var(--color-dark);margin-bottom:0.75rem}
+    .value-card p{color:var(--color-text-light);line-height:1.7;font-size:0.95rem}
+    .story-section{background:var(--color-dark);color:#fff;padding:80px 0}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    @media(max-width:768px){.story-grid{grid-template-columns:1fr}}
+    .story-text .section-title{color:#fff}
+    .story-text p{color:rgba(255,255,255,0.8);line-height:1.8;margin-bottom:1rem;font-size:1.05rem}
+    .stats-row{display:flex;gap:3rem;margin-top:2rem;flex-wrap:wrap}
+    .stat-item .number{font-family:var(--font-display);font-size:2.5rem;color:var(--color-accent);font-weight:700}
+    .stat-item .label{color:rgba(255,255,255,0.6);font-size:0.9rem}
+    .cta-section{padding:80px 0;text-align:center;background:var(--color-bg)}
+    .btn{display:inline-block;padding:14px 36px;border-radius:50px;font-weight:600;text-decoration:none;transition:all 0.2s;font-size:1rem}
+    .btn-primary{background:var(--color-accent);color:#fff}
+    .btn-primary:hover{background:var(--color-dark);color:#fff}
+    .btn-outline{background:transparent;border:2px solid var(--color-accent);color:var(--color-accent)}
+    .btn-outline:hover{background:var(--color-accent);color:#fff}
+    .affiliations{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;margin-top:2rem}
+    .aff-badge{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:0.75rem 1.25rem;font-size:0.85rem;font-weight:600;color:var(--color-dark)}
+    footer{background:var(--color-dark);color:rgba(255,255,255,0.8);padding:60px 0 30px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+    .footer-brand .logo-text{font-family:var(--font-display);font-size:1.5rem;color:#fff;margin-bottom:0.5rem}
+    .footer-tagline{color:var(--color-accent);font-size:0.85rem;font-weight:600;margin-bottom:1rem}
+    .footer-desc{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7}
+    .footer-col h4{color:#fff;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:0.6rem}
+    .footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;transition:color 0.2s}
+    .footer-col ul li a:hover{color:var(--color-accent)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-bottom span{color:rgba(255,255,255,0.4);font-size:0.85rem}
+    .footer-bottom a{color:rgba(255,255,255,0.4);text-decoration:underline}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:9999;padding:1rem;background:var(--color-primary);color:#fff;text-decoration:none;border-radius:0 0 8px 0">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Destinara Travel home">
+      <img src="destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span>Destinara</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="cruises.html">Cruises</a></li>
+      <li><a href="vacations.html">Vacations</a></li>
+      <li><a href="disney.html">Disney</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="index.html#deals">Deals</a></li>
+      <li><a href="/blog/">Journal</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Plan My Trip</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Our Story</div>
+      <h1>The People Behind <em>Your Journey</em></h1>
+      <p>We're Jay and Elizabeth Nichols — two passionate travelers turned trusted advisors, dedicated to crafting experiences that change the way you see the world.</p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section" aria-labelledby="story-heading">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-text">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title" id="story-heading">Born from a love of exploration</h2>
+          <p>Destinara Travel was founded by Jay and Elizabeth Nichols with a simple belief: travel should be transformative, not transactional. After decades of exploring the world and working in the travel industry, we created Destinara to offer our clients something rare — deeply personal, expertly curated journeys backed by real relationships with the world's finest hotels, cruise lines, and tour operators.</p>
+          <p>Based in Greensboro, North Carolina, we serve clients across the United States and beyond. Whether you're dreaming of a luxury Mediterranean cruise, a Maldives honeymoon, an African safari, or a multi-generational family adventure, we bring insider access, exclusive perks, and concierge-level care to every single trip.</p>
+          <p>We're not a booking engine. We're your advocates, your planners, and your partners in exploration — before, during, and long after your journey ends.</p>
+          <div class="stats-row">
+            <div class="stat-item"><div class="number">20+</div><div class="label">Years of Experience</div></div>
+            <div class="stat-item"><div class="number">500+</div><div class="label">Journeys Crafted</div></div>
+            <div class="stat-item"><div class="number">50+</div><div class="label">Destinations</div></div>
+          </div>
+        </div>
+        <div>
+          <img src="jay-nichols.jpg" alt="Jay and Elizabeth Nichols, co-founders of Destinara Travel" style="width:100%;border-radius:20px;object-fit:cover;max-height:500px" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section" aria-labelledby="team-heading">
+    <div class="container">
+      <div class="section-label">Meet the Team</div>
+      <h2 class="section-title" id="team-heading">The advisors behind your adventure</h2>
+      <p class="section-subtitle">With decades of combined experience and a genuine passion for travel, Jay and Elizabeth bring unmatched expertise and personal care to every client relationship.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="elizabeth-nichols.jpg" alt="Elizabeth Nichols, Co-Founder and Travel Advisor at Destinara Travel" loading="lazy" width="400" height="320">
+          <div class="team-card-body">
+            <h3>Elizabeth Nichols</h3>
+            <div class="role">Co-Founder &amp; Travel Advisor</div>
+            <p>With decades of travel industry experience, Elizabeth brings unmatched expertise in luxury cruises, resort vacations, and destination planning. Her meticulous attention to detail ensures every itinerary is crafted to perfection — from the hotel breakfast to the sunset excursion.</p>
+            <p>Elizabeth specializes in honeymoons, destination weddings, and family vacations, with a particular passion for the Caribbean, Mediterranean, and South Pacific.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="jay-nichols.jpg" alt="Jay Nichols, Co-Founder and Travel Advisor at Destinara Travel" loading="lazy" width="400" height="320">
+          <div class="team-card-body">
+            <h3>Jay Nichols</h3>
+            <div class="role">Co-Founder &amp; Travel Advisor</div>
+            <p>Jay's passion for exploration and deep industry connections ensure every client receives insider access and extraordinary experiences. His expertise spans ocean and river cruises, adventure travel, and safari planning across Africa and beyond.</p>
+            <p>Jay has personally visited over 40 countries and brings that firsthand knowledge to every trip he designs — from a luxury tented safari in Kenya to a Viking river cruise through Europe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="section" style="background:#fff;" aria-labelledby="values-heading">
+    <div class="container">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title" id="values-heading">What makes Destinara different</h2>
+      <p class="section-subtitle">We're not a booking website. We're a boutique travel agency built on relationships, expertise, and an unwavering commitment to your experience.</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="icon">🎯</div>
+          <h3>Truly Personalized</h3>
+          <p>Every itinerary is built from scratch around you — your style, your pace, your budget, your dreams. No templates. No one-size-fits-all packages.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🔑</div>
+          <h3>Exclusive Access</h3>
+          <p>As preferred partners with top cruise lines and hotel groups, we unlock complimentary upgrades, resort credits, priority boarding, and VIP perks you simply can't get online.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🛡️</div>
+          <h3>Your Advocate</h3>
+          <p>When something goes wrong — flight delays, hotel issues, unexpected changes — you have a real person in your corner fighting to make it right. Not a chatbot. Not a call center.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">📞</div>
+          <h3>24/7 Support</h3>
+          <p>We don't clock out when you board your plane. Our clients have direct access to us throughout their journey, wherever in the world they may be.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">💎</div>
+          <h3>Luxury Expertise</h3>
+          <p>We specialize in the premium end of travel — Regent Seven Seas, Ritz-Carlton Yacht, Silversea, Four Seasons, Aman, and more. We know these products inside and out.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🌍</div>
+          <h3>Real Experience</h3>
+          <p>We've been there. Our recommendations come from personal visits, not brochures. When we suggest a hotel or excursion, it's because we've experienced it firsthand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Affiliations -->
+  <section class="section" aria-labelledby="affiliations-heading">
+    <div class="container">
+      <div class="section-label">Industry Credentials</div>
+      <h2 class="section-title" id="affiliations-heading">Trusted. Certified. Connected.</h2>
+      <p class="section-subtitle">Destinara Travel maintains active memberships and certifications with leading travel industry organizations, ensuring our clients benefit from the highest professional standards and exclusive supplier relationships.</p>
+      <div class="affiliations">
+        <div class="aff-badge">✈ ASTA Member</div>
+        <div class="aff-badge">🚢 CLIA Certified</div>
+        <div class="aff-badge">🏨 Virtuoso Network</div>
+        <div class="aff-badge">⭐ 5★ Facebook Rated</div>
+        <div class="aff-badge">🏰 Preferred Partner: Regent Seven Seas</div>
+        <div class="aff-badge">🏰 Preferred Partner: Viking</div>
+        <div class="aff-badge">🏰 Preferred Partner: AMA Waterways</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="section-label">Ready to Explore?</div>
+      <h2 class="section-title" id="cta-heading" style="margin:0 auto 1rem;text-align:center">Let's plan your perfect journey</h2>
+      <p style="color:var(--color-text-light);margin:0 auto 2.5rem;max-width:560px;text-align:center;font-size:1.05rem">Tell us where you dream of going. We'll handle every detail and make sure you arrive with exclusive perks that make the experience truly extraordinary.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="index.html#contact" class="btn btn-primary">Start Planning My Trip →</a>
+        <a href="cruises.html" class="btn btn-outline">Browse Luxury Cruises</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">Destinara</div>
+        <div class="footer-tagline">Curated Journeys</div>
+        <p class="footer-desc">Experience the world through expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to your dreams.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="cruises.html">Luxury Cruises</a></li>
+          <li><a href="vacations.html">Hotels &amp; Resorts</a></li>
+          <li><a href="vacations.html">Honeymoons</a></li>
+          <li><a href="vacations.html">Group Travel</a></li>
+          <li><a href="disney.html">Disney Vacations</a></li>
+          <li><a href="/blog/">Journal</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="destinations.html">Mediterranean</a></li>
+          <li><a href="destinations.html">Caribbean</a></li>
+          <li><a href="destinations.html">Alaska</a></li>
+          <li><a href="destinations.html">Maldives</a></li>
+          <li><a href="destinations.html">Africa Safaris</a></li>
+          <li><a href="destinations.html">All Destinations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a></li>
+          <li><a href="tel:+19193486268">+1 (919) 348-6268</a></li>
+          <li><a href="https://maps.google.com/?q=Greensboro,+NC+27406">Greensboro, NC 27406</a></li>
+          <li><a href="https://instagram.com/destinara.travel">Instagram</a></li>
+          <li><a href="https://facebook.com/DestinaraTravel">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Destinara Travel. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a></span>
+      <span>Curated with love in North Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a2e2a;color:#fff;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <p style="margin:0;font-size:0.875rem;max-width:700px;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy.html" style="color:#c9a96e;text-decoration:underline;">Privacy Policy</a>.</p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.875rem;">Decline</button>
+    <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','accepted');" style="background:#c9a96e;border:none;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.875rem;font-weight:600;">Accept</button>
+  </div>
+</div>
+<script>
+  if (!localStorage.getItem('cookieConsent')) { document.getElementById('cookieBanner').style.display = 'flex'; }
+  document.getElementById('hamburger')?.addEventListener('click', function() {
+    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>
