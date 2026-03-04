@@ -2420,7 +2420,7 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
     <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','accepted');" style="background:#c9a96e;border:none;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.875rem;font-weight:600;">Accept</button>
   </div>
 </div>
-<script>
+<script> 
   if (!localStorage.getItem('cookieConsent')) {
     document.getElementById('cookieBanner').style.display = 'flex';
   }
