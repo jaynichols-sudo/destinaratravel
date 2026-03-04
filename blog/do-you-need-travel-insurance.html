@@ -4,9 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Do You Really Need Travel Insurance? | Destinara Travel</title>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 <meta name="description" content="Travel insurance: worth it or overhyped? Destinara Travel's advisors break down exactly what's covered, what's not, and when you absolutely need it in 2026.">
 <meta name="author" content="Jay &amp; Elizabeth Nichols, Destinara Travel">
 <link rel="canonical" href="https://destinaratravel.com/blog/do-you-need-travel-insurance.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://destinaratravel.com/blog/do-you-need-travel-insurance.html">
 <meta property="og:title" content="Do You Really Need Travel Insurance?">
@@ -102,7 +111,8 @@ footer p{margin-top:0.5rem}
       <li><a href="../disney.html">Disney</a></li>
       <li><a href="../destinations.html">Destinations</a></li>
       <li><a href="../index.html#deals">Deals</a></li>
-      <li><a href="../index.html#contact" class="nav-cta">Contact Us</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Plan My Trip</a></li>
     </ul>
   </div>
 </nav>
@@ -236,8 +246,23 @@ footer p{margin-top:0.5rem}
 </main>
 
 <footer>
-  <p>&copy; 2026 Destinara Travel. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a></p>
+  <p>&copy; 2026 Destinara Travel. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> &middot; <a href="../terms-of-service.html">Terms of Service</a></p>
   <p>Curated with love in North Carolina &mdash; <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a> &mdash; <a href="tel:+19193486268">+1 (919) 348-6268</a></p>
 </footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a3a2a;color:#fff;display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1rem 2rem;gap:1rem;box-shadow:0 -2px 12px rgba(0,0,0,0.25);"><p style="font-size:0.88rem;line-height:1.5;flex:1 1 300px;">We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="/privacy-policy.html" style="color:#d4af37;text-decoration:underline;">Privacy Policy</a>.</p><button onclick="acceptCookies()" style="background:#d4af37;color:#1a3a2a;border:none;border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;">Accept</button></div>
+  <script>
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    (function() {
+      if (localStorage.getItem('cookieConsent') !== 'accepted') {
+        var b = document.getElementById('cookie-banner');
+        b.style.display = 'flex';
+      }
+    })();
+  </script>
 </body>
 </html>
