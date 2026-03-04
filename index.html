@@ -712,6 +712,10 @@ section{padding:100px 0}
 #lb-next { right: 1rem; }
 #lb-counter { color: rgba(255,255,255,0.5); font-size: 0.8125rem; margin-top: 0.4rem; font-family: var(--font-body); }
 @media (max-width: 640px) { .lb-nav { font-size: 1.4rem; padding: 0.5rem 0.75rem; } }
+
+        /* Voyage Estimator Nav Link */
+        .nav-estimator-link { font-weight: 600; color: #C4956B !important; }
+        .nav-new-badge { display: inline-block; background: #ff6b35; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 2px 6px; border-radius: 50px; letter-spacing: 1px; text-transform: uppercase; margin-left: 4px; vertical-align: middle; }
 </style>
 
 <script type="application/ld+json">
@@ -781,7 +785,7 @@ section{padding:100px 0}
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="/blog/">Journal</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="trip-estimator.html" class="nav-estimator-link">&#9733; Trip Estimator <span style="display:inline-block;background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:50px;letter-spacing:1px;text-transform:uppercase;margin-left:4px;vertical-align:middle;">NEW</span>span></a>a></li>li>
+                <li><a href="trip-estimator.html" class="nav-estimator-link">&#9733; Trip Estimator <span class="nav-new-badge">NEW</span></a></li>
         <li><a href="#contact" class="nav-cta">Plan My Trip</a></li>
             </ul>
 <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -825,14 +829,86 @@ section{padding:100px 0}
 </section>
 
         <!-- VOYAGE ESTIMATOR ANNOUNCEMENT BANNER -->
-        <section id="estimator-announcement" style="background:linear-gradient(135deg,#071f1f 0%,#0D5C5C 50%,#1A7A7A 100%);padding:0;position:relative;overflow:hidden;">
-                <div class="announcement-inner" style="max-width:1200px;margin:0 auto;padding:72px 32px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;z-index:1;">
-                        <div><div style="display:inline-flex;align-items:center;gap:8px;background:rgba(196,149,107,0.2);border:1px solid rgba(196,149,107,0.4);padding:6px 16px;border-radius:50px;margin-bottom:20px;"><span style="width:6px;height:6px;background:#C4956B;border-radius:50%;display:inline-block;"></span>span><span style="color:#D4A574;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Just Launched &bull; Free to Use</span>span></div>
-                        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);color:#ffffff;line-height:1.15;margin-bottom:16px;font-weight:700;">Introducing the <em style="color:#C4956B;font-style:italic;">Voyage Estimator</em>em></h2>h2>
-                        <p style="font-size:1.05rem;color:rgba(255,255,255,0.78);max-width:560px;line-height:1.75;margin-bottom:28px;">Our AI-powered travel budget tool scours current prices for flights, hotels, dining, and activities &mdash; then builds you a personalized breakdown in under 60 seconds. No signup. No cost. No guesswork.</p>p>
-                        <div style="display:flex;gap:24px;flex-wrap:wrap;"><span style="color:rgba(255,255,255,0.65);font-size:0.85rem;">&#10003; 150+ destinations</span>span><span style="color:rgba(255,255,255,0.65);font-size:0.85rem;">&#10003; Real-time AI pricing</span>span><span style="color:rgba(255,255,255,0.65);font-size:0.85rem;">&#10003; Budget, moderate &amp; luxury</span>span></div></div>
-                <div style="text-align:center;flex-shrink:0;"><a href="trip-estimator.html" style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#C4956B,#D4A574);color:#fff;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:700;padding:20px 44px;border-radius:50px;text-decoration:none;box-shadow:0 8px 30px rgba(196,149,107,0.5);white-space:nowrap;">Try It Free &rarr;</a>a><p style="color:rgba(255,255,255,0.45);font-size:0.75rem;margin-top:12px;">No account required</p>p></div>
-                </div></section>section><style>@media(max-width:768px){.announcement-inner{grid-template-columns:1fr!important;gap:32px!important;padding:48px 24px!important}.announcement-inner>div:last-child{text-align:left!important}}</style></style></div>
+    <section id="estimator-announcement" style="padding:80px 0;background:linear-gradient(135deg,#0a4a4a 0%,#0d5c5c 50%,#0e6b6b 100%);position:relative;overflow:hidden;">
+      <style>
+        .announcement-inner { max-width:1100px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center; }
+        .announcement-badge { display:inline-flex;align-items:center;gap:8px;background:rgba(196,149,107,0.2);border:1px solid rgba(196,149,107,0.5);border-radius:50px;padding:6px 18px;margin-bottom:24px; }
+        .announcement-badge-dot { width:8px;height:8px;border-radius:50%;background:#C4956B;animation:pulse-dot 2s infinite; }
+        .announcement-badge-text { color:#C4956B;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase; }
+        @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+        .announcement-title { font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:20px; }
+        .announcement-title em { font-style:italic;color:#C4956B; }
+        .announcement-desc { font-size:1.05rem;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:32px; }
+        .announcement-features { list-style:none;padding:0;margin:0 0 36px 0; }
+        .announcement-features li { display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.9);font-size:0.95rem;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1); }
+        .announcement-features li:last-child { border-bottom:none; }
+        .announcement-features li::before { content:'';width:20px;height:20px;border-radius:50%;background:rgba(196,149,107,0.3);border:2px solid #C4956B;flex-shrink:0; }
+        .announcement-cta { display:inline-block;background:linear-gradient(135deg,#C4956B,#d4a574);color:#fff;padding:16px 36px;border-radius:50px;font-weight:700;font-size:1rem;letter-spacing:1px;text-decoration:none;transition:all 0.3s ease;box-shadow:0 8px 32px rgba(196,149,107,0.4); }
+        .announcement-cta:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(196,149,107,0.6); }
+        .announcement-note { margin-top:12px;color:rgba(255,255,255,0.6);font-size:0.85rem; }
+        .announcement-visual { position:relative;display:flex;align-items:center;justify-content:center; }
+        .announcement-card { background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:36px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3); }
+        .announcement-card-header { display:flex;align-items:center;gap:12px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1); }
+        .announcement-card-icon { width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#C4956B,#d4a574);display:flex;align-items:center;justify-content:center;font-size:1.3rem; }
+        .announcement-card-title { font-weight:700;color:#fff;font-size:1rem; }
+        .announcement-card-subtitle { color:rgba(255,255,255,0.6);font-size:0.8rem; }
+        .announcement-card-row { display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.07); }
+        .announcement-card-row:last-child { border-bottom:none;margin-top:12px;padding-top:16px; }
+        .announcement-card-label { color:rgba(255,255,255,0.7);font-size:0.9rem; }
+        .announcement-card-value { color:#fff;font-weight:600;font-size:0.9rem; }
+        .announcement-card-total { font-size:1.1rem;color:#C4956B;font-weight:700; }
+        @media(max-width:768px){.announcement-inner{grid-template-columns:1fr!important;gap:32px!important;padding:48px 24px!important}.announcement-inner>div:last-child{text-align:left!important}}
+      </style>
+      <div class="announcement-inner">
+        <div>
+          <div class="announcement-badge">
+            <span class="announcement-badge-dot"></span>
+            <span class="announcement-badge-text">Just Launched &bull; Free to Use</span>
+          </div>
+          <h2 class="announcement-title">Introducing the <em>Voyage Estimator</em></h2>
+          <p class="announcement-desc">Our AI-powered travel budget tool scours current prices for flights, hotels, dining, and activities &mdash; then builds you a personalized breakdown in under 60 seconds. No signup. No cost. No guesswork.</p>
+          <ul class="announcement-features">
+            <li>Instant AI-generated cost breakdown by category</li>
+            <li>Covers flights, hotels, dining &amp; activities</li>
+            <li>Personalized to your destination &amp; travel style</li>
+            <li>Completely free &mdash; no account required</li>
+          </ul>
+          <a href="trip-estimator.html" class="announcement-cta">Try It Free &rarr;</a>
+          <p class="announcement-note">No account required &bull; Results in under 60 seconds</p>
+        </div>
+        <div class="announcement-visual">
+          <div class="announcement-card">
+            <div class="announcement-card-header">
+              <div class="announcement-card-icon">&#9992;</div>
+              <div>
+                <div class="announcement-card-title">Voyage Estimator</div>
+                <div class="announcement-card-subtitle">Bali, Indonesia &bull; 10 days</div>
+              </div>
+            </div>
+            <div class="announcement-card-row">
+              <span class="announcement-card-label">&#9992; Flights (round trip)</span>
+              <span class="announcement-card-value">$1,200&ndash;$1,600</span>
+            </div>
+            <div class="announcement-card-row">
+              <span class="announcement-card-label">&#127968; Accommodation</span>
+              <span class="announcement-card-value">$800&ndash;$1,400</span>
+            </div>
+            <div class="announcement-card-row">
+              <span class="announcement-card-label">&#127829; Dining &amp; Experiences</span>
+              <span class="announcement-card-value">$400&ndash;$700</span>
+            </div>
+            <div class="announcement-card-row">
+              <span class="announcement-card-label">&#128663; Transport &amp; Activities</span>
+              <span class="announcement-card-value">$300&ndash;$500</span>
+            </div>
+            <div class="announcement-card-row announcement-card-total">
+              <span class="announcement-card-label">Estimated Total</span>
+              <span class="announcement-card-value announcement-card-total">$2,700&ndash;$4,200</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 <!-- STATS TICKER -->
 <div class="stats-ticker">
 <div class="ticker-track">
