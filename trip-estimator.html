@@ -17,7 +17,8 @@
 <style>
 :root{--color-primary:#0D5C5C;--color-primary-light:#1A7A7A;--color-accent:#C4956B;--color-accent-light:#D4A574;--color-dark:#0A4A4A;--color-text:#2d2d2d;--color-text-light:#6b7280;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-white:#ffffff;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1);--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 20px rgba(0,0,0,0.1);--shadow-lg:0 10px 40px rgba(0,0,0,0.15);--shadow-xl:0 20px 60px rgba(0,0,0,0.2)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+.skip-link{position:absolute;top:-40px;left:0;background:#0D5C5C;color:#fff;padding:8px;z-index:9999;transition:top 0.3s}.skip-link:focus{top:0}
+    html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
 
 /* ââ Mega-Menu Navigation ââ */
