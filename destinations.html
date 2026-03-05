@@ -725,7 +725,8 @@ section{padding:100px 0}
                 <li><a href="index.html#deals">Deals</a></li>
                 <li><a href="index.html#testimonials">Reviews</a></li>
                 <li><a href="/blog/">Journal</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">About</a>
+                <li><a href="trip-estimator.html" class="nav-estimator-link">&#9733; Trip Estimator <span class="nav-new-badge">NEW</span></a></li></li>
                 <li><a href="index.html#contact" class="nav-cta">Plan My Trip</a></li>
             </ul>
 <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -749,6 +750,25 @@ section{padding:100px 0}
 <h2 class="section-title">Featured Destinations</h2>
 <p class="section-subtitle">From Caribbean shores to Mediterranean gems, discover handpicked destinations for your next adventure.</p>
 </div>
+<!-- Destination anchor points for navigation -->
+<span id="caribbean" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="alaska" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="hawaii" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="santorini" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="amalfi" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="paris" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="french-riviera" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="tuscany" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="iceland" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="bali" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="japan" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="maldives" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="kenya" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="morocco" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="dubai" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="costa-rica" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="mexico" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
+<span id="patagonia" style="position:absolute;top:-80px;visibility:hidden;pointer-events:none"></span>
 <div class="dest-grid">
 <div class="dest-map reveal-left">
 <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" class="world-svg">
@@ -821,7 +841,7 @@ section{padding:100px 0}
 </a>
 </div>
 <div class="dest-cards reveal-right">
-<div class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean-islands.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
+<div id="caribbean" class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean-islands.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80" alt="Caribbean" loading="lazy"></div>
 <div><h4>Caribbean Islands</h4><p>Crystal waters & white sand beaches</p><span class="tag">Popular</span></div>
 </div>
@@ -833,7 +853,7 @@ section{padding:100px 0}
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=80" alt="Southeast Asia" loading="lazy"></div>
 <div><h4>Southeast Asia</h4><p>Temples, beaches & vibrant culture</p><span class="tag">Adventure</span></div>
 </div>
-<div class="dest-card" data-dest="Alaska" onclick="window.location='destinations/alaska.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
+<div id="alaska" class="dest-card" data-dest="Alaska" onclick="window.location='destinations/alaska.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
 <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=200&q=80" alt="Alaska" loading="lazy"></div>
 <div><h4>Alaska</h4><p>Glaciers, wildlife & wilderness</p><span class="tag">Expedition</span></div>
 </div>
