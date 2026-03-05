@@ -1,3 +1,4 @@
+// v3 - updated API key
 export async function onRequestPost(context) {
   const { request, env } = context;
 
