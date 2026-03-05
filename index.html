@@ -64,19 +64,61 @@
     body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-/* Enhanced Dropdown Navigation */
-    nav .dropdown { position: relative; }
-    nav .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: rgba(13, 86, 86, 0.98); min-width: 200px; list-style: none; padding: 10px 0; margin: 0; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); z-index: 1000; }
-    nav .dropdown:hover .dropdown-menu, nav .dropdown:focus-within .dropdown-menu { display: block; }
-    nav .dropdown-menu li { margin: 0; }
-    nav .dropdown-menu a { display: block; padding: 10px 20px; color: var(--color-white); text-decoration: none; transition: background-color 0.2s; }
-    nav .dropdown-menu a:hover { background-color: rgba(255, 255, 255, 0.1); padding-left: 25px; }
+/* ── Mega-Menu Navigation ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: background var(--transition), box-shadow var(--transition); }
+    nav.scrolled { background: rgba(13,92,92,0.97); backdrop-filter: blur(12px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
+    .nav-links > li > a {
+        display: flex; align-items: center; gap: 4px;
+        color: rgba(255,255,255,0.92); font-size: 0.9rem; font-weight: 500;
+        padding: 8px 14px; border-radius: 6px; text-decoration: none;
+        white-space: nowrap; transition: color 0.2s, background 0.2s;
+    }
+    .nav-links > li > a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    /* Vacations mega-menu trigger */
+    .nav-mega { position: relative; }
+    .nav-mega > a::after { content: ''; display: inline-block; width: 0; height: 0;
+        border-left: 4px solid transparent; border-right: 4px solid transparent;
+        border-top: 5px solid currentColor; margin-left: 4px; transition: transform 0.2s; }
+    .nav-mega:hover > a::after, .nav-mega:focus-within > a::after { transform: rotate(180deg); }
+    /* Mega-menu panel */
+    .mega-panel {
+        display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+        background: rgba(10,74,74,0.98); backdrop-filter: blur(16px);
+        border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+        padding: 28px 32px; min-width: 700px;
+        border: 1px solid rgba(255,255,255,0.08);
+        grid-template-columns: 1fr 1fr 1fr; gap: 0 24px;
+    }
+    .nav-mega:hover .mega-panel,
+    .nav-mega:focus-within .mega-panel { display: grid; }
+    .mega-col { padding: 0 16px; }
+    .mega-col + .mega-col { border-left: 1px solid rgba(255,255,255,0.1); }
+    .mega-col-header {
+        display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+        text-transform: uppercase; color: #C4956B; margin-bottom: 12px; padding-bottom: 8px;
+        border-bottom: 1px solid rgba(196,149,107,0.3);
+    }
+    .mega-col a {
+        display: block; color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 400;
+        padding: 6px 0; text-decoration: none; transition: color 0.2s, padding-left 0.2s;
+        white-space: nowrap;
+    }
+    .mega-col a:hover { color: #fff; padding-left: 6px; }
+    /* Standard dropdown (keep for any future use) */
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0;
+        background: rgba(10,74,74,0.98); min-width: 200px; border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2); padding: 8px 0; z-index: 100; }
+    .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 18px; color: rgba(255,255,255,0.85);
+        font-size: 0.85rem; text-decoration: none; transition: background 0.2s; }
+    .dropdown-menu a:hover { background: rgba(255,255,255,0.1); color: #fff; }
     @media (max-width: 768px) {
-          nav .dropdown-menu { position: static; display: none; background: rgba(13, 86, 86, 0.95); box-shadow: none; }
-          nav .dropdown.active .dropdown-menu { display: block; }
-          nav ul { display: none; }
-          nav ul.mobile-open { display: flex; position: absolute; top: 60px; left: 0; right: 0; background: var(--color-primary); flex-direction: column; width: 100%; z-index: 999; }
-          nav li { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .nav-links { display: none; }
+        .hamburger { display: flex; }
+        .mobile-menu { display: flex; }
     }
     img { max-width: 100%; height: auto; display: block; }
     /* CURSOR GLOW */
@@ -714,10 +756,10 @@ section{padding:100px 0}
 @media (max-width: 640px) { .lb-nav { font-size: 1.4rem; padding: 0.5rem 0.75rem; } }
 
 
-        /* Voyage Estimator Nav Link */
-        .nav-estimator-link { font-weight: 600; color: #C4956B !important; white-space: nowrap; font-size: 0.88rem; }
-        .nav-new-badge { display: inline-block; background: #ff6b35; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 2px 6px; border-radius: 50px; letter-spacing: 1px; text-transform: uppercase; margin-left: 4px; vertical-align: middle; }
-
+        /* Trip Estimator Nav Link */
+        .nav-estimator-link { font-weight: 700; color: #C4956B !important; white-space: nowrap; font-size: 0.88rem; letter-spacing: 0.02em; }
+        .nav-new-badge { display: inline-block; background: #ff6b35; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 2px 5px; border-radius: 3px; vertical-align: middle; margin-left: 4px; animation: pulse-badge 2s infinite; }
+        @keyframes pulse-badge { 0%,100%{opacity:1} 50%{opacity:0.7} }
 </style>
 
 <script type="application/ld+json">
@@ -743,74 +785,72 @@ section{padding:100px 0}
 
 <!-- NAVIGATION -->
 <nav class="nav" id="nav">
-<div class="container nav-inner">
-<a href="#hero" class="nav-logo">
-<img loading="eager" src="destinara-logo.png" alt="Destinara" class="nav-logo-img" style="height:48px;width:auto;">
-<span class="nav-logo-text">Destinara</span>
-</a>
-<ul class="nav-links">
-                <li class="dropdown">
-                    <a href="cruises.html">Cruises></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="cruises.html">All Cruise Lines></a></li>
-                        <li><a href="cruises.html#luxury">Luxury Cruises></a></li>
-                        <li><a href="cruises.html#ocean">Ocean Cruises></a></li>
-                        <li><a href="cruises.html#river">River Cruises></a></li>
-                        <li><a href="cruises.html#expedition">Expedition Cruises></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="vacations.html">Vacations></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="vacations.html">Hotels & Resorts></a></li>
-                        <li><a href="vacations.html">Adventure Travel></a></li>
-                        <li><a href="vacations.html">Wellness Retreats></a></li>
-                        <li><a href="vacations.html">Romance & Honeymoons></a></li>
-                        <li><a href="vacations.html">Cultural & Culinary></a></li>
-                        <li><a href="vacations.html">Group Travel></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="disney.html">Disney></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="disney.html">Disney Cruise Line></a></li>
-                        <li><a href="disney.html">Walt Disney World></a></li>
-                        <li><a href="disney.html">Disneyland Resort></a></li>
-                        <li><a href="disney.html">International Parks></a></li>
-                        <li><a href="disney.html">Aulani Hawaii></a></li>
-                        <li><a href="disney.html">Adventures by Disney></a></li>
-                        <li><a href="disney.html">Disney Vacation Club></a></li>
-                    </ul>
-                </li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="#deals">Deals</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="/blog/">Journal</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="trip-estimator.html" class="nav-estimator-link">&#9733; Trip Estimator <span class="nav-new-badge">NEW</span></a></li>
-        <li><a href="#contact" class="nav-cta">Plan My Trip</a></li>
-            </ul>
-<button class="hamburger" id="hamburger" aria-label="Menu">
-<span></span><span></span><span></span>
-</button>
-</div>
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/images/Destinara-D-white-favicon.png" alt="Destinara" width="40" height="40" style="border-radius:8px">
+            <span class="nav-logo-text">Destinara</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <!-- VACATIONS MEGA-MENU -->
+            <li class="nav-mega">
+                <a href="vacations.html">Vacations</a>
+                <div class="mega-panel" role="menu">
+                    <div class="mega-col">
+                        <span class="mega-col-header">Land Vacations</span>
+                        <a href="vacations.html">Hotels &amp; Resorts</a>
+                        <a href="vacations.html">Adventure Travel</a>
+                        <a href="vacations.html">Wellness Retreats</a>
+                        <a href="vacations.html">Romance &amp; Honeymoons</a>
+                        <a href="vacations.html">Cultural &amp; Culinary</a>
+                        <a href="vacations.html">Group Travel</a>
+                    </div>
+                    <div class="mega-col">
+                        <span class="mega-col-header">Cruises</span>
+                        <a href="cruises.html">All Cruise Lines</a>
+                        <a href="cruises.html#luxury">Luxury Cruises</a>
+                        <a href="cruises.html#ocean">Ocean Cruises</a>
+                        <a href="cruises.html#river">River Cruises</a>
+                        <a href="cruises.html#expedition">Expedition Cruises</a>
+                    </div>
+                    <div class="mega-col">
+                        <span class="mega-col-header">Disney</span>
+                        <a href="disney.html">Disney Cruise Line</a>
+                        <a href="disney.html">Walt Disney World</a>
+                        <a href="disney.html">Disneyland Resort</a>
+                        <a href="disney.html">International Parks</a>
+                        <a href="disney.html">Aulani Hawaii</a>
+                        <a href="disney.html">Adventures by Disney</a>
+                        <a href="disney.html">Disney Vacation Club</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="#deals">Deals</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="/blog/">Journal</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="trip-estimator.html" class="nav-estimator-link">★ Trip Estimator <span class="nav-new-badge">NEW</span></a></li>
+            <li><a href="#contact" class="nav-cta">Plan My Trip</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-<a href="cruises.html" onclick="closeMobile()">Cruises</a>
-                        <a href="vacations.html" onclick="closeMobile()">Vacations</a>
-                        <a href="disney.html" onclick="closeMobile()">Disney</a>
-                        <a href="destinations.html" onclick="closeMobile()">Destinations</a>
-                        <a href="#deals" onclick="closeMobile()">Deals</a>
-                        <a href="#testimonials" onclick="closeMobile()">Reviews</a>
-                        <a href="#team" onclick="closeMobile()">Our Team</a>
-                        <a href="/blog/" onclick="closeMobile()">Journal</a>
-            <a href="about.html" onclick="closeMobile()">About</a>
-                        <a href="trip-estimator.html" onclick="closeMobile()">&#9733; Trip Estimator</a>
-                        <a href="#contact" onclick="closeMobile()">Contact Us</a>
-                    </div>
-
+    <a href="vacations.html" onclick="closeMobile()">🏖 Land Vacations</a>
+    <a href="cruises.html" onclick="closeMobile()">🚢 Cruises</a>
+    <a href="disney.html" onclick="closeMobile()">✨ Disney</a>
+    <a href="destinations.html" onclick="closeMobile()">Destinations</a>
+    <a href="#deals" onclick="closeMobile()">Deals</a>
+    <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+    <a href="/blog/" onclick="closeMobile()">Journal</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="trip-estimator.html" onclick="closeMobile()">★ Trip Estimator</a>
+    <a href="#contact" onclick="closeMobile()">Plan My Trip</a>
+</div>
 <!-- HERO -->
 <main id="main-content">
     <section class="hero" id="hero">
