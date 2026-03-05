@@ -163,7 +163,7 @@ transform:translate(-50%,-50%);transition:opacity 0.3s}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px;opacity:0;visibility:hidden;transition:all 0.4s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:1001;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:90px;gap:30px;opacity:0;visibility:hidden;transition:all 0.4s;overflow-y:auto}
 .mobile-menu.active{opacity:1;visibility:visible}
 .mobile-menu a{font-family:var(--font-display);font-size:2rem;color:var(--color-white);text-decoration:none;opacity:0;transform:translateY(20px);transition:all 0.4s}
 .mobile-menu.active a{opacity:1;transform:translateY(0)}
@@ -1355,7 +1355,7 @@ section{padding:100px 0}
 <div class="test-author">
 <div class="test-avatar">DC</div>
 <div class="test-author-info">
-<h4>Dan Crowley</h4>
+<h3>Dan Crowley</h3>
 <p>Family Cruise &bull; Massachusetts</p>
 </div>
 </div>
@@ -1374,7 +1374,7 @@ section{padding:100px 0}
 <div class="test-author">
 <div class="test-avatar">SM</div>
 <div class="test-author-info">
-<h4>Sarah Mitchell</h4>
+<h3>Sarah Mitchell</h3>
 <p>Honeymoon &bull; Greece</p>
 </div>
 </div>
@@ -1393,7 +1393,7 @@ section{padding:100px 0}
 <div class="test-author">
 <div class="test-avatar">RJ</div>
 <div class="test-author-info">
-<h4>Robert Johnson</h4>
+<h3>Robert Johnson</h3>
 <p>Group Trip &bull; Italy</p>
 </div>
 </div>
@@ -1406,7 +1406,7 @@ section{padding:100px 0}
             <p class="test-quote">&ldquo;Jay found us an incredible suite upgrade on our Viking ocean cruise. The Iceland stop alone was worth the whole trip and we never would have gotten those perks booking direct.&rdquo;</p>
             <div class="test-author">
               <div class="test-avatar">PT</div>
-              <div class="test-author-info"><h4>Patricia Thompson</h4><p>Ocean Cruise • Iceland & Norway</p></div>
+              <div class="test-author-info"><h3>Patricia Thompson</h3><p>Ocean Cruise • Iceland & Norway</p></div>
             </div>
           </div>
         </div>
