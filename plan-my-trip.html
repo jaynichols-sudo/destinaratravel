@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan My Trip | Find & Budget Your Perfect Journey | Destinara Travel</title>
+<meta name="description" content="Find your ideal cruise, land tour, or flight+hotel vacation — then get an instant AI budget estimate. All in one place. Free, no signup required.">
+<link rel="icon" type="image/png" href="destinara-logo.png">
+<link rel="apple-touch-icon" href="destinara-logo.png">
+<meta name="theme-color" content="#0D5C5C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--color-primary:#0D5C5C;--color-primary-light:#1A7A7A;--color-accent:#C4956B;--color-accent-light:#D4A574;--color-dark:#0A4A4A;--color-text:#2d2d2d;--color-text-light:#6b7280;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-white:#ffffff;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1);--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 16px rgba(0,0,0,0.10);--shadow-lg:0 8px 32px rgba(0,0,0,0.13);}
+.skip-link{position:absolute;top:-40px;left:0;background:#0D5C5C;color:#fff;padding:8px;z-index:9999;transition:top 0.3s}.skip-link:focus{top:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--transition),box-shadow var(--transition);}
+nav.scrolled{background:rgba(10,74,74,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.15);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:72px;gap:32px;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;}
+.nav-logo-text{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-0.02em;}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1;}
+.nav-links > li > a{color:rgba(255,255,255,0.92);font-size:0.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color var(--transition);}
+.nav-links > li > a:hover{color:#fff;background:rgba(255,255,255,0.12);}
+.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0;}
+.nav-cta{background:var(--color-accent)!important;color:white!important;padding:10px 22px!important;border-radius:50px!important;font-weight:600!important;transition:background var(--transition)!important;}
+.nav-cta:hover{background:var(--color-accent-light)!important;transform:translateY(-1px);}
+
+/* HERO */
+.plan-hero{background:linear-gradient(135deg,#0A4A4A 0%,#0D5C5C 50%,#1A7A7A 100%);padding:140px 24px 80px;text-align:center;position:relative;overflow:hidden;}
+.plan-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.plan-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,149,107,0.2);border:1px solid rgba(196,149,107,0.4);color:var(--color-accent);padding:6px 16px;border-radius:50px;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;}
+.plan-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:16px;}
+.plan-hero h1 span{color:var(--color-accent);font-style:italic;}
+.plan-hero p{font-size:1.1rem;color:rgba(255,255,255,0.82);max-width:580px;margin:0 auto 40px;}
+.plan-steps{display:flex;justify-content:center;gap:0;max-width:600px;margin:0 auto;}
+.plan-step{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.7);font-size:0.85rem;}
+.plan-step-num{width:28px;height:28px;border-radius:50%;background:rgba(196,149,107,0.3);border:1.5px solid var(--color-accent);color:var(--color-accent);font-weight:700;font-size:0.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.plan-step.active .plan-step-num{background:var(--color-accent);color:#fff;}
+.plan-step.active{color:#fff;font-weight:600;}
+.plan-step-divider{flex:1;height:1.5px;background:rgba(196,149,107,0.3);margin:0 12px;max-width:60px;}
+
+/* MAIN LAYOUT */
+main{max-width:1100px;margin:0 auto;padding:60px 24px 80px;}
+
+/* STEP 1 - TRIP TYPE */
+.step-section{margin-bottom:60px;}
+.step-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;}
+.step-badge{width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-badge.complete{background:var(--color-accent);}
+.step-title{font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:var(--color-dark);}
+.step-subtitle{color:var(--color-text-light);font-size:0.95rem;margin-top:2px;}
+
+.trip-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.trip-type-card{border:2px solid rgba(13,92,92,0.12);border-radius:20px;padding:32px 24px;background:#fff;cursor:pointer;transition:all var(--transition);text-align:center;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
+.trip-type-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,92,92,0.04),rgba(196,149,107,0.04));opacity:0;transition:opacity var(--transition);}
+.trip-type-card:hover{border-color:var(--color-primary);box-shadow:var(--shadow-md);transform:translateY(-3px);}
+.trip-type-card:hover::before{opacity:1;}
+.trip-type-card.selected{border-color:var(--color-primary);background:linear-gradient(135deg,rgba(13,92,92,0.06),rgba(196,149,107,0.06));box-shadow:0 0 0 3px rgba(13,92,92,0.15),var(--shadow-md);}
+.trip-type-card.selected::before{opacity:1;}
+.trip-type-icon{font-size:2.8rem;margin-bottom:14px;display:block;}
+.trip-type-name{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--color-dark);margin-bottom:8px;}
+.trip-type-desc{font-size:0.875rem;color:var(--color-text-light);line-height:1.5;}
+.trip-type-check{position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;background:var(--color-primary);color:#fff;font-size:0.75rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0);transition:all 0.2s;}
+.trip-type-card.selected .trip-type-check{opacity:1;transform:scale(1);}
+
+/* STEP 2 - FIND YOUR VACATION (WIDGETY) */
+.widgety-section{background:#fff;border-radius:20px;box-shadow:var(--shadow-md);overflow:hidden;border:1px solid rgba(13,92,92,0.08);}
+.widgety-header{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));padding:28px 32px;display:flex;align-items:center;gap:16px;}
+.widgety-header-icon{font-size:1.8rem;}
+.widgety-header-text h3{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;}
+.widgety-header-text p{color:rgba(255,255,255,0.8);font-size:0.9rem;margin-top:4px;}
+.widgety-body{padding:0;}
+.widgety-body iframe{display:block;width:100%;border:none;}
+
+/* Cruise/Land tour tip */
+.widgety-tip{background:rgba(196,149,107,0.08);border-left:3px solid var(--color-accent);padding:14px 20px;margin:0 24px 0;border-radius:0 8px 8px 0;font-size:0.875rem;color:var(--color-text-light);}
+.widgety-tip strong{color:var(--color-accent);}
+
+/* STEP 3 - VOYAGE ESTIMATOR */
+.estimator-card{background:#fff;border-radius:20px;box-shadow:var(--shadow-md);overflow:hidden;border:1px solid rgba(13,92,92,0.08);}
+.estimator-header{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));padding:28px 32px;display:flex;align-items:center;gap:16px;}
+.estimator-header-icon{width:48px;height:48px;background:rgba(255,255,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.estimator-header-text h3{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;}
+.estimator-header-text p{color:rgba(255,255,255,0.8);font-size:0.9rem;margin-top:4px;}
+.estimator-body{padding:32px;}
+
+/* FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.form-group{display:flex;flex-direction:column;gap:8px;}
+.form-group.full{grid-column:1/-1;}
+.form-label{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-light);}
+.form-input,.form-select{width:100%;padding:14px 18px;border:1.5px solid rgba(13,92,92,0.15);border-radius:12px;font-family:var(--font-body);font-size:0.95rem;color:var(--color-text);background:var(--color-bg);transition:var(--transition);outline:none;-webkit-appearance:none;appearance:none;}
+.form-input:focus,.form-select:focus{border-color:var(--color-primary);background:#fff;box-shadow:0 0 0 3px rgba(13,92,92,0.08);}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230D5C5C' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px;cursor:pointer;}
+.form-textarea{width:100%;padding:14px 18px;border:1.5px solid rgba(13,92,92,0.15);border-radius:12px;font-family:var(--font-body);font-size:0.95rem;color:var(--color-text);background:var(--color-bg);transition:var(--transition);outline:none;resize:vertical;min-height:100px;}
+.form-textarea:focus{border-color:var(--color-primary);background:#fff;box-shadow:0 0 0 3px rgba(13,92,92,0.08);}
+
+/* STYLE PILLS */
+.style-pills{display:flex;gap:12px;flex-wrap:wrap;}
+.style-pill{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid rgba(13,92,92,0.15);border-radius:50px;cursor:pointer;font-size:0.9rem;font-weight:500;color:var(--color-text);background:#fff;transition:all var(--transition);}
+.style-pill:hover{border-color:var(--color-primary);color:var(--color-primary);}
+.style-pill.active{background:var(--color-primary);border-color:var(--color-primary);color:#fff;box-shadow:0 2px 8px rgba(13,92,92,0.25);}
+
+/* TRANSPORT NOTE */
+.transport-note{background:rgba(196,149,107,0.1);border:1px solid rgba(196,149,107,0.25);border-radius:10px;padding:12px 16px;font-size:0.85rem;color:#8B6A47;display:flex;align-items:center;gap:8px;margin-top:8px;}
+
+/* SUBMIT */
+.estimate-btn{width:100%;padding:18px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));color:#fff;border:none;border-radius:14px;font-family:var(--font-body);font-size:1rem;font-weight:600;cursor:pointer;transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:12px;margin-top:24px;letter-spacing:0.02em;}
+.estimate-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(13,92,92,0.3);}
+.estimate-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.btn-note{text-align:center;margin-top:12px;font-size:0.8rem;color:var(--color-text-light);}
+
+/* LOADING */
+.loading-state{text-align:center;padding:48px 32px;display:none;}
+.loading-spinner{width:48px;height:48px;border:3px solid rgba(13,92,92,0.1);border-top-color:var(--color-primary);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 24px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-msg{font-size:1rem;color:var(--color-text-light);min-height:24px;}
+
+/* RESULTS */
+.results-section{display:none;padding:32px;}
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px;}
+.results-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--color-dark);}
+.results-trip{font-size:0.85rem;color:var(--color-text-light);margin-top:4px;}
+.reset-btn{background:none;border:1.5px solid rgba(13,92,92,0.2);color:var(--color-primary);padding:8px 18px;border-radius:8px;font-size:0.875rem;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);}
+.reset-btn:hover{background:rgba(13,92,92,0.06);}
+.results-grid{display:grid;gap:12px;margin-bottom:28px;}
+.result-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--color-bg);border-radius:12px;border:1px solid rgba(13,92,92,0.07);}
+.result-row-label{display:flex;align-items:center;gap:10px;font-weight:500;color:var(--color-text);}
+.result-row-label span:first-child{font-size:1.2rem;}
+.result-range{font-weight:600;color:var(--color-primary);font-size:0.95rem;}
+.results-total{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));border-radius:14px;color:#fff;margin-bottom:24px;}
+.results-total-label{font-size:1rem;font-weight:600;opacity:0.9;}
+.results-total-range{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--color-accent-light);}
+.results-insights{background:var(--color-bg-alt);border-radius:14px;padding:24px;margin-bottom:24px;}
+.results-insights h4{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--color-dark);margin-bottom:14px;}
+.results-insights p{font-size:0.9rem;color:var(--color-text-light);line-height:1.7;}
+.results-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.results-cta-primary{flex:1;min-width:200px;padding:14px 20px;background:var(--color-accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all var(--transition);}
+.results-cta-primary:hover{background:var(--color-accent-light);transform:translateY(-1px);}
+.results-cta-secondary{flex:1;min-width:200px;padding:14px 20px;background:#fff;color:var(--color-primary);border:1.5px solid rgba(13,92,92,0.2);border-radius:12px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all var(--transition);}
+.results-cta-secondary:hover{border-color:var(--color-primary);background:rgba(13,92,92,0.04);}
+
+/* HIDDEN UTIL */
+.hidden{display:none!important;}
+
+/* FOOTER */
+footer{background:var(--color-dark);color:rgba(255,255,255,0.7);text-align:center;padding:32px 24px;font-size:0.875rem;}
+footer a{color:var(--color-accent);text-decoration:none;}
+
+@media(max-width:768px){
+  .trip-type-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .results-cta{flex-direction:column;}
+  .plan-steps{flex-wrap:wrap;gap:8px;}
+  .plan-step-divider{display:none;}
+  .estimator-body,.results-section{padding:20px;}
+  .widgety-header,.estimator-header{padding:20px;}
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="destinara-logo.png" alt="Destinara">
+      <span class="nav-logo-text">Destinara</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Vacations</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="index.html#deals">Deals</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="index.html#blog">Journal</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="index.html#contact" class="nav-cta" style="padding:10px 22px;border-radius:50px;font-weight:600;background:var(--color-accent);color:#fff;text-decoration:none;font-size:0.9rem;">Plan My Trip</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="plan-hero">
+  <div class="plan-hero-badge">&#10022; Destinara Travel Planning Hub</div>
+  <h1>Find & Plan<br><span>Your Dream Trip</span></h1>
+  <p>Browse real vacations, then get an instant AI budget — all in one place. No signup. No guesswork.</p>
+  <div class="plan-steps">
+    <div class="plan-step active" id="stepIndicator1">
+      <div class="plan-step-num">1</div>
+      <span>Choose Type</span>
+    </div>
+    <div class="plan-step-divider"></div>
+    <div class="plan-step" id="stepIndicator2">
+      <div class="plan-step-num">2</div>
+      <span>Find a Vacation</span>
+    </div>
+    <div class="plan-step-divider"></div>
+    <div class="plan-step" id="stepIndicator3">
+      <div class="plan-step-num">3</div>
+      <span>Get Your Budget</span>
+    </div>
+  </div>
+</section>
+
+<main id="main-content">
+
+  <!-- STEP 1: TRIP TYPE -->
+  <section class="step-section" id="step1">
+    <div class="step-header">
+      <div class="step-badge" id="step1Badge">1</div>
+      <div>
+        <div class="step-title">What kind of trip are you dreaming of?</div>
+        <div class="step-subtitle">Choose your vacation style to get started</div>
+      </div>
+    </div>
+    <div class="trip-type-grid">
+      <div class="trip-type-card" data-type="cruise" onclick="selectTripType('cruise')">
+        <div class="trip-type-check">&#10003;</div>
+        <span class="trip-type-icon">&#128674;</span>
+        <div class="trip-type-name">Cruise</div>
+        <div class="trip-type-desc">Ocean or river cruises — browse sailings by destination, cruise line, duration & price.</div>
+      </div>
+      <div class="trip-type-card" data-type="land" onclick="selectTripType('land')">
+        <div class="trip-type-check">&#10003;</div>
+        <span class="trip-type-icon">&#127966;</span>
+        <div class="trip-type-name">Land Tour / Package</div>
+        <div class="trip-type-desc">Guided tours, escorted journeys & all-inclusive land packages around the world.</div>
+      </div>
+      <div class="trip-type-card" data-type="flight" onclick="selectTripType('flight')">
+        <div class="trip-type-check">&#10003;</div>
+        <span class="trip-type-icon">&#9992;</span>
+        <div class="trip-type-name">Flight + Hotel</div>
+        <div class="trip-type-desc">Independent travel — you choose the destination, we estimate the full cost breakdown.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: FIND A VACATION (Widgety — shown for cruise/land) -->
+  <section class="step-section hidden" id="step2">
+    <div class="step-header">
+      <div class="step-badge" id="step2Badge">2</div>
+      <div>
+        <div class="step-title" id="step2Title">Browse & Find Your Vacation</div>
+        <div class="step-subtitle" id="step2Subtitle">Filter by destination, dates, duration, price and more</div>
+      </div>
+    </div>
+    <div class="widgety-section">
+      <div class="widgety-header">
+        <div class="widgety-header-icon" id="widgetyIcon">&#128674;</div>
+        <div class="widgety-header-text">
+          <h3 id="widgetyTitle">Search Cruises</h3>
+          <p id="widgetySubtitle">Browse hundreds of curated sailings — filter by destination, dates, ship & more</p>
+        </div>
+      </div>
+      <div class="widgety-body">
+        <iframe
+          src="https://www.widgety.co.uk/widgets/691Y6PTXsxqNTngRcLUU.widget"
+          class="widgety-cruise-tour-search"
+          width="100%"
+          height="520px"
+          frameborder="0"
+          id="widgetyFrame">
+        </iframe>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <p style="color:var(--color-text-light);font-size:0.9rem;margin-bottom:16px;">Found something you love? Now let's build your budget.</p>
+      <button onclick="showStep3()" style="background:var(--color-accent);color:#fff;border:none;padding:14px 32px;border-radius:50px;font-size:1rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+        &#128200; Get My Budget Estimate &rarr;
+      </button>
+    </div>
+  </section>
+
+  <!-- STEP 2 (flight only) / STEP 3 (cruise/land): VOYAGE ESTIMATOR -->
+  <section class="step-section hidden" id="step3">
+    <div class="step-header">
+      <div class="step-badge" id="step3Badge">3</div>
+      <div>
+        <div class="step-title">Get Your Instant Budget Estimate</div>
+        <div class="step-subtitle">AI-powered cost breakdown for your specific trip — free, no account needed</div>
+      </div>
+    </div>
+    <div class="estimator-card">
+      <div class="estimator-header">
+        <div class="estimator-header-icon">&#127908;</div>
+        <div class="estimator-header-text">
+          <h3>Voyage Estimator</h3>
+          <p>Powered by Claude AI &bull; Real-time pricing intelligence</p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="estimator-body" id="estimatorForm">
+        <form onsubmit="return false">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Flying / Departing From</label>
+              <input type="text" class="form-input" id="origin" placeholder="e.g. Greensboro, NC" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Destination</label>
+              <input type="text" class="form-input" id="destination" placeholder="e.g. Santorini, Greece" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Departure Date</label>
+              <input type="date" class="form-input" id="departDate" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Return Date</label>
+              <input type="date" class="form-input" id="returnDate" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Number of Travelers</label>
+              <select class="form-select" id="travelers">
+                <option value="1">1 person</option>
+                <option value="2" selected>2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5 people</option>
+                <option value="6">6 people</option>
+                <option value="8">8+ people (group)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Trip Type</label>
+              <select class="form-select" id="transport">
+                <option value="flight">&#9992; Flight + Hotel</option>
+                <option value="cruise">&#128674; Cruise</option>
+                <option value="land">&#127966; Land Tour / Package</option>
+                <option value="drive">&#128663; Road Trip</option>
+                <option value="rail">&#128646; Train / Rail</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Travel Style</label>
+              <div class="style-pills" id="stylePills">
+                <div class="style-pill" data-value="budget" onclick="selectStyle(this)">&#128176; Budget</div>
+                <div class="style-pill active" data-value="moderate" onclick="selectStyle(this)">&#11088; Moderate</div>
+                <div class="style-pill" data-value="luxury" onclick="selectStyle(this)">&#128142; Luxury</div>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Any Special Interests? <span style="font-weight:400;text-transform:none;letter-spacing:0;">(Optional)</span></label>
+              <textarea class="form-textarea" id="notes" placeholder="e.g. family with 2 kids ages 5 & 8, interested in local food tours, need accessible rooms..." rows="3"></textarea>
+            </div>
+          </div>
+          <div class="transport-note" id="transportNote" style="display:none;">
+            <span>&#128161;</span>
+            <span id="transportNoteText"></span>
+          </div>
+          <button class="estimate-btn" id="estimateBtn" onclick="runEstimate()">
+            <span>&#127908;</span>
+            <span id="estimateBtnText">Calculate My Trip Budget</span>
+          </button>
+          <div class="btn-note">Free AI estimate &bull; No account needed &bull; Powered by Claude AI</div>
+        </form>
+      </div>
+
+      <!-- LOADING -->
+      <div class="loading-state" id="loadingState">
+        <div class="loading-spinner"></div>
+        <div class="loading-msg" id="loadingMsg">Searching for current prices...</div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="results-section" id="resultsSection">
+        <div class="results-header">
+          <div>
+            <div class="results-title">Your Budget Estimate</div>
+            <div class="results-trip" id="resultsMeta"></div>
+          </div>
+          <button class="reset-btn" onclick="resetEstimator()">&#8617; New Estimate</button>
+        </div>
+        <div class="results-grid" id="resultsGrid"></div>
+        <div class="results-total">
+          <div class="results-total-label">Estimated Total (per person)</div>
+          <div class="results-total-range" id="resultsTotal"></div>
+        </div>
+        <div class="results-insights">
+          <h4>&#128204; Insider Tips</h4>
+          <p id="resultsInsights"></p>
+        </div>
+        <div class="results-cta">
+          <a href="index.html#contact" class="results-cta-primary">&#128222; Book a Free Consultation with Jay & Elizabeth</a>
+          <button class="results-cta-secondary" onclick="resetEstimator()">&#8617; Estimate Another Trip</button>
+        </div>
+      </div>
+
+    </div><!-- end estimator-card -->
+  </section><!-- end step3 -->
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Destinara Travel. All rights reserved. &bull; <a href="privacy-policy.html">Privacy Policy</a> &bull; <a href="index.html">Home</a></p>
+</footer>
+
+<!-- Widgety scripts -->
+<script src="https://www.widgety.co.uk/assets/widgety_iframe-338e444fa45e2af836a1c162ed7b7fa3b57d6267f6e30c026f7d582a77e34dd7.js"></script>
+<script src="https://www.widgety.co.uk/assets/deep_linking_iframe-96ca31e40c8ae6e4a72211018719c609dddc638f8767b1df287e76832e4b953e.js"></script>
+<script src="https://www.widgety.co.uk/assets/widgety_cruise_tour_search_navigation_script-e5c46a5521b82182ecdc1564d7f90c5cfb653f3ffed29c4220e85749607af1de.js"></script>
+
+<script>
+// ─── NAV SCROLL ───────────────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+
+// ─── STEP FLOW ───────────────────────────────────────────────
+let selectedType = null;
+
+function selectTripType(type) {
+  selectedType = type;
+  // Update cards
+  document.querySelectorAll('.trip-type-card').forEach(c => c.classList.remove('selected'));
+  document.querySelector('[data-type="'+type+'"]').classList.add('selected');
+  // Mark step 1 badge complete
+  document.getElementById('step1Badge').classList.add('complete');
+  document.getElementById('step1Badge').textContent = '\u2713';
+  // Update step indicators
+  document.getElementById('stepIndicator1').classList.add('active');
+
+  if (type === 'flight') {
+    // Skip Widgety — go straight to Voyage Estimator as step 2
+    document.getElementById('step2').classList.add('hidden');
+    showEstimatorStep(2);
+    // Update step indicators
+    document.getElementById('stepIndicator2').classList.add('active');
+    document.getElementById('stepIndicator2').querySelector('.plan-step-num').textContent = '2';
+    document.querySelector('#stepIndicator2 span:last-child').textContent = 'Get Your Budget';
+    document.getElementById('stepIndicator3').classList.add('hidden');
+  } else {
+    // Cruise or Land: show Widgety first
+    configureWidgety(type);
+    document.getElementById('step2').classList.remove('hidden');
+    document.getElementById('step3').classList.add('hidden');
+    document.getElementById('stepIndicator2').classList.add('active');
+    document.getElementById('stepIndicator3').classList.remove('active');
+    // Smooth scroll to step 2
+    setTimeout(()=>document.getElementById('step2').scrollIntoView({behavior:'smooth',block:'start'}),100);
+  }
+
+  // Pre-select transport in estimator
+  const transportMap = {cruise:'cruise', land:'land', flight:'flight'};
+  document.getElementById('transport').value = transportMap[type] || 'flight';
+  updateTransportNote();
+}
+
+function configureWidgety(type) {
+  if (type === 'cruise') {
+    document.getElementById('widgetyIcon').textContent = '\u{1F6A2}';
+    document.getElementById('widgetyTitle').textContent = 'Search Cruises';
+    document.getElementById('widgetySubtitle').textContent = 'Browse hundreds of curated sailings — filter by destination, dates, cruise line & more';
+    document.getElementById('step2Title').textContent = 'Browse & Find Your Cruise';
+    document.getElementById('step2Subtitle').textContent = 'Search live cruise inventory — then we\'ll build your budget estimate';
+  } else {
+    document.getElementById('widgetyIcon').textContent = '\u{1F3DE}';
+    document.getElementById('widgetyTitle').textContent = 'Search Land Tours & Packages';
+    document.getElementById('widgetySubtitle').textContent = 'Browse guided tours & packages — filter by destination, dates, duration & price';
+    document.getElementById('step2Title').textContent = 'Browse & Find Your Land Tour';
+    document.getElementById('step2Subtitle').textContent = 'Search curated tours & packages — then we\'ll build your budget estimate';
+  }
+}
+
+function showStep3() {
+  document.getElementById('step3').classList.remove('hidden');
+  document.getElementById('step3Badge').textContent = '3';
+  document.getElementById('stepIndicator2').classList.add('active');
+  document.getElementById('stepIndicator3').classList.add('active');
+  setTimeout(()=>document.getElementById('step3').scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+function showEstimatorStep(stepNum) {
+  document.getElementById('step3').classList.remove('hidden');
+  document.getElementById('step3Badge').textContent = stepNum;
+  setTimeout(()=>document.getElementById('step3').scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+// ─── TRANSPORT NOTE ─────────────────────────────────────────
+function updateTransportNote() {
+  const transport = document.getElementById('transport').value;
+  const note = document.getElementById('transportNote');
+  const noteText = document.getElementById('transportNoteText');
+  const notes = {
+    cruise: 'For cruises, your destination should be the ship\'s home port or main region (e.g. "Miami, FL — Caribbean"). The estimate covers port fees, excursions & onboard extras.',
+    land: 'For land tours, your destination is the tour region (e.g. "Italy" or "Peru"). The estimate covers accommodation, meals, transport & activities within the tour.',
+    drive: 'For road trips, enter your starting city and final destination. We\'ll estimate fuel, lodging, food & activities along the route.',
+    rail: 'For rail trips, enter your departure city and destination. We\'ll estimate train passes, accommodation, meals & sightseeing.'
+  };
+  if (notes[transport]) {
+    noteText.textContent = notes[transport];
+    note.style.display = 'flex';
+  } else {
+    note.style.display = 'none';
+  }
+}
+document.getElementById('transport').addEventListener('change', updateTransportNote);
+
+// ─── STYLE PILLS ─────────────────────────────────────────────
+function selectStyle(el) {
+  document.querySelectorAll('.style-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ─── LOADING MESSAGES ────────────────────────────────────────
+const loadingMsgs = [
+  'Searching for current prices...',
+  'Checking flight rates & hotel costs...',
+  'Analyzing dining & activity options...',
+  'Calculating your personalized estimate...',
+  'Almost ready — building your breakdown...'
+];
+let msgIdx = 0, msgInterval;
+function cycleLoadingMsg() {
+  msgIdx = (msgIdx + 1) % loadingMsgs.length;
+  document.getElementById('loadingMsg').textContent = loadingMsgs[msgIdx];
+}
+
+// ─── RUN ESTIMATE ────────────────────────────────────────────
+async function runEstimate() {
+  const origin = document.getElementById('origin').value.trim();
+  const dest = document.getElementById('destination').value.trim();
+  const depart = document.getElementById('departDate').value;
+  const ret = document.getElementById('returnDate').value;
+  const travelers = document.getElementById('travelers').value;
+  const transport = document.getElementById('transport').value;
+  const style = document.querySelector('.style-pill.active')?.dataset.value || 'moderate';
+  const notes = document.getElementById('notes').value.trim();
+
+  if (!origin || !dest || !depart || !ret) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const d1 = new Date(depart), d2 = new Date(ret);
+  if (d2 <= d1) { alert('Return date must be after departure date.'); return; }
+  const nights = Math.ceil((d2 - d1) / 86400000);
+
+  // Show loading
+  document.getElementById('estimatorForm').style.display = 'none';
+  document.getElementById('loadingState').style.display = 'block';
+  document.getElementById('resultsSection').style.display = 'none';
+  msgIdx = 0;
+  document.getElementById('loadingMsg').textContent = loadingMsgs[0];
+  msgInterval = setInterval(cycleLoadingMsg, 2500);
+
+  const transportLabels = {flight:'Flight + Hotel', cruise:'Cruise', land:'Land Tour', drive:'Road Trip', rail:'Train / Rail'};
+  const prompt = 'Provide a detailed travel budget estimate for a ' + style + ' ' + (transportLabels[transport]||transport) + ' trip from ' + origin + ' to ' + dest + '. Duration: ' + nights + ' nights. Travelers: ' + travelers + '. ' + (notes ? 'Special notes: ' + notes + '. ' : '') + 'Return JSON with keys: "categories" (array of {name,icon,low,high} in USD per person), "total_low", "total_high", "best_time" (string), "destination_summary" (2-3 sentence overview with budget tips). Categories should reflect the trip type — for cruises include port fees & excursions; for land tours include tour operator fees & local transport; for flights include airfare & hotel separately.';
+
+  try {
+    const res = await fetch('/api/estimate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({prompt, destination: dest, origin, nights, travelers, style, transport})
+    });
+    if (!res.ok) throw new Error('API error ' + res.status);
+    const data = await res.json();
+    clearInterval(msgInterval);
+    document.getElementById('loadingState').style.display = 'none';
+    renderResults(data, dest, origin, nights, travelers, style, transport);
+  } catch(e) {
+    clearInterval(msgInterval);
+    document.getElementById('loadingState').style.display = 'none';
+    renderFallback(dest, nights, travelers, style, transport);
+  }
+}
+
+// ─── FORMAT ──────────────────────────────────────────────────
+function fmt(n) {
+  return '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits:0});
+}
+
+// ─── RENDER RESULTS ──────────────────────────────────────────
+function renderResults(data, dest, origin, nights, travelers, style, transport) {
+  const transportLabels = {flight:'Flight + Hotel', cruise:'Cruise', land:'Land Tour', drive:'Road Trip', rail:'Train / Rail'};
+  document.getElementById('resultsMeta').textContent = dest + ' \u2022 ' + nights + ' nights \u2022 ' + travelers + ' traveler(s) \u2022 ' + (transportLabels[transport]||transport) + ' \u2022 ' + style.charAt(0).toUpperCase()+style.slice(1);
+  const grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+  (data.categories || []).forEach(cat => {
+    const row = document.createElement('div');
+    row.className = 'result-row';
+    row.innerHTML = '<div class="result-row-label"><span>' + (cat.icon||'\u2708') + '</span><span>' + cat.name + '</span></div><div class="result-range">' + fmt(cat.low) + '\u2013' + fmt(cat.high) + '</div>';
+    grid.appendChild(row);
+  });
+  document.getElementById('resultsTotal').textContent = fmt(data.total_low||0) + '\u2013' + fmt(data.total_high||0);
+  document.getElementById('resultsInsights').textContent = (data.destination_summary||'') + (data.best_time ? ' Best time to visit: ' + data.best_time + '.' : '');
+  document.getElementById('resultsSection').style.display = 'block';
+}
+
+// ─── FALLBACK ────────────────────────────────────────────────
+function renderFallback(dest, nights, travelers, style, transport) {
+  const fallbacks = {
+    flight: [{name:'Flights (round trip)',icon:'\u2708',low:800,high:1600},{name:'Accommodation',icon:'\u{1F3E0}',low:600,high:1400},{name:'Dining & Experiences',icon:'\u{1F355}',low:300,high:700},{name:'Transport & Activities',icon:'\u{1F697}',low:200,high:500}],
+    cruise: [{name:'Cruise Fare',icon:'\u{1F6A2}',low:900,high:2500},{name:'Port Fees & Taxes',icon:'\u{1F4CB}',low:200,high:400},{name:'Shore Excursions',icon:'\u{1F3D6}',low:300,high:800},{name:'Onboard Extras',icon:'\u{1F37E}',low:200,high:600},{name:'Flights to Port',icon:'\u2708',low:300,high:800}],
+    land: [{name:'Tour Package',icon:'\u{1F3DE}',low:1200,high:3500},{name:'Flights',icon:'\u2708',low:600,high:1400},{name:'Accommodation (extra)',icon:'\u{1F3E0}',low:200,high:600},{name:'Meals & Activities',icon:'\u{1F374}',low:300,high:700},{name:'Local Transport',icon:'\u{1F68C}',low:100,high:300}]
+  };
+  const cats = fallbacks[transport] || fallbacks.flight;
+  const mult = style === 'budget' ? 0.7 : style === 'luxury' ? 1.8 : 1;
+  const adjusted = cats.map(c => ({...c, low: Math.round(c.low * mult / 50) * 50, high: Math.round(c.high * mult / 50) * 50}));
+  const totalLow = adjusted.reduce((s,c)=>s+c.low,0);
+  const totalHigh = adjusted.reduce((s,c)=>s+c.high,0);
+  renderResults({categories: adjusted, total_low: totalLow, total_high: totalHigh, destination_summary: 'Estimates are approximate ranges for a ' + style + ' trip. Actual costs vary by season, availability, and specific choices.', best_time: null}, dest, 'your origin', nights, travelers, style, transport);
+}
+
+// ─── RESET ──────────────────────────────────────────────────
+function resetEstimator() {
+  document.getElementById('estimatorForm').style.display = 'block';
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('resultsSection').style.display = 'none';
+}
+
+// ─── SET DEFAULTS ──────────────────────────────────────────
+(function setDefaults() {
+  const today = new Date();
+  const dep = new Date(today); dep.setMonth(dep.getMonth()+2);
+  const ret = new Date(dep); ret.setDate(ret.getDate()+10);
+  const fmt = d => d.toISOString().split('T')[0];
+  document.getElementById('departDate').value = fmt(dep);
+  document.getElementById('returnDate').value = fmt(ret);
+})();
+</script>
+</body>
+</html>
