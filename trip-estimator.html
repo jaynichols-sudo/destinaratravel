@@ -20,24 +20,42 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(13,92,92,0.08);transition:var(--transition)}
-.nav-container{max-width:1400px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--color-primary)}
-.nav-logo img{height:36px;width:36px;object-fit:contain}
-.nav-logo span{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em}
-.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--color-text);font-size:0.875rem;font-weight:500;padding:6px 12px;border-radius:6px;transition:var(--transition);position:relative}
-.nav-links a:hover{color:var(--color-primary);background:rgba(13,92,92,0.06)}
-.nav-links .has-dropdown{position:relative}
-.nav-links .has-dropdown::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--color-accent);transition:var(--transition)}
-.nav-links .has-dropdown:hover::after{width:60%}
-.nav-cta{background:var(--color-accent)!important;color:var(--color-white)!important;padding:8px 20px!important;border-radius:50px!important;font-weight:600!important}
-.nav-cta:hover{background:var(--color-accent-light)!important;transform:translateY(-1px);box-shadow:0 4px 15px rgba(196,149,107,0.4)!important}
-.nav-estimator-highlight{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light))!important;color:var(--color-white)!important;padding:8px 18px!important;border-radius:50px!important;font-weight:600!important;letter-spacing:0.01em;box-shadow:0 4px 15px rgba(13,92,92,0.3)!important}
-.nav-estimator-highlight:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(13,92,92,0.45)!important;background:linear-gradient(135deg,var(--color-primary-light),var(--color-primary))!important}
-
-/* HERO */
+/* ── Mega-Menu Navigation ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: background var(--transition), box-shadow var(--transition); }
+    nav.scrolled { background: rgba(10,74,74,0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
+    .nav-inner { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; height: 72px; gap: 48px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-img-wrap { position: relative; width: 40px; height: 40px; }
+    .nav-logo-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 10%; border-radius: 50%; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; flex: 1; }
+    .nav-links > li > a { color: rgba(255,255,255,0.92); font-size: 0.9rem; font-weight: 500; text-decoration: none; padding: 8px 14px; border-radius: 8px; transition: color var(--transition), background var(--transition); white-space: nowrap; display: inline-block; }
+    .nav-links > li > a:hover { color: #fff; background: rgba(255,255,255,0.12); }
+    .nav-mega { position: relative; }
+    .nav-mega > a::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; margin-left: 4px; transition: transform 0.2s; }
+    .nav-mega:hover > a::after, .nav-mega:focus-within > a::after { transform: rotate(180deg); }
+    .mega-panel { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: rgba(10,74,74,0.98); backdrop-filter: blur(16px); border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,0.3); padding: 28px 32px; min-width: 700px; border: 1px solid rgba(255,255,255,0.08); grid-template-columns: 1fr 1fr 1fr; gap: 0 24px; }
+    .nav-mega:hover .mega-panel, .nav-mega:focus-within .mega-panel { display: grid; }
+    .mega-col { padding: 0 16px; }
+    .mega-col + .mega-col { border-left: 1px solid rgba(255,255,255,0.08); }
+    .mega-col-header { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .mega-col a { display: block; color: rgba(255,255,255,0.8); font-size: 0.875rem; padding: 6px 0; text-decoration: none; transition: color var(--transition); }
+    .mega-col a:hover { color: #fff; }
+    .nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; flex-shrink: 0; }
+    .nav-estimator-link { display: flex; align-items: center; gap: 6px; color: var(--color-accent) !important; font-weight: 600 !important; }
+    .nav-estimator-link .nav-new-badge { background: var(--color-accent); color: white; font-size: 0.6rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.05em; }
+    .nav-cta { background: var(--color-accent); color: white !important; padding: 10px 22px !important; border-radius: 50px; font-weight: 600 !important; transition: background var(--transition), transform var(--transition); }
+    .nav-cta:hover { background: var(--color-accent-light) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--transition); }
+    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(10,74,74,0.98); backdrop-filter: blur(20px); padding: 24px; overflow-y: auto; z-index: 999; flex-direction: column; gap: 8px; }
+    .mobile-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 1.1rem; padding: 12px 16px; border-radius: 10px; display: block; }
+    .mobile-nav a:hover { background: rgba(255,255,255,0.1); }
+    .mobile-nav .mobile-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); padding: 16px 16px 4px; }
+    .mobile-menu { display: none; }
+    @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } .mobile-menu { display: flex; } }
+    img { max-width: 100%; height: auto; display: block; }
+    /* HERO */
 .estimator-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:72px}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#071f1f 0%,#0D5C5C 40%,#1A7A7A 70%,#0a3535 100%);z-index:0}
 .hero-particles{position:absolute;inset:0;z-index:1;overflow:hidden}
@@ -219,58 +237,95 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 }
 </style>
 </head>
-<body><nav class="nav" id="nav">
-<div class="container nav-inner">
-<a href="#hero" class="nav-logo">
-<img loading="eager" src="destinara-logo.png" alt="Destinara" class="nav-logo-img" style="height:48px;width:auto;">
-<span class="nav-logo-text">Destinara</span>
-</a>
-<ul class="nav-links">
-                <li class="dropdown">
-                    <a href="cruises.html">Cruises></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="cruises.html">All Cruise Lines></a></li>
-                        <li><a href="cruises.html#luxury">Luxury Cruises></a></li>
-                        <li><a href="cruises.html#ocean">Ocean Cruises></a></li>
-                        <li><a href="cruises.html#river">River Cruises></a></li>
-                        <li><a href="cruises.html#expedition">Expedition Cruises></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="vacations.html">Vacations></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="vacations.html">Hotels & Resorts></a></li>
-                        <li><a href="vacations.html">Adventure Travel></a></li>
-                        <li><a href="vacations.html">Wellness Retreats></a></li>
-                        <li><a href="vacations.html">Romance & Honeymoons></a></li>
-                        <li><a href="vacations.html">Cultural & Culinary></a></li>
-                        <li><a href="vacations.html">Group Travel></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="disney.html">Disney></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="disney.html">Disney Cruise Line></a></li>
-                        <li><a href="disney.html">Walt Disney World></a></li>
-                        <li><a href="disney.html">Disneyland Resort></a></li>
-                        <li><a href="disney.html">International Parks></a></li>
-                        <li><a href="disney.html">Aulani Hawaii></a></li>
-                        <li><a href="disney.html">Adventures by Disney></a></li>
-                        <li><a href="disney.html">Disney Vacation Club></a></li>
-                    </ul>
-                </li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="#deals">Deals</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="/blog/">Journal</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="trip-estimator.html" class="nav-estimator-highlight">&#10022; Trip Estimator</a></li>
-                <li><a href="#contact" class="nav-cta">Plan My Trip</a></li>
-            </ul>
-<button class="hamburger" id="hamburger" aria-label="Menu">
-<span></span><span></span><span></span>
-</button>
-</div>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="loader" id="loader"><div class="loader-inner"></div></div>
+
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-img-wrap">
+                <img loading="eager" src="destinara-logo.png" alt="Destinara" width="40" height="40">
+            </div>
+            <span class="nav-logo-text">Destinara</span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-mega">
+                <a href="vacations.html">Vacations</a>
+                <div class="mega-panel" role="menu">
+                    <div class="mega-col">
+                        <span class="mega-col-header">Land Vacations</span>
+                        <a href="vacations.html">Hotels &amp; Resorts</a>
+                        <a href="vacations.html">Adventure Travel</a>
+                        <a href="vacations.html">Wellness Retreats</a>
+                        <a href="vacations.html">Romance &amp; Honeymoons</a>
+                        <a href="vacations.html">Cultural &amp; Culinary</a>
+                        <a href="vacations.html">Group Travel</a>
+                    </div>
+                    <div class="mega-col">
+                        <span class="mega-col-header">Cruises</span>
+                        <a href="cruises.html">All Cruise Lines</a>
+                        <a href="cruises.html#luxury">Luxury Cruises</a>
+                        <a href="cruises.html#ocean">Ocean Cruises</a>
+                        <a href="cruises.html#river">River Cruises</a>
+                        <a href="cruises.html#expedition">Expedition Cruises</a>
+                    </div>
+                    <div class="mega-col">
+                        <span class="mega-col-header">Disney</span>
+                        <a href="disney.html">Disney Cruise Line</a>
+                        <a href="disney.html">Walt Disney World</a>
+                        <a href="disney.html">Disneyland Resort</a>
+                        <a href="disney.html">International Parks</a>
+                        <a href="disney.html">Aulani Hawaii</a>
+                        <a href="disney.html">Adventures by Disney</a>
+                        <a href="disney.html">Disney Vacation Club</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-mega">
+                <a href="destinations.html">Destinations</a>
+                <div class="mega-panel" role="menu">
+                    <div class="mega-col">
+                        <span class="mega-col-header">Americas</span>
+                        <a href="destinations.html#caribbean">Caribbean Islands</a>
+                        <a href="destinations.html#alaska">Alaska</a>
+                        <a href="destinations.html#hawaii">Hawaii</a>
+                        <a href="destinations.html#costa-rica">Costa Rica</a>
+                        <a href="destinations.html#mexico">Mexico</a>
+                        <a href="destinations.html#patagonia">Patagonia</a>
+                    </div>
+                    <div class="mega-col">
+                        <span class="mega-col-header">Europe</span>
+                        <a href="destinations.html#santorini">Santorini, Greece</a>
+                        <a href="destinations.html#amalfi">Amalfi Coast, Italy</a>
+                        <a href="destinations.html#paris">Paris, France</a>
+                        <a href="destinations.html#french-riviera">French Riviera</a>
+                        <a href="destinations.html#tuscany">Tuscany, Italy</a>
+                        <a href="destinations.html#iceland">Iceland</a>
+                    </div>
+                    <div class="mega-col">
+                        <span class="mega-col-header">Asia &amp; Beyond</span>
+                        <a href="destinations.html#bali">Bali, Indonesia</a>
+                        <a href="destinations.html#japan">Japan</a>
+                        <a href="destinations.html#maldives">Maldives</a>
+                        <a href="destinations.html#kenya">Kenya Safari</a>
+                        <a href="destinations.html#morocco">Morocco</a>
+                        <a href="destinations.html#dubai">Dubai, UAE</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="index.html#deals">Deals</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="/blog/">Journal</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="trip-estimator.html" class="nav-estimator-link">&#9733; Trip Estimator <span class="nav-new-badge">NEW</span></a></li>
+            <li><a href="index.html#contact" class="nav-cta">Plan My Trip</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
 
 <!-- HERO -->
@@ -694,8 +749,19 @@ const today=new Date();const dep=new Date(today);dep.setDate(dep.getDate()+60);c
 document.getElementById('departDate').value=dep.toISOString().split('T')[0];
 document.getElementById('returnDate').value=ret.toISOString().split('T')[0];
 
-// Nav scroll effect
-window.addEventListener('scroll',()=>{const nav=document.querySelector('nav');if(nav)nav.style.boxShadow=window.scrollY>50?'0 2px 20px rgba(0,0,0,0.1)':'none';});
+// Nav scroll + hamburger
+const navEl = document.getElementById('nav');
+const hamburgerEl = document.getElementById('hamburger');
+const mobileNavEl = document.getElementById('mobileNav');
+window.addEventListener('scroll', () => {
+  if (navEl) navEl.classList.toggle('scrolled', window.scrollY > 50);
+});
+if (hamburgerEl && mobileNavEl) {
+  hamburgerEl.addEventListener('click', () => {
+    mobileNavEl.classList.toggle('mobile-menu');
+    mobileNavEl.style.display = mobileNavEl.style.display === 'flex' ? 'none' : 'flex';
+  });
+}
 
 initParticles();
 initReveal();
