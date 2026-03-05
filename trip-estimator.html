@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voyage Estimator | AI-Powered Trip Budget Tool | Destinara Travel</title>
-<meta name="description" content="Get an instant AI-powered budget estimate for your dream trip. Flights, hotels, meals and more — personalized to your destination, dates and travel style.">
+<meta name="description" content="Get an instant AI-powered budget estimate for your dream trip. Flights, hotels, meals and more â personalized to your destination, dates and travel style.">
 <link rel="icon" type="image/png" href="destinara-logo.png">
 <link rel="apple-touch-icon" href="destinara-logo.png">
 <meta name="theme-color" content="#0D5C5C">
@@ -20,15 +20,13 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
 
-/* ── Mega-Menu Navigation ── */
+/* ââ Mega-Menu Navigation ââ */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: background var(--transition), box-shadow var(--transition); }
     nav.scrolled { background: rgba(10,74,74,0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
-    .nav-inner { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; height: 72px; gap: 48px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; height: 72px; gap: 32px; }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
-    .nav-logo-img-wrap { position: relative; width: 40px; height: 40px; }
-    .nav-logo-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 10%; border-radius: 50%; }
-    .nav-logo-text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
-    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; flex: 1; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; flex: 1; }
     .nav-links > li > a { color: rgba(255,255,255,0.92); font-size: 0.9rem; font-weight: 500; text-decoration: none; padding: 8px 14px; border-radius: 8px; transition: color var(--transition), background var(--transition); white-space: nowrap; display: inline-block; }
     .nav-links > li > a:hover { color: #fff; background: rgba(255,255,255,0.12); }
     .nav-mega { position: relative; }
@@ -245,9 +243,7 @@ body{font-family:var(--font-body);color:var(--color-text);background:var(--color
 <nav id="nav">
     <div class="nav-inner">
         <a href="index.html" class="nav-logo">
-            <div class="nav-logo-img-wrap">
-                <img loading="eager" src="destinara-logo.png" alt="Destinara" width="40" height="40">
-            </div>
+            <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;background:url(destinara-logo.png) no-repeat;background-size:200%;background-position:center 10%;"></div>
             <span class="nav-logo-text">Destinara</span>
         </a>
         <ul class="nav-links">
@@ -467,18 +463,18 @@ body{font-family:var(--font-body);color:var(--color-text);background:var(--color
             <div class="form-group">
               <label class="form-label">Primary Transport</label>
               <select class="form-select" id="transport">
-                <option value="flight">✈ Flight</option>
-                <option value="cruise">🚢 Cruise</option>
-                <option value="drive">🚗 Road Trip</option>
-                <option value="rail">🚂 Train / Rail</option>
+                <option value="flight">â Flight</option>
+                <option value="cruise">ð¢ Cruise</option>
+                <option value="drive">ð Road Trip</option>
+                <option value="rail">ð Train / Rail</option>
               </select>
             </div>
             <div class="form-group full">
               <label class="form-label">Travel Style</label>
               <div class="style-pills" id="stylePills">
-                <div class="style-pill" data-value="budget">🎒 Budget</div>
-                <div class="style-pill active" data-value="moderate">⭐ Moderate</div>
-                <div class="style-pill" data-value="luxury">💎 Luxury</div>
+                <div class="style-pill" data-value="budget">ð Budget</div>
+                <div class="style-pill active" data-value="moderate">â­ Moderate</div>
+                <div class="style-pill" data-value="luxury">ð Luxury</div>
               </div>
             </div>
             <div class="form-group full">
