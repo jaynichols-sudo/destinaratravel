@@ -1,7 +1,6 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  // CORS headers
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -15,8 +14,7 @@ export async function onRequestPost(context) {
 
     if (!destination) {
       return new Response(JSON.stringify({ error: 'Destination is required' }), {
-        status: 400,
-        headers: corsHeaders,
+        status: 400, headers: corsHeaders,
       });
     }
 
@@ -50,11 +48,18 @@ Respond with ONLY a valid JSON object in this exact format (no markdown, no expl
   "currency": "Local currency name and approximate exchange rate"
 }`;
 
+    const apiKey = env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      return new Response(JSON.stringify({ error: 'API key not configured', debug: 'ANTHROPIC_API_KEY env var is missing' }), {
+        status: 500, headers: corsHeaders,
+      });
+    }
+
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': env.ANTHROPIC_API_KEY,
+        'x-api-key': apiKey,
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
@@ -65,41 +70,36 @@ Respond with ONLY a valid JSON object in this exact format (no markdown, no expl
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error('Anthropic API error:', error);
-      return new Response(JSON.stringify({ error: 'Failed to get estimate from AI' }), {
-        status: 500,
-        headers: corsHeaders,
+      const errorText = await response.text();
+      return new Response(JSON.stringify({ error: 'Anthropic API error', status: response.status, detail: errorText }), {
+        status: 500, headers: corsHeaders,
       });
     }
 
     const data = await response.json();
     const text = data.content[0].text.trim();
 
-    // Parse the JSON response from Claude
     let estimate;
     try {
       estimate = JSON.parse(text);
     } catch (e) {
-      // Try to extract JSON if wrapped in markdown
       const match = text.match(/```(?:json)?\n?([sS]*?)```/);
       if (match) {
         estimate = JSON.parse(match[1]);
       } else {
-        throw new Error('Could not parse AI response as JSON');
+        return new Response(JSON.stringify({ error: 'Parse error', rawText: text.substring(0, 500) }), {
+          status: 500, headers: corsHeaders,
+        });
       }
     }
 
     return new Response(JSON.stringify(estimate), {
-      status: 200,
-      headers: corsHeaders,
+      status: 200, headers: corsHeaders,
     });
 
   } catch (err) {
-    console.error('Function error:', err);
-    return new Response(JSON.stringify({ error: 'Internal server error: ' + err.message }), {
-      status: 500,
-      headers: corsHeaders,
+    return new Response(JSON.stringify({ error: 'Internal server error', detail: err.message }), {
+      status: 500, headers: corsHeaders,
     });
   }
 }
