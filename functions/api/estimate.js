@@ -82,16 +82,12 @@ Respond with ONLY a valid JSON object in this exact format (no markdown, no expl
 
     let estimate;
     try {
-      estimate = JSON.parse(text);
+      const cleaned = text.replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'').trim();
+      estimate = JSON.parse(cleaned);
     } catch (e) {
-      const match = text.match(/```(?:json)?\n?([sS]*?)```/);
-      if (match) {
-        estimate = JSON.parse(match[1]);
-      } else {
-        return new Response(JSON.stringify({ error: 'Parse error', rawText: text.substring(0, 500) }), {
-          status: 500, headers: corsHeaders,
-        });
-      }
+      return new Response(JSON.stringify({ error: 'Parse error', rawText: text.substring(0, 500) }), {
+        status: 500, headers: corsHeaders,
+      });
     }
 
     return new Response(JSON.stringify(estimate), {
