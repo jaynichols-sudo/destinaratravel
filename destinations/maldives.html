@@ -8,41 +8,62 @@
         <style>
           *{margin:0;padding:0;box-sizing:border-box}:root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#1a1a2e;--color-light:#F5F1EB;--color-white:#ffffff;--color-text:#333333;--color-text-light:#666666}body{font-family:'Inter',sans-serif;color:var(--color-text);background:var(--color-white)}.nav{background:rgba(26,26,46,0.95);padding:1rem 2rem;position:fixed;width:100%;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center}.nav-logo img{height:40px}.nav-content{display:flex;gap:2rem;align-items:center}.nav-content a{color:var(--color-white);text-decoration:none;font-size:0.9rem;transition:color 0.3s}.nav-content a:hover{color:var(--color-accent)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}.hero-destination{height:70vh;background:linear-gradient(rgba(26,26,46,0.4),rgba(26,26,46,0.6)),url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--color-white);margin-top:60px}.hero-destination h1{font-family:'Playfair Display',serif;font-size:3.5rem;margin-bottom:1rem}.hero-destination p{font-size:1.2rem;max-width:600px;opacity:0.9}.breadcrumb{padding:1.5rem 0;font-size:0.9rem}.breadcrumb a{color:var(--color-primary);text-decoration:none}.breadcrumb span{margin:0 0.5rem;color:var(--color-text-light)}.section{padding:5rem 0}.section-alt{background:var(--color-light)}.section-dark{background:var(--color-dark);color:var(--color-white)}.section-label{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--color-accent);margin-bottom:1rem}.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:2rem;color:var(--color-dark)}.section-dark .section-title{color:var(--color-white)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.overview-grid img{width:100%;height:400px;object-fit:cover;border-radius:12px}.overview-text p{margin-bottom:1rem;line-height:1.8;color:var(--color-text-light)}.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.fact-card{background:var(--color-white);padding:2rem;border-radius:12px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.05)}.fact-card .fact-icon{font-size:1.5rem;margin-bottom:0.5rem}.fact-card h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.5rem;color:var(--color-dark)}.fact-card p{font-size:0.85rem;color:var(--color-text-light)}.experiences-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.experience-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,0.08)}.experience-card img{width:100%;height:250px;object-fit:cover}.experience-card .card-content{padding:1.5rem}.experience-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;color:var(--color-dark)}.experience-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.seasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.season-card{background:rgba(255,255,255,0.1);padding:2rem;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}.season-card.recommended{border-color:var(--color-accent);background:rgba(196,149,107,0.15)}.season-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem}.season-card .temp{font-size:1.5rem;color:var(--color-accent);font-weight:600;margin:0.5rem 0}.season-card p{font-size:0.85rem;opacity:0.8;line-height:1.6}.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.tip-card{padding:2rem;border-radius:12px;border:1px solid #e0d5c9}.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}.tip-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem;color:var(--color-dark)}.tip-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:1rem}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:8px;transition:transform 0.3s}.gallery-grid img:first-child{grid-column:span 2;grid-row:span 2}.gallery-grid img:hover{transform:scale(1.02)}.cta-section{text-align:center;padding:5rem 0}.cta-section h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}.cta-section p{opacity:0.8;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}.btn-primary{display:inline-block;background:var(--color-accent);color:var(--color-white);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:500;transition:all 0.3s}.btn-primary:hover{background:#b8895f;transform:translateY(-2px)}.footer{background:var(--color-dark);color:var(--color-white);padding:3rem 0;text-align:center}.footer-logo img{height:30px;margin-bottom:1rem}.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem}.footer p{font-size:0.8rem;opacity:0.5}@media(max-width:1024px){.overview-grid,.facts-grid,.seasons-grid{grid-template-columns:repeat(2,1fr)}.experiences-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.hero-destination h1{font-size:2.2rem}.overview-grid,.facts-grid,.experiences-grid,.seasons-grid,.tips-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-grid img:first-child{grid-column:span 1;grid-row:span 1}.nav-content{display:none}}
               </style>
-    </head>
-    <body>
-          <nav id="nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara Travel"><span class="nav-logo-text">Destinara</span></a>
-    <ul class="nav-links"><li><a href="../cruises.html">Cruises</a></li><li><a href="../vacations.html">Vacations</a></li><li><a href="../disney.html">Disney</a></li><li><a href="../destinations.html">Destinations</a></li><li><a href="../blog/">Blog</a></li><li><a href="../about.html">About</a></li></ul>
-    <div class="nav-right"><a href="../plan-my-trip.html" class="nav-cta">Plan My Trip</a><button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu"><span class="mobile-close" id="mobileClose">&#10005;</span><a href="../index.html">Home</a><a href="../cruises.html">Cruises</a><a href="../vacations.html">Vacations</a><a href="../disney.html">Disney</a><a href="../destinations.html">Destinations</a><a href="../blog/">Blog</a><a href="../about.html">About</a><a href="../plan-my-trip.html" class="nav-cta" style="display:inline-block;margin-top:16px;">Plan My Trip</a></div>
-</nav>/* NAV */
+    <style>
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
 nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:32px}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
 .nav-logo img{width:40px;height:40px;border-radius:50%;object-fit:cover}
-.nav-logo-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
-nav.scrolled .nav-logo-text{color:var(--color-dark)}
+.nav-logo-text{font-family:var(--font-display,Georgia,serif);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+nav.scrolled .nav-logo-text{color:#1a1a2e}
 .nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1}
-.nav-links>li>a{color:rgba(255,255,255,.92);font-size:.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color var(--transition)}
+.nav-links>li>a{color:rgba(255,255,255,.92);font-size:.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color .3s}
 .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.1)}
-nav.scrolled .nav-links>li>a{color:var(--color-text)}
-nav.scrolled .nav-links>li>a:hover{color:var(--color-primary);background:rgba(13,92,92,.06)}
+nav.scrolled .nav-links>li>a{color:#333}
+nav.scrolled .nav-links>li>a:hover{color:#0d5c5c;background:rgba(13,92,92,.06)}
 .nav-right{display:flex;align-items:center;gap:12px;margin-left:auto}
-.nav-cta{background:var(--color-accent);color:#fff;padding:9px 20px;border-radius:24px;font-weight:600;font-size:.88rem;text-decoration:none;transition:all var(--transition);white-space:nowrap}
-.nav-cta:hover{background:var(--color-accent-light);transform:translateY(-1px)}
+.nav-cta{background:#c9a96e;color:#fff;padding:9px 20px;border-radius:24px;font-weight:600;font-size:.88rem;text-decoration:none;transition:all .3s;white-space:nowrap}
+.nav-cta:hover{background:#b8935a;transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
-nav.scrolled .hamburger span{background:var(--color-dark)}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+nav.scrolled .hamburger span{background:#1a1a2e}
+.mobile-menu{display:none;position:fixed;inset:0;background:#1a1a2e;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px}
 .mobile-menu.active{display:flex}
 .mobile-menu a{color:#fff;font-size:1.4rem;font-weight:600;text-decoration:none}
 .mobile-close{position:absolute;top:24px;right:24px;color:#fff;font-size:1.5rem;cursor:pointer}
 @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
-
-          <section class="hero-destination"><div><h1>Maldives</h1><p>A paradise of crystal-clear lagoons, overwater villas, and pristine coral reefs in the Indian Ocean.</p></div></section>
+</style>
+</head>
+    <body>
+          <nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara Travel"><span class="nav-logo-text">Destinara</span></a>
+    <ul class="nav-links">
+      <li><a href="../cruises.html">Cruises</a></li>
+      <li><a href="../vacations.html">Vacations</a></li>
+      <li><a href="../disney.html">Disney</a></li>
+      <li><a href="../destinations.html">Destinations</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../plan-my-trip.html" class="nav-cta">Plan My Trip</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&#10005;</span>
+    <a href="../index.html">Home</a>
+    <a href="../cruises.html">Cruises</a>
+    <a href="../vacations.html">Vacations</a>
+    <a href="../disney.html">Disney</a>
+    <a href="../destinations.html">Destinations</a>
+    <a href="../blog/">Blog</a>
+    <a href="../about.html">About</a>
+    <a href="../plan-my-trip.html" class="nav-cta" style="display:inline-block;margin-top:16px;">Plan My Trip</a>
+  </div>
+</nav>/</div></section>
         <div class="breadcrumb"><div class="container"><a href="../index.html">Home</a><span>/</span><a href="../index.html#destinations">Destinations</a><span>/</span>Maldives</div></div>
         <section class="section"><div class="container"><div class="overview-grid"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80" alt="Maldives overwater villa"><div class="overview-text"><div class="section-label">Overview</div><h3 class="section-title">Paradise on Earth</h3><p>The Maldives is the ultimate tropical escape, a collection of 1,192 coral islands scattered across the Indian Ocean like jewels on blue silk. With powdery white beaches, impossibly turquoise waters, and some of the most luxurious resorts on the planet, this archipelago defines paradise.</p><p>Beneath the surface lies an underwater wonderland of vibrant coral reefs, manta rays, whale sharks, and hundreds of species of tropical fish. The Maldives offers world-class diving and snorkeling that ranks among the best anywhere on earth.</p><p>From iconic overwater bungalows and private island resorts to underwater restaurants and spa treatments above the waves, the Maldives delivers an unmatched level of luxury and seclusion for couples, honeymooners, and those seeking the ultimate relaxation.</p></div></div></div></section>
         <section class="section section-alt"><div class="container"><div class="section-label">Essential Information</div><h3 class="section-title">Quick Facts</h3><div class="facts-grid"><div class="fact-card"><div class="fact-icon">âï¸</div><h4>Best Season</h4><p>Nov-Apr (Dry Season)</p></div><div class="fact-card"><div class="fact-icon">ð¡ï¸</div><h4>Avg Temperature</h4><p>79-88F (26-31C)</p></div><div class="fact-card"><div class="fact-icon">ð°</div><h4>Budget Range</h4><p>$200 - $2000+/day</p></div><div class="fact-card"><div class="fact-icon">âï¸</div><h4>Flight Time</h4><p>18-24 hrs from US</p></div><div class="fact-card"><div class="fact-icon">ð£ï¸</div><h4>Language</h4><p>Dhivehi and English</p></div><div class="fact-card"><div class="fact-icon">ðµ</div><h4>Currency</h4><p>Maldivian Rufiyaa</p></div><div class="fact-card"><div class="fact-icon">ð</div><h4>Visa</h4><p>Free 30-day on arrival</p></div><div class="fact-card"><div class="fact-icon">ð¯</div><h4>Best For</h4><p>Luxury and Romance</p></div></div></div></section>
