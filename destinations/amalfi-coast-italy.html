@@ -91,7 +91,38 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.1)}
 </style>
 </head>
 <body>
-<nav><div class="nav-container"><a href="/" class="nav-logo">Destinara Travel</a><ul class="nav-links"><li><a href="/cruises.html">Cruises</a></li><li><a href="/vacations.html">Vacations</a></li><li><a href="/disney.html">Disney</a></li><li><a href="/destinations.html">Destinations</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about.html">About</a></li><li><a href="/plan-my-trip.html" style="background:#c9a84c;color:#1a1a1a;padding:6px 16px;border-radius:20px;font-weight:700;">Plan My Trip</a></li></ul><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../destinara-logo.png" alt="Destinara Travel"><span class="nav-logo-text">Destinara</span></a>
+    <ul class="nav-links"><li><a href="../cruises.html">Cruises</a></li><li><a href="../vacations.html">Vacations</a></li><li><a href="../disney.html">Disney</a></li><li><a href="../destinations.html">Destinations</a></li><li><a href="../blog/">Blog</a></li><li><a href="../about.html">About</a></li></ul>
+    <div class="nav-right"><a href="../plan-my-trip.html" class="nav-cta">Plan My Trip</a><button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><span class="mobile-close" id="mobileClose">&#10005;</span><a href="../index.html">Home</a><a href="../cruises.html">Cruises</a><a href="../vacations.html">Vacations</a><a href="../disney.html">Disney</a><a href="../destinations.html">Destinations</a><a href="../blog/">Blog</a><a href="../about.html">About</a><a href="../plan-my-trip.html" class="nav-cta" style="display:inline-block;margin-top:16px;">Plan My Trip</a></div>
+</nav>/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
+nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:32px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.nav-logo-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+nav.scrolled .nav-logo-text{color:var(--color-dark)}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1}
+.nav-links>li>a{color:rgba(255,255,255,.92);font-size:.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color var(--transition)}
+.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.scrolled .nav-links>li>a{color:var(--color-text)}
+nav.scrolled .nav-links>li>a:hover{color:var(--color-primary);background:rgba(13,92,92,.06)}
+.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto}
+.nav-cta{background:var(--color-accent);color:#fff;padding:9px 20px;border-radius:24px;font-weight:600;font-size:.88rem;text-decoration:none;transition:all var(--transition);white-space:nowrap}
+.nav-cta:hover{background:var(--color-accent-light);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+nav.scrolled .hamburger span{background:var(--color-dark)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{color:#fff;font-size:1.4rem;font-weight:600;text-decoration:none}
+.mobile-close{position:absolute;top:24px;right:24px;color:#fff;font-size:1.5rem;cursor:pointer}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
 <div class="mobile-menu" id="mobileMenu">
 <span class="mobile-close" id="mobileClose">&#x2715;</span>
 <a href="../index.html">Home</a>
