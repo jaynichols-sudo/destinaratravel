@@ -867,40 +867,83 @@ section{padding:100px 0}
 </section>
 
     <!-- WEEKEND GETAWAYS -->
+    <!-- SOUTHEAST ESCAPES -->
     <section class="browse-section" id="weekend-getaways">
       <div class="container">
         <div class="section-label reveal">Weekend Getaways</div>
         <h2 class="section-title reveal">Southeast Escapes</h2>
-        <p class="section-subtitle reveal">Quick trips to charming cities, pristine beaches, and mountain retreats across the Southeast</p>
-        <div class="browse-dest-grid reveal">
-          <a href="destinations/charleston-sc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=400&q=80" alt="Charleston SC" loading="lazy">
-            <div class="browse-dest-name">Charleston SC</div>
-          </a>
-          <a href="destinations/savannah-ga.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1667869373373-2237060cb446?w=400&q=80" alt="Savannah GA" loading="lazy">
-            <div class="browse-dest-name">Savannah GA</div>
-          </a>
-          <a href="destinations/outer-banks-nc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?w=400&q=80" alt="Outer Banks NC" loading="lazy">
-            <div class="browse-dest-name">Outer Banks NC</div>
-          </a>
-          <a href="destinations/washington-dc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=400&q=80" alt="Washington DC" loading="lazy">
-            <div class="browse-dest-name">Washington DC</div>
-          </a>
-          <a href="destinations/hilton-head-sc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" alt="Hilton Head SC" loading="lazy">
-            <div class="browse-dest-name">Hilton Head SC</div>
-          </a>
-          <a href="destinations/asheville-nc.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=80" alt="Asheville NC" loading="lazy">
-            <div class="browse-dest-name">Asheville NC</div>
-          </a>
-          <a href="destinations/nashville-tn.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1556033681-83abea291a96?w=400&q=80" alt="Nashville TN" loading="lazy">
-            <div class="browse-dest-name">Nashville TN</div>
-          </a>
+        <p class="section-subtitle reveal">Quick trips to charming coastal towns, Blue Ridge mountain retreats, and storied Southern cities — all within easy reach</p>
+        <style>
+          .se-categories { display: flex; flex-direction: column; gap: 50px; margin-top: 40px; }
+          .se-category-label { font-family: 'Inter', system-ui, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+          .se-category-label::after { content: ''; flex: 1; height: 1px; background: #e0d8cf; }
+          .se-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+          .se-card { display: block; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.09); transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: var(--color-text); background: #fff; }
+          .se-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.14); }
+          .se-card-img-wrap { position: relative; overflow: hidden; height: 175px; }
+          .se-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+          .se-card:hover .se-card-img-wrap img { transform: scale(1.06); }
+          .se-card-body { padding: 14px 16px 16px; }
+          .se-card-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 1.05rem; color: var(--color-dark); margin-bottom: 4px; }
+          .se-card-tag { font-size: 0.78rem; color: var(--color-text-light); line-height: 1.5; }
+          @media (max-width: 600px) { .se-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); } .se-card-img-wrap { height: 140px; } }
+        </style>
+        <div class="se-categories reveal">
+          <div class="se-category">
+            <div class="se-category-label">Coastal Escapes</div>
+            <div class="se-grid">
+              <a href="destinations/charleston-sc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1555606265-6cdd8f09888a?w=600&q=80" alt="Rainbow Row historic pastel houses Charleston SC" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Charleston, SC</div><div class="se-card-tag">Rainbow Row, cobblestone streets &amp; Lowcountry cuisine</div></div>
+              </a>
+              <a href="destinations/hilton-head-sc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Hilton Head SC pristine Atlantic beach" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Hilton Head, SC</div><div class="se-card-tag">World-class golf, pristine Atlantic beaches &amp; scenic bike paths</div></div>
+              </a>
+              <a href="destinations/outer-banks-nc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1597466765980-a09a0b7ed4ea?w=600&q=80" alt="Cape Hatteras Lighthouse Outer Banks North Carolina" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Outer Banks, NC</div><div class="se-card-tag">Wild barrier islands, Cape Hatteras Lighthouse &amp; Wright Brothers history</div></div>
+              </a>
+              <a href="destinations/savannah-ga.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1667869373373-2237060cb446?w=600&q=80" alt="Forsyth Park fountain and Spanish moss Savannah Georgia" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Savannah, GA</div><div class="se-card-tag">Spanish moss, antebellum squares &amp; America's most walkable city</div></div>
+              </a>
+            </div>
+          </div>
+          <div class="se-category">
+            <div class="se-category-label">Historic Cities &amp; Culture</div>
+            <div class="se-grid">
+              <a href="destinations/nashville-tn.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1545431781-3e1b506e9a37?w=600&q=80" alt="Nashville Tennessee Broadway honky-tonk neon lights at night" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Nashville, TN</div><div class="se-card-tag">Live music capital, honky-tonks &amp; world-class hot chicken</div></div>
+              </a>
+              <a href="destinations/washington-dc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=600&q=80" alt="Washington DC cherry blossoms Tidal Basin Washington Monument spring" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Washington, D.C.</div><div class="se-card-tag">Free world-class museums, iconic monuments &amp; cherry blossoms</div></div>
+              </a>
+              <a href="destinations/new-york-city.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80" alt="New York City Manhattan skyline aerial view" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">New York City, NY</div><div class="se-card-tag">The city that never sleeps — culture, food &amp; iconic skyline</div></div>
+              </a>
+              <a href="destinations/asheville-nc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1601628828688-632f38a5a7d0?w=600&q=80" alt="Asheville NC downtown arts district buildings and street" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Asheville, NC</div><div class="se-card-tag">Craft breweries, vibrant arts scene &amp; gateway to the Blue Ridge</div></div>
+              </a>
+            </div>
+          </div>
+          <div class="se-category">
+            <div class="se-category-label">Mountain Retreats</div>
+            <div class="se-grid">
+              <a href="destinations/asheville-nc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80" alt="Great Smoky Mountains misty forest morning Tennessee" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Smoky Mountains, TN/NC</div><div class="se-card-tag">America's most-visited national park — waterfalls, wildlife &amp; fall color</div></div>
+              </a>
+              <a href="destinations/asheville-nc.html" class="se-card">
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Blue Ridge Parkway autumn foliage mountain road overlook" loading="lazy"></div>
+                <div class="se-card-body"><div class="se-card-name">Blue Ridge Parkway, VA/NC</div><div class="se-card-tag">469 miles of breathtaking mountain scenery &amp; blazing fall foliage</div></div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -949,121 +992,107 @@ section{padding:100px 0}
     </section>
 
     <!-- BROWSE ALL DESTINATIONS -->
+    <!-- BROWSE ALL DESTINATIONS -->
     <section class="browse-section browse-all-section" id="all-destinations">
       <div class="container">
         <div class="section-label reveal">Explore</div>
         <h2 class="section-title reveal">Browse All Destinations</h2>
         <p class="section-subtitle reveal">From tropical islands to arctic adventures, find your perfect destination</p>
-        <div class="browse-dest-pills reveal">
-          <a href="destinations/alaska.html" class="browse-dest-pill">Alaska</a>
-          <a href="destinations/amalfi-coast-italy.html" class="browse-dest-pill">Amalfi Coast Italy</a>
-          <a href="destinations/asheville-nc.html" class="browse-dest-pill">Asheville NC</a>
-          <a href="destinations/australia.html" class="browse-dest-pill">Australia</a>
-          <a href="destinations/bali-indonesia.html" class="browse-dest-pill">Bali Indonesia</a>
-          <a href="destinations/barcelona-spain.html" class="browse-dest-pill">Barcelona Spain</a>
-          <a href="destinations/botswana.html" class="browse-dest-pill">Botswana</a>
-          <a href="destinations/brussels-christmas-market.html" class="browse-dest-pill">Brussels Christmas Market</a>
-          <a href="destinations/budapest-christmas-market.html" class="browse-dest-pill">Budapest Christmas Market</a>
-          <a href="destinations/cambodia.html" class="browse-dest-pill">Cambodia</a>
-          <a href="destinations/caribbean-islands.html" class="browse-dest-pill">Caribbean Islands</a>
-          <a href="destinations/charleston-sc.html" class="browse-dest-pill">Charleston SC</a>
-          <a href="destinations/cologne-christmas-market.html" class="browse-dest-pill">Cologne Christmas Market</a>
-          <a href="destinations/costa-rica.html" class="browse-dest-pill">Costa Rica</a>
-          <a href="destinations/dubai-uae.html" class="browse-dest-pill">Dubai UAE</a>
-          <a href="destinations/egypt.html" class="browse-dest-pill">Egypt</a>
-          <a href="destinations/fiji.html" class="browse-dest-pill">Fiji</a>
-          <a href="destinations/french-polynesia.html" class="browse-dest-pill">French Polynesia</a>
-          <a href="destinations/french-riviera.html" class="browse-dest-pill">French Riviera</a>
-          <a href="destinations/hawaii.html" class="browse-dest-pill">Hawaii</a>
-          <a href="destinations/hilton-head-sc.html" class="browse-dest-pill">Hilton Head SC</a>
-          <a href="destinations/iceland.html" class="browse-dest-pill">Iceland</a>
-          <a href="destinations/india.html" class="browse-dest-pill">India</a>
-          <a href="destinations/israel.html" class="browse-dest-pill">Israel</a>
-          <a href="destinations/japan.html" class="browse-dest-pill">Japan</a>
-          <a href="destinations/jordan.html" class="browse-dest-pill">Jordan</a>
-          <a href="destinations/kenya-safari.html" class="browse-dest-pill">Kenya Safari</a>
-          <a href="destinations/madagascar.html" class="browse-dest-pill">Madagascar</a>
-          <a href="destinations/maldives.html" class="browse-dest-pill">Maldives</a>
-          <a href="destinations/mexico.html" class="browse-dest-pill">Mexico</a>
-          <a href="destinations/morocco.html" class="browse-dest-pill">Morocco</a>
-          <a href="destinations/nashville-tn.html" class="browse-dest-pill">Nashville TN</a>
-          <a href="destinations/new-york-city.html" class="browse-dest-pill">New York City</a>
-          <a href="destinations/new-zealand.html" class="browse-dest-pill">New Zealand</a>
-          <a href="destinations/nuremberg-christmas-market.html" class="browse-dest-pill">Nuremberg Christmas Market</a>
-          <a href="destinations/oman.html" class="browse-dest-pill">Oman</a>
-          <a href="destinations/outer-banks-nc.html" class="browse-dest-pill">Outer Banks NC</a>
-          <a href="destinations/paris-france.html" class="browse-dest-pill">Paris France</a>
-          <a href="destinations/patagonia.html" class="browse-dest-pill">Patagonia</a>
-          <a href="destinations/peru.html" class="browse-dest-pill">Peru</a>
-          <a href="destinations/prague-christmas-market.html" class="browse-dest-pill">Prague Christmas Market</a>
-          <a href="destinations/rhine-river-germany.html" class="browse-dest-pill">Rhine River Germany</a>
-          <a href="destinations/salzburg-christmas-market.html" class="browse-dest-pill">Salzburg Christmas Market</a>
-          <a href="destinations/santorini-greece.html" class="browse-dest-pill">Santorini Greece</a>
-          <a href="destinations/savannah-ga.html" class="browse-dest-pill">Savannah GA</a>
-          <a href="destinations/seychelles.html" class="browse-dest-pill">Seychelles</a>
-          <a href="destinations/south-africa.html" class="browse-dest-pill">South Africa</a>
-          <a href="destinations/sri-lanka.html" class="browse-dest-pill">Sri Lanka</a>
-          <a href="destinations/strasbourg-christmas-market.html" class="browse-dest-pill">Strasbourg Christmas Market</a>
-          <a href="destinations/tanzania.html" class="browse-dest-pill">Tanzania</a>
-          <a href="destinations/thailand.html" class="browse-dest-pill">Thailand</a>
-          <a href="destinations/tuscany-italy.html" class="browse-dest-pill">Tuscany Italy</a>
-          <a href="destinations/vienna-christmas-market.html" class="browse-dest-pill">Vienna Christmas Market</a>
-          <a href="destinations/vietnam.html" class="browse-dest-pill">Vietnam</a>
-          <a href="destinations/washington-dc.html" class="browse-dest-pill">Washington DC</a>
+        <style>
+          .dest-category-group { margin-top: 40px; }
+          .dest-category-group + .dest-category-group { margin-top: 32px; }
+          .dest-cat-heading { font-family: 'Inter', system-ui, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+          .dest-cat-heading::after { content: ''; flex: 1; height: 1px; background: #d8d0c8; }
+        </style>
+        <div class="dest-category-group reveal">
+          <div class="dest-cat-heading">Americas</div>
+          <div class="browse-dest-pills">
+            <a href="destinations/alaska.html" class="browse-dest-pill">Alaska</a>
+            <a href="destinations/caribbean-islands.html" class="browse-dest-pill">Caribbean Islands</a>
+            <a href="destinations/costa-rica.html" class="browse-dest-pill">Costa Rica</a>
+            <a href="destinations/french-polynesia.html" class="browse-dest-pill">French Polynesia</a>
+            <a href="destinations/hawaii.html" class="browse-dest-pill">Hawaii</a>
+            <a href="destinations/mexico.html" class="browse-dest-pill">Mexico</a>
+            <a href="destinations/new-york-city.html" class="browse-dest-pill">New York City</a>
+            <a href="destinations/patagonia.html" class="browse-dest-pill">Patagonia</a>
+            <a href="destinations/peru.html" class="browse-dest-pill">Peru</a>
+          </div>
+        </div>
+        <div class="dest-category-group reveal">
+          <div class="dest-cat-heading">Southeast USA</div>
+          <div class="browse-dest-pills">
+            <a href="destinations/asheville-nc.html" class="browse-dest-pill">Asheville, NC</a>
+            <a href="destinations/charleston-sc.html" class="browse-dest-pill">Charleston, SC</a>
+            <a href="destinations/hilton-head-sc.html" class="browse-dest-pill">Hilton Head, SC</a>
+            <a href="destinations/nashville-tn.html" class="browse-dest-pill">Nashville, TN</a>
+            <a href="destinations/outer-banks-nc.html" class="browse-dest-pill">Outer Banks, NC</a>
+            <a href="destinations/savannah-ga.html" class="browse-dest-pill">Savannah, GA</a>
+            <a href="destinations/washington-dc.html" class="browse-dest-pill">Washington, D.C.</a>
+          </div>
+        </div>
+        <div class="dest-category-group reveal">
+          <div class="dest-cat-heading">Europe</div>
+          <div class="browse-dest-pills">
+            <a href="destinations/amalfi-coast-italy.html" class="browse-dest-pill">Amalfi Coast</a>
+            <a href="destinations/barcelona-spain.html" class="browse-dest-pill">Barcelona</a>
+            <a href="destinations/french-riviera.html" class="browse-dest-pill">French Riviera</a>
+            <a href="destinations/iceland.html" class="browse-dest-pill">Iceland</a>
+            <a href="destinations/paris-france.html" class="browse-dest-pill">Paris</a>
+            <a href="destinations/santorini-greece.html" class="browse-dest-pill">Santorini</a>
+            <a href="destinations/tuscany-italy.html" class="browse-dest-pill">Tuscany</a>
+          </div>
+        </div>
+        <div class="dest-category-group reveal">
+          <div class="dest-cat-heading">European Christmas Markets</div>
+          <div class="browse-dest-pills">
+            <a href="destinations/brussels-christmas-market.html" class="browse-dest-pill">Brussels</a>
+            <a href="destinations/budapest-christmas-market.html" class="browse-dest-pill">Budapest</a>
+            <a href="destinations/cologne-christmas-market.html" class="browse-dest-pill">Cologne</a>
+            <a href="destinations/nuremberg-christmas-market.html" class="browse-dest-pill">Nuremberg</a>
+            <a href="destinations/prague-christmas-market.html" class="browse-dest-pill">Prague</a>
+            <a href="destinations/rhine-river-germany.html" class="browse-dest-pill">Rhine River</a>
+            <a href="destinations/salzburg-christmas-market.html" class="browse-dest-pill">Salzburg</a>
+            <a href="destinations/strasbourg-christmas-market.html" class="browse-dest-pill">Strasbourg</a>
+            <a href="destinations/vienna-christmas-market.html" class="browse-dest-pill">Vienna</a>
+          </div>
+        </div>
+        <div class="dest-category-group reveal">
+          <div class="dest-cat-heading">Middle East &amp; Africa</div>
+          <div class="browse-dest-pills">
+            <a href="destinations/botswana.html" class="browse-dest-pill">Botswana</a>
+            <a href="destinations/dubai-uae.html" class="browse-dest-pill">Dubai</a>
+            <a href="destinations/egypt.html" class="browse-dest-pill">Egypt</a>
+            <a href="destinations/israel.html" class="browse-dest-pill">Israel</a>
+            <a href="destinations/jordan.html" class="browse-dest-pill">Jordan</a>
+            <a href="destinations/kenya-safari.html" class="browse-dest-pill">Kenya Safari</a>
+            <a href="destinations/madagascar.html" class="browse-dest-pill">Madagascar</a>
+            <a href="destinations/morocco.html" class="browse-dest-pill">Morocco</a>
+            <a href="destinations/oman.html" class="browse-dest-pill">Oman</a>
+            <a href="destinations/seychelles.html" class="browse-dest-pill">Seychelles</a>
+            <a href="destinations/south-africa.html" class="browse-dest-pill">South Africa</a>
+            <a href="destinations/tanzania.html" class="browse-dest-pill">Tanzania</a>
+          </div>
+        </div>
+        <div class="dest-category-group reveal">
+          <div class="dest-cat-heading">Asia &amp; Pacific</div>
+          <div class="browse-dest-pills">
+            <a href="destinations/australia.html" class="browse-dest-pill">Australia</a>
+            <a href="destinations/bali-indonesia.html" class="browse-dest-pill">Bali, Indonesia</a>
+            <a href="destinations/cambodia.html" class="browse-dest-pill">Cambodia</a>
+            <a href="destinations/fiji.html" class="browse-dest-pill">Fiji</a>
+            <a href="destinations/india.html" class="browse-dest-pill">India</a>
+            <a href="destinations/japan.html" class="browse-dest-pill">Japan</a>
+            <a href="destinations/maldives.html" class="browse-dest-pill">Maldives</a>
+            <a href="destinations/new-zealand.html" class="browse-dest-pill">New Zealand</a>
+            <a href="destinations/sri-lanka.html" class="browse-dest-pill">Sri Lanka</a>
+            <a href="destinations/thailand.html" class="browse-dest-pill">Thailand</a>
+            <a href="destinations/vietnam.html" class="browse-dest-pill">Vietnam</a>
+          </div>
         </div>
       </div>
     </section>
 
-<!-- EXPANDED CRUISE PARTNERS SHOWCASE -->
-    <div class="partners-expanded">
-    <h2>We Partner With Every Major Cruise Line</h2>
-    <p class="partners-sub">30+ cruise brands across luxury, premium, contemporary, river, and expedition categories</p>
-    <div class="partners-logo-grid">
-    <div class="partner-logo-item"><span class="partner-emoji">🎩</span><span class="partner-name">Regent Seven Seas</span><span class="partner-type">Luxury</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">💎</span><span class="partner-name">Silversea</span><span class="partner-type">Luxury</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">💠</span><span class="partner-name">Seabourn</span><span class="partner-type">Luxury</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🛳</span><span class="partner-name">Ritz-Carlton Yacht</span><span class="partner-type">Luxury</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌊</span><span class="partner-name">Explora Journeys</span><span class="partner-type">Luxury</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">⛵</span><span class="partner-name">Crystal</span><span class="partner-type">Luxury</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌍</span><span class="partner-name">Viking Ocean</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🏝</span><span class="partner-name">Celebrity</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🍴</span><span class="partner-name">Oceania</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🎶</span><span class="partner-name">Azamara</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🏰</span><span class="partner-name">Cunard</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌸</span><span class="partner-name">Holland America</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">👠</span><span class="partner-name">Virgin Voyages</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🎰</span><span class="partner-name">Atlas Ocean</span><span class="partner-type">Premium</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">👑</span><span class="partner-name">Royal Caribbean</span><span class="partner-type">Contemporary</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌎</span><span class="partner-name">Norwegian</span><span class="partner-type">Contemporary</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌍</span><span class="partner-name">MSC Cruises</span><span class="partner-type">Contemporary</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🎉</span><span class="partner-name">Carnival</span><span class="partner-type">Contemporary</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🎵</span><span class="partner-name">Princess</span><span class="partner-type">Contemporary</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">✨</span><span class="partner-name">Disney Vacations</span><span class="partner-type">Parks & Cruises</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🏞</span><span class="partner-name">AMA Waterways</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🏛</span><span class="partner-name">Viking River</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🍷</span><span class="partner-name">Avalon Waterways</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🎨</span><span class="partner-name">Uniworld</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🇺🇸</span><span class="partner-name">American Cruise Lines</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">⚓</span><span class="partner-name">American Queen</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🇪🇬</span><span class="partner-name">Tauck River</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🇫🇷</span><span class="partner-name">Scenic</span><span class="partner-type">River</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🐧</span><span class="partner-name">Hurtigruten</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🐊</span><span class="partner-name">Lindblad-Nat Geo</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🇫🇷</span><span class="partner-name">Ponant</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🧊</span><span class="partner-name">Quark Expeditions</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌋</span><span class="partner-name">Scenic Eclipse</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">⛵</span><span class="partner-name">Windstar</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🏝</span><span class="partner-name">Paul Gauguin</span><span class="partner-type">Expedition</span></div>
-    <div class="partner-logo-item"><span class="partner-emoji">🌊</span><span class="partner-name">Star Clippers</span><span class="partner-type">Expedition</span></div>
-    </div>
-    <div class="partners-stat-bar">
-    <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Cruise Brands</div></div>
-    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Ships Worldwide</div></div>
-    <div class="stat"><div class="stat-num">2,000+</div><div class="stat-label">Itineraries</div></div>
-    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Continents</div></div>
-    </div>
-    </div>
-
+    <!-- WHY DESTINARA -->
 <!-- WHY DESTINARA -->
 <section class="why-section" id="why">
 <div class="container">
