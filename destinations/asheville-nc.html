@@ -216,7 +216,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
 </p>
 </footer>
 <script>
-const nav=document.getElementById('mainNav');
+const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
