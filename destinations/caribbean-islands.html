@@ -24,110 +24,121 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ===== DEST PAGE BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--color-primary:#0D5C5C;--color-primary-light:#1A7A7A;--color-accent:#C4956B;--color-accent-light:#D4A574;--color-dark:#0A4A4A;--color-text:#2d2d2d;--color-text-light:#6b7280;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-white:#ffffff;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.1);--radius:12px;--transition:.25s ease}
-html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6}img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
-nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:32px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.nav-logo img{width:40px;height:40px;border-radius:50%;object-fit:cover}
-.nav-logo-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
-nav.scrolled .nav-logo-text{color:var(--color-dark)}
-.nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1}
-.nav-links>li>a{color:rgba(255,255,255,.92);font-size:.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color var(--transition)}
-.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.12)}
-nav.scrolled .nav-links>li>a{color:var(--color-text)}
-nav.scrolled .nav-links>li>a:hover{background:rgba(13,92,92,.08);color:var(--color-primary)}
-.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
-.nav-cta{background:var(--color-accent)!important;color:white!important;padding:10px 22px!important;border-radius:25px!important;font-weight:600!important;transition:all var(--transition)!important}
-.nav-cta:hover{background:var(--color-accent-light)!important;transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
-.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
-nav.scrolled .hamburger span{background:var(--color-dark)}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:1001;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:90px;gap:24px;opacity:0;visibility:hidden;transition:all .4s;overflow-y:auto}
-.mobile-menu.open{display:flex;opacity:1;visibility:visible}
-.mobile-menu a{font-family:var(--font-display);font-size:1.6rem;color:var(--color-white)}
-.nav-new-badge{display:inline-block;background:#ff6b35;color:#fff;font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px;animation:pulse-badge 2s infinite}.nav-badge{display:inline-block;background:#ff6b35;color:#fff;font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px}@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:.7}}
-.skip-link{position:absolute;top:-40px;left:0;background:#0D5C5C;color:#fff;padding:8px;z-index:9999;transition:top .3s;text-decoration:none}
-.skip-link:focus{top:0}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.nav-inner{width:100%}}
-.breadcrumb{position:absolute;top:76px;left:50%;transform:translateX(-50%);z-index:10;width:100%;max-width:1200px;padding:0 24px}
-.breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.75)}
-.breadcrumb-inner a{color:rgba(255,255,255,.75)}
-.breadcrumb-inner a:hover{color:#fff}
-.breadcrumb-inner span{color:rgba(255,255,255,.5)}
-.hero{position:relative;height:85vh;min-height:500px;max-height:700px;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);transition:transform 8s ease}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,30,30,.85) 0%,rgba(10,30,30,.3) 50%,rgba(10,30,30,.15) 100%)}
-.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:0 24px 56px}
-.hero-badge{display:inline-flex;align-items:center;background:rgba(196,149,107,.25);backdrop-filter:blur(10px);border:1px solid rgba(196,149,107,.4);color:var(--color-accent-light);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px}
-.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:12px}
-.hero-tagline{font-size:1.15rem;color:rgba(255,255,255,.82);font-style:italic;margin-bottom:24px}
-.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
-.hero-meta-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;font-size:.8rem;font-weight:500;padding:6px 14px;border-radius:20px}
-.page-content{max-width:1200px;margin:0 auto;padding:0 24px}
-.intro-section{padding:64px 0 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-@media(max-width:768px){.intro-section{grid-template-columns:1fr;gap:32px}}
-.intro-lead{font-family:var(--font-display);font-size:1.4rem;font-weight:400;color:var(--color-dark);line-height:1.6;font-style:italic;margin-bottom:20px}
-.intro-body{color:var(--color-text-light);line-height:1.8}
-.intro-body p+p{margin-top:16px}
-.quick-facts{background:var(--color-bg-alt);border-radius:var(--radius);padding:28px;border:1px solid rgba(13,92,92,.08)}
-.quick-facts h3{font-family:var(--font-display);font-size:1.1rem;color:var(--color-dark);margin-bottom:20px}
-.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fact-item{display:flex;flex-direction:column;gap:4px}
-.fact-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-light)}
-.fact-value{font-size:.95rem;font-weight:600;color:var(--color-dark)}
-.section-divider{border:none;border-top:1px solid rgba(13,92,92,.08);margin:0}
-.highlights-section,.itinerary-section,.tips-section,.weather-section{padding:48px 0}
-.section-header{display:flex;align-items:center;gap:12px;margin-bottom:32px}
-.section-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.section-label-text{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent);display:block;margin-bottom:4px}
-.section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--color-dark)}
-.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:900px){.highlights-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.highlights-grid{grid-template-columns:1fr}}
-.highlight-card{background:var(--color-white);border:1px solid rgba(13,92,92,.08);border-radius:var(--radius);padding:20px;display:flex;align-items:flex-start;gap:12px;box-shadow:var(--shadow-sm);transition:all var(--transition)}
-.highlight-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:rgba(196,149,107,.3)}
-.highlight-bullet{width:8px;height:8px;border-radius:50%;background:var(--color-accent);flex-shrink:0;margin-top:6px}
-.highlight-text{font-size:.9rem;color:var(--color-text);font-weight:500;line-height:1.4}
-.day-card{display:grid;grid-template-columns:80px 1fr;gap:20px;background:var(--color-white);border-radius:var(--radius);padding:24px;border:1px solid rgba(13,92,92,.08);box-shadow:var(--shadow-sm);margin-bottom:16px}
-@media(max-width:600px){.day-card{grid-template-columns:1fr}}
-.day-number{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--color-accent);line-height:1}
-.day-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--color-dark);margin-bottom:12px}
-.day-activities{list-style:none;display:flex;flex-direction:column;gap:8px}
-.day-activities li{font-size:.9rem;color:var(--color-text-light);padding-left:16px;position:relative;line-height:1.5}
-.day-activities li::before{content:'→';position:absolute;left:0;color:var(--color-accent);font-size:.8rem}
-.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-@media(max-width:700px){.tips-grid{grid-template-columns:1fr}}
-.tip-card{background:var(--color-bg-alt);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start;border:1px solid rgba(13,92,92,.06)}
-.tip-icon{font-size:1.6rem;flex-shrink:0;margin-top:2px}
-.tip-title{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--color-dark);margin-bottom:6px}
-.tip-content p{font-size:.87rem;color:var(--color-text-light);line-height:1.6}
-.weather-card{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));border-radius:var(--radius);padding:32px;color:#fff}
-.weather-card h3{font-family:var(--font-display);font-size:1.3rem;margin-bottom:8px}
-.weather-card p{color:rgba(255,255,255,.85);line-height:1.7;font-size:.95rem}
-.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
-@media(max-width:700px){.season-grid{grid-template-columns:repeat(2,1fr)}}
-.season-item{background:rgba(255,255,255,.12);border-radius:8px;padding:14px;text-align:center}
-.season-name{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
-.season-desc{font-size:.85rem;font-weight:600}
-.cta-section{padding:64px 0}
-.cta-card{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));border-radius:20px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
-.cta-card::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.04)}
-.cta-card h2{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:#fff;margin-bottom:16px;position:relative}
-.cta-card p{color:rgba(255,255,255,.82);font-size:1.05rem;max-width:520px;margin:0 auto 32px;line-height:1.7;position:relative}
-.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
-.btn-primary{background:var(--color-accent);color:#fff;padding:16px 32px;border-radius:30px;font-weight:600;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:all var(--transition)}
-.btn-primary:hover{background:var(--color-accent-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(196,149,107,.4)}
-.btn-secondary{background:rgba(255,255,255,.15);color:#fff;padding:16px 32px;border-radius:30px;font-weight:600;font-size:1rem;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.3);transition:all var(--transition)}
-.btn-secondary:hover{background:rgba(255,255,255,.25)}
-.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--color-primary);font-weight:500;font-size:.9rem;padding:48px 0 24px}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2d2d2d;line-height:1.6}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:rgba(15,25,20,.92);backdrop-filter:blur(12px)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;flex-shrink:0}
+.nav-logo img{width:40px;height:40px;border-radius:50%}
+.nav-logo-text{font-size:1.05rem}
+.nav-links{list-style:none;display:flex;gap:4px;align-items:center;margin-left:auto}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:8px;font-size:.9rem;transition:all .2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-links .nav-cta{background:#c8956c;color:#fff!important;padding:9px 18px;border-radius:20px;font-weight:600}
+.nav-links .nav-cta:hover{background:#b8845b}
+.nav-badge{background:#e74c3c;color:#fff;font-size:.6rem;font-weight:700;padding:2px 5px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+.mobile-menu{display:none}
+
+/* ===== HERO ===== */
+.dest-hero{min-height:420px;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 50%,#1a3a2a 100%);display:flex;align-items:flex-end;padding-bottom:40px;margin-top:72px;position:relative;overflow:hidden}
+.dest-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 100%)}
+.hero-content{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;color:#fff}
+.breadcrumb{font-size:.85rem;opacity:.8;margin-bottom:12px}
+.breadcrumb a{color:#c8956c;text-decoration:none}
+.category-badge{display:inline-block;background:rgba(200,149,108,.9);color:#fff;font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.hero-tagline{font-size:2.8rem;font-weight:700;line-height:1.2;margin-bottom:8px;font-family:'Playfair Display',Georgia,serif}
+.meta-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.meta-pill{background:rgba(255,255,255,.15);color:#fff;font-size:.82rem;padding:5px 14px;border-radius:16px;backdrop-filter:blur(6px)}
+
+/* ===== MAIN CONTENT ===== */
+main.dest-main{max-width:1200px;margin:0 auto;padding:40px 24px 60px}
+
+/* ===== LEAD ===== */
+.dest-lead{font-size:1.15rem;line-height:1.8;color:#444;margin-bottom:36px;padding:24px;background:#fff;border-radius:12px;border-left:4px solid #c8956c;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+
+/* ===== INFO CARDS ===== */
+.info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:40px}
+.info-card{background:#fff;border-radius:12px;padding:18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc}
+.ic-icon{font-size:1.8rem;margin-bottom:8px}
+.ic-label{display:block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:4px}
+.ic-value{display:block;font-size:.9rem;font-weight:600;color:#2d2d2d}
+
+/* ===== SECTION WRAPPER ===== */
+.dest-section{margin-bottom:44px}
+.section-title{font-size:1.5rem;font-weight:700;color:#1a3a2a;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #c8956c;font-family:'Playfair Display',Georgia,serif}
+
+/* ===== HIGHLIGHTS GRID ===== */
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.hl-item{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;display:flex;gap:16px;align-items:flex-start}
+.hl-icon{font-size:2rem;flex-shrink:0;line-height:1}
+.hl-item p{font-size:.93rem;color:#555;line-height:1.6}
+.hl-item strong{display:block;font-size:1rem;color:#1a3a2a;margin-bottom:4px}
+
+/* ===== QUICK FACTS TABLE ===== */
+.facts-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.facts-table th,.facts-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #f0ece4;font-size:.92rem}
+.facts-table th{background:#f4f1eb;font-weight:600;color:#1a3a2a;width:35%}
+.facts-table td{color:#444}
+.facts-table tr:last-child th,.facts-table tr:last-child td{border-bottom:none}
+
+/* ===== WHY LIST ===== */
+.why-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.why-list li{background:#fff;border-radius:10px;padding:14px 18px 14px 44px;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.05);border:1px solid #e8e4dc;font-size:.93rem;color:#444}
+.why-list li::before{content:'✓';position:absolute;left:16px;color:#c8956c;font-weight:700;font-size:1.1rem}
+
+/* ===== ITINERARY ===== */
+.itin-grid{display:flex;flex-direction:column;gap:16px}
+.itin-day{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start}
+.itin-day-num{background:#1a3a2a;color:#fff;border-radius:10px;padding:12px 8px;text-align:center;font-weight:700;font-size:.85rem;line-height:1.3}
+.itin-day-content h4{font-size:1rem;font-weight:700;color:#1a3a2a;margin-bottom:10px}
+.itin-day-content ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.itin-day-content li{font-size:.9rem;color:#555;padding-left:18px;position:relative}
+.itin-day-content li::before{content:'→';position:absolute;left:0;color:#c8956c}
+
+/* ===== TIPS GRID ===== */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tip-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;border-top:3px solid #c8956c}
+.tip-icon{font-size:1.8rem;margin-bottom:10px}
+.tip-card h4{font-size:1rem;font-weight:700;color:#1a3a2a;margin-bottom:8px}
+.tip-card p{font-size:.9rem;color:#555;line-height:1.6}
+
+/* ===== SEASONS GRID ===== */
+.seasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.season-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;text-align:center}
+.season-icon{font-size:2rem;margin-bottom:10px}
+.season-card h4{font-size:.95rem;font-weight:700;color:#1a3a2a;margin-bottom:8px}
+.season-card p{font-size:.87rem;color:#555;line-height:1.5}
+
+/* ===== CTA ===== */
+.dest-cta{background:linear-gradient(135deg,#1a3a2a,#2d5a3d);border-radius:16px;padding:36px;text-align:center;color:#fff;margin-top:44px}
+.dest-cta h2{font-size:1.6rem;margin-bottom:12px;font-family:'Playfair Display',Georgia,serif}
+.dest-cta p{opacity:.9;margin-bottom:24px;font-size:.95rem}
+.btn-cta{display:inline-block;background:#c8956c;color:#fff;text-decoration:none;padding:14px 32px;border-radius:24px;font-weight:700;font-size:1rem;transition:all .2s}
+.btn-cta:hover{background:#b8845b;transform:translateY(-1px)}
+
+/* ===== FOOTER ===== */
+footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:center;font-size:.88rem;margin-top:0}
+.footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:10px}
+.footer-links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#c8956c}
+
+/* ===== BACK LINK ===== */
+.back-link{display:inline-flex;align-items:center;gap:8px;color:#c8956c;text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:24px;transition:gap .2s}
 .back-link:hover{gap:12px}
-footer{background:var(--color-dark);color:rgba(255,255,255,.65);text-align:center;padding:32px 24px;font-size:.875rem}
-footer a{color:var(--color-accent)}
-footer a:hover{color:var(--color-accent-light)}
-.footer-links{display:flex;gap:24px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+
+@media(max-width:768px){
+  .hero-tagline{font-size:1.8rem}
+  .info-cards{grid-template-columns:repeat(2,1fr)}
+  .itin-day{grid-template-columns:1fr}
+  .itin-day-num{display:inline-block;padding:6px 12px}
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
 </style>
 </head>
 <body>
@@ -269,6 +280,127 @@ footer a:hover{color:var(--color-accent-light)}
     </section>
     <a href="../destinations.html" class="back-link">← Back to All Destinations</a>
   </div>
+<!-- RICH CONTENT START -->
+<p class="dest-lead">The Caribbean is not one destination — it is more than 7,000 islands, each with its own character, culture, and color. From the French-inflected elegance of St. Barths to the volcanic grandeur of St. Lucia, the turquoise flats of the Turks and Caicos to the rum-soaked rhythms of Jamaica, the Caribbean offers the full spectrum of tropical perfection. These are the islands that invented the beach vacation — and they have never stopped perfecting it.</p>
+<div class="info-cards">
+  <div class="info-card"><span class="ic-icon">🌍</span><span class="ic-label">REGION</span><span class="ic-value">Caribbean</span></div>
+  <div class="info-card"><span class="ic-icon">✦</span><span class="ic-label">CATEGORY</span><span class="ic-value">Beach, Romance & Culture</span></div>
+  <div class="info-card"><span class="ic-icon">📅</span><span class="ic-label">BEST TIME</span><span class="ic-value">December–April (dry season)</span></div>
+  <div class="info-card"><span class="ic-icon">💰</span><span class="ic-label">BUDGET</span><span class="ic-value">$300–$800/day</span></div>
+  <div class="info-card"><span class="ic-icon">👥</span><span class="ic-label">YOUR EXPERTS</span><span class="ic-value">Jay &amp; Elizabeth Nichols</span></div>
+</div>
+<section class="dest-section">
+<h2 class="section-title">Highlights &amp; Experiences</h2>
+<div class="highlights-grid">
+  <div class="hl-item"><span class="hl-icon">🏖️</span><span>Turks & Caicos — Grace Bay Beach consistently ranked the #1 beach in the world: blinding white sand, improbable turquoise water</span></div>
+  <div class="hl-item"><span class="hl-icon">🌋</span><span>St. Lucia — The Pitons rise dramatically from the sea beside one of the Caribbean's most stunning beach resorts</span></div>
+  <div class="hl-item"><span class="hl-icon">🎵</span><span>Jamaica — Bob Marley, Blue Mountain coffee, jerk chicken, Doctor's Cave Beach, and the warmth of the Jamaican people</span></div>
+  <div class="hl-item"><span class="hl-icon">🍹</span><span>Barbados — The most sophisticated island: world-class food, cricket culture, superb rum, and a perfect beach on every coast</span></div>
+  <div class="hl-item"><span class="hl-icon">🦞</span><span>St. Martin/Sint Maarten — Two nations on one island with the best restaurant scene and duty-free shopping in the Caribbean</span></div>
+  <div class="hl-item"><span class="hl-icon">⛵</span><span>BVI (British Virgin Islands) — The world's greatest sailing destination, with pristine anchorages and The Baths at Virgin Gorda</span></div>
+</div>
+</section>
+<section class="dest-section">
+<h2 class="section-title">Quick Facts</h2>
+<table class="facts-table"><tbody>
+<tr><th>Region</th><td>Caribbean Sea & Atlantic Ocean</td></tr>
+<tr><th>Currency</th><td>Varies by island (USD widely accepted)</td></tr>
+<tr><th>Language</th><td>English, French, Spanish, Dutch, Papiamento</td></tr>
+<tr><th>Time Zone</th><td>AST (UTC−4, most islands)</td></tr>
+<tr><th>Flight Time</th><td>3–5 hrs from US East Coast</td></tr>
+<tr><th>Entry</th><td>US passport required; visa-free on most islands</td></tr>
+</tbody></table>
+</section>
+<section class="dest-section">
+<h2 class="section-title">Why Caribbean Islands?</h2>
+<ul class="why-list">
+  <li class="why-item">The world's most stunning beaches — powder sand, crystal water, and year-round warmth unlike anywhere else</li>
+  <li class="why-item">Extraordinary diversity — each island has a distinct culture, cuisine, and character; no two are the same</li>
+  <li class="why-item">World-class diving and snorkeling — coral walls, nurse sharks, sea turtles, and stingrays in warm clear water</li>
+  <li class="why-item">Quick and easy from the US East Coast — just 3–5 hours makes a long weekend in paradise entirely possible</li>
+  <li class="why-item">All-inclusive and boutique options for every budget — the Caribbean caters to honeymooners and families equally</li>
+  <li class="why-item">Rich cultural tapestry — indigenous, African, European, and colonial history woven into music, food, and architecture</li>
+</ul>
+</section>
+<section class="dest-section">
+<h2 class="section-title">Your 5-Day Itinerary</h2>
+<div class="itin-grid">
+<div class="itin-day">
+  <div class="itin-day-num">Day 1</div>
+  <div class="itin-day-content">
+    <h3>Turks & Caicos — Beach Perfection</h3>
+    <ul><li>Arrive Providenciales — Grace Bay Beach afternoon: the world's #1 ranked beach</li>
+      <li>Snorkeling at Bight Reef (steps from Grace Bay) — nurse sharks and eagle rays</li>
+      <li>Half-day boat excursion to uninhabited cays and pristine reefs</li>
+      <li>Dinner at Grace Bay Club or Coco Bistro under the palm trees</li></ul>
+  </div>
+</div>
+<div class="itin-day">
+  <div class="itin-day-num">Day 2</div>
+  <div class="itin-day-content">
+    <h3>St. Lucia — Drama & Romance</h3>
+    <ul><li>Fly to St. Lucia — check into a Piton-view resort in the Soufrière area</li>
+      <li>Drive-in volcano Sulphur Springs — the world's only drive-in volcano with mud baths</li>
+      <li>Hike the Gros Piton (guided, 3 hrs) — reward: views over the Caribbean that stop conversation</li>
+      <li>Sunset catamaran cruise between the Pitons</li></ul>
+  </div>
+</div>
+<div class="itin-day">
+  <div class="itin-day-num">Day 3</div>
+  <div class="itin-day-content">
+    <h3>Jamaica — Culture & Rhythm</h3>
+    <ul><li>Fly to Montego Bay or Kingston</li>
+      <li>Bob Marley Museum in Kingston or Nine Mile (his birthplace)</li>
+      <li>Blue Mountain Coffee estate tour — one of the world's finest coffees grown in lush peaks</li>
+      <li>Jerk chicken at Scotchies (authentic) and rum punch at sunset over Doctor's Cave Beach</li></ul>
+  </div>
+</div>
+<div class="itin-day">
+  <div class="itin-day-num">Day 4</div>
+  <div class="itin-day-content">
+    <h3>Barbados — Sophistication & Rum</h3>
+    <ul><li>Arrive Bridgetown, Barbados — one of the Caribbean's most architecturally beautiful capitals</li>
+      <li>Mount Gay Rum Distillery — world's oldest rum producer; outstanding tour and tastings</li>
+      <li>Bottom Bay or Crane Beach — the island's most dramatic beaches on the Atlantic coast</li>
+      <li>Oistins Fish Fry on Friday night — the Caribbean's best open-air seafood market-party</li></ul>
+  </div>
+</div>
+<div class="itin-day">
+  <div class="itin-day-num">Day 5</div>
+  <div class="itin-day-content">
+    <h3>BVI Sailing Finale</h3>
+    <ul><li>Transfer to Tortola, BVI — board a chartered sailboat for 2–3 days</li>
+      <li>The Baths, Virgin Gorda — walk through enormous granite boulders into sea caves and hidden pools</li>
+      <li>Saba Rock and the Dogs — pristine anchorages and snorkeling reefs</li>
+      <li>Jost Van Dyke — Foxy's beach bar, one of the Caribbean's most beloved rum spots</li></ul>
+  </div>
+</div>
+</div>
+</section>
+<section class="dest-section">
+<h2 class="section-title">Insider Travel Tips</h2>
+<div class="tips-grid">
+  <div class="tip-card"><span class="tip-icon">📅</span><strong>Book December–April</strong><p>Hurricane season runs June–November. December–April is reliably dry with perfect trade-wind breezes. It's peak season — book early</p></div>
+  <div class="tip-card"><span class="tip-icon">🏝️</span><strong>Choose One Island Well</strong><p>First-timers often try to island-hop too much. Pick one or two islands and go deep — you'll have a far better experience than rushing between five</p></div>
+  <div class="tip-card"><span class="tip-icon">🩺</span><strong>Travel Insurance is Critical</strong><p>Emergency medical evacuation from the islands can cost $50,000+. Travel insurance with medical evacuation coverage is non-negotiable here</p></div>
+  <div class="tip-card"><span class="tip-icon">🤿</span><strong>Book Dive/Snorkel Operators Early</strong><p>The best operators (especially in BVI and Turks & Caicos) fill up months in advance during high season. Reserve before you depart</p></div>
+</div>
+</section>
+<section class="dest-section">
+<h2 class="section-title">When to Visit</h2>
+<div class="seasons-grid">
+  <div class="season-card"><span class="season-icon">☀️</span><strong>High Season (Dec–Apr)</strong><p>The gold standard: dry, cool trade winds, perfect blue skies. Most expensive and busiest. Book everything 6–9 months out</p></div>
+  <div class="season-card"><span class="season-icon">🌴</span><strong>Shoulder (May & Nov)</strong><p>Lower prices, fewer crowds, still excellent weather on most islands. A few tropical waves possible in November but rare</p></div>
+  <div class="season-card"><span class="season-icon">🌀</span><strong>Hurricane Season (Jun–Oct)</strong><p>Risk of storms; lower prices and nearly empty beaches. Late August–October is highest risk. Travel insurance is essential if visiting</p></div>
+</div>
+</section>
+<div class="dest-cta">
+<h2>Ready to Plan Your Caribbean Islands Journey?</h2>
+<p>Let Jay and Elizabeth Nichols craft your perfect itinerary, from hidden gems to iconic moments.</p>
+<a href="../plan-my-trip.html" class="btn-cta">Start Planning Your Trip</a>
+<a href="../destinations.html" class="back-link">&larr; Back to All Destinations</a>
+</div>
+<!-- RICH CONTENT END -->
 </main>
 <footer>
   <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
