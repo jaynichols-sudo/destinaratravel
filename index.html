@@ -138,35 +138,35 @@ transform:translate(-50%,-50%);transition:opacity 0.3s}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:all 0.4s}
-.nav.scrolled{background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);padding:12px 0;box-shadow:var(--shadow-sm)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:20px}
-.nav-logo-icon{width:44px;height:44px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center}
-.nav-logo-icon svg{width:24px;height:24px;fill:var(--color-white)}
-.nav-logo-img{height:48px;width:auto;border-radius:6px;transition:all var(--transition)}
-.nav.scrolled .nav-logo-img{height:40px}
-.nav-logo-text{font-family:var(--font-display);font-size:1.5rem;color:var(--color-white);transition:color var(--transition)}
-.nav.scrolled .nav-logo-text{color:var(--color-dark)}
-.nav-links{display:flex;align-items:center;gap:20px;list-style:none}
-.nav-links a{text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;letter-spacing:0.3px;position:relative;transition:color var(--transition)}
-.nav.scrolled .nav-links a{color:var(--color-text)}
-.nav-links a:hover{color:var(--color-accent-light)}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-accent);transition:width var(--transition)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{background:var(--color-accent);color:var(--color-white) !important;padding:10px 20px;border-radius:50px;font-weight:600;transition:all var(--transition) !important;white-space:nowrap;font-size:0.88rem}
-.nav-cta:hover{background:var(--color-accent-light);transform:translateY(-2px)}
-.nav-cta::after{display:none !important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001;background:none;border:none}
-.hamburger span{width:24px;height:2px;background:var(--color-white);transition:all var(--transition)}
-.nav.scrolled .hamburger span{background:var(--color-dark)}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:1001;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:90px;gap:30px;opacity:0;visibility:hidden;transition:all 0.4s;overflow-y:auto}
-.mobile-menu.active{opacity:1;visibility:visible}
-.mobile-menu a{font-family:var(--font-display);font-size:2rem;color:var(--color-white);text-decoration:none;opacity:0;transform:translateY(20px);transition:all 0.4s}
-.mobile-menu.active a{opacity:1;transform:translateY(0)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
+nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:32px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.nav-logo-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+nav.scrolled .nav-logo-text{color:var(--color-dark)}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1}
+.nav-links > li > a{color:rgba(255,255,255,.92);font-size:.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color var(--transition)}
+.nav-links > li > a:hover{color:#fff;background:rgba(255,255,255,.12)}
+nav.scrolled .nav-links > li > a{color:var(--color-text)}
+nav.scrolled .nav-links > li > a:hover{background:rgba(13,92,92,.08);color:var(--color-primary)}
+.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
+.nav-cta{background:var(--color-accent)!important;color:white!important;padding:10px 22px!important;border-radius:25px!important;font-weight:600!important;transition:all var(--transition)!important}
+.nav-cta:hover{background:var(--color-accent-light)!important;transform:translateY(-1px);box-shadow:0 4px 12px rgba(196,149,107,.4)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+nav.scrolled .hamburger span{background:var(--color-dark)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:1001;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:90px;gap:24px;opacity:0;visibility:hidden;transition:all .4s;overflow-y:auto}
+.mobile-menu.open{display:flex;opacity:1;visibility:visible}
+.mobile-menu a{font-family:var(--font-display);font-size:1.6rem;color:var(--color-white);text-decoration:none}
+.nav-new-badge{display:inline-block;background:#ff6b35;color:#fff;font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px;animation:pulse-badge 2s infinite}.nav-badge{display:inline-block;background:#ff6b35;color:#fff;font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px}@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:.7}}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-logo-text{font-size:1.2rem}
+  .nav-inner{width:100%}
+}
+
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--color-dark)}
@@ -785,103 +785,44 @@ section{padding:100px 0}
 </div>
 
 <!-- NAVIGATION -->
-<nav class="nav" id="nav">
-    <div class="container nav-inner">
-        <a href="index.html" class="nav-logo">
-            <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;background:url(destinara-logo.png) no-repeat;background-size:200%;background-position:center 10%;"></div>
-            <span class="nav-logo-text">Destinara</span>
-        </a>
-        <ul class="nav-links" id="navLinks">
-            <!-- VACATIONS MEGA-MENU -->
-            <li class="nav-mega">
-                <a href="vacations.html">Vacations</a>
-                <div class="mega-panel" role="menu">
-                    <div class="mega-col">
-                        <span class="mega-col-header">Land Vacations</span>
-                        <a href="vacations.html">Hotels &amp; Resorts</a>
-                        <a href="vacations.html">Adventure Travel</a>
-                        <a href="vacations.html">Wellness Retreats</a>
-                        <a href="vacations.html">Romance &amp; Honeymoons</a>
-                        <a href="vacations.html">Cultural &amp; Culinary</a>
-                        <a href="vacations.html">Group Travel</a>
-                    </div>
-                    <div class="mega-col">
-                        <span class="mega-col-header">Cruises</span>
-                        <a href="cruises.html">All Cruise Lines</a>
-                        <a href="cruises.html#luxury">Luxury Cruises</a>
-                        <a href="cruises.html#ocean">Ocean Cruises</a>
-                        <a href="cruises.html#river">River Cruises</a>
-                        <a href="cruises.html#expedition">Expedition Cruises</a>
-                    </div>
-                    <div class="mega-col">
-                        <span class="mega-col-header">Disney</span>
-                        <a href="disney.html">Disney Cruise Line</a>
-                        <a href="disney.html">Walt Disney World</a>
-                        <a href="disney.html">Disneyland Resort</a>
-                        <a href="disney.html">International Parks</a>
-                        <a href="disney.html">Aulani Hawaii</a>
-                        <a href="disney.html">Adventures by Disney</a>
-                        <a href="disney.html">Disney Vacation Club</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-mega">
-                <a href="destinations.html">Destinations</a>
-                <div class="mega-panel" role="menu">
-                    <div class="mega-col">
-                        <span class="mega-col-header">Americas</span>
-                        <a href="destinations/caribbean-islands.html">Caribbean Islands</a>
-                        <a href="destinations/alaska.html">Alaska</a>
-                        <a href="destinations/hawaii.html">Hawaii</a>
-                        <a href="destinations/costa-rica.html">Costa Rica</a>
-                        <a href="destinations/mexico.html">Mexico</a>
-                        <a href="destinations/patagonia.html">Patagonia</a>
-                    </div>
-                    <div class="mega-col">
-                        <span class="mega-col-header">Europe</span>
-                        <a href="destinations/santorini-greece.html">Santorini, Greece</a>
-                        <a href="destinations/amalfi-coast-italy.html">Amalfi Coast, Italy</a>
-                        <a href="destinations/paris-france.html">Paris, France</a>
-                        <a href="destinations/french-riviera.html">French Riviera</a>
-                        <a href="destinations/tuscany-italy.html">Tuscany, Italy</a>
-                        <a href="destinations/iceland.html">Iceland</a>
-                    </div>
-                    <div class="mega-col">
-                        <span class="mega-col-header">Asia & Beyond</span>
-                        <a href="destinations/bali-indonesia.html">Bali, Indonesia</a>
-                        <a href="destinations/japan.html">Japan</a>
-                        <a href="destinations/maldives.html">Maldives</a>
-                        <a href="destinations/kenya-safari.html">Kenya Safari</a>
-                        <a href="destinations/morocco.html">Morocco</a>
-                        <a href="destinations/dubai-uae.html">Dubai, UAE</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="#deals">Deals</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="/blog/">Journal</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="trip-estimator.html" class="nav-estimator-link">★ Trip Estimator</a></li>
-            <li><a href="plan-my-trip.html" class="nav-cta">Plan My Trip</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-logo">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="./cruises.html">Cruises</a></li>
+      <li><a href="./vacations.html">Vacations</a></li>
+      <li><a href="./disney.html">Disney</a></li>
+      <li><a href="./destinations.html">Destinations</a></li>
+      <li><a href="./index.html#deals">Deals</a></li>
+      <li><a href="./index.html#testimonials">Reviews</a></li>
+      <li><a href="./index.html#blog">Journal</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./trip-estimator.html" class="nav-new-badge">Trip Estimator <span class="nav-badge">NEW</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="./plan-my-trip.html" class="nav-cta">Plan My Trip</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-    <a href="vacations.html" onclick="closeMobile()">🏖 Land Vacations</a>
-    <a href="cruises.html" onclick="closeMobile()">🚢 Cruises</a>
-    <a href="disney.html" onclick="closeMobile()">✨ Disney</a>
-    <a href="destinations.html" onclick="closeMobile()">Destinations</a>
-    <a href="#deals" onclick="closeMobile()">Deals</a>
-    <a href="#testimonials" onclick="closeMobile()">Reviews</a>
-    <a href="/blog/" onclick="closeMobile()">Journal</a>
-    <a href="about.html" onclick="closeMobile()">About</a>
-    <a href="trip-estimator.html" onclick="closeMobile()">★ Trip Estimator</a>
-    <a href="plan-my-trip.html" onclick="closeMobile()">Plan My Trip</a>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <a href="./cruises.html" onclick="closeMobile()">Cruises</a>
+  <a href="./vacations.html" onclick="closeMobile()">Vacations</a>
+  <a href="./disney.html" onclick="closeMobile()">Disney</a>
+  <a href="./destinations.html" onclick="closeMobile()">Destinations</a>
+  <a href="./index.html#deals" onclick="closeMobile()">Deals</a>
+  <a href="./index.html#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="./index.html#blog" onclick="closeMobile()">Journal</a>
+  <a href="./about.html" onclick="closeMobile()">About</a>
+  <a href="./trip-estimator.html" onclick="closeMobile()">Trip Estimator</a>
+  <a href="./plan-my-trip.html" onclick="closeMobile()">Plan My Trip</a>
 </div>
 <!-- HERO -->
 <main id="main-content">
@@ -1806,50 +1747,15 @@ Get a Free Quote
 
 </main>
 
-    <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">Destinara</div>
-        <div class="tagline">Curated Journeys</div>
-        <p>Expertly curated travel experiences crafted by Jay &amp; Elizabeth Nichols, your dedicated travel advisors in Greensboro, NC.</p>
-        <div class="footer-contact-inline">
-          <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a>
-          <a href="tel:+19193486268">+1 (919) 348-6268</a>
-          <span>Greensboro, NC 27406</span>
-        </div>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="cruises.html">Cruises</a></li>
-          <li><a href="vacations.html">Vacations</a></li>
-          <li><a href="disney.html">Disney</a></li>
-          <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="index.html#deals">Deals</a></li>
-          <li><a href="/blog/">Journal</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Plan Your Trip</h4>
-        <ul>
-          <li><a href="index.html#contact">Get a Free Quote</a></li>
-          <li><a href="index.html#how-it-works">How It Works</a></li>
-          <li><a href="index.html#testimonials">Client Reviews</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="packing-checklist.html">Packing Checklist</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Destinara Travel. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms of Service</a>
-      </div>
-    </div>
-  </div>
+    <footer>
+  <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="./index.html">Home</a>
+    <a href="./destinations.html">Destinations</a>
+    <a href="./blog/index.html">Journal</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./about.html">About</a>
+  </nav>
 </footer>
 <script>
 setTimeout(function(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.hero-badge,.hero h1,.hero p,.hero-buttons').forEach(function(e){e.style.opacity='1';e.style.transform='none'})},2000);// PAGE LOADER
@@ -2485,10 +2391,26 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
     <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','accepted');" style="background:#c9a96e;border:none;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.875rem;font-weight:600;">Accept</button>
   </div>
 </div>
-<script> 
-  if (!localStorage.getItem('cookieConsent')) {
-    document.getElementById('cookieBanner').style.display = 'flex';
-  }
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+ham && ham.addEventListener('click', () => {
+  const open = mob.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open);
+});
+function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
+document.addEventListener('click', e => {
+  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
+});
+// Subtle hero parallax
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll', () => {
+  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
+}, {passive: true});
 </script>
 </body>
 </html>
