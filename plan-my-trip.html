@@ -196,9 +196,15 @@ footer a{color:var(--color-accent);text-decoration:none;}
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
-      <li><a href="./cruises.html">Cruises</a></li>
-      <li><a href="./vacations.html">Vacations</a></li>
-      <li><a href="./disney.html">Disney</a></li>
+      <li class="nav-dropdown-item">
+        <a href="./vacations.html" class="nav-dropdown-trigger">Vacations ▾</a>
+        <ul class="nav-dropdown">
+          <li><a href="./cruises.html">Cruises</a></li>
+          <li><a href="./vacations.html">Land Destinations</a></li>
+          <li><a href="./destinations.html?filter=southeast">Southeast Getaways</a></li>
+          <li><a href="./disney.html">Disney</a></li>
+        </ul>
+      </li>
       <li><a href="./destinations.html">Destinations</a></li>
       <li><a href="./index.html#deals">Deals</a></li>
       <li><a href="./index.html#testimonials">Reviews</a></li>
@@ -475,6 +481,23 @@ const heroBg = document.querySelector('.hero-bg');
 window.addEventListener('scroll', () => {
   if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
 }, {passive: true});
+</script>
+
+<script>
+// Mobile dropdown toggle
+document.addEventListener('DOMContentLoaded',function(){
+  var trigger = document.querySelector('.nav-dropdown-trigger');
+  if(trigger){
+    trigger.addEventListener('click',function(e){
+      var isMobile = window.innerWidth <= 768;
+      if(isMobile){
+        e.preventDefault();
+        var item = trigger.closest('.nav-dropdown-item');
+        item.classList.toggle('open');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>
