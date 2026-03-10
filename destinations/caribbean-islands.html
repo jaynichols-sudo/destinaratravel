@@ -135,8 +135,8 @@ footer a:hover{color:var(--color-accent-light)}
 <nav id="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <img src="../destinara-logo.png" alt="Destinara">
-      <span class="nav-logo-text">Destinara</span>
+      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
       <li><a href="../cruises.html">Cruises</a></li>
@@ -150,7 +150,7 @@ footer a:hover{color:var(--color-accent-light)}
       <li><a href="../trip-estimator.html" class="nav-new-badge">Trip Estimator <span class="nav-badge">NEW</span></a></li>
     </ul>
     <div class="nav-right">
-      <a href="../index.html#contact" class="nav-cta">Plan My Trip</a>
+      <a href="../plan-my-trip.html" class="nav-cta">Plan My Trip</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -162,9 +162,12 @@ footer a:hover{color:var(--color-accent-light)}
   <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
   <a href="../disney.html" onclick="closeMobile()">Disney</a>
   <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
-  <a href="../trip-estimator.html" onclick="closeMobile()">Trip Estimator</a>
+  <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
+  <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
   <a href="../about.html" onclick="closeMobile()">About</a>
-  <a href="../index.html#contact" onclick="closeMobile()">Plan My Trip</a>
+  <a href="../trip-estimator.html" onclick="closeMobile()">Trip Estimator</a>
+  <a href="../plan-my-trip.html" onclick="closeMobile()">Plan My Trip</a>
 </div>
 <main id="main-content">
   <section class="hero" aria-label="Caribbean Islands hero">
@@ -278,14 +281,25 @@ footer a:hover{color:var(--color-accent-light)}
   </nav>
 </footer>
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
-const ham=document.getElementById('hamburger'),mob=document.getElementById('mobileMenu');
-ham&&ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o)});
-function closeMobile(){mob&&mob.classList.remove('open');ham&&ham.setAttribute('aria-expanded','false')}
-document.addEventListener('click',e=>{if(ham&&!ham.contains(e.target)&&mob&&!mob.contains(e.target))closeMobile()});
-const hb=document.querySelector('.hero-bg');
-window.addEventListener('scroll',()=>{if(hb)hb.style.transform='scale(1.05) translateY('+(window.scrollY*.08)+'px)'},{ passive:true});
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+ham && ham.addEventListener('click', () => {
+  const open = mob.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open);
+});
+function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
+document.addEventListener('click', e => {
+  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
+});
+// Subtle hero parallax
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll', () => {
+  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
+}, {passive: true});
 </script>
 </body>
 </html>
