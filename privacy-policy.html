@@ -44,19 +44,43 @@ footer a{color:var(--color-accent)}
 </head>
 <body>
 <a href="#main" style="position:absolute;top:-100px;left:1rem;background:var(--color-primary);color:#fff;padding:0.5rem 1rem;border-radius:4px;z-index:9999">Skip to content</a>
-<nav aria-label="Main navigation">
+<nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="destinara-logo.png" alt="Destinara Travel logo">Destinara</a>
+    <a href="./index.html" class="nav-logo">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
+    </a>
     <ul class="nav-links">
-      <li><a href="cruises.html">Cruises</a></li>
-      <li><a href="vacations.html">Vacations</a></li>
-      <li><a href="disney.html">Disney</a></li>
-      <li><a href="destinations.html">Destinations</a></li>
-      <li><a href="about.html">About</a></li>
-                <li><a href="index.html#contact" class="nav-cta">Plan My Trip</a></li>
+      <li><a href="./cruises.html">Cruises</a></li>
+      <li><a href="./vacations.html">Vacations</a></li>
+      <li><a href="./disney.html">Disney</a></li>
+      <li><a href="./destinations.html">Destinations</a></li>
+      <li><a href="./index.html#deals">Deals</a></li>
+      <li><a href="./index.html#testimonials">Reviews</a></li>
+      <li><a href="./index.html#blog">Journal</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./trip-estimator.html" class="nav-new-badge">Trip Estimator <span class="nav-badge">NEW</span></a></li>
     </ul>
+    <div class="nav-right">
+      <a href="./plan-my-trip.html" class="nav-cta">Plan My Trip</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <a href="./cruises.html" onclick="closeMobile()">Cruises</a>
+  <a href="./vacations.html" onclick="closeMobile()">Vacations</a>
+  <a href="./disney.html" onclick="closeMobile()">Disney</a>
+  <a href="./destinations.html" onclick="closeMobile()">Destinations</a>
+  <a href="./index.html#deals" onclick="closeMobile()">Deals</a>
+  <a href="./index.html#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="./index.html#blog" onclick="closeMobile()">Journal</a>
+  <a href="./about.html" onclick="closeMobile()">About</a>
+  <a href="./trip-estimator.html" onclick="closeMobile()">Trip Estimator</a>
+  <a href="./plan-my-trip.html" onclick="closeMobile()">Plan My Trip</a>
+</div>
 
 <div class="page-header">
   <h1>Privacy Policy</h1>
@@ -141,12 +165,38 @@ footer a{color:var(--color-accent)}
 </main>
 
 <footer>
-  <p>&copy; 2026 Destinara Travel. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
-  <p><a href="index.html">← Back to Homepage</a></p>
+  <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="./index.html">Home</a>
+    <a href="./destinations.html">Destinations</a>
+    <a href="./blog/index.html">Journal</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./about.html">About</a>
+  </nav>
 </footer>
 
 <!-- Cookie Consent Banner -->
 <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a2e2a;color:#fff;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);"><p style="margin:0;font-size:0.875rem;max-width:700px;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy.html" style="color:#c9a96e;text-decoration:underline;">Privacy Policy</a>.</p><div style="display:flex;gap:10px;flex-shrink:0;"><button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.875rem;">Decline</button><button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','accepted');" style="background:#c9a96e;border:none;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.875rem;font-weight:600;">Accept</button></div></div>
-<script>if(!localStorage.getItem('cookieConsent')){document.getElementById('cookieBanner').style.display='flex';}</script>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+ham && ham.addEventListener('click', () => {
+  const open = mob.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open);
+});
+function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
+document.addEventListener('click', e => {
+  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
+});
+// Subtle hero parallax
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll', () => {
+  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
+}, {passive: true});
+</script>
 </body>
 </html>
