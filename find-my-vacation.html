@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find My Vacation | Search Cruises & Land Tours | Destinara Travel</title>
+<meta name="description" content="Search hundreds of cruises and land tours with Destinara Travel. Filter by destination, dates, duration and more — then book with expert guidance from Jay & Elizabeth.">
+<link rel="canonical" href="https://destinaratravel.com/find-my-vacation.html">
+<link rel="icon" type="image/png" href="destinara-logo.png">
+<link rel="apple-touch-icon" href="destinara-logo.png">
+<meta name="theme-color" content="#0D5C5C">
+<meta property="og:title" content="Find My Vacation | Search Cruises & Land Tours | Destinara Travel">
+<meta property="og:description" content="Search hundreds of cruises and land tours. Filter by destination, dates, duration and more.">
+<meta property="og:url" content="https://destinaratravel.com/find-my-vacation.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--color-primary:#0D5C5C;--color-primary-light:#1A7A7A;--color-accent:#C4956B;--color-accent-light:#D4A574;--color-dark:#0A4A4A;--color-text:#2d2d2d;--color-text-light:#6b7280;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-white:#ffffff;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1);--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 20px rgba(0,0,0,0.1);--shadow-lg:0 10px 40px rgba(0,0,0,0.15);--shadow-xl:0 20px 60px rgba(0,0,0,0.2)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.skip-link{position:absolute;top:-40px;left:0;background:#0D5C5C;color:#fff;padding:8px;z-index:9999;transition:top 0.3s}.skip-link:focus{top:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--transition),box-shadow var(--transition)}
+nav.scrolled{background:rgba(10,74,74,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.15)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:72px;gap:32px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo-text{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-0.02em}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1}
+.nav-links>li>a{color:rgba(255,255,255,0.92);font-size:0.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color var(--transition),background var(--transition);white-space:nowrap;display:inline-block}
+.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,0.12)}
+.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
+.nav-cta{background:var(--color-accent);color:white!important;padding:10px 22px!important;border-radius:50px;font-weight:600!important;transition:background var(--transition),transform var(--transition)}
+.nav-cta:hover{background:var(--color-accent-light)!important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:var(--transition)}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,74,74,0.98);backdrop-filter:blur(20px);padding:24px;overflow-y:auto;z-index:999;flex-direction:column;gap:8px}
+.mobile-menu a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:1.1rem;padding:12px 16px;border-radius:10px;display:block}
+.mobile-menu a:hover{background:rgba(255,255,255,0.1)}
+.nav-badge{display:inline-block;background:#ff6b35;color:#fff;font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px}
+@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:.7}}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* VACATIONS DROPDOWN */
+.nav-dropdown-item{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:4px;cursor:pointer}
+.nav-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:rgba(15,25,20,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:10px;min-width:200px;padding:8px 0;z-index:2000;list-style:none;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nav-dropdown li{padding:0}
+.nav-dropdown li a{display:block;padding:10px 20px;color:rgba(255,255,255,.85);font-size:.88rem;text-decoration:none;transition:all .2s;white-space:nowrap;border-radius:0}
+.nav-dropdown li a:hover{color:#fff;background:rgba(255,255,255,.08);padding-left:26px}
+.nav-dropdown-item:hover .nav-dropdown{display:block}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:rgba(15,25,20,.97);border-top:none}
+@media(max-width:768px){.nav-dropdown-item{width:100%}.nav-dropdown{display:none;position:static;transform:none;background:rgba(255,255,255,.05);border:none;border-radius:0;box-shadow:none;padding:0 0 0 16px;min-width:unset}.nav-dropdown li a{font-size:.95rem;padding:10px 16px}.nav-dropdown::before{display:none}.nav-dropdown-item.open .nav-dropdown{display:block}}
+
+/* HERO */
+.fmv-hero{position:relative;min-height:55vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:72px;background:linear-gradient(135deg,#071f1f 0%,#0D5C5C 50%,#1A7A7A 100%)}
+.hero-overlay-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(196,149,107,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(196,149,107,0.07) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(196,149,107,0.12) 0%,transparent 70%);pointer-events:none}
+.fmv-hero-content{position:relative;z-index:10;text-align:center;max-width:800px;padding:60px 32px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,149,107,0.2);border:1px solid rgba(196,149,107,0.4);color:#D4A574;padding:8px 20px;border-radius:50px;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:28px;backdrop-filter:blur(10px)}
+.fmv-hero-content h1{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px}
+.fmv-hero-content h1 em{color:#C4956B;font-style:italic}
+.fmv-hero-content p{font-size:1.1rem;color:rgba(255,255,255,0.75);max-width:580px;margin:0 auto;line-height:1.7}
+
+/* SEARCH SECTION */
+.fmv-search{padding:60px 32px 80px;background:var(--color-bg)}
+.fmv-search-inner{max-width:1100px;margin:0 auto}
+.fmv-search-header{text-align:center;margin-bottom:40px}
+.section-eyebrow{font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent);margin-bottom:12px}
+.fmv-search-header h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);color:var(--color-dark);line-height:1.2;margin-bottom:12px}
+.fmv-search-header p{color:var(--color-text-light);font-size:1rem;max-width:560px;margin:0 auto;line-height:1.7}
+.widgety-card{background:var(--color-white);border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(13,92,92,0.12),0 0 0 1px rgba(13,92,92,0.06)}
+.widgety-card-top{background:linear-gradient(135deg,var(--color-primary),var(--color-dark));padding:28px 40px;display:flex;align-items:center;gap:16px}
+.widgety-card-top-icon{width:48px;height:48px;background:rgba(255,255,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem}
+.widgety-card-top h3{font-family:var(--font-display);font-size:1.4rem;color:#fff;font-weight:700}
+.widgety-card-top p{color:rgba(255,255,255,0.7);font-size:0.88rem;margin-top:2px}
+.widgety-body{padding:0}
+.widgety-wrap{background:rgba(255,255,255,0.97);overflow:hidden}
+
+/* HOW IT WORKS */
+.fmv-how{padding:80px 32px;background:var(--color-bg-alt)}
+.fmv-how-inner{max-width:1100px;margin:0 auto}
+.fmv-how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.fmv-how-card{background:var(--color-white);border-radius:20px;padding:36px 28px;box-shadow:var(--shadow-sm);border:1px solid rgba(13,92,92,0.06);transition:var(--transition);text-align:center}
+.fmv-how-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.fmv-how-num{font-family:var(--font-display);font-size:3rem;font-weight:800;color:rgba(13,92,92,0.08);line-height:1;margin-bottom:12px}
+.fmv-how-icon{font-size:2rem;margin-bottom:16px}
+.fmv-how-card h3{font-family:var(--font-display);font-size:1.15rem;color:var(--color-dark);margin-bottom:10px}
+.fmv-how-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.7}
+
+/* CTA SECTION */
+.fmv-cta{padding:80px 32px;background:linear-gradient(135deg,var(--color-primary),var(--color-dark));text-align:center}
+.fmv-cta h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:16px}
+.fmv-cta p{color:rgba(255,255,255,0.75);font-size:1rem;max-width:520px;margin:0 auto 32px;line-height:1.7}
+.fmv-cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--color-accent);color:#fff;padding:16px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;transition:var(--transition);box-shadow:0 6px 24px rgba(196,149,107,0.4)}
+.fmv-cta-btn:hover{background:var(--color-accent-light);transform:translateY(-2px);box-shadow:0 10px 32px rgba(196,149,107,0.5)}
+
+/* FOOTER */
+footer{background:var(--color-dark);color:rgba(255,255,255,0.7);padding:40px 32px;text-align:center}
+footer p{margin-bottom:16px;font-size:0.875rem}
+.footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;list-style:none}
+.footer-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.875rem;transition:color 0.3s}
+.footer-links a:hover{color:#fff}
+@media(max-width:768px){.fmv-how-grid{grid-template-columns:1fr}.fmv-hero-content{padding:40px 20px}}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-logo">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown-item">
+        <a href="./vacations.html" class="nav-dropdown-trigger">Vacations ▾</a>
+        <ul class="nav-dropdown">
+          <li><a href="./cruises.html">Cruises</a></li>
+          <li><a href="./vacations.html">Land Destinations</a></li>
+          <li><a href="./destinations.html?filter=southeast">Southeast Getaways</a></li>
+          <li><a href="./disney.html">Disney</a></li>
+        </ul>
+      </li>
+      <li><a href="./destinations.html">Destinations</a></li>
+      <li><a href="./find-my-vacation.html">Find My Vacation</a></li>
+      <li><a href="./index.html#deals">Deals</a></li>
+      <li><a href="./index.html#testimonials">Reviews</a></li>
+      <li><a href="./index.html#blog">Journal</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./trip-estimator.html" class="nav-new-badge">Trip Estimator <span class="nav-badge">NEW</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="./plan-my-trip.html" class="nav-cta">Plan My Trip</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="./vacations.html">Vacations</a>
+  <a href="./cruises.html">Cruises</a>
+  <a href="./vacations.html">Land Destinations</a>
+  <a href="./destinations.html?filter=southeast">Southeast Getaways</a>
+  <a href="./disney.html">Disney</a>
+  <a href="./destinations.html">Destinations</a>
+  <a href="./find-my-vacation.html">Find My Vacation</a>
+  <a href="./index.html#deals">Deals</a>
+  <a href="./index.html#testimonials">Reviews</a>
+  <a href="./index.html#blog">Journal</a>
+  <a href="./about.html">About</a>
+  <a href="./trip-estimator.html">Trip Estimator</a>
+  <a href="./plan-my-trip.html">Plan My Trip</a>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="fmv-hero">
+  <div class="hero-overlay-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="fmv-hero-content">
+    <div class="hero-badge">✦ Cruises · Land Tours · Group Trips · River Voyages</div>
+    <h1>Find Your <em>Perfect</em> Vacation</h1>
+    <p>Search hundreds of curated sailings and land tours — filter by destination, dates, duration, and travel style. Then let Jay &amp; Elizabeth handle everything else.</p>
+  </div>
+</section>
+
+<!-- SEARCH TOOL -->
+<section class="fmv-search" id="search-tool">
+  <div class="fmv-search-inner">
+    <div class="fmv-search-header">
+      <div class="section-eyebrow">Powered by Widgety</div>
+      <h2>Search Cruises &amp; Land Tours</h2>
+      <p>Browse live availability across 35+ cruise lines and hundreds of land tour operators. Filter by destination, dates, duration, price and more.</p>
+    </div>
+    <div class="widgety-card">
+      <div class="widgety-card-top">
+        <div class="widgety-card-top-icon">🔍</div>
+        <div>
+          <h3>Vacation Search</h3>
+          <p>Live availability across cruises, land tours &amp; more</p>
+        </div>
+      </div>
+      <div class="widgety-body">
+        <div class="widgety-wrap">
+          <iframe title="Search and Book Travel" class="widgety-cruise-tour-search" frameborder="0" height="650" preview-nav="true" results-nav="true" src="//www.widgety.co.uk/widgets/691Y6PTXsxqNTngRcLUU.widget" tabs="true" width="100%"></iframe>
+          <script data-widgety="true" src="https://www.widgety.co.uk/assets/widgety_iframe-338e444fa45e2af836a1c162ed7b7fa3b57d6267f6e30c026f7d582a77e34dd7.js"></script>
+          <script data-widgety="true" src="https://www.widgety.co.uk/assets/deep_linking_iframe-96ca31e40c8ae6e4a72211018719c609dddc638f8767b1df287e76832e4b953e.js"></script>
+          <script src="https://www.widgety.co.uk/assets/widgety_cruise_tour_search_navigation_script-e5c46a5521b82182ecdc1564d7f90c5cfb653f3ffed29c4220e85749607af1de.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="fmv-how">
+  <div class="fmv-how-inner">
+    <div class="section-eyebrow" style="text-align:center">How It Works</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);color:var(--color-dark);text-align:center;margin-bottom:0">Search, Find, and Book with Expert Help</h2>
+    <div class="fmv-how-grid">
+      <div class="fmv-how-card">
+        <div class="fmv-how-num">01</div>
+        <div class="fmv-how-icon">🔍</div>
+        <h3>Search Live Availability</h3>
+        <p>Use the search tool above to browse real-time availability across cruises and land tours. Filter by destination, dates, duration, price, and travel style.</p>
+      </div>
+      <div class="fmv-how-card">
+        <div class="fmv-how-num">02</div>
+        <div class="fmv-how-icon">💬</div>
+        <h3>Connect with Jay &amp; Elizabeth</h3>
+        <p>Found something you love? Our advisors can match you with exclusive perks, upgrades, and pricing that often beats what you'd find booking direct.</p>
+      </div>
+      <div class="fmv-how-card">
+        <div class="fmv-how-num">03</div>
+        <div class="fmv-how-icon">✈️</div>
+        <h3>Travel with Confidence</h3>
+        <p>From first inquiry to final boarding pass, we handle every detail so your only job is to enjoy the journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="fmv-cta">
+  <h2>Ready to Start Planning?</h2>
+  <p>Let Jay &amp; Elizabeth turn your search results into a fully personalized itinerary — with perks and pricing you won't find anywhere else.</p>
+  <a href="./plan-my-trip.html" class="fmv-cta-btn">
+    Plan My Trip →
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
+  <div class="footer-links" aria-label="Footer navigation">
+    <a href="./index.html">Home</a>
+    <a href="./destinations.html">Destinations</a>
+    <a href="./blog/index.html">Journal</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./about.html">About</a>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+ham && ham.addEventListener('click', () => {
+  const open = mob.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open);
+  mob.style.display = open ? 'flex' : 'none';
+});
+function closeMobile() { mob && (mob.style.display='none') && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
+</script>
+<script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
+</body>
+</html>
