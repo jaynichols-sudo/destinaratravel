@@ -87,20 +87,37 @@
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-brand">Destinara<span>Travel</span></a>
-      <ul class="nav-links">
-        <li><a href="/cruises">Cruises</a></li>
-        <li><a href="/vacations">Vacations</a></li>
-        <li><a href="/disney">Disney</a></li>
-        <li><a href="/destinations">Destinations</a></li>
-        <li><a href="/#deals">Deals</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
-      </ul>
+  <nav id="nav">
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-logo">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown-item">
+        <a href="./vacations.html" class="nav-dropdown-trigger">Vacations &#9660;</a>
+        <ul class="nav-dropdown">
+          <li><a href="./cruises.html">Cruises</a></li>
+          <li><a href="./vacations.html">Land Destinations</a></li>
+          <li><a href="./destinations.html?filter=southeast">Southeast Getaways</a></li>
+          <li><a href="./disney.html">Disney</a></li>
+        </ul>
+      </li>
+      <li><a href="./destinations.html">Destinations</a></li>
+      <li><a href="./find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
+      <li><a href="./index.html#deals">Deals</a></li>
+      <li><a href="./index.html#testimonials">Reviews</a></li>
+      <li><a href="./index.html#blog">Journal</a></li>
+      <li><a href="./about.html">About</a></li>
+      
+    </ul>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <section class="confirm-section">
     <div class="confirm-card">
@@ -143,8 +160,15 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Destinara Travel &mdash; Jay &amp; Elizabeth Nichols, Greensboro, NC &mdash; <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a> &mdash; <a href="/privacy-policy.html">Privacy Policy</a> &middot; <a href="/terms-of-service.html">Terms of Service</a></p>
-  </footer>
+  <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
+  <div class="footer-links" aria-label="Footer navigation">
+    <a href="./index.html">Home</a>
+    <a href="./destinations.html">Destinations</a>
+    <a href="./blog/index.html">Journal</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./about.html">About</a>
+  </div>
+</footer>
 
 
   <!-- COOKIE CONSENT BANNER -->
