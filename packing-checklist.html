@@ -155,22 +155,33 @@ footer a:hover{color:var(--color-accent)}
 <!-- NAVBAR -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
-      <span>Destinara Travel</span>
+    <a href="./index.html" class="nav-logo">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="destinations.html">Destinations</a></li>
-      <li><a href="cruises.html">Cruises</a></li>
-      <li><a href="vacations.html">Vacations</a></li>
-      <li><a href="disney.html">Disney</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
+    <ul class="nav-links">
+      <li class="nav-dropdown-item">
+        <a href="./vacations.html" class="nav-dropdown-trigger">Vacations &#9660;</a>
+        <ul class="nav-dropdown">
+          <li><a href="./cruises.html">Cruises</a></li>
+          <li><a href="./vacations.html">Land Destinations</a></li>
+          <li><a href="./destinations.html?filter=southeast">Southeast Getaways</a></li>
+          <li><a href="./disney.html">Disney</a></li>
+        </ul>
+      </li>
+      <li><a href="./destinations.html">Destinations</a></li>
+      <li><a href="./find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
+      <li><a href="./index.html#deals">Deals</a></li>
+      <li><a href="./index.html#testimonials">Reviews</a></li>
+      <li><a href="./index.html#blog">Journal</a></li>
+      <li><a href="./about.html">About</a></li>
+      
     </ul>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -760,15 +771,14 @@ footer a:hover{color:var(--color-accent)}
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="cruises.html">Cruises</a>
-    <a href="vacations.html">Vacations</a>
-    <a href="disney.html">Disney</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="index.html#contact">Contact</a>
+  <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
+  <div class="footer-links" aria-label="Footer navigation">
+    <a href="./index.html">Home</a>
+    <a href="./destinations.html">Destinations</a>
+    <a href="./blog/index.html">Journal</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./about.html">About</a>
   </div>
-  <p>&copy; 2026 Destinara Travel &mdash; Greensboro, NC &mdash; <a href="mailto:info@destinaratravel.com">info@destinaratravel.com</a></p>
 </footer>
 
 <script>
