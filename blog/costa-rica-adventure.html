@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costa Rica Adventure Travel Guide | Destinara Travel</title>
+  <meta name="description" content="Cloud forests, active volcanoes, sea turtle nesting beaches — our Costa Rica adventure guide covers the best wildlife, zip-lining, and eco-lodge experiences." />
+  <link rel="canonical" href="https://destinaratravel.com/blog/costa-rica-adventure" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744; --gold: #c9a84c; --gold-light: #e8c97a;
+      --white: #ffffff; --off-white: #f8f6f1; --text: #2c2c2c; --muted: #666;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    nav.main-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+      background: rgba(26,39,68,0.97); backdrop-filter: blur(8px);
+      transition: background 0.3s;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-logo span { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); letter-spacing: 0.04em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.45rem 1.1rem; border-radius: 4px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 999;
+      background: var(--navy); padding: 1.5rem 2rem; flex-direction: column; gap: 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    .article-hero {
+      position: relative; min-height: 480px; display: flex; align-items: flex-end;
+      padding: 4rem 2rem 3rem; margin-top: 64px; overflow: hidden;
+      background: var(--navy);
+    }
+    .article-hero .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1698871741610-11e817f934e3?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover; background-position: center;
+      opacity: 0.28; z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .article-label {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.3rem 0.8rem; border-radius: 3px; margin-bottom: 1rem;
+    }
+    .article-hero h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white); line-height: 1.2; margin-bottom: 1rem;
+    }
+    .byline { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .byline span { font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+    .byline .sep { color: rgba(255,255,255,0.35); }
+
+    .article-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.4rem; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.65rem; color: var(--navy); margin: 2.5rem 0 1rem; }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+    .stat-card { background: var(--off-white); border-radius: 8px; padding: 1.2rem 1rem; text-align: center; }
+    .stat-card .stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--navy); font-weight: 700; }
+    .stat-card .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    @media (max-width: 600px) { .stat-row { grid-template-columns: 1fr; } }
+
+    .section-num {
+      display: inline-block; background: var(--navy); color: var(--white);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.25rem 0.7rem; border-radius: 20px; margin-bottom: 0.5rem;
+    }
+
+    .tip-box {
+      border-left: 4px solid var(--gold); background: #fffbf0;
+      padding: 1rem 1.2rem; border-radius: 0 6px 6px 0; margin: 1.5rem 0;
+    }
+    .tip-box .tip-label { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .tip-box p { margin-bottom: 0; font-size: 0.95rem; }
+
+    .highlights { background: var(--off-white); border-radius: 8px; padding: 1.4rem 1.6rem; margin: 1.5rem 0; }
+    .highlights h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.8rem; }
+    .highlights ul { padding-left: 1.2rem; }
+    .highlights ul li { font-size: 0.95rem; line-height: 1.7; color: var(--text); margin-bottom: 0.3rem; }
+
+    .cta-band {
+      background: var(--navy); color: var(--white);
+      text-align: center; padding: 4rem 2rem;
+    }
+    .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.8rem; }
+    .cta-band p { font-size: 1rem; color: rgba(255,255,255,0.75); margin-bottom: 1.8rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-band a { display: inline-block; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.85rem 2.2rem; border-radius: 4px; transition: background 0.2s; }
+    .cta-band a:hover { background: var(--gold-light); }
+
+    .article-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 760px; margin: 0 auto; padding: 2rem 2rem 3rem;
+      border-top: 1px solid #e8e4dc;
+    }
+    .article-nav a { text-decoration: none; color: var(--navy); font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .article-nav a:hover { color: var(--gold); }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.55); text-align: center; padding: 1.8rem; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+
+<nav class="main-nav" id="mainNav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/destinara-logo.png" alt="Destinara Travel" />
+    <span>Destinara Travel</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../destinations.html">Destinations</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="index.html">Journal</a></li>
+    <li><a href="../find-my-vacation.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html">Destinations</a>
+  <a href="../index.html#about">About</a>
+  <a href="index.html">Journal</a>
+  <a href="../find-my-vacation.html">Plan My Trip</a>
+</div>
+
+<header class="article-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="article-label">Adventure Travel</span>
+    <h1>Costa Rica: The Adventure Traveler's Complete Guide</h1>
+    <div class="byline">
+      <span>By Jay Nichols</span>
+      <span class="sep">|</span>
+      <span>May 2025</span>
+      <span class="sep">|</span>
+      <span>11 min read</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="article-body">
+    <p>I've been to a lot of places that claim to be "the adventure capital of" something. Costa Rica is the real thing. Within a single two-week trip, I watched sea turtles nest on a dark Caribbean beach at midnight, zipped through a cloud forest canopy above the clouds, white-water rafted Class IV rapids, and soaked in a hot spring heated by an active volcano. And that's before we even get to the wildlife.</p>
+    <p>"Pura Vida" — the pure life — is more than a national slogan in Costa Rica. It's a genuine philosophy of slowing down, appreciating nature, and letting the unexpected happen. For travelers who want to feel fully alive, this country delivers something extraordinary at almost every turn. This guide will help you structure a trip that makes the most of it.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">25%</div><div class="stat-label">Of land protected</div></div>
+      <div class="stat-card"><div class="stat-num">500K+</div><div class="stat-label">Species of wildlife</div></div>
+      <div class="stat-card"><div class="stat-num">14</div><div class="stat-label">Climate zones</div></div>
+    </div>
+
+    <span class="section-num">01 — When to Go</span>
+    <h2>Dry Season vs. Green Season: Timing Your Visit</h2>
+    <p>Costa Rica has two seasons: the dry season (December through April) and the green season — what locals call the rainy season — from May through November. Both have their advantages, and the right choice depends entirely on what you want to do.</p>
+    <p>The dry season is peak travel time for good reason: roads are passable, beaches are sunny, and hiking is easy. December through March are the most popular months, and prices reflect that. Booking accommodations 4–6 months in advance is essential for the most sought-after eco-lodges during this window.</p>
+    <p>The green season, however, is a genuinely excellent time to visit if you don't mind afternoon rain showers. The country is lush, the tourist crowds thin significantly, prices drop 20–40%, and the forests are strikingly alive. Rivers run full and fast, making it ideal for white-water rafting. Wildlife is also highly active — turtle nesting season on both coasts runs through the green season. For experienced travelers, May and June or September and October can actually be the best months of all.</p>
+
+    <div class="tip-box">
+      <div class="tip-label">Advisor Tip — Jay Nichols</div>
+      <p>The Pacific and Caribbean coasts have opposite weather patterns. When the Pacific is in dry season, the Caribbean side is often rainy, and vice versa. This means a two-week itinerary that covers both coasts can give you excellent weather on each side — it just requires some planning. Ask us about building a split-coast itinerary.</p>
+    </div>
+
+    <span class="section-num">02 — The Regions</span>
+    <h2>Where to Go: Understanding the Geography</h2>
+    <p>Costa Rica is roughly the size of West Virginia, but it packs an astonishing diversity of landscapes into that space. Understanding the major regions will help you plan a logical route and avoid the mistake of trying to do too much — a trap many first-time visitors fall into.</p>
+    <p><strong>Arenal</strong> is the adventure hub of the country and the most popular destination for good reason. Arenal Volcano provides a dramatic backdrop for everything from hanging bridges and zip-lines to horseback riding and white-water rafting. The hot springs near the volcano — fed by geothermal heat — are among the most memorable experiences in all of Central America.</p>
+    <p><strong>Monteverde and Santa Elena</strong> perch above the clouds in the Central Highlands and are home to Costa Rica's famous cloud forests. The biodiversity here is extraordinary — you're likely to spot a resplendent quetzal, three-wattled bellbird, and dozens of orchid species all in a single morning walk. The canopy zip-line circuits here were among the first in the world and remain spectacular.</p>
+    <p><strong>The Osa Peninsula</strong> is the wild, remote heart of Costa Rica — the Corcovado National Park there has been called "the most biologically intense place on Earth" by National Geographic. Getting here requires effort (small charter flights or long rough roads), but the payoff is a rainforest experience that feels genuinely primeval. This is the right choice for serious naturalists and travelers who want to get off the beaten path.</p>
+    <p><strong>Manuel Antonio</strong> offers the easiest combination of beach and wildlife. The national park here is home to all four species of Costa Rican monkeys, two-toed sloths, and nesting sea turtles, right alongside excellent swimming beaches. It's the most accessible major park in the country and great for families.</p>
+
+    <div class="highlights">
+      <h3>Key Regions at a Glance</h3>
+      <ul>
+        <li><strong>Arenal</strong> — Adventure sports, volcanic hot springs, white-water rafting, hanging bridges</li>
+        <li><strong>Monteverde</strong> — Cloud forest, zip-lining, extraordinary birdwatching, quetzal sightings</li>
+        <li><strong>Osa Peninsula / Corcovado</strong> — Remote jungle, world-class wildlife, charter flights or 4WD required</li>
+        <li><strong>Manuel Antonio</strong> — Beach + wildlife combo, easiest access, great for families</li>
+        <li><strong>Tortuguero</strong> — Canals and sea turtle nesting (Caribbean coast), accessible by boat or small plane only</li>
+        <li><strong>Guanacaste</strong> — Pacific beaches, surfing, dry tropical forest, all-inclusive resorts</li>
+      </ul>
+    </div>
+
+    <span class="section-num">03 — The Wildlife</span>
+    <h2>What You'll See: Costa Rica's Extraordinary Wildlife</h2>
+    <p>Costa Rica contains approximately 5% of the world's total biodiversity in less than 0.03% of the planet's surface area. The numbers sound abstract until you're actually standing in the forest watching a troop of howler monkeys pass overhead, a strawberry poison dart frog crosses your path, and a scarlet macaw pair flies by in a flash of red and blue — all in the span of ten minutes.</p>
+    <p>Birds are the undisputed stars for many visitors. The country has over 900 bird species, and a half-day with a good local guide can yield 50–80 species in prime locations. The resplendent quetzal, found in the cloud forests of Monteverde and the Chirripó highlands, is considered one of the most beautiful birds in the world and draws dedicated birders from across the globe.</p>
+    <p>For sea turtles, the timing of your visit matters enormously. Leatherback turtles nest on the Pacific coast from October through February; green turtles nest at Tortuguero on the Caribbean coast from July through October; and olive ridley turtles stage mass nesting events (called "arribadas") on Guanacaste beaches from September through December. A guided night tour to a turtle nesting beach is one of the most moving wildlife experiences on the planet.</p>
+
+    <div class="tip-box">
+      <div class="tip-label">Wildlife Tip</div>
+      <p>Always hire a local certified naturalist guide for wildlife-focused walks — especially in parks like Corcovado and Tortuguero. Guides spot creatures that visitors walk past entirely, and they understand the forest in a way that transforms the experience from a pleasant hike into something genuinely revelatory. Budget $30–60 per person for a half-day guided walk.</p>
+    </div>
+
+    <span class="section-num">04 — Adventure Activities</span>
+    <h2>What to Do: The Adventure Menu</h2>
+    <p>Costa Rica essentially invented modern adventure tourism, and the infrastructure for it is excellent. The activities below are available throughout the country, though quality varies significantly by operator — book through reputable companies or ask your travel advisor for vetted recommendations.</p>
+    <p>Zip-lining in Monteverde remains a bucket-list experience — the cables run over the cloud forest canopy at heights that make your stomach lurch in the best possible way. The Monteverde circuits range from beginner-friendly to genuinely fast and exposed. Arenal's zip-line operations are also excellent and combine well with the hanging bridges traversing the rainforest canopy.</p>
+    <p>White-water rafting on the Pacuare River is widely considered one of the best rafting experiences in the Americas. The Class III–IV rapids run through pristine rainforest canyon with no road access — the river is the only way in or out — and the two-day overnight option with a jungle lodge on the riverbank is extraordinary.</p>
+
+    <div class="highlights">
+      <h3>Top Adventure Experiences</h3>
+      <ul>
+        <li>Zip-lining through the Monteverde cloud forest canopy</li>
+        <li>White-water rafting on the Pacuare River (2-day overnight is the best version)</li>
+        <li>Night turtle nesting tour at Tortuguero or Ostional (seasonal)</li>
+        <li>Hanging bridges walk at Arenal Mistico Park or Monteverde</li>
+        <li>Surfing lessons in Tamarindo, Dominical, or Santa Teresa (Pacific coast)</li>
+        <li>Sea kayaking through Tortuguero's jungle canals</li>
+        <li>Horseback riding to the Rio Celeste waterfall (vibrant turquoise blue)</li>
+      </ul>
+    </div>
+
+    <span class="section-num">05 — Practical Planning</span>
+    <h2>Getting Around and Staying Safe</h2>
+    <p>Costa Rica rewards those who plan ahead and punishes those who wing it. Roads outside of San José range from decent to genuinely impassable, and the distances between major destinations look deceivingly short on a map — a 100-mile drive can easily take 3–4 hours on mountain roads. Renting a 4WD vehicle is strongly recommended for any itinerary that includes more than one major destination.</p>
+    <p>An alternative that many travelers don't consider: small domestic charter flights. Sansa Airlines and Green Airways connect San José with Arenal, Monteverde, the Osa Peninsula, Tortuguero, and Guanacaste in 30–45 minutes for $80–180 per person each way. For a two-week trip, flying between major regions and driving locally is often the smartest approach — it preserves your energy for adventures rather than road fatigue.</p>
+    <p>San José itself is typically just a one-night connection stop for most itineraries — the capital has little to detain travelers compared to the rest of the country. Budget one night there at arrival and departure and spend your remaining days in the regions.</p>
+
+    <div class="tip-box">
+      <div class="tip-label">Booking Advice</div>
+      <p>The best eco-lodges in the Osa Peninsula and Tortuguero book out 6–12 months in advance for peak season. If those destinations are on your wish list, planning early is essential. We can help you build an itinerary around your target dates and secure the lodges that make the biggest difference.</p>
+    </div>
+  </article>
+</main>
+
+<section class="cta-band">
+  <h2>Ready to Experience Pura Vida?</h2>
+  <p>Our advisors can design the perfect Costa Rica itinerary — from wildlife lodges in Corcovado to surfing on the Pacific coast.</p>
+  <a href="../find-my-vacation.html">Start Planning</a>
+</section>
+
+<nav class="article-nav">
+  <a href="santorini-guide.html">&#8592; Santorini, Greece</a>
+  <a href="amalfi-coast-guide.html">Amalfi Coast &#8594;</a>
+</nav>
+
+<footer>
+  <p>&copy; 2025 Destinara Travel. All rights reserved.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 50 ? 'rgba(26,39,68,0.99)' : 'rgba(26,39,68,0.97)';
+  });
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
