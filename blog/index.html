@@ -121,6 +121,47 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
             .blog-read-more { display: inline-block; margin-top: 1.25rem; color: var(--color-primary); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
             .blog-read-more:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
+/* BLOG EXPAND/COLLAPSE */
+.blog-grid-hidden {
+  display: none;
+}
+.blog-grid-hidden.visible {
+  display: grid;
+  margin-top: 2rem;
+}
+.blog-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.blog-toggle-btn {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+.blog-toggle-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.blog-toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s;
+  font-size: 0.75rem;
+}
+.blog-toggle-btn[aria-expanded="true"] .blog-toggle-icon {
+  transform: rotate(180deg);
+}
+
             /* CTA BAND */
             .cta-band { background: var(--color-primary); padding: 5rem 2rem; text-align: center; }
             .cta-band h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; }
@@ -216,129 +257,263 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
     <div class="container">
         <div class="section-label">Latest Articles</div>
         <h2 class="section-title">Stories from the Road</h2>
-        <div class="blog-grid">
-        
-              <!-- Article 1: Honeymoon Destinations -->
-              <article class="blog-card">
-                      <div class="blog-card-img">
-                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Overwater bungalows at a tropical resort for honeymooners" loading="lazy">
-                      </div>
-                      <div class="blog-card-body">
-                                <div class="blog-category">Romance &amp; Honeymoons</div>
-                                <h2>Top Honeymoon Destinations for 2026</h2>
-                                <p>From overwater bungalows in the Maldives to private villa retreats in Tuscany — the world's most romantic destinations for newlyweds this year.</p>
-                                <div class="blog-meta">
-                                            <span>Elizabeth Nichols</span>
-                                            <span class="dot">&bull;</span>
-                                            <span>Feb 2026</span>
-                                            <span class="dot">&bull;</span>
-                                            <span>8 min read</span>
-                                </div>
-                                <a href="/blog/honeymoon-destinations-2026.html" class="blog-read-more" aria-label="Read Top Honeymoon Destinations for 2026">Read Article &rarr;</a>
-                      </div>
-              </article>
-        
-              <!-- Article 2: River vs Ocean Cruises -->
-              <article class="blog-card">
-                      <div class="blog-card-img">
-                                <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80" alt="Luxury cruise ship sailing at golden hour on calm ocean waters" loading="lazy">
-                      </div>
-                      <div class="blog-card-body">
-                                <div class="blog-category">Cruise Travel</div>
-                                <h2>River Cruises vs. Ocean Cruises: Which Is Right for You?</h2>
-                                <p>Both offer extraordinary experiences, but the right choice depends on your travel style. Jay Nichols breaks down the key differences — ship size, destination access, cost, and the best lines for each.</p>
-                                <div class="blog-meta">
-                                            <span>Jay Nichols</span>
-                                            <span class="dot">&bull;</span>
-                                            <span>Feb 2026</span>
-                                            <span class="dot">&bull;</span>
-                                            <span>9 min read</span>
-                                </div>
-                                <a href="/blog/river-cruise-vs-ocean-cruise.html" class="blog-read-more" aria-label="Read River Cruises vs. Ocean Cruises">Read Article &rarr;</a>
-                      </div>
-              </article>
-        
-              <!-- Article 3: European Christmas Markets -->
-              <article class="blog-card">
-                      <div class="blog-card-img">
-                                <img src="https://images.unsplash.com/photo-1481437156560-3205f6a55735?w=800&q=80" alt="Festive European Christmas market with glowing lights and stalls" loading="lazy">
-                      </div>
-                      <div class="blog-card-body">
-                                <div class="blog-category">Seasonal Travel</div>
-                                <h2>How to Plan the Perfect European Christmas Market Trip</h2>
-                                <p>Jay Nichols shares expert tips for planning a European Christmas market trip — from the best markets to visit, when to go, and how to make the most of every magical moment.</p>
-                                <div class="blog-meta">
-                                            <span>Jay Nichols</span>
-                                            <span class="dot">&bull;</span>
-                                            <span>Feb 2026</span>
-                                            <span class="dot">&bull;</span>
-                                            <span>10 min read</span>
-                                </div>
-                                <a href="/blog/planning-european-christmas-markets.html" class="blog-read-more" aria-label="Read How to Plan the Perfect European Christmas Market Trip">Read Article &rarr;</a>
-                      </div>
-              </article>
+        <div class="blog-grid" id="blogGridTop">
 
-      <!-- Article 4: Disney Cruise -->
+      <!-- Article 1: Honeymoon Destinations -->
       <article class="blog-card">
         <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80" alt="Turquoise Caribbean waters and tropical coastline — a Disney Cruise destination" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Overwater bungalows at a tropical resort for honeymooners" loading="lazy">
         </div>
         <div class="blog-card-body">
-          <div class="blog-category">Family Travel</div>
-          <h2>Why a Disney Cruise Is the Ultimate Family Vacation</h2>
-          <p>Magic at sea — Elizabeth Nichols breaks down why Disney Cruise Line stands apart from every other family vacation, from Castaway Cay to Broadway-quality shows every night.</p>
+          <div class="blog-category">Romance &amp; Honeymoons</div>
+          <h2>Top Honeymoon Destinations for 2026</h2>
+          <p>From overwater bungalows in the Maldives to private villa retreats in Tuscany — the world's most romantic destinations for newlyweds this year.</p>
           <div class="blog-meta">
             <span>Elizabeth Nichols</span>
             <span class="dot">&bull;</span>
-            <span>Mar 2026</span>
+            <span>Feb 2026</span>
             <span class="dot">&bull;</span>
             <span>8 min read</span>
           </div>
-          <a href="/blog/disney-cruise-family-vacation.html" class="blog-read-more" aria-label="Read Why a Disney Cruise Is the Ultimate Family Vacation">Read Article &rarr;</a>
+          <a href="/blog/honeymoon-destinations-2026.html" class="blog-read-more" aria-label="Read Top Honeymoon Destinations for 2026">Read Article &rarr;</a>
         </div>
       </article>
 
-      <!-- Article 5: Alaska Cruise -->
+      <!-- Article 2: River vs Ocean Cruises -->
       <article class="blog-card">
         <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=800&q=80" alt="Dramatic Alaskan mountain wilderness with glacial river and dense pine forest" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80" alt="Luxury cruise ship sailing at golden hour on calm ocean waters" loading="lazy">
         </div>
         <div class="blog-card-body">
           <div class="blog-category">Cruise Travel</div>
-          <h2>Alaska by Cruise Ship: America's Most Spectacular Voyage</h2>
-          <p>Glaciers the size of cities, humpback whales, bald eagles, and ancient rainforests — Jay Nichols shares everything you need to plan this bucket-list Alaskan journey.</p>
+          <h2>River Cruises vs. Ocean Cruises: Which Is Right for You?</h2>
+          <p>Both offer extraordinary experiences, but the right choice depends on your travel style. Jay Nichols breaks down the key differences — ship size, destination access, cost, and the best lines for each.</p>
           <div class="blog-meta">
             <span>Jay Nichols</span>
             <span class="dot">&bull;</span>
-            <span>Mar 2026</span>
-            <span class="dot">&bull;</span>
-            <span>10 min read</span>
-          </div>
-          <a href="/blog/alaska-cruise-guide.html" class="blog-read-more" aria-label="Read Alaska by Cruise Ship">Read Article &rarr;</a>
-        </div>
-      </article>
-
-      <!-- Article 6: Japan Cherry Blossoms -->
-      <article class="blog-card">
-        <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Stunning tunnel of cherry blossom trees illuminated at night over a Japanese canal" loading="lazy">
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-category">Destinations</div>
-          <h2>Japan in Cherry Blossom Season: A Once-in-a-Lifetime Journey</h2>
-          <p>Sakura season is fleeting, breathtaking, and unforgettable. Elizabeth Nichols shares the best viewing spots, timing secrets, and why expert planning makes all the difference.</p>
-          <div class="blog-meta">
-            <span>Elizabeth Nichols</span>
-            <span class="dot">&bull;</span>
-            <span>Mar 2026</span>
+            <span>Feb 2026</span>
             <span class="dot">&bull;</span>
             <span>9 min read</span>
           </div>
-          <a href="/blog/japan-cherry-blossom-season.html" class="blog-read-more" aria-label="Read Japan in Cherry Blossom Season">Read Article &rarr;</a>
+          <a href="/blog/river-cruise-vs-ocean-cruise.html" class="blog-read-more" aria-label="Read River Cruises vs. Ocean Cruises">Read Article &rarr;</a>
         </div>
       </article>
-        
+
+      <!-- Article 3: European Christmas Markets -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1481437156560-3205f6a55735?w=800&q=80" alt="Festive European Christmas market with glowing lights and stalls" loading="lazy">
         </div>
+        <div class="blog-card-body">
+          <div class="blog-category">Seasonal Travel</div>
+          <h2>How to Plan the Perfect German Christmas Market Trip</h2>
+          <p>From Nuremberg's centuries-old Christkindlesmarkt to Dresden's Striezelmarkt, Jay Nichols shares the best markets, when to go, where to stay, and how to experience the magic of a German holiday season.</p>
+          <div class="blog-meta">
+            <span>Jay Nichols</span>
+            <span class="dot">&bull;</span>
+            <span>Feb 2026</span>
+            <span class="dot">&bull;</span>
+            <span>10 min read</span>
+          </div>
+          <a href="/blog/planning-european-christmas-markets.html" class="blog-read-more" aria-label="Read How to Plan the Perfect German Christmas Market Trip">Read Article &rarr;</a>
+        </div>
+      </article>
+
+    </div><!-- end blog-grid top -->
+
+    <!-- Expand/Collapse toggle -->
+    <div class="blog-expand-wrap" id="blogExpandWrap">
+      <div class="blog-grid blog-grid-hidden" id="blogGridMore">
+
+        <!-- Article 4: Charleston SC -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1630688048913-bc2f98c14afe?w=800&q=80" alt="Historic pastel row houses on Rainbow Row in Charleston, South Carolina" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Southeast Getaways</div>
+            <h2>Charleston, SC: The South's Most Charming City</h2>
+            <p>Cobblestone streets, antebellum architecture, James Beard-worthy restaurants, and pristine beaches — Elizabeth Nichols shares why Charleston is one of America's most underrated luxury getaways.</p>
+            <div class="blog-meta">
+              <span>Elizabeth Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Mar 2026</span>
+              <span class="dot">&bull;</span>
+              <span>7 min read</span>
+            </div>
+            <a href="/blog/coming-soon.html" class="blog-read-more" aria-label="Read Charleston SC: The South's Most Charming City">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 5: Mardi Gras -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1548502499-ef49208cdfe9?w=800&q=80" alt="Colorful Mardi Gras parade floats and beads in New Orleans" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Festivals &amp; Events</div>
+            <h2>Mardi Gras in New Orleans: How to Experience It Right</h2>
+            <p>Beyond Bourbon Street — Jay Nichols breaks down the best neighborhoods, parades, and insider tips for making the most of the greatest free show on earth without losing your mind (or your wallet).</p>
+            <div class="blog-meta">
+              <span>Jay Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Mar 2026</span>
+              <span class="dot">&bull;</span>
+              <span>8 min read</span>
+            </div>
+            <a href="/blog/coming-soon.html" class="blog-read-more" aria-label="Read Mardi Gras in New Orleans: How to Experience It Right">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 6: Santorini -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1507501336603-6260faf2b7e5?w=800&q=80" alt="White-washed buildings and blue domed churches overlooking the Aegean Sea in Santorini" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Destinations</div>
+            <h2>Santorini on Your Terms: Avoiding the Crowds &amp; Finding the Magic</h2>
+            <p>Santorini is breathtaking — but only if you know how to navigate it. Elizabeth Nichols shares the quieter villages, best sunset spots, and boutique hotels that make this Greek island unforgettable.</p>
+            <div class="blog-meta">
+              <span>Elizabeth Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Mar 2026</span>
+              <span class="dot">&bull;</span>
+              <span>9 min read</span>
+            </div>
+            <a href="/blog/coming-soon.html" class="blog-read-more" aria-label="Read Santorini on Your Terms">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 7: Disney Cruise -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80" alt="Turquoise Caribbean waters and tropical coastline — a Disney Cruise destination" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Family Travel</div>
+            <h2>Why a Disney Cruise Is the Ultimate Family Vacation</h2>
+            <p>Magic at sea — Elizabeth Nichols breaks down why Disney Cruise Line stands apart from every other family vacation, from Castaway Cay to Broadway-quality shows every night.</p>
+            <div class="blog-meta">
+              <span>Elizabeth Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Mar 2026</span>
+              <span class="dot">&bull;</span>
+              <span>8 min read</span>
+            </div>
+            <a href="/blog/disney-cruise-family-vacation.html" class="blog-read-more" aria-label="Read Why a Disney Cruise Is the Ultimate Family Vacation">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 8: Alaska Cruise -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=800&q=80" alt="Dramatic Alaskan mountain wilderness with glacial river and dense pine forest" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Cruise Travel</div>
+            <h2>Alaska by Cruise Ship: America's Most Spectacular Voyage</h2>
+            <p>Glaciers the size of cities, humpback whales, bald eagles, and ancient rainforests — Jay Nichols shares everything you need to plan this bucket-list Alaskan journey.</p>
+            <div class="blog-meta">
+              <span>Jay Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Mar 2026</span>
+              <span class="dot">&bull;</span>
+              <span>10 min read</span>
+            </div>
+            <a href="/blog/alaska-cruise-guide.html" class="blog-read-more" aria-label="Read Alaska by Cruise Ship">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 9: Japan Cherry Blossoms -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Stunning tunnel of cherry blossom trees illuminated at night over a Japanese canal" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Destinations</div>
+            <h2>Japan in Cherry Blossom Season: A Once-in-a-Lifetime Journey</h2>
+            <p>Sakura season is fleeting, breathtaking, and unforgettable. Elizabeth Nichols shares the best viewing spots, timing secrets, and why expert planning makes all the difference.</p>
+            <div class="blog-meta">
+              <span>Elizabeth Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Mar 2026</span>
+              <span class="dot">&bull;</span>
+              <span>9 min read</span>
+            </div>
+            <a href="/blog/japan-cherry-blossom-season.html" class="blog-read-more" aria-label="Read Japan in Cherry Blossom Season">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 10: Costa Rica -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1543157145-f78c636d023d?w=800&q=80" alt="Lush Costa Rica rainforest with misty waterfalls and tropical wildlife" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Adventure Travel</div>
+            <h2>Costa Rica: The Perfect Mix of Adventure and Relaxation</h2>
+            <p>From zip-lining over cloud forests in Monteverde to soaking in volcanic hot springs at Arenal — Jay Nichols maps out the ideal Costa Rica itinerary for every type of traveler.</p>
+            <div class="blog-meta">
+              <span>Jay Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Apr 2026</span>
+              <span class="dot">&bull;</span>
+              <span>8 min read</span>
+            </div>
+            <a href="/blog/coming-soon.html" class="blog-read-more" aria-label="Read Costa Rica: The Perfect Mix of Adventure and Relaxation">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 11: Amalfi Coast -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80" alt="Colorful cliffside villages and azure waters along the Amalfi Coast, Italy" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Destinations</div>
+            <h2>Amalfi Coast, Italy: A Road-Trip Guide for the Bold Traveler</h2>
+            <p>Hairpin turns, sky-high lemon groves, and the impossibly blue Tyrrhenian Sea — Elizabeth Nichols shares how to drive (or boat) the Amalfi Coast like a local, from Positano to Ravello.</p>
+            <div class="blog-meta">
+              <span>Elizabeth Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Apr 2026</span>
+              <span class="dot">&bull;</span>
+              <span>9 min read</span>
+            </div>
+            <a href="/blog/coming-soon.html" class="blog-read-more" aria-label="Read Amalfi Coast, Italy: A Road-Trip Guide">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 12: Travel Insurance -->
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Traveler reviewing travel insurance documents before a trip" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-category">Travel Tips</div>
+            <h2>Do You Really Need Travel Insurance? A Honest Look</h2>
+            <p>Medical emergencies abroad, missed connections, lost luggage — Jay Nichols walks through exactly when travel insurance is worth every penny and when you might be over-paying for coverage you don't need.</p>
+            <div class="blog-meta">
+              <span>Jay Nichols</span>
+              <span class="dot">&bull;</span>
+              <span>Apr 2026</span>
+              <span class="dot">&bull;</span>
+              <span>7 min read</span>
+            </div>
+            <a href="/blog/do-you-need-travel-insurance.html" class="blog-read-more" aria-label="Read Do You Really Need Travel Insurance">Read Article &rarr;</a>
+          </div>
+        </article>
+
+      </div><!-- end blog-grid-more -->
+
+      <div class="blog-toggle-wrap">
+        <button class="blog-toggle-btn" id="blogToggleBtn" aria-expanded="false" onclick="toggleBlogGrid()">
+          View All Articles <span class="blog-toggle-icon">&#9660;</span>
+        </button>
+      </div>
+
+    </div><!-- end blogExpandWrap -->
     </div>
   </section>
   
@@ -381,5 +556,19 @@ const heroBg = document.querySelector('.hero-bg');
 window.addEventListener('scroll', () => {
   if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
 }, {passive: true});
+
+function toggleBlogGrid() {
+  const grid = document.getElementById('blogGridMore');
+  const btn = document.getElementById('blogToggleBtn');
+  const icon = btn.querySelector('.blog-toggle-icon');
+  const isOpen = grid.classList.toggle('visible');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.innerHTML = isOpen
+    ? 'Show Fewer Articles <span class="blog-toggle-icon" style="display:inline-block;transition:transform 0.3s;transform:rotate(180deg);font-size:0.75rem">&#9660;</span>'
+    : 'View All Articles <span class="blog-toggle-icon" style="display:inline-block;transition:transform 0.3s;font-size:0.75rem">&#9660;</span>';
+  if (!isOpen) {
+    document.getElementById('blogGridTop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 </script></title>
   </head>
