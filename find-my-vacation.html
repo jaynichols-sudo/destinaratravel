@@ -1,4 +1,6 @@
-<a href="./find-my-vacation.html">Find &amp; Price My Vacation</a>a><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Search hundreds of cruises and land tours, then instantly know your numbers before you book — powered by Widgety and Claude AI.">
 <link rel="canonical" href="https://destinaratravel.com/find-my-vacation.html">
@@ -525,23 +527,23 @@ Price My Trip
 <form id="estimatorForm" onsubmit="return false">
 <div class="form-grid">
 <div class="form-group">
-<label class="form-label">Flying From</label>
+<label class="form-label" for="origin">Flying From</label>
 <div class="airport-autocomplete-wrap"><input type="text" class="form-input" id="origin" placeholder="e.g. Greensboro, NC or GSO" autocomplete="off"></div>
 </div>
 <div class="form-group" id="dest-group">
-<label class="form-label">Destination</label>
+<label class="form-label" for="destination">Destination</label>
 <input type="text" class="form-input" id="destination" placeholder="e.g. Santorini, Greece">
 </div>
 <div class="form-group" id="depart-group">
-<label class="form-label">Departure Date</label>
+<label class="form-label" for="departDate">Departure Date</label>
 <input type="date" class="form-input" id="departDate">
 </div>
 <div class="form-group" id="return-group">
-<label class="form-label">Return Date</label>
+<label class="form-label" for="returnDate">Return Date</label>
 <input type="date" class="form-input" id="returnDate">
 </div>
 <div class="form-group">
-<label class="form-label">Number of Travelers</label>
+<label class="form-label" for="travelers">Number of Travelers</label>
 <select class="form-select" id="travelers">
 <option value="1">1 person</option>
 <option value="2" selected>2 people</option>
@@ -553,7 +555,7 @@ Price My Trip
 </select>
 </div>
 <div class="form-group">
-<label class="form-label">Primary Transport</label>
+<label class="form-label" for="transport">Primary Transport</label>
 <select class="form-select" id="transport">
 <option value="flight">&#9992; Flight</option>
 <option value="cruise" selected>&#128674; Cruise</option>
@@ -563,14 +565,14 @@ Price My Trip
 </div>
 <div class="form-group full">
 <label class="form-label">Travel Style</label>
-<div class="style-pills" id="stylePills">
-<div class="style-pill" data-value="budget">&#128176; Budget</div>
-<div class="style-pill active" data-value="moderate">&#11088; Moderate</div>
-<div class="style-pill" data-value="luxury">&#128142; Luxury</div>
+<div class="style-pills" id="stylePills" role="radiogroup" aria-label="Travel style">
+<div class="style-pill" data-value="budget" role="radio" aria-checked="false" tabindex="0">&#128176; Budget</div>
+<div class="style-pill active" data-value="moderate" role="radio" aria-checked="true" tabindex="0">&#11088; Moderate</div>
+<div class="style-pill" data-value="luxury" role="radio" aria-checked="false" tabindex="0">&#128142; Luxury</div>
 </div>
 </div>
 <div class="form-group full">
-<label class="form-label">Any Special Interests? <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+<label class="form-label" for="notes">Any Special Interests? <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
 <textarea class="form-textarea" id="notes" placeholder="e.g. family with 2 kids, interested in shore excursions, need accessible cabin..."></textarea>
 </div>
 </div>
@@ -714,18 +716,18 @@ Book a Free Consultation
 </div>
 <div class="smart-toast-body">
 <div class="smart-origin-group">
-<label class="smart-origin-label">Flying From</label>
+<label class="smart-origin-label" for="smartOrigin">Flying From</label>
 <div class="airport-autocomplete-wrap"><input type="text" class="smart-origin-input" id="smartOrigin" placeholder="e.g. Greensboro, NC or GSO" autocomplete="off"></div>
 </div>
 <div class="smart-meta-pills">
-<select class="smart-meta-select" id="smartTravelers">
+<select class="smart-meta-select" id="smartTravelers" aria-label="Number of travelers">
 <option value="1">1 traveler</option>
 <option value="2" selected>2 travelers</option>
 <option value="3">3 travelers</option>
 <option value="4">4 travelers</option>
 <option value="6">6 travelers</option>
 </select>
-<select class="smart-meta-select" id="smartStyle">
+<select class="smart-meta-select" id="smartStyle" aria-label="Travel style">
 <option value="budget">&#128176; Budget</option>
 <option value="moderate" selected>&#11088; Moderate</option>
 <option value="luxury">&#128142; Luxury</option>
@@ -760,9 +762,27 @@ if(window.innerWidth <= 768) { e.preventDefault(); trigger.closest('.nav-dropdow
 });
 // Style pills
 document.querySelectorAll('.style-pill').forEach(pill => {
-pill.addEventListener('click', () => {
-document.querySelectorAll('.style-pill').forEach(p => p.classList.remove('active'));
-pill.classList.add('active');
+  const activate = (el) => {
+    document.querySelectorAll('.style-pill').forEach(p => { p.classList.remove('active'); p.setAttribute('aria-checked','false'); });
+    el.classList.add('active');
+    el.setAttribute('aria-checked','true');
+  };
+  pill.addEventListener('click', () => activate(pill));
+  pill.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(pill); }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      const pills = [...document.querySelectorAll('.style-pill')];
+      const next = pills[(pills.indexOf(pill) + 1) % pills.length];
+      next.focus(); activate(next);
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const pills = [...document.querySelectorAll('.style-pill')];
+      const prev = pills[(pills.indexOf(pill) - 1 + pills.length) % pills.length];
+      prev.focus(); activate(prev);
+    }
+  });
 });
 });
 // Hero scroll CTA
@@ -1125,7 +1145,7 @@ function onWidgetTripSelected(data) {
 }
 
 function dismissToast() {
-  const t = document.getElementById('tripContextToast');
+  const t = document.getElementById('smartToast');
   if (t) t.style.display = 'none';
 }
 
@@ -1146,7 +1166,7 @@ function estimateFromWidget() {
 }
 
 function showTripContextPanel(parsed) {
-  let toast = document.getElementById('tripContextToast');
+  let toast = document.getElementById('smartToast');
   if (!toast) return;
   const smartOriginEl = document.getElementById('smartOrigin');
   const currentOrigin = document.getElementById('origin')?.value || '';
@@ -1167,7 +1187,7 @@ function showTripContextPanel(parsed) {
 
 function clearTripContext() {
   _widgetContext = null;
-  const t = document.getElementById('tripContextToast');
+  const t = document.getElementById('smartToast');
   if (t) t.style.display = 'none';
   const originEl = document.getElementById('origin');
   if (originEl) originEl.value = '';
