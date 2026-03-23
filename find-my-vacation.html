@@ -888,13 +888,65 @@ startDate = y + '-' + m + '-' + d;
 return { code, startDate, formattedDate, rawState: state };
 }
 function onWidgetTripSelected(tripData) {
-_widgetTrip = tripData;
-const tripLine = document.getElementById('smartToastTrip');
-if(tripLine) tripLine.textContent = tripData.formattedDate ? 'Departing ' + tripData.formattedDate + ' — add your origin city to estimate the full cost' : 'Add your flying-from city to estimate the total cost';
-document.getElementById('smartToast').classList.add('visible');
-setTimeout(() => { const inp = document.getElementById('smartOrigin'); if(inp && !inp.value) inp.focus(); }, 600);
+  _widgetTrip = tripData;
+  // Auto-populate the Voyage Estimator from widget trip data
+  if (tripData) {
+    const dest = tripData.destination || '';
+    const dur  = tripData.duration   || '';
+    const dep  = tripData.startDate  || '';
+    const line = tripData.cruiseLine || '';
+    const type = tripData.type       || 'cruise'; // 'cruise' or 'land'
+
+    // Fill destination field
+    const destEl = document.getElementById('destination');
+    if (destEl && dest) {
+      destEl.value = dest + (line ? ' (' + line + ')' : '');
+      destEl.closest('.form-group')?.classList.remove('auto-hidden');
+      document.getElementById('dest-group')?.classList.remove('auto-hidden');
+    }
+
+    // Fill depart date
+    const departEl = document.getElementById('departDate');
+    if (departEl && dep) {
+      departEl.value = dep; // ISO yyyy-mm-dd
+      document.getElementById('depart-group')?.classList.remove('auto-hidden');
+    }
+
+    // Fill return date from duration
+    const returnEl = document.getElementById('returnDate');
+    if (returnEl && dep && dur) {
+      const days = parseInt(dur) || 0;
+      if (days > 0) {
+        const ret = new Date(dep);
+        ret.setDate(ret.getDate() + days - 1);
+        returnEl.value = ret.toISOString().split('T')[0];
+        document.getElementById('return-group')?.classList.remove('auto-hidden');
+      }
+    }
+
+    // Set transport type
+    const transportEl = document.getElementById('transport');
+    if (transportEl) {
+      transportEl.value = type === 'land' ? 'land' : 'cruise';
+    }
+
+    // Show trip context summary panel
+    showTripContextPanel(
+      document.getElementById('origin')?.value || '',
+      document.getElementById('travelers')?.value || '2 people',
+      document.querySelector('.style-pill.active')?.dataset?.style || 'moderate'
+    );
+
+    // Scroll to estimator and auto-run if origin already filled
+    document.getElementById('estimator-tool')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const origin = document.getElementById('origin')?.value?.trim();
+    if (origin) {
+      setTimeout(() => { if (typeof runEstimate === 'function') runEstimate(); }, 600);
+    }
+  }
+  document.getElementById('smartToast')?.classList.add('visible');
 }
-function dismissToast() { document.getElementById('smartToast').classList.remove('visible'); }
+
 function estimateFromWidget() {
 const origin = document.getElementById('smartOrigin').value.trim();
 const travelers = document.getElementById('smartTravelers').value;
@@ -940,15 +992,61 @@ document.getElementById('resultsSection')?.classList.remove('visible');
 document.getElementById('resultsContent')?.classList.remove('visible');
 }
 window.addEventListener('message', function(e) {
-if(!e.origin.includes('widgety.co.uk')) return;
-const data = e.data;
-if(!data || typeof data !== 'object') return;
-if(data.type === 'stateUpdate' && data.state) {
-const tripData = parseWidgetyState(data.state);
-if(tripData) { onWidgetTripSelected(tripData); }
-else if(!_widgetTrip) { document.getElementById('smartToast')?.classList.remove('visible'); }
-}
+  if(!e.origin.includes('widgety.co.uk')) return;
+  const msg = e.data;
+
+  if(msg && msg.type === 'stateUpdate' && msg.state) {
+    // Parse trip details from the widgety state URL
+    // Format: /widgets/ID/holidays/TRIPCODE.widget
+    const match = msg.state.match(/\/holidays\/([A-Z0-9]+)\.widget$/);
+    if(match) {
+      const code = match[1];
+      // Skip the generic results page
+      if(code === 'result') { if(!_widgetTrip) document.getElementById('smartToast')?.classList.remove('visible'); return; }
+
+      // Parse the trip code: e.g. MSCEU20260323CVVCVV
+      // Common prefixes: MSC, RCI, NCL, CCL, HAL, CUN, VIK, AMA, etc.
+      const cruiseLines = { MSC:'MSC Cruises', RCI:'Royal Caribbean', NCL:'Norwegian Cruise Line',
+        CCL:'Carnival', HAL:'Holland America', CUN:'Cunard', VIK:'Viking', AMA:'AmaWaterways',
+        CEL:'Celebrity Cruises', COT:'Costa Cruises', POC:'P&O Cruises', SIL:'Silversea',
+        REG:'Regent Seven Seas', OCE:'Oceania', SAG:'Saga', CMV:'Cruise & Maritime' };
+      const regions = { EU:'Europe', CAR:'Caribbean', MED:'Mediterranean', BER:'Bermuda',
+        ALA:'Alaska', CAN:'Canada/New England', HAW:'Hawaii', PAC:'Pacific',
+        ASA:'Asia', AFR:'Africa', SAM:'South America', ANT:'Antarctica', AUS:'Australia/NZ',
+        MID:'Middle East', SCN:'Scandinavia', BAL:'Baltics', ARC:'Arctic' };
+
+      // Extract operator code (first 2-4 uppercase letters)
+      const opMatch = code.match(/^([A-Z]{2,4})/);
+      const opCode = opMatch ? opMatch[1] : '';
+      const cruiseLine = cruiseLines[opCode] || '';
+
+      // Extract region (next 2-3 letters after operator code)
+      const regionMatch = code.substring(opCode.length).match(/^([A-Z]{2,3})/);
+      const regionCode = regionMatch ? regionMatch[1] : '';
+      const region = regions[regionCode] || '';
+
+      // Extract date (8 digits: YYYYMMDD)
+      const dateMatch = code.match(/(d{4})(d{2})(d{2})/);
+      let startDate = '';
+      let formattedDate = '';
+      if(dateMatch) {
+        startDate = dateMatch[1] + '-' + dateMatch[2] + '-' + dateMatch[3];
+        formattedDate = new Date(startDate + 'T12:00:00').toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+      }
+
+      // Build destination string from region + cruise line
+      let destination = region || 'Cruise';
+      if(cruiseLine) destination = cruiseLine + ' — ' + destination;
+
+      const tripData = { code, startDate, formattedDate, destination, cruiseLine, region, type:'cruise' };
+      onWidgetTripSelected(tripData);
+    } else {
+      // Back to results — clear
+      if(!_widgetTrip) document.getElementById('smartToast')?.classList.remove('visible');
+    }
+  }
 }, false);
+
 (function checkInitialState() {
 const state = new URL(window.location.href).searchParams.get('widgety-state');
 if(state) { const t = parseWidgetyState(decodeURIComponent(state)); if(t) setTimeout(() => onWidgetTripSelected(t), 1500); }
