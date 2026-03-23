@@ -528,15 +528,15 @@ Price My Trip
 <label class="form-label">Flying From</label>
 <div class="airport-autocomplete-wrap"><input type="text" class="form-input" id="origin" placeholder="e.g. Greensboro, NC or GSO" autocomplete="off"></div>
 </div>
-<div class="form-group auto-hidden" id="dest-group">
+<div class="form-group" id="dest-group">
 <label class="form-label">Destination</label>
 <input type="text" class="form-input" id="destination" placeholder="e.g. Santorini, Greece">
 </div>
-<div class="form-group auto-hidden" id="depart-group">
+<div class="form-group" id="depart-group">
 <label class="form-label">Departure Date</label>
 <input type="date" class="form-input" id="departDate">
 </div>
-<div class="form-group auto-hidden" id="return-group">
+<div class="form-group" id="return-group">
 <label class="form-label">Return Date</label>
 <input type="date" class="form-input" id="returnDate">
 </div>
@@ -803,14 +803,7 @@ const loadingMessages = [
 let msgIdx = 0, msgInterval;
 function runEstimate() {
 const destination = document.getElementById('destination').value.trim();
-if(!destination) {
-document.getElementById('destination').focus();
-document.getElementById('destination').style.borderColor = '#e74c3c';
-setTimeout(() => document.getElementById('destination').style.borderColor = '', 2000);
-return;
-}
-const departDate = document.getElementById('departDate').value;
-const returnDate = document.getElementById('returnDate').value;
+    const departDate = document.getElementById('departDate').value;const returnDate = document.getElementById('returnDate').value;
 let duration = '7 days';
 if(departDate && returnDate) {
 const nights = Math.round((new Date(returnDate) - new Date(departDate)) / 86400000);
@@ -1139,7 +1132,7 @@ function dismissToast() {
 function estimateFromWidget() {
   dismissToast();
   if (_widgetContext) {
-    const interestsEl = document.getElementById('interests');
+    const interestsEl = document.getElementById('notes');
     if (interestsEl && !interestsEl.value) {
       const parts = [];
       if (_widgetContext.cruiseLine) parts.push(_widgetContext.cruiseLine + ' cruise');
