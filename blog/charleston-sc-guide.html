@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D5C5C">
+  <meta name="description" content="Charleston, SC is one of America's most charming and underrated luxury getaways. Elizabeth Nichols shares the best neighborhoods, restaurants, hotels, and hidden gems.">
+  <title>Charleston, SC: The South's Most Charming City | Destinara Travel</title>
+  <link rel="canonical" href="https://destinaratravel.com/blog/charleston-sc-guide.html">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#0A4A4A;--color-bg:#faf8f5;--color-bg-alt:#f0ebe4;--color-text:#2c2c2c;--color-text-light:#6b7280;--font-heading:'Playfair Display',serif;--font-body:'Inter',sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
+    nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:32px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+    .nav-logo-text{font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+    nav.scrolled .nav-logo-text{color:var(--color-dark)}
+    .nav-links{display:flex;align-items:center;gap:20px;list-style:none;flex:1}
+    .nav-links>li>a{color:rgba(255,255,255,.92);font-size:.9rem;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px;transition:color .3s}
+    .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.12)}
+    nav.scrolled .nav-links>li>a{color:var(--color-text)}
+    nav.scrolled .nav-links>li>a:hover{background:rgba(13,92,92,.08);color:var(--color-primary)}
+    .nav-cta{background:var(--color-accent)!important;color:white!important;padding:10px 22px!important;border-radius:25px!important;font-weight:600!important;white-space:nowrap}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+    nav.scrolled .hamburger span{background:var(--color-dark)}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--color-dark);z-index:1001;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:90px;gap:24px;opacity:0;visibility:hidden;transition:all .4s;overflow-y:auto}
+    .mobile-menu.open{display:flex;opacity:1;visibility:visible}
+    .mobile-menu a{font-family:var(--font-heading);font-size:1.6rem;color:#fff;text-decoration:none}
+    @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+    .article-hero{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-dark) 100%);padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+    .article-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1619892127776-08a763bfe34c?w=1400&q=80') center/cover;opacity:.25}
+    .article-hero>*{position:relative;z-index:1}
+    .article-hero .label{color:var(--color-accent);font-size:.875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+    .article-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.25rem);color:#fff;margin-bottom:1.25rem;max-width:760px;margin-left:auto;margin-right:auto;line-height:1.25}
+    .byline{color:rgba(255,255,255,.75);font-size:.9375rem;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+    .byline .dot{color:var(--color-accent)}
+    .article-body{max-width:760px;margin:0 auto;padding:4rem 2rem}
+    .article-body p{font-size:1.0625rem;line-height:1.8;color:var(--color-text);margin-bottom:1.5rem}
+    .article-body h2{font-family:var(--font-heading);font-size:1.75rem;color:var(--color-primary);margin:3rem 0 1.25rem}
+    .article-body h3{font-family:var(--font-heading);font-size:1.25rem;color:var(--color-dark);margin:2rem 0 .75rem}
+    .article-body ul{margin:0 0 1.5rem 1.5rem;line-height:2}
+    .article-body ul li{font-size:1rem;color:var(--color-text)}
+    .section-num{display:inline-block;background:var(--color-accent);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:.75rem}
+    .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;background:var(--color-bg-alt);border-radius:12px;padding:2rem;margin:2.5rem 0}
+    .stat-item{text-align:center}
+    .stat-num{font-family:var(--font-heading);font-size:2rem;color:var(--color-primary);font-weight:700}
+    .stat-label{font-size:.8125rem;color:var(--color-text-light);margin-top:.25rem;line-height:1.4}
+    .tip-box{background:#fff;border-left:4px solid var(--color-accent);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2.5rem 0;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .tip-box .tip-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:.5rem}
+    .tip-box p{margin-bottom:0;font-size:.9375rem}
+    .highlights{background:var(--color-bg-alt);border-radius:12px;padding:1.75rem 2rem;margin:2rem 0}
+    .highlights h4{font-family:var(--font-heading);font-size:1rem;color:var(--color-primary);margin-bottom:.75rem}
+    .highlights ul{margin:0 0 0 1.25rem;line-height:2}
+    .article-img{width:100%;border-radius:12px;margin:2.5rem 0;object-fit:cover;max-height:420px}
+    .cta-band{background:var(--color-primary);padding:5rem 2rem;text-align:center}
+    .cta-band h2{font-family:var(--font-heading);font-size:clamp(1.75rem,4vw,2.5rem);color:#fff;margin-bottom:1rem}
+    .cta-band p{color:rgba(255,255,255,.75);font-size:1.0625rem;max-width:500px;margin:0 auto 2rem}
+    .btn-accent{background:var(--color-accent);color:#fff;padding:.9rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:1rem;display:inline-block;transition:background .2s}
+    .btn-accent:hover{background:#b8845a}
+    .article-nav{max-width:760px;margin:0 auto;padding:2rem 2rem 4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .article-nav a{color:var(--color-primary);text-decoration:none;font-weight:600;font-size:.9375rem;display:flex;align-items:center;gap:.5rem}
+    .article-nav a:hover{color:var(--color-accent)}
+    footer{background:var(--color-dark);color:rgba(255,255,255,.7);padding:2.5rem 2rem;text-align:center;font-size:.875rem;line-height:1.8}
+    footer a{color:var(--color-accent);text-decoration:none}
+  </style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40">
+      <span class="nav-logo-text">Destinara Travel</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../vacations.html">Vacations</a></li>
+      <li><a href="../destinations.html">Destinations</a></li>
+      <li><a href="../find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
+      <li><a href="../index.html#deals">Deals</a></li>
+      <li><a href="../index.html#blog">Journal</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <div style="margin-left:auto;flex-shrink:0">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
+  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
+  <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
+  <a href="../about.html" onclick="closeMobile()">About</a>
+  <a href="../find-my-vacation.html" onclick="closeMobile()">Find &amp; Price My Vacation</a>
+</div>
+
+<header class="article-hero">
+  <div class="label">Southeast Getaways</div>
+  <h1>Charleston, SC: The South's Most Charming City</h1>
+  <div class="byline">
+    <span>By Elizabeth Nichols</span>
+    <span class="dot">&bull;</span>
+    <span>March 2026</span>
+    <span class="dot">&bull;</span>
+    <span>7 min read</span>
+  </div>
+</header>
+
+<main>
+<article class="article-body">
+
+<p>If you've never been to Charleston, South Carolina, I want you to picture this: a warm evening in April, the scent of jasmine drifting through streets lined with pastel-painted antebellum homes, the clinking of glasses at a rooftop bar overlooking the harbor, and a dinner that rivals anything you'd find in New York or San Francisco. That's Charleston — and it's one of the most consistently underrated luxury destinations in the entire country.</p>
+
+<p>Jay and I have sent dozens of clients to Charleston over the years, and without exception, every single one comes back saying the same thing: "We had no idea it was that good." If you're looking for a long weekend that punches far above its weight class, Charleston is your answer.</p>
+
+<div class="stat-row">
+  <div class="stat-item">
+    <div class="stat-num">350+</div>
+    <div class="stat-label">Years of American history in every cobblestone block</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">#1</div>
+    <div class="stat-label">Ranked best city in the US by Travel + Leisure (multiple years)</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4 hrs</div>
+    <div class="stat-label">Easy drive from Greensboro — or a quick 1-hour flight</div>
+  </div>
+</div>
+
+<span class="section-num">01</span>
+<h2>The Neighborhoods Worth Exploring</h2>
+
+<p>Charleston's magic is concentrated in a walkable peninsula, and understanding the different neighborhoods makes all the difference in your experience. The <strong>Historic District</strong> is where most visitors start — and for good reason. The Battery promenade, Rainbow Row (those famous pastel facades along East Bay Street), and the antebellum mansions of South of Broad are genuinely jaw-dropping.</p>
+
+<p>But the neighborhood Jay and I are most excited about right now is <strong>Upper King Street</strong>. This is Charleston's culinary and cocktail epicenter, with new restaurants, cocktail bars, and boutiques opening seemingly every month. If you want to eat and drink well — and you do — this is where you'll spend your evenings.</p>
+
+<p>For a quieter, more residential feel, wander into <strong>Harleston Village</strong> or stroll along the <strong>French Quarter</strong>, where art galleries, hidden courtyards, and the St. Philip's Episcopal Church steeple dominate the skyline. And don't skip the <strong>Market District</strong> — the Old City Market has been operating since the 1790s and remains one of the great sensory experiences in American travel.</p>
+
+<span class="section-num">02</span>
+<h2>Where to Eat: A Serious Food City</h2>
+
+<p>Charleston has quietly become one of the best food cities in the American South — perhaps in the entire country. The culinary scene is rooted in Lowcountry tradition (think shrimp and grits, she-crab soup, and pimento cheese) but elevated by a generation of James Beard Award-winning chefs who've chosen Charleston as their canvas.</p>
+
+<div class="highlights">
+  <h4>Elizabeth's Charleston Restaurant List</h4>
+  <ul>
+    <li><strong>Husk</strong> — The restaurant that put Charleston on the national culinary map. Locally sourced Southern cuisine at its absolute best.</li>
+    <li><strong>FIG</strong> — Farm-to-table before it was trendy, and still the benchmark for ingredient-driven cooking in the city.</li>
+    <li><strong>The Obstinate Daughter</strong> — On Sullivan's Island, worth the drive. Wood-fired pizza meets Lowcountry ingredients in an incredibly charming setting.</li>
+    <li><strong>Chez Nous</strong> — A tiny jewel box of a restaurant with only a handful of tables and a rotating menu of European-inspired small plates. Book weeks ahead.</li>
+    <li><strong>Leon's Oyster Shop</strong> — Casual, loud, and wonderful. Fried chicken, raw oysters, and frozen rosé in a converted auto body shop.</li>
+    <li><strong>The Darling Oyster Bar</strong> — A downtown institution. Go for the mignonette trio and stay for the local catch.</li>
+  </ul>
+</div>
+
+<div class="tip-box">
+  <div class="tip-label">&#128161; Advisor Tip from Elizabeth</div>
+  <p>Charleston's best restaurants fill up weeks in advance, especially on weekends. When we book a Charleston trip for our clients, we handle the restaurant reservations as part of the itinerary — it's one of the most valuable things we do. Don't show up expecting to walk into Husk on a Saturday night. Plan ahead, or let us plan for you.</p>
+</div>
+
+<span class="section-num">03</span>
+<h2>Where to Stay: Charleston's Finest Hotels</h2>
+
+<p>The hotel scene in Charleston has elevated dramatically over the past decade. Here are the properties we recommend to our clients most frequently, depending on their travel style.</p>
+
+<p><strong>The Dewberry</strong> is our top recommendation for the design-forward traveler. Set in a beautifully restored 1960s federal building, it has the feel of a private club — mid-century modern design, a spectacular rooftop bar, and a lobby bar (The Living Room) that's become a social institution. Walking distance to everything in the Historic District.</p>
+
+<p><strong>Zero George Street</strong> is what we recommend for couples seeking something more intimate. A collection of restored antebellum buildings around a courtyard, with just 18 rooms and suites. The evening cocktail hour, the exceptional breakfasts, and the genuinely warm service make it feel like staying at an elegant private home.</p>
+
+<p><strong>Belmond Charleston Place</strong> is the grande dame — the most traditional luxury choice, with a rooftop pool, full-service spa, and a central King Street location that can't be beaten. If you want the full service hotel experience, this is it.</p>
+
+<span class="section-num">04</span>
+<h2>Day Trips Worth Taking</h2>
+
+<p>One of Charleston's great advantages is its location. Within an easy drive are some of the most beautiful natural and historic sites on the East Coast.</p>
+
+<div class="highlights">
+  <h4>Best Day Trips from Charleston</h4>
+  <ul>
+    <li><strong>Kiawah Island</strong> (30 min) — A barrier island with pristine beaches, world-class golf, and some of the most consistent dolphin sightings on the Atlantic coast. The Sanctuary Hotel is spectacular.</li>
+    <li><strong>Middleton Place</strong> (20 min) — America's oldest landscaped gardens, set on an antebellum plantation. The moss-draped oaks and reflecting pools are otherworldly.</li>
+    <li><strong>Sullivan's Island &amp; Isle of Palms</strong> (20 min) — Low-key beach towns with a laid-back energy completely different from downtown Charleston. Great for an afternoon with drinks and ocean air.</li>
+    <li><strong>Magnolia Plantation</strong> (15 min) — Gardens established in 1676, with blooming azaleas in spring and a haunting beauty year-round. The nature boat tour through the cypress swamp is not to be missed.</li>
+    <li><strong>Savannah, Georgia</strong> (2 hrs) — If you're staying 4+ nights, Savannah makes a perfect day trip or overnight. Two entirely different personalities; both magnificent.</li>
+  </ul>
+</div>
+
+<span class="section-num">05</span>
+<h2>When to Go</h2>
+
+<p>Charleston is a year-round destination, but timing makes a meaningful difference. <strong>Spring (March through May)</strong> is peak season for good reason — the azaleas are in bloom, the weather is perfect, and the city is alive. Book early if you're traveling in spring.</p>
+
+<p><strong>Fall (September through November)</strong> is our personal favorite time to visit. The heat of summer has broken, the crowds have thinned, and the light is golden in a way that makes every photograph look like a painting. October in Charleston is genuinely one of the great travel experiences in the American South.</p>
+
+<p><strong>Summer</strong> is hot, humid, and busy — but if that's when your schedule allows, Charleston handles summer well. The beaches are gorgeous, the restaurants are all fully staffed, and the energy is high. Just stay near the waterfront where the sea breeze helps.</p>
+
+<p><strong>Winter</strong> is the secret season. December through February brings cool but mild weather (average highs in the 50s°F), minimal crowds, and some of the best restaurant availability of the year. Holiday lights in the Historic District in December are genuinely magical.</p>
+
+<div class="tip-box">
+  <div class="tip-label">&#128161; Why Book Through Destinara</div>
+  <p>When we book your Charleston getaway, we handle everything — from the right hotel for your travel style to restaurant reservations, spa bookings, and custom touring itineraries. Our preferred partner relationships with The Dewberry, Zero George, and Belmond often mean room upgrades, early check-in, and complimentary amenities that you simply can't get booking on your own.</p>
+</div>
+
+</article>
+</main>
+
+<section class="cta-band">
+  <div style="max-width:600px;margin:0 auto">
+    <h2>Ready to Experience Charleston?</h2>
+    <p>Let Jay &amp; Elizabeth plan every detail — from the perfect hotel to dinner reservations at the best tables in the city.</p>
+    <a href="../find-my-vacation.html" class="btn-accent">Start Planning My Trip</a>
+  </div>
+</section>
+
+<nav class="article-nav" aria-label="Article navigation">
+  <a href="/blog/">&#8592; Back to Journal</a>
+  <a href="/blog/mardi-gras-new-orleans.html">Next: Mardi Gras in New Orleans &#8594;</a>
+</nav>
+
+<footer>
+  <p>&copy; 2026 Destinara Travel &mdash; Jay &amp; Elizabeth Nichols &mdash; Greensboro, NC</p>
+  <div style="margin-top:.5rem">
+    <a href="../index.html">Home</a> &nbsp;&bull;&nbsp;
+    <a href="../blog/">Journal</a> &nbsp;&bull;&nbsp;
+    <a href="../about.html">About</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham && ham.addEventListener('click', () => { const open = mob.classList.toggle('open'); ham.setAttribute('aria-expanded', open); });
+  function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
+  document.addEventListener('click', e => { if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile(); });
+</script>
+</body>
+</html>
