@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://destinaratravel.com/">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="icon" type="image/png" href="destinara-logo.png">
-    <link rel="apple-touch-icon" href="destinaralogo.png"
+    <link rel="apple-touch-icon" href="destinaralogo.pn
         <meta name="theme-color" content="#0D5C5C
         <meta name="author" content="Jay &amp; Elizabeth Nichols, Destinara Travel">
         <meta name="geo.region" content="US-NC">
@@ -1869,13 +1869,13 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
   document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 function closeMobile() {
-  hamburger.classList.remove('active');
-  mobileMenu.classList.remove('active');
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
   document.body.style.overflow = '';
 }
 
