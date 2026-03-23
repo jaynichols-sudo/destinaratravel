@@ -73,6 +73,29 @@ nav.scrolled{background:rgba(10,74,74,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.1
 .mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
           }
+
+/* Airport Autocomplete */
+.airport-autocomplete-wrap { position: relative; }
+.airport-suggestions {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 9999;
+  background: #fff; border: 1px solid #ccc; border-top: none;
+  border-radius: 0 0 6px 6px; max-height: 220px; overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.airport-suggestions li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; cursor: pointer; font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.airport-suggestions li:hover { background: #f5f9f7; }
+.apt-code {
+  font-weight: 700; color: #1a5c4a; min-width: 36px;
+  font-size: 13px; background: #e8f4f0; border-radius: 4px;
+  padding: 2px 5px; text-align: center;
+}
+.apt-info { display: flex; flex-direction: column; }
+.apt-city { font-weight: 600; color: #222; font-size: 13px; }
+.apt-name { color: #666; font-size: 11px; }
 </style>
 </head>
 <style>
@@ -503,7 +526,7 @@ Price My Trip
 <div class="form-grid">
 <div class="form-group">
 <label class="form-label">Flying From</label>
-<input type="text" class="form-input" id="origin" placeholder="e.g. Greensboro, NC">
+<div class="airport-autocomplete-wrap"><input type="text" class="form-input" id="origin" placeholder="e.g. Greensboro, NC or GSO" autocomplete="off"></div>
 </div>
 <div class="form-group auto-hidden" id="dest-group">
 <label class="form-label">Destination</label>
@@ -692,7 +715,7 @@ Book a Free Consultation
 <div class="smart-toast-body">
 <div class="smart-origin-group">
 <label class="smart-origin-label">Flying From</label>
-<input type="text" class="smart-origin-input" id="smartOrigin" placeholder="e.g. Greensboro, NC or GSO" autocomplete="off">
+<div class="airport-autocomplete-wrap"><input type="text" class="smart-origin-input" id="smartOrigin" placeholder="e.g. Greensboro, NC or GSO" autocomplete="off"></div>
 </div>
 <div class="smart-meta-pills">
 <select class="smart-meta-select" id="smartTravelers">
@@ -871,186 +894,338 @@ document.querySelector('.style-pill[data-value="moderate"]').classList.add('acti
 document.getElementById('estimator-tool').scrollIntoView({ behavior: 'smooth' });
 }
 // ============ WIDGETY SMART INTEGRATION ============
-let _widgetTrip = null, _smartTripDestination = null;
-function parseWidgetyState(state) {
-const match = state.match(//holidays/([^.]+).widget/);
-if(!match) return null;
-const code = match[1];
-if(code === 'result') return null;
-const dateMatch = code.match(/(d{4})(d{2})(d{2})/);
-let startDate = null, formattedDate = null;
-if(dateMatch) {
-const [,y,m,d] = dateMatch;
-const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-formattedDate = d + ' ' + months[parseInt(m)-1] + ' ' + y;
-startDate = y + '-' + m + '-' + d;
-}
-return { code, startDate, formattedDate, rawState: state };
-}
-function onWidgetTripSelected(tripData) {
-  _widgetTrip = tripData;
-  // Auto-populate the Voyage Estimator from widget trip data
-  if (tripData) {
-    const dest = tripData.destination || '';
-    const dur  = tripData.duration   || '';
-    const dep  = tripData.startDate  || '';
-    const line = tripData.cruiseLine || '';
-    const type = tripData.type       || 'cruise'; // 'cruise' or 'land'
+// Airport autocomplete data
+const AIRPORTS = [
+  { code:'GSO', city:'Greensboro', name:'Piedmont Triad International', state:'NC' },
+  { code:'CLT', city:'Charlotte', name:'Charlotte Douglas International', state:'NC' },
+  { code:'RDU', city:'Raleigh-Durham', name:'Raleigh Durham International', state:'NC' },
+  { code:'ATL', city:'Atlanta', name:'Hartsfield-Jackson Atlanta International', state:'GA' },
+  { code:'ORD', city:'Chicago', name:"O'Hare International", state:'IL' },
+  { code:'MDW', city:'Chicago', name:'Midway International', state:'IL' },
+  { code:'LAX', city:'Los Angeles', name:'Los Angeles International', state:'CA' },
+  { code:'JFK', city:'New York', name:'John F. Kennedy International', state:'NY' },
+  { code:'LGA', city:'New York', name:'LaGuardia', state:'NY' },
+  { code:'EWR', city:'Newark', name:'Newark Liberty International', state:'NJ' },
+  { code:'SFO', city:'San Francisco', name:'San Francisco International', state:'CA' },
+  { code:'OAK', city:'Oakland', name:'Oakland International', state:'CA' },
+  { code:'SJC', city:'San Jose', name:'Norman Y. Mineta San Jose International', state:'CA' },
+  { code:'SEA', city:'Seattle', name:'Seattle-Tacoma International', state:'WA' },
+  { code:'DEN', city:'Denver', name:'Denver International', state:'CO' },
+  { code:'DFW', city:'Dallas', name:'Dallas/Fort Worth International', state:'TX' },
+  { code:'DAL', city:'Dallas', name:'Dallas Love Field', state:'TX' },
+  { code:'IAH', city:'Houston', name:'George Bush Intercontinental', state:'TX' },
+  { code:'HOU', city:'Houston', name:'William P. Hobby', state:'TX' },
+  { code:'MIA', city:'Miami', name:'Miami International', state:'FL' },
+  { code:'FLL', city:'Fort Lauderdale', name:'Fort Lauderdale-Hollywood International', state:'FL' },
+  { code:'MCO', city:'Orlando', name:'Orlando International', state:'FL' },
+  { code:'TPA', city:'Tampa', name:'Tampa International', state:'FL' },
+  { code:'PBI', city:'West Palm Beach', name:'Palm Beach International', state:'FL' },
+  { code:'JAX', city:'Jacksonville', name:'Jacksonville International', state:'FL' },
+  { code:'MSY', city:'New Orleans', name:'Louis Armstrong New Orleans International', state:'LA' },
+  { code:'BOS', city:'Boston', name:'Logan International', state:'MA' },
+  { code:'PHL', city:'Philadelphia', name:'Philadelphia International', state:'PA' },
+  { code:'PIT', city:'Pittsburgh', name:'Pittsburgh International', state:'PA' },
+  { code:'IAD', city:'Washington DC', name:'Dulles International', state:'VA' },
+  { code:'DCA', city:'Washington DC', name:'Ronald Reagan Washington National', state:'DC' },
+  { code:'BWI', city:'Baltimore', name:'Baltimore/Washington International', state:'MD' },
+  { code:'BNA', city:'Nashville', name:'Nashville International', state:'TN' },
+  { code:'MEM', city:'Memphis', name:'Memphis International', state:'TN' },
+  { code:'TYS', city:'Knoxville', name:'McGhee Tyson', state:'TN' },
+  { code:'CHA', city:'Chattanooga', name:'Lovell Field', state:'TN' },
+  { code:'BHM', city:'Birmingham', name:'Birmingham-Shuttlesworth International', state:'AL' },
+  { code:'HSV', city:'Huntsville', name:'Huntsville International', state:'AL' },
+  { code:'MOB', city:'Mobile', name:'Mobile Regional', state:'AL' },
+  { code:'MSP', city:'Minneapolis', name:'Minneapolis-Saint Paul International', state:'MN' },
+  { code:'DTW', city:'Detroit', name:'Detroit Metropolitan Wayne County', state:'MI' },
+  { code:'CLE', city:'Cleveland', name:'Cleveland Hopkins International', state:'OH' },
+  { code:'CMH', city:'Columbus', name:'John Glenn Columbus International', state:'OH' },
+  { code:'CVG', city:'Cincinnati', name:'Cincinnati/Northern Kentucky International', state:'KY' },
+  { code:'IND', city:'Indianapolis', name:'Indianapolis International', state:'IN' },
+  { code:'MKE', city:'Milwaukee', name:'General Mitchell International', state:'WI' },
+  { code:'STL', city:'St. Louis', name:'Lambert-St. Louis International', state:'MO' },
+  { code:'MCI', city:'Kansas City', name:'Kansas City International', state:'MO' },
+  { code:'OMA', city:'Omaha', name:'Eppley Airfield', state:'NE' },
+  { code:'DSM', city:'Des Moines', name:'Des Moines International', state:'IA' },
+  { code:'MSN', city:'Madison', name:'Dane County Regional', state:'WI' },
+  { code:'LIT', city:'Little Rock', name:'Bill and Hillary Clinton National', state:'AR' },
+  { code:'XNA', city:'Fayetteville', name:'Northwest Arkansas National', state:'AR' },
+  { code:'OKC', city:'Oklahoma City', name:'Will Rogers World', state:'OK' },
+  { code:'TUL', city:'Tulsa', name:'Tulsa International', state:'OK' },
+  { code:'ABQ', city:'Albuquerque', name:'Albuquerque International Sunport', state:'NM' },
+  { code:'PHX', city:'Phoenix', name:'Phoenix Sky Harbor International', state:'AZ' },
+  { code:'TUS', city:'Tucson', name:'Tucson International', state:'AZ' },
+  { code:'LAS', city:'Las Vegas', name:'Harry Reid International', state:'NV' },
+  { code:'RNO', city:'Reno', name:'Reno-Tahoe International', state:'NV' },
+  { code:'SLC', city:'Salt Lake City', name:'Salt Lake City International', state:'UT' },
+  { code:'BOI', city:'Boise', name:'Boise Airport', state:'ID' },
+  { code:'PDX', city:'Portland', name:'Portland International', state:'OR' },
+  { code:'GEG', city:'Spokane', name:'Spokane International', state:'WA' },
+  { code:'BZN', city:'Bozeman', name:'Bozeman Yellowstone International', state:'MT' },
+  { code:'ANC', city:'Anchorage', name:'Ted Stevens Anchorage International', state:'AK' },
+  { code:'HNL', city:'Honolulu', name:'Daniel K. Inouye International', state:'HI' },
+  { code:'OGG', city:'Maui', name:'Kahului Airport', state:'HI' },
+  { code:'KOA', city:'Kona', name:'Ellison Onizuka Kona International', state:'HI' },
+  { code:'LIH', city:'Kauai', name:'Lihue Airport', state:'HI' },
+  { code:'RIC', city:'Richmond', name:'Richmond International', state:'VA' },
+  { code:'ORF', city:'Norfolk', name:'Norfolk International', state:'VA' },
+  { code:'CHO', city:'Charlottesville', name:'Charlottesville Albemarle', state:'VA' },
+  { code:'ROA', city:'Roanoke', name:'Roanoke-Blacksburg Regional', state:'VA' },
+  { code:'AVL', city:'Asheville', name:'Asheville Regional', state:'NC' },
+  { code:'FAY', city:'Fayetteville', name:'Fayetteville Regional', state:'NC' },
+  { code:'ILM', city:'Wilmington', name:'Wilmington International', state:'NC' },
+  { code:'OAJ', city:'Jacksonville', name:'Albert J. Ellis', state:'NC' },
+  { code:'CAE', city:'Columbia', name:'Columbia Metropolitan', state:'SC' },
+  { code:'CHS', city:'Charleston', name:'Charleston International', state:'SC' },
+  { code:'MYR', city:'Myrtle Beach', name:'Myrtle Beach International', state:'SC' },
+  { code:'GSP', city:'Greenville', name:'Greenville-Spartanburg International', state:'SC' },
+  { code:'SAV', city:'Savannah', name:'Savannah/Hilton Head International', state:'GA' },
+  { code:'AGS', city:'Augusta', name:'Augusta Regional', state:'GA' },
+  { code:'CSG', city:'Columbus', name:'Columbus Airport', state:'GA' },
+  { code:'MCN', city:'Macon', name:'Middle Georgia Regional', state:'GA' },
+  { code:'PNS', city:'Pensacola', name:'Pensacola International', state:'FL' },
+  { code:'VPS', city:'Destin', name:'Destin-Fort Walton Beach', state:'FL' },
+  { code:'ECP', city:'Panama City', name:'Northwest Florida Beaches International', state:'FL' },
+  { code:'TLH', city:'Tallahassee', name:'Tallahassee International', state:'FL' },
+  { code:'GNV', city:'Gainesville', name:'Gainesville Regional', state:'FL' },
+  { code:'SRQ', city:'Sarasota', name:'Sarasota Bradenton International', state:'FL' },
+  { code:'RSW', city:'Fort Myers', name:'Southwest Florida International', state:'FL' },
+  { code:'MLB', city:'Melbourne', name:'Melbourne Orlando International', state:'FL' },
+  { code:'DAB', city:'Daytona Beach', name:'Daytona Beach International', state:'FL' },
+  { code:'PIE', city:'St. Petersburg', name:'St. Pete-Clearwater International', state:'FL' },
+  { code:'SWF', city:'Newburgh', name:'New York Stewart International', state:'NY' },
+  { code:'ALB', city:'Albany', name:'Albany International', state:'NY' },
+  { code:'BUF', city:'Buffalo', name:'Buffalo Niagara International', state:'NY' },
+  { code:'ROC', city:'Rochester', name:'Frederick Douglass Greater Rochester', state:'NY' },
+  { code:'SYR', city:'Syracuse', name:'Syracuse Hancock International', state:'NY' },
+  { code:'PWM', city:'Portland', name:'Portland International Jetport', state:'ME' },
+  { code:'BTV', city:'Burlington', name:'Burlington International', state:'VT' },
+  { code:'MHT', city:'Manchester', name:'Manchester-Boston Regional', state:'NH' },
+  { code:'PVD', city:'Providence', name:'T.F. Green International', state:'RI' },
+  { code:'BDL', city:'Hartford', name:'Bradley International', state:'CT' },
+  { code:'HPN', city:'White Plains', name:'Westchester County', state:'NY' },
+  { code:'ACY', city:'Atlantic City', name:'Atlantic City International', state:'NJ' },
+  { code:'ABE', city:'Allentown', name:'Lehigh Valley International', state:'PA' },
+  { code:'MDT', city:'Harrisburg', name:'Harrisburg International', state:'PA' },
+  { code:'AVP', city:'Scranton', name:'Wilkes-Barre/Scranton International', state:'PA' }
+];
 
-    // Fill destination field
-    const destEl = document.getElementById('destination');
-    if (destEl && dest) {
-      destEl.value = dest + (line ? ' (' + line + ')' : '');
-      destEl.closest('.form-group')?.classList.remove('auto-hidden');
-      document.getElementById('dest-group')?.classList.remove('auto-hidden');
+function airportAutocomplete(inputEl, listId) {
+  let list = document.getElementById(listId);
+  if (!list) {
+    list = document.createElement('ul');
+    list.id = listId;
+    list.className = 'airport-suggestions';
+    list.style.display = 'none';
+    inputEl.parentNode.appendChild(list);
+  }
+  inputEl.setAttribute('autocomplete','off');
+
+  inputEl.addEventListener('input', function() {
+    const q = this.value.trim().toLowerCase();
+    list.innerHTML = '';
+    if (q.length < 1) { list.style.display = 'none'; return; }
+    const matches = AIRPORTS.filter(a =>
+      a.city.toLowerCase().includes(q) ||
+      a.code.toLowerCase().startsWith(q) ||
+      a.name.toLowerCase().includes(q) ||
+      a.state.toLowerCase().startsWith(q)
+    ).slice(0, 8);
+    if (!matches.length) { list.style.display = 'none'; return; }
+    matches.forEach(a => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="apt-code">${a.code}</span><span class="apt-info"><span class="apt-city">${a.city}, ${a.state}</span><span class="apt-name">${a.name}</span></span>`;
+      li.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        selectAirport(a.code, a.city, inputEl, list);
+      });
+      list.appendChild(li);
+    });
+    list.style.display = 'block';
+  });
+
+  inputEl.addEventListener('blur', function() {
+    setTimeout(() => { list.style.display = 'none'; }, 150);
+  });
+  inputEl.addEventListener('focus', function() {
+    if (this.value.trim().length > 0) this.dispatchEvent(new Event('input'));
+  });
+}
+
+function selectAirport(code, city, inputEl, list) {
+  inputEl.value = code;
+  if (list) list.style.display = 'none';
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.airport-suggestions').forEach(function(el) {
+    if (!el.parentNode.contains(e.target)) el.style.display = 'none';
+  });
+});
+
+// ============ WIDGETY MESSAGE HANDLING ============
+function parseWidgetyState(stateParam) {
+  if (!stateParam) return null;
+  try {
+    const decoded = decodeURIComponent(stateParam);
+    const holidayPattern = new RegExp('[/]holidays[/]([^.]+)[.]widget');
+    const hMatch = decoded.match(holidayPattern);
+    const widgetCode = hMatch ? hMatch[1] : null;
+
+    const dateMatch = decoded.match(/[0-9]{8}/);
+    let depDate = null;
+    if (dateMatch) {
+      const raw = dateMatch[0];
+      depDate = raw.slice(0,4) + '-' + raw.slice(4,6) + '-' + raw.slice(6,8);
     }
 
-    // Fill depart date
-    const departEl = document.getElementById('departDate');
-    if (departEl && dep) {
-      departEl.value = dep; // ISO yyyy-mm-dd
-      document.getElementById('depart-group')?.classList.remove('auto-hidden');
-    }
+    const regionMatch = decoded.match(/region_ids(?:%5B%5D)?(?:[])?=(d+)/);
+    const regionId = regionMatch ? regionMatch[1] : null;
+    const regionMap = { '1':'Caribbean','2':'Mediterranean','3':'Northern Europe','4':'Caribbean','5':'Alaska','6':'Mexico','7':'Bermuda','8':'Bahamas','9':'Hawaii','10':'South America','11':'Transatlantic','12':'Asia','13':'Australia/New Zealand','14':'Africa','15':'Canada/New England','16':'Repositioning' };
 
-    // Fill return date from duration
-    const returnEl = document.getElementById('returnDate');
-    if (returnEl && dep && dur) {
-      const days = parseInt(dur) || 0;
-      if (days > 0) {
-        const ret = new Date(dep);
-        ret.setDate(ret.getDate() + days - 1);
-        returnEl.value = ret.toISOString().split('T')[0];
-        document.getElementById('return-group')?.classList.remove('auto-hidden');
+    const operatorMatch = decoded.match(/operator_ids(?:%5B%5D)?(?:[])?=(d+)/);
+    const operatorId = operatorMatch ? operatorMatch[1] : null;
+    const operatorMap = { '183':'Virgin Voyages','16':'Royal Caribbean','6':'Carnival','14':'Norwegian','4':'Celebrity','5':'Princess','7':'Holland America','8':'MSC','11':'Costa','15':'Cunard','17':'Oceania','18':'Regent Seven Seas','19':'Silversea','20':'Seabourn','21':'Azamara','22':'Crystal','23':'Viking Ocean','24':'Windstar','25':'Hurtigruten','26':'Ponant' };
+
+    const durationFromMatch = decoded.match(/duration_from=(d+)/);
+    const durationToMatch = decoded.match(/duration_to=(d+)/);
+    const durFrom = durationFromMatch ? parseInt(durationFromMatch[1]) : null;
+    const durTo = durationToMatch ? parseInt(durationToMatch[1]) : null;
+
+    const cruiseLine = operatorId && operatorMap[operatorId] ? operatorMap[operatorId] : (widgetCode ? widgetCode.replace(/[0-9]/g,'').trim() : 'Cruise');
+    const destination = regionId && regionMap[regionId] ? regionMap[regionId] : 'Caribbean';
+    const duration = durFrom && durTo ? Math.round((durFrom + durTo) / 2) : (durFrom || durTo || 7);
+    const transportType = 'Cruise';
+
+    return { cruiseLine, destination, duration, depDate, transportType, widgetCode };
+  } catch(e) {
+    console.warn('parseWidgetyState error:', e);
+    return null;
+  }
+}
+
+let _widgetContext = null;
+
+function onWidgetTripSelected(data) {
+  const stateParam = new URLSearchParams(window.location.search).get('widgety-state');
+  const parsed = parseWidgetyState(stateParam);
+  _widgetContext = parsed;
+
+  const originEl = document.getElementById('origin');
+  if (originEl && originEl.value) {
+    // keep user's origin
+  }
+
+  if (parsed) {
+    const travSelect = document.getElementById('travelers');
+    if (travSelect && (!travSelect.value || travSelect.value === '2')) {
+      // keep default
+    }
+    const transportSelect = document.getElementById('transport');
+    if (transportSelect) {
+      for (let opt of transportSelect.options) {
+        if (opt.text.toLowerCase().includes('cruise')) { transportSelect.value = opt.value; break; }
       }
     }
-
-    // Set transport type
-    const transportEl = document.getElementById('transport');
-    if (transportEl) {
-      transportEl.value = type === 'land' ? 'land' : 'cruise';
-    }
-
-    // Show trip context summary panel
-    showTripContextPanel(
-      document.getElementById('origin')?.value || '',
-      document.getElementById('travelers')?.value || '2 people',
-      document.querySelector('.style-pill.active')?.dataset?.style || 'moderate'
-    );
-
-    // Scroll to estimator and auto-run if origin already filled
-    document.getElementById('estimator-tool')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    const origin = document.getElementById('origin')?.value?.trim();
-    if (origin) {
-      setTimeout(() => { if (typeof runEstimate === 'function') runEstimate(); }, 600);
-    }
+    showTripContextPanel(parsed);
   }
-  document.getElementById('smartToast')?.classList.add('visible');
+}
+
+function dismissToast() {
+  const t = document.getElementById('tripContextToast');
+  if (t) t.style.display = 'none';
 }
 
 function estimateFromWidget() {
-const origin = document.getElementById('smartOrigin').value.trim();
-const travelers = document.getElementById('smartTravelers').value;
-const style = document.getElementById('smartStyle').value;
-if(!origin) {
-document.getElementById('smartOrigin').style.borderColor = '#e74c3c';
-document.getElementById('smartOrigin').placeholder = 'Please enter your departure city';
-document.getElementById('smartOrigin').focus();
-setTimeout(() => { document.getElementById('smartOrigin').style.borderColor = ''; document.getElementById('smartOrigin').placeholder = 'e.g. Greensboro, NC or GSO'; }, 2500);
-return;
-}
-dismissToast();
-const tripDescription = _widgetTrip?.formattedDate ? 'cruise departing ' + _widgetTrip.formattedDate : 'cruise/vacation package';
-document.getElementById('origin').value = origin;
-document.getElementById('destination').value = _smartTripDestination || tripDescription;
-document.getElementById('travelers').value = travelers;
-if(_widgetTrip?.startDate) document.getElementById('departDate').value = _widgetTrip.startDate;
-document.querySelectorAll('.style-pill').forEach(p => p.classList.remove('active'));
-const sp = document.querySelector('.style-pill[data-value="'+style+'"]');
-if(sp) sp.classList.add('active');
-showTripContextPanel(origin, travelers, style);
-document.getElementById('estimator-tool').scrollIntoView({ behavior: 'smooth', block: 'start' });
-setTimeout(() => runEstimate(), 800);
-}
-function showTripContextPanel(origin, travelers, style) {
-const panel = document.getElementById('tripContextPanel'), grid = document.getElementById('tripContextGrid');
-if(!panel || !grid) return;
-const dest = _smartTripDestination || (_widgetTrip?.formattedDate ? 'Trip departing ' + _widgetTrip.formattedDate : 'Selected trip');
-const items = [{ label:'Trip', value:dest }, { label:'Flying From', value:origin }, { label:'Travelers', value:travelers+' traveler'+(travelers>1?'s':'')+'' }, { label:'Style', value:style.charAt(0).toUpperCase()+style.slice(1) }];
-if(_widgetTrip?.formattedDate) items.splice(1, 0, { label:'Departs', value:_widgetTrip.formattedDate });
-grid.innerHTML = items.map(i => '<div class="trip-context-item"><span class="trip-context-label">'+i.label+'</span><span class="trip-context-value">'+i.value+'</span></div>').join('') + '<button class="trip-context-clear" onclick="clearTripContext()">← Search again</button>';
-panel.classList.add('visible');
-document.getElementById('dest-group')?.classList.add('auto-hidden');
-document.getElementById('depart-group')?.classList.add('auto-hidden');
-document.getElementById('return-group')?.classList.add('auto-hidden');
-}
-function clearTripContext() {
-_widgetTrip = null; _smartTripDestination = null;
-document.getElementById('tripContextPanel')?.classList.remove('visible');
-['dest-group','depart-group','return-group'].forEach(id => document.getElementById(id)?.classList.remove('auto-hidden'));
-['destination','origin','departDate','returnDate'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
-document.getElementById('resultsSection')?.classList.remove('visible');
-document.getElementById('resultsContent')?.classList.remove('visible');
-}
-window.addEventListener('message', function(e) {
-  if(!e.origin.includes('widgety.co.uk')) return;
-  const msg = e.data;
-
-  if(msg && msg.type === 'stateUpdate' && msg.state) {
-    // Parse trip details from the widgety state URL
-    // Format: /widgets/ID/holidays/TRIPCODE.widget
-    const match = msg.state.match(/\/holidays\/([A-Z0-9]+)\.widget$/);
-    if(match) {
-      const code = match[1];
-      // Skip the generic results page
-      if(code === 'result') { if(!_widgetTrip) document.getElementById('smartToast')?.classList.remove('visible'); return; }
-
-      // Parse the trip code: e.g. MSCEU20260323CVVCVV
-      // Common prefixes: MSC, RCI, NCL, CCL, HAL, CUN, VIK, AMA, etc.
-      const cruiseLines = { MSC:'MSC Cruises', RCI:'Royal Caribbean', NCL:'Norwegian Cruise Line',
-        CCL:'Carnival', HAL:'Holland America', CUN:'Cunard', VIK:'Viking', AMA:'AmaWaterways',
-        CEL:'Celebrity Cruises', COT:'Costa Cruises', POC:'P&O Cruises', SIL:'Silversea',
-        REG:'Regent Seven Seas', OCE:'Oceania', SAG:'Saga', CMV:'Cruise & Maritime' };
-      const regions = { EU:'Europe', CAR:'Caribbean', MED:'Mediterranean', BER:'Bermuda',
-        ALA:'Alaska', CAN:'Canada/New England', HAW:'Hawaii', PAC:'Pacific',
-        ASA:'Asia', AFR:'Africa', SAM:'South America', ANT:'Antarctica', AUS:'Australia/NZ',
-        MID:'Middle East', SCN:'Scandinavia', BAL:'Baltics', ARC:'Arctic' };
-
-      // Extract operator code (first 2-4 uppercase letters)
-      const opMatch = code.match(/^([A-Z]{2,4})/);
-      const opCode = opMatch ? opMatch[1] : '';
-      const cruiseLine = cruiseLines[opCode] || '';
-
-      // Extract region (next 2-3 letters after operator code)
-      const regionMatch = code.substring(opCode.length).match(/^([A-Z]{2,3})/);
-      const regionCode = regionMatch ? regionMatch[1] : '';
-      const region = regions[regionCode] || '';
-
-      // Extract date (8 digits: YYYYMMDD)
-      const dateMatch = code.match(/(d{4})(d{2})(d{2})/);
-      let startDate = '';
-      let formattedDate = '';
-      if(dateMatch) {
-        startDate = dateMatch[1] + '-' + dateMatch[2] + '-' + dateMatch[3];
-        formattedDate = new Date(startDate + 'T12:00:00').toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
-      }
-
-      // Build destination string from region + cruise line
-      let destination = region || 'Cruise';
-      if(cruiseLine) destination = cruiseLine + ' — ' + destination;
-
-      const tripData = { code, startDate, formattedDate, destination, cruiseLine, region, type:'cruise' };
-      onWidgetTripSelected(tripData);
-    } else {
-      // Back to results — clear
-      if(!_widgetTrip) document.getElementById('smartToast')?.classList.remove('visible');
+  dismissToast();
+  if (_widgetContext) {
+    const interestsEl = document.getElementById('interests');
+    if (interestsEl && !interestsEl.value) {
+      const parts = [];
+      if (_widgetContext.cruiseLine) parts.push(_widgetContext.cruiseLine + ' cruise');
+      if (_widgetContext.destination) parts.push('destination: ' + _widgetContext.destination);
+      if (_widgetContext.duration) parts.push(_widgetContext.duration + ' nights');
+      if (_widgetContext.depDate) parts.push('departing ' + _widgetContext.depDate);
+      interestsEl.value = parts.join(', ');
     }
   }
-}, false);
+  runEstimate();
+}
 
-(function checkInitialState() {
-const state = new URL(window.location.href).searchParams.get('widgety-state');
-if(state) { const t = parseWidgetyState(decodeURIComponent(state)); if(t) setTimeout(() => onWidgetTripSelected(t), 1500); }
+function showTripContextPanel(parsed) {
+  let toast = document.getElementById('tripContextToast');
+  if (!toast) return;
+  const smartOriginEl = document.getElementById('smartOrigin');
+  const currentOrigin = document.getElementById('origin')?.value || '';
+  if (smartOriginEl && currentOrigin) smartOriginEl.value = currentOrigin;
+
+  const lineEl = document.getElementById('smartCruiseLine');
+  const destEl = document.getElementById('smartDestination');
+  const durEl = document.getElementById('smartDuration');
+  const dateEl = document.getElementById('smartDepDate');
+
+  if (lineEl) lineEl.textContent = parsed.cruiseLine || 'N/A';
+  if (destEl) destEl.textContent = parsed.destination || 'N/A';
+  if (durEl) durEl.textContent = parsed.duration ? parsed.duration + ' nights' : 'N/A';
+  if (dateEl) dateEl.textContent = parsed.depDate || 'N/A';
+
+  toast.style.display = 'block';
+}
+
+function clearTripContext() {
+  _widgetContext = null;
+  const t = document.getElementById('tripContextToast');
+  if (t) t.style.display = 'none';
+  const originEl = document.getElementById('origin');
+  if (originEl) originEl.value = '';
+}
+
+window.addEventListener('message', function(e) {
+  if (!e.data || typeof e.data !== 'object') return;
+  if (e.data.type === 'stateUpdate' || e.data.event === 'stateUpdate') {
+    const url = e.data.url || e.data.state || '';
+    if (url) {
+      try {
+        const urlObj = new URL(url, window.location.origin);
+        const stateParam = urlObj.pathname;
+        history.replaceState(null,'', '?widgety-state=' + encodeURIComponent(stateParam));
+        const parsed = parseWidgetyState(encodeURIComponent(stateParam));
+        if (parsed) { _widgetContext = parsed; showTripContextPanel(parsed); }
+      } catch(err) {
+        history.replaceState(null,'', '?widgety-state=' + encodeURIComponent(url));
+        const parsed = parseWidgetyState(encodeURIComponent(url));
+        if (parsed) { _widgetContext = parsed; showTripContextPanel(parsed); }
+      }
+    }
+  }
+});
+
+// Init autocomplete on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const originEl = document.getElementById('origin');
+  if (originEl) airportAutocomplete(originEl, 'airport-list-main');
+  const smartOriginEl = document.getElementById('smartOrigin');
+  if (smartOriginEl) airportAutocomplete(smartOriginEl, 'airport-list-smart');
+});
+
+// Also init if DOM already loaded
+(function() {
+  if (document.readyState !== 'loading') {
+    const originEl = document.getElementById('origin');
+    if (originEl) airportAutocomplete(originEl, 'airport-list-main');
+    const smartOriginEl = document.getElementById('smartOrigin');
+    if (smartOriginEl) airportAutocomplete(smartOriginEl, 'airport-list-smart');
+  }
 })();
+
+function checkInitialState() {
+  const sp = new URLSearchParams(window.location.search).get('widgety-state');
+  if (sp) {
+    const parsed = parseWidgetyState(sp);
+    if (parsed) { _widgetContext = parsed; showTripContextPanel(parsed); }
+  }
+}
+checkInitialState();
 </script>
 </body>
 </html>
