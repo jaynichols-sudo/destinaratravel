@@ -635,6 +635,10 @@ section{padding:100px 0}
 
     /* DISNEY VACATIONS SECTION */
     .disney-showcase{padding:80px 0;background:linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);position:relative;overflow:hidden}
+.disney-bg-slides{position:absolute;inset:0;z-index:0;pointer-events:none}
+.disney-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease-in-out}
+.disney-bg-slide.active{opacity:1}
+.disney-showcase .container{position:relative;z-index:2}
     .disney-showcase::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:0.5}
     .disney-showcase .container{position:relative;z-index:1}
     .disney-showcase .section-label{color:#f9a825}
@@ -796,6 +800,11 @@ section{padding:100px 0}
 </div>
 
 <section class="disney-showcase" id="disney-vacations">
+<div class="disney-bg-slides" aria-hidden="true">
+  <div class="disney-bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1628784829843?auto=format&fit=crop&w=1600&q=80')"></div>
+  <div class="disney-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1569033887792?auto=format&fit=crop&w=1600&q=80')"></div>
+  <div class="disney-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1707342617132?auto=format&fit=crop&w=1600&q=80')"></div>
+</div>
     <div class="container">
     <p class="section-label reveal">✨ The Most Magical Vacations on Earth</p>
     <h2 class="reveal">Disney Vacations</h2>
@@ -1829,6 +1838,18 @@ document.addEventListener('DOMContentLoaded',function(){
   }
 });
 </script>
-<script id="dropdown-js">document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
+<script id="dropdown-js">document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});
+
+// Disney background slideshow
+(function(){
+  const slides = document.querySelectorAll('.disney-bg-slide');
+  if(!slides.length) return;
+  let cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }, 5000);
+})();</script>
 </body>
 </html>
