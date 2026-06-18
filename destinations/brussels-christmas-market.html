@@ -1,120 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Brussels Christmas Market Travel Guide | Destinara Travel</title><meta name="description" content="Brussels transforms into a glittering winter wonderland each December as the Grand Place, one of the world&#x27;s most beautiful squares, is adorned with thousands of lights and a towering Christmas tree."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/><style>
-/* ===== DEST PAGE BASE ===== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2d2d2d;line-height:1.6}
-
-/* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:rgba(15,25,20,.92);backdrop-filter:blur(12px)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;flex-shrink:0}
-.nav-logo img{width:40px;height:40px;border-radius:50%}
-.nav-logo-text{font-size:1.05rem}
-.nav-links{list-style:none;display:flex;gap:4px;align-items:center;margin-left:auto}
-.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:8px;font-size:.9rem;transition:all .2s}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.nav-links .nav-cta{background:#c8956c;color:#fff!important;padding:9px 18px;border-radius:20px;font-weight:600}
-.nav-links .nav-cta:hover{background:#b8845b}
-.nav-badge{background:#e74c3c;color:#fff;font-size:.6rem;font-weight:700;padding:2px 5px;border-radius:4px;margin-left:4px;vertical-align:middle}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
-.mobile-menu{display:none}
-
-/* ===== HERO ===== */
-.dest-hero{min-height:420px;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 50%,#1a3a2a 100%);display:flex;align-items:flex-end;padding-bottom:40px;margin-top:72px;position:relative;overflow:hidden}
-.dest-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 100%)}
-.hero-content{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;color:#fff}
-.breadcrumb{font-size:.85rem;opacity:.8;margin-bottom:12px}
-.breadcrumb a{color:#c8956c;text-decoration:none}
-.category-badge{display:inline-block;background:rgba(200,149,108,.9);color:#fff;font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
-.hero-tagline{font-size:2.8rem;font-weight:700;line-height:1.2;margin-bottom:8px;font-family:'Playfair Display',Georgia,serif}
-.meta-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-.meta-pill{background:rgba(255,255,255,.15);color:#fff;font-size:.82rem;padding:5px 14px;border-radius:16px;backdrop-filter:blur(6px)}
-
-/* ===== MAIN CONTENT ===== */
-main.dest-main{max-width:1200px;margin:0 auto;padding:40px 24px 60px}
-
-/* ===== LEAD ===== */
-.dest-lead{font-size:1.15rem;line-height:1.8;color:#444;margin-bottom:36px;padding:24px;background:#fff;border-radius:12px;border-left:4px solid #c8956c;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-
-/* ===== INFO CARDS ===== */
-.info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:40px}
-.info-card{background:#fff;border-radius:12px;padding:18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc}
-.ic-icon{font-size:1.8rem;margin-bottom:8px}
-.ic-label{display:block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:4px}
-.ic-value{display:block;font-size:.9rem;font-weight:600;color:#2d2d2d}
-
-/* ===== SECTION WRAPPER ===== */
-.dest-section{margin-bottom:44px}
-.section-title{font-size:1.5rem;font-weight:700;color:#1a3a2a;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #c8956c;font-family:'Playfair Display',Georgia,serif}
-
-/* ===== HIGHLIGHTS GRID ===== */
-.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.hl-item{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;display:flex;gap:16px;align-items:flex-start}
-.hl-icon{font-size:2rem;flex-shrink:0;line-height:1}
-.hl-item p{font-size:.93rem;color:#555;line-height:1.6}
-.hl-item strong{display:block;font-size:1rem;color:#1a3a2a;margin-bottom:4px}
-
-/* ===== QUICK FACTS TABLE ===== */
-.facts-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.facts-table th,.facts-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #f0ece4;font-size:.92rem}
-.facts-table th{background:#f4f1eb;font-weight:600;color:#1a3a2a;width:35%}
-.facts-table td{color:#444}
-.facts-table tr:last-child th,.facts-table tr:last-child td{border-bottom:none}
-
-/* ===== WHY LIST ===== */
-.why-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
-.why-list li{background:#fff;border-radius:10px;padding:14px 18px 14px 44px;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.05);border:1px solid #e8e4dc;font-size:.93rem;color:#444}
-.why-list li::before{content:'✓';position:absolute;left:16px;color:#c8956c;font-weight:700;font-size:1.1rem}
-
-/* ===== ITINERARY ===== */
-.itin-grid{display:flex;flex-direction:column;gap:16px}
-.itin-day{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start}
-.itin-day-num{background:#1a3a2a;color:#fff;border-radius:10px;padding:12px 8px;text-align:center;font-weight:700;font-size:.85rem;line-height:1.3}
-.itin-day-content h4{font-size:1rem;font-weight:700;color:#1a3a2a;margin-bottom:10px}
-.itin-day-content ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.itin-day-content li{font-size:.9rem;color:#555;padding-left:18px;position:relative}
-.itin-day-content li::before{content:'→';position:absolute;left:0;color:#c8956c}
-
-/* ===== TIPS GRID ===== */
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.tip-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;border-top:3px solid #c8956c}
-.tip-icon{font-size:1.8rem;margin-bottom:10px}
-.tip-card h4{font-size:1rem;font-weight:700;color:#1a3a2a;margin-bottom:8px}
-.tip-card p{font-size:.9rem;color:#555;line-height:1.6}
-
-/* ===== SEASONS GRID ===== */
-.seasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.season-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;text-align:center}
-.season-icon{font-size:2rem;margin-bottom:10px}
-.season-card h4{font-size:.95rem;font-weight:700;color:#1a3a2a;margin-bottom:8px}
-.season-card p{font-size:.87rem;color:#555;line-height:1.5}
-
-/* ===== CTA ===== */
-.dest-cta{background:linear-gradient(135deg,#1a3a2a,#2d5a3d);border-radius:16px;padding:36px;text-align:center;color:#fff;margin-top:44px}
-.dest-cta h2{font-size:1.6rem;margin-bottom:12px;font-family:'Playfair Display',Georgia,serif}
-.dest-cta p{opacity:.9;margin-bottom:24px;font-size:.95rem}
-.btn-cta{display:inline-block;background:#c8956c;color:#fff;text-decoration:none;padding:14px 32px;border-radius:24px;font-weight:700;font-size:1rem;transition:all .2s}
-.btn-cta:hover{background:#b8845b;transform:translateY(-1px)}
-
-/* ===== FOOTER ===== */
-footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:center;font-size:.88rem;margin-top:0}
-.footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:10px}
-.footer-links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#c8956c}
-
-/* ===== BACK LINK ===== */
-.back-link{display:inline-flex;align-items:center;gap:8px;color:#c8956c;text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:24px;transition:gap .2s}
-.back-link:hover{gap:12px}
-
-@media(max-width:768px){
-  .hero-tagline{font-size:1.8rem}
-  .info-cards{grid-template-columns:repeat(2,1fr)}
-  .itin-day{grid-template-columns:1fr}
-  .itin-day-num{display:inline-block;padding:6px 12px}
-  .hamburger{display:flex}
-  .nav-links{display:none}
-}
-</style><style>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width,initial-scale=1.0">
+          <title>Brussels Christmas Market Destination Guide | Destinara Travel</title>
+    <meta name="description" content="Brussels transforms into a winter wonderland each December — its Grand Place, one of the world&#x27;s most beautiful city squares, glitters under thousands of l…">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <style>
+          *{margin:0;padding:0;box-sizing:border-box}:root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#1a1a2e;--color-light:#F5F1EB;--color-white:#ffffff;--color-text:#333333;--color-text-light:#666666}body{font-family:'Inter',sans-serif;color:var(--color-text);background:var(--color-white)}.nav{background:rgba(26,26,46,0.95);padding:1rem 2rem;position:fixed;width:100%;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center}.nav-logo img{height:40px}.nav-content{display:flex;gap:2rem;align-items:center}.nav-content a{color:var(--color-white);text-decoration:none;font-size:0.9rem;transition:color 0.3s}.nav-content a:hover{color:var(--color-accent)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}.hero-destination{height:70vh;background:linear-gradient(rgba(26,26,46,0.4),rgba(26,26,46,0.6)),url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--color-white);margin-top:60px}.hero-destination h1{font-family:'Playfair Display',serif;font-size:3.5rem;margin-bottom:1rem}.hero-destination p{font-size:1.2rem;max-width:600px;opacity:0.9}.breadcrumb{padding:1.5rem 0;font-size:0.9rem}.breadcrumb a{color:var(--color-primary);text-decoration:none}.breadcrumb span{margin:0 0.5rem;color:var(--color-text-light)}.section{padding:5rem 0}.section-alt{background:var(--color-light)}.section-dark{background:var(--color-dark);color:var(--color-white)}.section-label{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--color-accent);margin-bottom:1rem}.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:2rem;color:var(--color-dark)}.section-dark .section-title{color:var(--color-white)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.overview-grid img{width:100%;height:400px;object-fit:cover;border-radius:12px}.overview-text p{margin-bottom:1rem;line-height:1.8;color:var(--color-text-light)}.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.fact-card{background:var(--color-white);padding:2rem;border-radius:12px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.05)}.fact-card .fact-icon{font-size:1.5rem;margin-bottom:0.5rem}.fact-card h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.5rem;color:var(--color-dark)}.fact-card p{font-size:0.85rem;color:var(--color-text-light)}.experiences-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.experience-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,0.08)}.experience-card img{width:100%;height:250px;object-fit:cover}.experience-card .card-content{padding:1.5rem}.experience-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;color:var(--color-dark)}.experience-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.seasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.season-card{background:rgba(255,255,255,0.1);padding:2rem;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}.season-card.recommended{border-color:var(--color-accent);background:rgba(196,149,107,0.15)}.season-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem}.season-card .temp{font-size:1.5rem;color:var(--color-accent);font-weight:600;margin:0.5rem 0}.season-card p{font-size:0.85rem;opacity:0.8;line-height:1.6}.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.tip-card{padding:2rem;border-radius:12px;border:1px solid #e0d5c9}.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}.tip-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem;color:var(--color-dark)}.tip-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:1rem}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:8px;transition:transform 0.3s}.gallery-grid img:first-child{grid-column:span 2;grid-row:span 2}.gallery-grid img:hover{transform:scale(1.02)}.cta-section{text-align:center;padding:5rem 0}.cta-section h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}.cta-section p{opacity:0.8;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}.btn-primary{display:inline-block;background:var(--color-accent);color:var(--color-white);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:500;transition:all 0.3s}.btn-primary:hover{background:#b8895f;transform:translateY(-2px)}.footer{background:var(--color-dark);color:var(--color-white);padding:3rem 0;text-align:center}.footer-logo img{height:30px;margin-bottom:1rem}.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem}.footer p{font-size:0.8rem;opacity:0.5}@media(max-width:1024px){.overview-grid,.facts-grid,.seasons-grid{grid-template-columns:repeat(2,1fr)}.experiences-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.hero-destination h1{font-size:2.2rem}.overview-grid,.facts-grid,.experiences-grid,.seasons-grid,.tips-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-grid img:first-child{grid-column:span 1;grid-row:span 1}.nav-content{display:none}}
+              .mobile-mega-destinations{padding:0}
+.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-dest-regions{display:none;padding:8px 16px 12px}
+.mobile-mega-destinations.open .mobile-dest-regions{display:block}
+.mobile-dest-region{margin-bottom:12px}
+.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
+.mobile-dest-region a:hover{color:#fff}
+</style>
+    <style>
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
 nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
@@ -164,21 +67,68 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   .nav-dropdown::before{display:none}
   .nav-dropdown-item.open .nav-dropdown{display:block}
 }
-/* DESTINATIONS MEGA-MENU */
-.nav-mega-item{position:relative}.nav-mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:920px;display:none;grid-template-columns:repeat(7,1fr);gap:0;padding:20px 24px 16px;background:#0a3d3d;border-top:2px solid var(--color-accent,#c9a96e);z-index:1000;box-shadow:0 8px 32px rgba(0,0,0,0.3)}.nav-mega-dropdown li{list-style:none;padding:0;margin:0}.nav-mega-heading{display:block;color:var(--color-accent,#c9a96e);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0 0 6px 0;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.12);white-space:nowrap}.nav-mega-region{padding:0 10px 0 0}.nav-mega-region a{display:block;color:rgba(255,255,255,0.8);font-size:12px;padding:2px 0;white-space:nowrap;text-decoration:none;transition:color 0.2s}.nav-mega-region a:hover{color:#fff}.nav-mega-footer{grid-column:1/-1;padding-top:10px;margin-top:8px;border-top:1px solid rgba(255,255,255,0.12)}.nav-mega-footer a{color:var(--color-accent,#c9a96e);font-size:12px;font-weight:600;text-decoration:none}.nav-mega-footer a:hover{color:#fff}.nav-mega-item:hover .nav-mega-dropdown,.nav-mega-item:focus-within .nav-mega-dropdown{display:grid}@media(max-width:1200px){.nav-mega-dropdown{width:680px;grid-template-columns:repeat(4,1fr)}}@media(max-width:768px){.nav-mega-dropdown{display:none!important}}.mobile-mega-destinations{padding:0}.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}.mobile-dest-regions{display:none;padding:8px 16px 12px}.mobile-mega-destinations.open .mobile-dest-regions{display:block}.mobile-dest-region{margin-bottom:12px}.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
-
 </style>
     <link rel="canonical" href="https://destinaratravel.com/destinations/brussels-christmas-market.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://destinaratravel.com/destinations/brussels-christmas-market.html">
-    <meta property="og:title" content="Brussels Christmas Market Travel Guide | Destinara Travel">
-    <meta property="og:description" content="Brussels transforms into a glittering winter wonderland each December as the Grand Place, one of the world&#x27;s most beautiful squares, is adorned with thousands of lights and a towering Christmas tree.">
+    <meta property="og:title" content="Brussels Christmas Market Destination Guide | Destinara Travel">
+    <meta property="og:description" content="Brussels transforms into a winter wonderland each December — its Grand Place, one of the world&#x27;s most beautiful city squares, glitters under thousands of l…">
     <meta property="og:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&amp;q=80&amp;auto=format&amp;fit=crop">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Brussels Christmas Market Travel Guide | Destinara Travel">
-    <meta name="twitter:description" content="Brussels transforms into a glittering winter wonderland each December as the Grand Place, one of the world&#x27;s most beautiful squares, is adorned with thousands of lights and a towering Christmas tree.">
+    <meta name="twitter:title" content="Brussels Christmas Market Destination Guide | Destinara Travel">
+    <meta name="twitter:description" content="Brussels transforms into a winter wonderland each December — its Grand Place, one of the world&#x27;s most beautiful city squares, glitters under thousands of l…">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&amp;q=80&amp;auto=format&amp;fit=crop">
-  </head><body><div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <style>
+.itin-list{display:flex;flex-direction:column;gap:1rem;max-width:840px;margin:0 auto}
+.itin-card{display:flex;gap:1.25rem;background:var(--color-white);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 15px rgba(0,0,0,0.05)}
+.itin-daynum{flex:0 0 46px;height:46px;width:46px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
+.itin-body h4{font-family:'Playfair Display',serif;color:var(--color-dark);margin-bottom:.3rem;font-size:1.1rem}
+.itin-body p{color:var(--color-text-light);line-height:1.7;font-size:.95rem}
+</style>
+
+<style>
+.itin-list{display:flex;flex-direction:column;gap:1rem;max-width:840px;margin:0 auto}
+.itin-card{display:flex;gap:1.25rem;background:var(--color-white);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 15px rgba(0,0,0,0.05)}
+.itin-daynum{flex:0 0 46px;height:46px;width:46px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
+.itin-body h4{font-family:'Playfair Display',serif;color:var(--color-dark);margin-bottom:.3rem;font-size:1.1rem}
+.itin-body p{color:var(--color-text-light);line-height:1.7;font-size:.95rem}
+.experience-card .card-content{padding:1.75rem}
+.experience-card.no-img{border-top:3px solid var(--color-accent)}
+</style>
+</head>
+    <body>
+          <nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <span class="nav-logo-text">Destinara Travel</span>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown-item">
+        <a href="../vacations.html" class="nav-dropdown-trigger">Vacations &#9660;</a>
+        <ul class="nav-dropdown">
+          <li><a href="../cruises.html">Cruises</a></li>
+          <li><a href="../vacations.html">Land Destinations</a></li>
+          <li><a href="../destinations.html?filter=southeast">Southeast Getaways</a></li>
+          <li><a href="../disney.html">Disney</a></li>
+        </ul>
+      </li>
+      <li><a href="../destinations.html">Destinations</a></li>
+      <li><a href="../find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
+      <li><a href="../index.html#deals">Deals</a></li>
+      <li><a href="../index.html#testimonials">Reviews</a></li>
+      <li><a href="../index.html#blog">Journal</a></li>
+      <li><a href="../about.html">About</a></li>
+      </ul>
+    <div class="nav-right">
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
   <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
   <a href="../disney.html" onclick="closeMobile()">Disney</a>
@@ -200,48 +150,10 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
   <a href="../about.html" onclick="closeMobile()">About</a>
   <a href="../find-my-vacation.html" onclick="closeMobile()">Find &amp; Price My Vacation</a>
-</div><nav id="nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
-      <span class="nav-logo-text">Destinara Travel</span>
-    </a>
-    <ul class="nav-links">
-      <li class="nav-dropdown-item">
-        <a href="../vacations.html" class="nav-dropdown-trigger">Vacations &#9660;</a>
-        <ul class="nav-dropdown">
-          <li><a href="../cruises.html">Cruises</a></li>
-          <li><a href="../vacations.html">Land Destinations</a></li>
-          <li><a href="../destinations.html?filter=southeast">Southeast Getaways</a></li>
-          <li><a href="../disney.html">Disney</a></li>
-        </ul>
-      </li>
-      <li class="nav-dropdown-item nav-mega-item">
-        <a href="../destinations.html" class="nav-dropdown-trigger">Destinations &#9660;</a>
-        <ul class="nav-dropdown nav-mega-dropdown">
-          <li class="nav-mega-region"><span class="nav-mega-heading">Caribbean &amp; Islands</span><a href="../destinations/caribbean-islands.html">Caribbean Islands</a><a href="../destinations/hawaii.html">Hawaii</a><a href="../destinations/maldives.html">Maldives</a><a href="../destinations/fiji.html">Fiji</a><a href="../destinations/seychelles.html">Seychelles</a><a href="../destinations/french-polynesia.html">French Polynesia</a><a href="../destinations/bali-indonesia.html">Bali, Indonesia</a></li>
-          <li class="nav-mega-region"><span class="nav-mega-heading">Southeast US</span><a href="../destinations/charleston-sc.html">Charleston, SC</a><a href="../destinations/hilton-head-sc.html">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html">Outer Banks, NC</a><a href="../destinations/savannah-ga.html">Savannah, GA</a><a href="../destinations/smoky-mountains.html">Smoky Mountains</a><a href="../destinations/asheville-nc.html">Asheville, NC</a><a href="../destinations/nashville-tn.html">Nashville, TN</a></li>
-          <li class="nav-mega-region"><span class="nav-mega-heading">Americas</span><a href="../destinations/alaska.html">Alaska</a><a href="../destinations/new-york-city.html">New York City</a><a href="../destinations/washington-dc.html">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html">Blue Ridge Parkway</a><a href="../destinations/mexico.html">Mexico</a><a href="../destinations/costa-rica.html">Costa Rica</a><a href="../destinations/peru.html">Peru</a><a href="../destinations/patagonia.html">Patagonia</a></li>
-          <li class="nav-mega-region"><span class="nav-mega-heading">Europe</span><a href="../destinations/paris-france.html">Paris, France</a><a href="../destinations/barcelona-spain.html">Barcelona, Spain</a><a href="../destinations/santorini-greece.html">Santorini, Greece</a><a href="../destinations/tuscany-italy.html">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html">Amalfi Coast</a><a href="../destinations/french-riviera.html">French Riviera</a><a href="../destinations/iceland.html">Iceland</a></li>
-          <li class="nav-mega-region"><span class="nav-mega-heading">Christmas Markets</span><a href="../destinations/brussels-christmas-market.html">Brussels</a><a href="../destinations/budapest-christmas-market.html">Budapest</a><a href="../destinations/cologne-christmas-market.html">Cologne</a><a href="../destinations/nuremberg-christmas-market.html">Nuremberg</a><a href="../destinations/prague-christmas-market.html">Prague</a><a href="../destinations/rhine-river-germany.html">Rhine River</a><a href="../destinations/salzburg-christmas-market.html">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html">Strasbourg</a><a href="../destinations/vienna-christmas-market.html">Vienna</a></li>
-          <li class="nav-mega-region"><span class="nav-mega-heading">Middle East &amp; Africa</span><a href="../destinations/egypt.html">Egypt</a><a href="../destinations/israel.html">Israel</a><a href="../destinations/jordan.html">Jordan</a><a href="../destinations/morocco.html">Morocco</a><a href="../destinations/oman.html">Oman</a><a href="../destinations/dubai-uae.html">Dubai, UAE</a><a href="../destinations/kenya-safari.html">Kenya Safari</a><a href="../destinations/south-africa.html">South Africa</a><a href="../destinations/tanzania.html">Tanzania</a><a href="../destinations/botswana.html">Botswana</a><a href="../destinations/madagascar.html">Madagascar</a></li>
-          <li class="nav-mega-region"><span class="nav-mega-heading">Asia &amp; Pacific</span><a href="../destinations/japan.html">Japan</a><a href="../destinations/thailand.html">Thailand</a><a href="../destinations/vietnam.html">Vietnam</a><a href="../destinations/india.html">India</a><a href="../destinations/cambodia.html">Cambodia</a><a href="../destinations/sri-lanka.html">Sri Lanka</a><a href="../destinations/australia.html">Australia</a><a href="../destinations/new-zealand.html">New Zealand</a></li>
-          <li class="nav-mega-footer"><a href="../destinations.html">View All Destinations &rarr;</a></li>
-        </ul>
-      </li>
-      <li><a href="../find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a></li>
-      <li><a href="../index.html#deals">Deals</a></li>
-      <li><a href="../index.html#testimonials">Reviews</a></li>
-      <li><a href="../index.html#blog">Journal</a></li>
-      <li><a href="../about.html">About</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav><section class="hero"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80&auto=format&fit=crop" alt="Brussels Christmas Market"/><div class="hero-overlay"></div><div class="hero-content"><span class="hero-badge">Seasonal</span><h1>Brussels Christmas Market</h1><p>Festive Magic in the Heart of Europe</p></div></section><div class="breadcrumb"><a href="/">Home</a><span>&rsaquo;</span><a href="/destinations.html">Destinations</a><span>&rsaquo;</span><span>Brussels Christmas Market</span></div><main class="dest-main"><p class="dest-lead">Brussels transforms into a winter wonderland each December — its Grand Place, one of the world's most beautiful city squares, glitters under thousands of lights as the Winter Wonders Christmas market fills it with the scent of glühwein, waffles, and roasted chestnuts. Belgium's capital blends festive magic with world-class chocolate, art nouveau architecture, and the finest beer culture in Europe.</p><div class="info-cards"><div class="info-card"><div class="ic-icon">&#127757;</div><div class="ic-label">Region</div><div class="ic-value">Europe</div></div><div class="info-card"><div class="ic-icon">&#10022;</div><div class="ic-label">Category</div><div class="ic-value">Seasonal</div></div><div class="info-card"><div class="ic-icon">&#128197;</div><div class="ic-label">Best Time</div><div class="ic-value">Late Nov–Dec 31</div></div><div class="info-card"><div class="ic-icon">&#128176;</div><div class="ic-label">Budget</div><div class="ic-value">$150–$250/day</div></div><div class="info-card"><div class="ic-icon">&#128101;</div><div class="ic-label">Your Experts</div><div class="ic-value">Jay &amp; Elizabeth Nichols</div></div></div><section class="dest-section"><h2 class="section-title">Highlights &amp; Experiences</h2><div class="highlights-grid"><div class="hl-item"><span class="hl-icon">&#10022;</span><span>Grand Place Winter Wonders Market</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>Belgian Chocolate & Waffle Trail</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>Art Nouveau Horta Museum</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>Manneken Pis in Festive Costume</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>Belgian Beer Tasting Tour</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>Royal Museums of Fine Arts</span></div></div></section><section class="dest-section"><h2 class="section-title">Quick Facts</h2><table class="facts-table"><tr><th>Capital</th><td>Brussels, Belgium</td></tr><tr><th>Language</th><td>French, Dutch, German</td></tr><tr><th>Currency</th><td>Euro (EUR)</td></tr><tr><th>Time Zone</th><td>CET (UTC+1)</td></tr><tr><th>Best Season</th><td>Late November–December</td></tr><tr><th>Avg Trip Length</th><td>3–5 days</td></tr></table></section><section class="dest-section"><h2 class="section-title">Why Brussels Christmas Market?</h2><ul class="why-list"><li>Stand in the Grand Place — a UNESCO World Heritage Site — as it transforms into Europe's most spectacular Christmas market backdrop.</li><li>Follow the Belgian chocolate trail through artisan chocolatiers: Neuhaus, Wittamer, Pierre Marcolini, and Mary Chocolatier.</li><li>Taste the country that invented modern brewing: Trappist ales, Lambic, Gueuze, and a 1,500-variety beer menu at Delirium Café.</li><li>Visit the Horta Museum — Victor Horta's own art nouveau townhouse, a UNESCO masterpiece of organic curves and light.</li><li>Admire the illuminated Grand Place light and sound show every 30 minutes from 5pm throughout December.</li><li>Discover the comic strip heritage of the Hergé museum and 50+ street murals of Tintin, Asterix, and Lucky Luke.</li><li>Warm up with a steaming bowl of moules-frites at a classic Brussels brasserie with Belgian golden ale.</li><li>Day-trip to medieval Bruges, just 55 minutes away, for its own fairy-tale Christmas market and canal reflections.</li></ul></section><section class="dest-section"><h2 class="section-title">Your 5-Day Itinerary</h2><div class="itin-grid"><div class="itin-day"><div class="itin-day-num">Day 1</div><div class="itin-day-content"><h4>Arrival & Grand Place</h4><ul><li>Check in near the city centre; drop luggage</li><li>Grand Place: explore the guild houses and Gothic city hall in daylight</li><li>Winter Wonders market opens — explore the stalls, try glühwein and waffles</li><li>Grand Place illuminated light show at 6pm</li><li>Belgian beer hall dinner: try carbonade flamande (beer-braised beef stew)</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 2</div><div class="itin-day-content"><h4>Art & Chocolate</h4><ul><li>Morning: Royal Museums of Fine Arts (Bruegel the Elder, Rubens, Magritte)</li><li>Lunch at the Galeries Royales Saint-Hubert arcade</li><li>Afternoon: self-guided Belgian chocolate trail — 5 artisan chocolatiers</li><li>Horta Museum in the late afternoon</li><li>Craft beer tasting at Delirium Café or Moeder Lambic</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 3</div><div class="itin-day-content"><h4>Bruges Day Trip</h4><ul><li>Early morning train to Bruges (55 minutes)</li><li>Christmas market at Markt Square and Burg Square</li><li>Canal boat tour through medieval waterways</li><li>Chocolate museum and regional brewery tour</li><li>Return to Brussels for a final beer dinner</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 4</div><div class="itin-day-content"><h4>Final Brussels Exploration</h4><ul><li>Atomium and Mini-Europe in the morning</li><li>European Parliament visitor centre (free entry)</li><li>Manneken Pis — see Belgium's famous statue in festive costume</li><li>Comic book art museum and street mural walk</li><li>Farewell dinner: mussels, frites, and Chimay ale</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 5</div><div class="itin-day-content"><h4>Departure or Extension</h4><ul><li>Morning food market at Place du Jeu de Balle (Sunday) or Gare du Midi</li><li>Final Grand Place espresso and speculoos biscuits</li><li>Belgian chocolate and beer purchases for home</li><li>Transfer to airport or Eurostar to London/Paris</li></ul></div></div></div></section><section class="dest-section"><h2 class="section-title">Insider Travel Tips</h2><div class="tips-grid"><div class="tip-card"><div class="tip-icon">❄️</div><h4>Book Hotels Very Early</h4><p>Brussels Christmas market hotels book out by September. The city centre fills with visitors from across Europe. Book your accommodation as soon as your dates are set.</p></div><div class="tip-card"><div class="tip-icon">🎭</div><h4>Market Opening Hours</h4><p>Winter Wonders runs late November to January 1. Markets open daily 11am–10pm (later on weekends). The Grand Place light show runs every 30 mins from 5pm.</p></div><div class="tip-card"><div class="tip-icon">🍺</div><h4>Beer Etiquette</h4><p>Each Belgian beer has its own specific glass — refusing the correct glass is a minor local offense. Embrace the ritual: it's part of the experience.</p></div><div class="tip-card"><div class="tip-icon">🚇</div><h4>Getting Around</h4><p>Brussels has an excellent metro, tram, and bus network. A 10-trip card is the best value. Most Christmas market sights are walkable from the city centre.</p></div></div></section><section class="dest-section"><h2 class="section-title">When to Visit</h2><div class="seasons-grid"><div class="season-card"><div class="season-icon">⛄</div><h4>Winter (Nov–Feb)</h4><p>Christmas market season. Cold 0–8°C. Festive atmosphere. Peak hotel demand in December.</p></div><div class="season-card"><div class="season-icon">🌸</div><h4>Spring (Mar–May)</h4><p>Tulip season. Excellent weather for walking. Fewer crowds. Good hotel rates.</p></div><div class="season-card"><div class="season-icon">☀️</div><h4>Summer (Jun–Aug)</h4><p>Warm and pleasant. Outdoor cafés in full swing. Brussels festival season.</p></div><div class="season-card"><div class="season-icon">🍂</div><h4>Autumn (Sep–Oct)</h4><p>Ideal temperatures. Low crowds. Beer festivals abound. Beautiful fall colours.</p></div></div></section><div class="dest-cta"><h2>Ready to Plan Your Brussels Christmas Market Journey?</h2><p>Let Jay and Elizabeth Nichols craft your perfect itinerary, from hidden gems to iconic moments.</p><a href="/#contact" class="btn-cta">Start Planning Your Trip</a><br/><a href="/destinations.html" class="back-link">&larr; Back to All Destinations</a></div></main><footer>
+</div>/</div></section>
+        <div class="breadcrumb"><div class="container"><a href="../index.html">Home</a><span>/</span><a href="../index.html#destinations">Destinations</a><span>/</span>Brussels Christmas Market</div></div>
+        <section class="section"><div class="container"><div class="overview-grid"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&amp;q=80&amp;auto=format&amp;fit=crop" alt="Brussels Christmas Market" loading="lazy"><div class="overview-text"><div class="section-label">Overview</div><h3 class="section-title">Festive Magic in the Heart of Europe</h3><p>Brussels transforms into a winter wonderland each December — its Grand Place, one of the world&#x27;s most beautiful city squares, glitters under thousands of lights as the Winter Wonders Christmas market fills it with the scent of glühwein, waffles, and roasted chestnuts. Belgium&#x27;s capital blends festive magic with world-class chocolate, art nouveau architecture, and the finest beer culture in Europe.</p></div></div></div></section><section class="section section-alt"><div class="container"><div class="section-label">Essential Information</div><h3 class="section-title">Quick Facts</h3><div class="facts-grid"><div class="fact-card"><div class="fact-icon">🌍</div><h4>Region</h4><p>Europe</p></div><div class="fact-card"><div class="fact-icon">🏷️</div><h4>Category</h4><p>Seasonal</p></div><div class="fact-card"><div class="fact-icon">🗓️</div><h4>Best Time</h4><p>Late Nov–Dec 31</p></div><div class="fact-card"><div class="fact-icon">💰</div><h4>Budget</h4><p>$150–$250/day</p></div><div class="fact-card"><div class="fact-icon">🧭</div><h4>Your Experts</h4><p>Jay &amp; Elizabeth Nichols</p></div><div class="fact-card"><div class="fact-icon">🏙️</div><h4>Capital</h4><p>Brussels, Belgium</p></div><div class="fact-card"><div class="fact-icon">🗣️</div><h4>Language</h4><p>French, Dutch, German</p></div><div class="fact-card"><div class="fact-icon">💵</div><h4>Currency</h4><p>Euro (EUR)</p></div></div></div></section><section class="section"><div class="container"><div class="section-label">Must-Do Activities</div><h3 class="section-title">Top Experiences</h3><div class="experiences-grid"><div class="experience-card no-img"><div class="card-content"><h3>Grand Place Winter Wonders Market</h3><p></p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Belgian Chocolate &amp; Waffle Trail</h3><p></p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Art Nouveau Horta Museum</h3><p></p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Manneken Pis in Festive Costume</h3><p></p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Belgian Beer Tasting Tour</h3><p></p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Royal Museums of Fine Arts</h3><p></p></div></div></div></div></section><section class="section section-dark"><div class="container"><div class="section-label">Plan Your Visit</div><h3 class="section-title">Best Time to Visit</h3><div class="seasons-grid"><div class="season-card recommended"><h4>Winter (Nov–Feb)</h4><p>Christmas market season. Cold 0–8°C. Festive atmosphere. Peak hotel demand in December.</p></div><div class="season-card"><h4>Spring (Mar–May)</h4><p>Tulip season. Excellent weather for walking. Fewer crowds. Good hotel rates.</p></div><div class="season-card"><h4>Summer (Jun–Aug)</h4><p>Warm and pleasant. Outdoor cafés in full swing. Brussels festival season.</p></div><div class="season-card"><h4>Autumn (Sep–Oct)</h4><p>Ideal temperatures. Low crowds. Beer festivals abound. Beautiful fall colours.</p></div></div></div></section><section class="section"><div class="container"><div class="section-label">Your Journey</div><h3 class="section-title">A Sample 7-Day Itinerary</h3><div class="itin-list"><div class="itin-card"><div class="itin-daynum">1</div><div class="itin-body"><h4>Arrival in Brussels</h4><p>Settle into your old-town boutique hotel, then drift toward the Grand-Place to glimpse its festive sound-and-light spectacle after dusk.</p></div></div><div class="itin-card"><div class="itin-daynum">2</div><div class="itin-body"><h4>Grand-Place &amp; Galeries</h4><p>A guided market stroll through Winter Wonders, followed by chocolate and praline tastings beneath the glass arcades of the Galeries Royales.</p></div></div><div class="itin-card"><div class="itin-daynum">3</div><div class="itin-body"><h4>Sablon &amp; Antiques</h4><p>Explore the elegant Sablon quarter, its chocolatiers and antique galleries, capped by a private glühwein and Belgian beer tasting.</p></div></div><div class="itin-card"><div class="itin-daynum">4</div><div class="itin-body"><h4>Art Nouveau &amp; Cuisine</h4><p>A curated tour of Horta&#x27;s Art Nouveau masterworks, then a refined dinner showcasing seasonal Belgian gastronomy.</p></div></div><div class="itin-card"><div class="itin-daynum">5</div><div class="itin-body"><h4>Bruges Day Trip</h4><p>A private excursion to frost-touched Bruges, where canals, belfries and market stalls evoke a storybook winter.</p></div></div><div class="itin-card"><div class="itin-daynum">6</div><div class="itin-body"><h4>Ferris Wheel &amp; Atomium</h4><p>Survey the illuminated city from the market&#x27;s grand wheel, then a leisurely visit to the Atomium and a farewell feast.</p></div></div><div class="itin-card"><div class="itin-daynum">7</div><div class="itin-body"><h4>Departure</h4><p>A final morning for last chocolates and lace before your private transfer to the airport.</p></div></div></div></div></section><section class="section section-alt"><div class="container"><div class="section-label">Practical Advice</div><h3 class="section-title">Travel Tips</h3><div class="tips-grid"><div class="tip-card"><div class="tip-icon">🧭</div><h4>Book Hotels Very Early</h4><p>Brussels Christmas market hotels book out by September. The city centre fills with visitors from across Europe. Book your accommodation as soon as your dates are set.</p></div><div class="tip-card"><div class="tip-icon">🌍</div><h4>Market Opening Hours</h4><p>Winter Wonders runs late November to January 1. Markets open daily 11am–10pm (later on weekends). The Grand Place light show runs every 30 mins from 5pm.</p></div><div class="tip-card"><div class="tip-icon">💡</div><h4>Beer Etiquette</h4><p>Each Belgian beer has its own specific glass — refusing the correct glass is a minor local offense. Embrace the ritual: it&#x27;s part of the experience.</p></div><div class="tip-card"><div class="tip-icon">🧳</div><h4>Getting Around</h4><p>Brussels has an excellent metro, tram, and bus network. A 10-trip card is the best value. Most Christmas market sights are walkable from the city centre.</p></div></div></div></section><section class="section section-dark cta-section"><div class="container"><h2>Ready to Explore Brussels Christmas Market?</h2><p>Let our travel experts craft your perfect Brussels Christmas Market itinerary with insider access and curated experiences.</p><a href="../index.html#contact" class="btn-primary">Start Planning</a></div></section>
+        <footer>
   <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
   <div class="footer-links" aria-label="Footer navigation">
     <a href="../index.html">Home</a>
@@ -250,26 +162,9 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
     <a href="../privacy-policy.html">Privacy Policy</a>
     <a href="../about.html">About</a>
   </div>
-</footer><script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-ham && ham.addEventListener('click', () => {
-  const open = mob.classList.toggle('open');
-  ham.setAttribute('aria-expanded', open);
-});
-function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
-document.addEventListener('click', e => {
-  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
-});
-// Subtle hero parallax
-const heroBg = document.querySelector('.hero-bg');
-window.addEventListener('scroll', () => {
-  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
-}, {passive: true});
-</script><script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
+</footer>
+    <script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
+<script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
 <script id="dropdown-js">document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
-</body></html>
+</body>
+</html>
