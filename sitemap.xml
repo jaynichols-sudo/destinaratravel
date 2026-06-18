@@ -464,4 +464,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/mediterranean-cruise-ports.html</loc>
+          <lastmod>2026-06-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/europe-summer-2026.html</loc>
+          <lastmod>2026-06-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+    </url>
 </urlset>
