@@ -117,7 +117,15 @@
     .article-nav a:hover { color: var(--gold); }
 
     footer { background: var(--navy); color: rgba(255,255,255,0.55); text-align: center; padding: 1.8rem; font-size: 0.82rem; }
-  </style>
+  .mobile-mega-destinations{padding:0}
+.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-dest-regions{display:none;padding:8px 16px 12px}
+.mobile-mega-destinations.open .mobile-dest-regions{display:block}
+.mobile-dest-region{margin-bottom:12px}
+.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
+.mobile-dest-region a:hover{color:#fff}
+</style>
 </head>
 <body>
 
@@ -140,8 +148,20 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="../index.html">Home</a>
-  <a href="../destinations.html">Destinations</a>
-  <a href="../index.html#about">About</a>
+  <div class="mobile-mega-destinations">
+  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
+  <div class="mobile-dest-regions">
+    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html">Caribbean Islands</a><a href="../destinations/hawaii.html">Hawaii</a><a href="../destinations/maldives.html">Maldives</a><a href="../destinations/fiji.html">Fiji</a><a href="../destinations/seychelles.html">Seychelles</a><a href="../destinations/french-polynesia.html">French Polynesia</a><a href="../destinations/bali-indonesia.html">Bali, Indonesia</a></div>
+    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html">Charleston, SC</a><a href="../destinations/hilton-head-sc.html">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html">Outer Banks, NC</a><a href="../destinations/savannah-ga.html">Savannah, GA</a><a href="../destinations/smoky-mountains.html">Smoky Mountains</a><a href="../destinations/asheville-nc.html">Asheville, NC</a><a href="../destinations/nashville-tn.html">Nashville, TN</a></div>
+    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html">Alaska</a><a href="../destinations/new-york-city.html">New York City</a><a href="../destinations/washington-dc.html">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html">Blue Ridge Parkway</a><a href="../destinations/mexico.html">Mexico</a><a href="../destinations/costa-rica.html">Costa Rica</a><a href="../destinations/peru.html">Peru</a><a href="../destinations/patagonia.html">Patagonia</a></div>
+    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html">Paris, France</a><a href="../destinations/barcelona-spain.html">Barcelona, Spain</a><a href="../destinations/santorini-greece.html">Santorini, Greece</a><a href="../destinations/tuscany-italy.html">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html">Amalfi Coast</a><a href="../destinations/french-riviera.html">French Riviera</a><a href="../destinations/iceland.html">Iceland</a></div>
+    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html">Brussels</a><a href="../destinations/budapest-christmas-market.html">Budapest</a><a href="../destinations/cologne-christmas-market.html">Cologne</a><a href="../destinations/nuremberg-christmas-market.html">Nuremberg</a><a href="../destinations/prague-christmas-market.html">Prague</a><a href="../destinations/rhine-river-germany.html">Rhine River</a><a href="../destinations/salzburg-christmas-market.html">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html">Strasbourg</a><a href="../destinations/vienna-christmas-market.html">Vienna</a></div>
+    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html">Egypt</a><a href="../destinations/israel.html">Israel</a><a href="../destinations/jordan.html">Jordan</a><a href="../destinations/morocco.html">Morocco</a><a href="../destinations/oman.html">Oman</a><a href="../destinations/dubai-uae.html">Dubai, UAE</a><a href="../destinations/kenya-safari.html">Kenya Safari</a><a href="../destinations/south-africa.html">South Africa</a><a href="../destinations/tanzania.html">Tanzania</a><a href="../destinations/botswana.html">Botswana</a><a href="../destinations/madagascar.html">Madagascar</a></div>
+    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html">Japan</a><a href="../destinations/thailand.html">Thailand</a><a href="../destinations/vietnam.html">Vietnam</a><a href="../destinations/india.html">India</a><a href="../destinations/cambodia.html">Cambodia</a><a href="../destinations/sri-lanka.html">Sri Lanka</a><a href="../destinations/australia.html">Australia</a><a href="../destinations/new-zealand.html">New Zealand</a></div>
+  </div>
+  <a href="../destinations.html" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
+</div>
+  <a href="../about.html">About</a>
   <a href="index.html">Journal</a>
   <a href="../find-my-vacation.html">Plan My Trip</a>
 </div>
