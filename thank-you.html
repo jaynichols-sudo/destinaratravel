@@ -256,16 +256,20 @@
 
   <!-- COOKIE CONSENT BANNER -->
   <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a3a2a;color:#fff;display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1rem 2rem;gap:1rem;box-shadow:0 -2px 12px rgba(0,0,0,0.25);">
-    <p style="font-size:0.88rem;line-height:1.5;flex:1 1 300px;">We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="/privacy-policy.html" style="color:#d4af37;text-decoration:underline;">Privacy Policy</a>.</p>
-    <button onclick="acceptCookies()" style="background:#d4af37;color:#1a3a2a;border:none;border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;">Accept</button>
+    <p style="font-size:0.88rem;line-height:1.5;flex:1 1 300px;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy.html" style="color:#d4af37;text-decoration:underline;">Privacy Policy</a>.</p>
+    <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.6);border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;margin-right:0.6rem;">Decline</button><button onclick="acceptCookies()" style="background:#d4af37;color:#1a3a2a;border:none;border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;">Accept</button>
   </div>
   <script>
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
       document.getElementById('cookie-banner').style.display = 'none';
     }
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
     (function() {
-      if (localStorage.getItem('cookieConsent') !== 'accepted') {
+      if (!localStorage.getItem('cookieConsent')) {
         var b = document.getElementById('cookie-banner');
         b.style.display = 'flex';
       }
