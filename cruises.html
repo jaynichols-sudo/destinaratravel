@@ -1830,27 +1830,7 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
 
 <!-- Cookie Consent Banner -->
 <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a2e2a;color:#fff;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);"><p style="margin:0;font-size:0.875rem;max-width:700px;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy.html" style="color:#c9a96e;text-decoration:underline;">Privacy Policy</a>.</p><div style="display:flex;gap:10px;flex-shrink:0;"><button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','declined');" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.875rem;">Decline</button><button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookieConsent','accepted');" style="background:#c9a96e;border:none;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.875rem;font-weight:600;">Accept</button></div></div>
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-ham && ham.addEventListener('click', () => {
-  const open = mob.classList.toggle('open');
-  ham.setAttribute('aria-expanded', open);
-});
-function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
-document.addEventListener('click', e => {
-  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
-});
-// Subtle hero parallax
-const heroBg = document.querySelector('.hero-bg');
-window.addEventListener('scroll', () => {
-  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
-}, {passive: true});
-</script>
+<script>(function(){var heroBg=document.querySelector('.hero-bg');if(heroBg){window.addEventListener('scroll',function(){heroBg.style.transform='scale(1.05) translateY('+(window.scrollY*0.08)+'px)';},{passive:true});}})();</script>
 
 <script>
 // Mobile dropdown toggle
