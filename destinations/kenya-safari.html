@@ -1,120 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Kenya Safari Travel Guide | Destinara Travel</title><meta name="description" content="Kenya is the birthplace of the modern safari, where the Maasai Mara&#x27;s endless golden plains host the world&#x27;s greatest wildlife drama, the Great Migration."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/><style>
-/* ===== DEST PAGE BASE ===== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2d2d2d;line-height:1.6}
-
-/* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:rgba(15,25,20,.92);backdrop-filter:blur(12px)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;flex-shrink:0}
-.nav-logo img{width:40px;height:40px;border-radius:50%}
-.nav-logo-text{font-size:1.05rem}
-.nav-links{list-style:none;display:flex;gap:4px;align-items:center;margin-left:auto}
-.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:8px;font-size:.9rem;transition:all .2s}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.nav-links .nav-cta{background:#c8956c;color:#fff!important;padding:9px 18px;border-radius:20px;font-weight:600}
-.nav-links .nav-cta:hover{background:#b8845b}
-.nav-badge{background:#e74c3c;color:#fff;font-size:.6rem;font-weight:700;padding:2px 5px;border-radius:4px;margin-left:4px;vertical-align:middle}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
-.mobile-menu{display:none}
-
-/* ===== HERO ===== */
-.dest-hero{min-height:420px;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 50%,#1a3a2a 100%);display:flex;align-items:flex-end;padding-bottom:40px;margin-top:72px;position:relative;overflow:hidden}
-.dest-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 100%)}
-.hero-content{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;color:#fff}
-.breadcrumb{font-size:.85rem;opacity:.8;margin-bottom:12px}
-.breadcrumb a{color:#c8956c;text-decoration:none}
-.category-badge{display:inline-block;background:rgba(200,149,108,.9);color:#fff;font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
-.hero-tagline{font-size:2.8rem;font-weight:700;line-height:1.2;margin-bottom:8px;font-family:'Playfair Display',Georgia,serif}
-.meta-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-.meta-pill{background:rgba(255,255,255,.15);color:#fff;font-size:.82rem;padding:5px 14px;border-radius:16px;backdrop-filter:blur(6px)}
-
-/* ===== MAIN CONTENT ===== */
-main.dest-main{max-width:1200px;margin:0 auto;padding:40px 24px 60px}
-
-/* ===== LEAD ===== */
-.dest-lead{font-size:1.15rem;line-height:1.8;color:#444;margin-bottom:36px;padding:24px;background:#fff;border-radius:12px;border-left:4px solid #c8956c;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-
-/* ===== INFO CARDS ===== */
-.info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:40px}
-.info-card{background:#fff;border-radius:12px;padding:18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc}
-.ic-icon{font-size:1.8rem;margin-bottom:8px}
-.ic-label{display:block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:4px}
-.ic-value{display:block;font-size:.9rem;font-weight:600;color:#2d2d2d}
-
-/* ===== SECTION WRAPPER ===== */
-.dest-section{margin-bottom:44px}
-.section-title{font-size:1.5rem;font-weight:700;color:#1a3a2a;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #c8956c;font-family:'Playfair Display',Georgia,serif}
-
-/* ===== HIGHLIGHTS GRID ===== */
-.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.hl-item{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;display:flex;gap:16px;align-items:flex-start}
-.hl-icon{font-size:2rem;flex-shrink:0;line-height:1}
-.hl-item p{font-size:.93rem;color:#555;line-height:1.6}
-.hl-item strong{display:block;font-size:1rem;color:#1a3a2a;margin-bottom:4px}
-
-/* ===== QUICK FACTS TABLE ===== */
-.facts-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.facts-table th,.facts-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #f0ece4;font-size:.92rem}
-.facts-table th{background:#f4f1eb;font-weight:600;color:#1a3a2a;width:35%}
-.facts-table td{color:#444}
-.facts-table tr:last-child th,.facts-table tr:last-child td{border-bottom:none}
-
-/* ===== WHY LIST ===== */
-.why-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
-.why-list li{background:#fff;border-radius:10px;padding:14px 18px 14px 44px;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.05);border:1px solid #e8e4dc;font-size:.93rem;color:#444}
-.why-list li::before{content:'✓';position:absolute;left:16px;color:#c8956c;font-weight:700;font-size:1.1rem}
-
-/* ===== ITINERARY ===== */
-.itin-grid{display:flex;flex-direction:column;gap:16px}
-.itin-day{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start}
-.itin-day-num{background:#1a3a2a;color:#fff;border-radius:10px;padding:12px 8px;text-align:center;font-weight:700;font-size:.85rem;line-height:1.3}
-.itin-day-content h4{font-size:1rem;font-weight:700;color:#1a3a2a;margin-bottom:10px}
-.itin-day-content ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.itin-day-content li{font-size:.9rem;color:#555;padding-left:18px;position:relative}
-.itin-day-content li::before{content:'→';position:absolute;left:0;color:#c8956c}
-
-/* ===== TIPS GRID ===== */
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.tip-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;border-top:3px solid #c8956c}
-.tip-icon{font-size:1.8rem;margin-bottom:10px}
-.tip-card h4{font-size:1rem;font-weight:700;color:#1a3a2a;margin-bottom:8px}
-.tip-card p{font-size:.9rem;color:#555;line-height:1.6}
-
-/* ===== SEASONS GRID ===== */
-.seasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.season-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #e8e4dc;text-align:center}
-.season-icon{font-size:2rem;margin-bottom:10px}
-.season-card h4{font-size:.95rem;font-weight:700;color:#1a3a2a;margin-bottom:8px}
-.season-card p{font-size:.87rem;color:#555;line-height:1.5}
-
-/* ===== CTA ===== */
-.dest-cta{background:linear-gradient(135deg,#1a3a2a,#2d5a3d);border-radius:16px;padding:36px;text-align:center;color:#fff;margin-top:44px}
-.dest-cta h2{font-size:1.6rem;margin-bottom:12px;font-family:'Playfair Display',Georgia,serif}
-.dest-cta p{opacity:.9;margin-bottom:24px;font-size:.95rem}
-.btn-cta{display:inline-block;background:#c8956c;color:#fff;text-decoration:none;padding:14px 32px;border-radius:24px;font-weight:700;font-size:1rem;transition:all .2s}
-.btn-cta:hover{background:#b8845b;transform:translateY(-1px)}
-
-/* ===== FOOTER ===== */
-footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:center;font-size:.88rem;margin-top:0}
-.footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:10px}
-.footer-links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#c8956c}
-
-/* ===== BACK LINK ===== */
-.back-link{display:inline-flex;align-items:center;gap:8px;color:#c8956c;text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:24px;transition:gap .2s}
-.back-link:hover{gap:12px}
-
-@media(max-width:768px){
-  .hero-tagline{font-size:1.8rem}
-  .info-cards{grid-template-columns:repeat(2,1fr)}
-  .itin-day{grid-template-columns:1fr}
-  .itin-day-num{display:inline-block;padding:6px 12px}
-  .hamburger{display:flex}
-  .nav-links{display:none}
-}
-.mobile-mega-destinations{padding:0}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width,initial-scale=1.0">
+          <title>Kenya Safari Destination Guide | Destinara Travel</title>
+    <meta name="description" content="Kenya is the gold standard for African safaris — a land where the Great Migration thunders across the Maasai Mara, where Big Five sightings are almost guar…">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <style>
+          *{margin:0;padding:0;box-sizing:border-box}:root{--color-primary:#0D5C5C;--color-accent:#C4956B;--color-dark:#1a1a2e;--color-light:#F5F1EB;--color-white:#ffffff;--color-text:#333333;--color-text-light:#666666}body{font-family:'Inter',sans-serif;color:var(--color-text);background:var(--color-white)}.nav{background:rgba(26,26,46,0.95);padding:1rem 2rem;position:fixed;width:100%;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center}.nav-logo img{height:40px}.nav-content{display:flex;gap:2rem;align-items:center}.nav-content a{color:var(--color-white);text-decoration:none;font-size:0.9rem;transition:color 0.3s}.nav-content a:hover{color:var(--color-accent)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}.hero-destination{height:70vh;background:linear-gradient(rgba(26,26,46,0.4),rgba(26,26,46,0.6)),url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--color-white);margin-top:60px}.hero-destination h1{font-family:'Playfair Display',serif;font-size:3.5rem;margin-bottom:1rem}.hero-destination p{font-size:1.2rem;max-width:600px;opacity:0.9}.breadcrumb{padding:1.5rem 0;font-size:0.9rem}.breadcrumb a{color:var(--color-primary);text-decoration:none}.breadcrumb span{margin:0 0.5rem;color:var(--color-text-light)}.section{padding:5rem 0}.section-alt{background:var(--color-light)}.section-dark{background:var(--color-dark);color:var(--color-white)}.section-label{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--color-accent);margin-bottom:1rem}.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:2rem;color:var(--color-dark)}.section-dark .section-title{color:var(--color-white)}.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.overview-grid img{width:100%;height:400px;object-fit:cover;border-radius:12px}.overview-text p{margin-bottom:1rem;line-height:1.8;color:var(--color-text-light)}.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.fact-card{background:var(--color-white);padding:2rem;border-radius:12px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.05)}.fact-card .fact-icon{font-size:1.5rem;margin-bottom:0.5rem}.fact-card h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.5rem;color:var(--color-dark)}.fact-card p{font-size:0.85rem;color:var(--color-text-light)}.experiences-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.experience-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,0.08)}.experience-card img{width:100%;height:250px;object-fit:cover}.experience-card .card-content{padding:1.5rem}.experience-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;color:var(--color-dark)}.experience-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.seasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.season-card{background:rgba(255,255,255,0.1);padding:2rem;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}.season-card.recommended{border-color:var(--color-accent);background:rgba(196,149,107,0.15)}.season-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem}.season-card .temp{font-size:1.5rem;color:var(--color-accent);font-weight:600;margin:0.5rem 0}.season-card p{font-size:0.85rem;opacity:0.8;line-height:1.6}.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.tip-card{padding:2rem;border-radius:12px;border:1px solid #e0d5c9}.tip-card .tip-icon{font-size:1.5rem;margin-bottom:1rem}.tip-card h4{font-family:'Playfair Display',serif;margin-bottom:0.5rem;color:var(--color-dark)}.tip-card p{font-size:0.9rem;color:var(--color-text-light);line-height:1.6}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:1rem}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:8px;transition:transform 0.3s}.gallery-grid img:first-child{grid-column:span 2;grid-row:span 2}.gallery-grid img:hover{transform:scale(1.02)}.cta-section{text-align:center;padding:5rem 0}.cta-section h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}.cta-section p{opacity:0.8;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}.btn-primary{display:inline-block;background:var(--color-accent);color:var(--color-white);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:500;transition:all 0.3s}.btn-primary:hover{background:#b8895f;transform:translateY(-2px)}.footer{background:var(--color-dark);color:var(--color-white);padding:3rem 0;text-align:center}.footer-logo img{height:30px;margin-bottom:1rem}.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem}.footer p{font-size:0.8rem;opacity:0.5}@media(max-width:1024px){.overview-grid,.facts-grid,.seasons-grid{grid-template-columns:repeat(2,1fr)}.experiences-grid,.tips-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.hero-destination h1{font-size:2.2rem}.overview-grid,.facts-grid,.experiences-grid,.seasons-grid,.tips-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-grid img:first-child{grid-column:span 1;grid-row:span 1}.nav-content{display:none}}
+              .mobile-mega-destinations{padding:0}
 .mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
 .mobile-dest-regions{display:none;padding:8px 16px 12px}
 .mobile-mega-destinations.open .mobile-dest-regions{display:block}
@@ -122,7 +16,8 @@ footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:cen
 .mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
-</style><style>
+</style>
+    <style>
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
 nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
@@ -176,36 +71,33 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
     <link rel="canonical" href="https://destinaratravel.com/destinations/kenya-safari.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://destinaratravel.com/destinations/kenya-safari.html">
-    <meta property="og:title" content="Kenya Safari Travel Guide | Destinara Travel">
-    <meta property="og:description" content="Kenya is the birthplace of the modern safari, where the Maasai Mara&#x27;s endless golden plains host the world&#x27;s greatest wildlife drama, the Great Migration.">
+    <meta property="og:title" content="Kenya Safari Destination Guide | Destinara Travel">
+    <meta property="og:description" content="Kenya is the gold standard for African safaris — a land where the Great Migration thunders across the Maasai Mara, where Big Five sightings are almost guar…">
     <meta property="og:image" content="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&amp;q=80&amp;auto=format&amp;fit=crop">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kenya Safari Travel Guide | Destinara Travel">
-    <meta name="twitter:description" content="Kenya is the birthplace of the modern safari, where the Maasai Mara&#x27;s endless golden plains host the world&#x27;s greatest wildlife drama, the Great Migration.">
+    <meta name="twitter:title" content="Kenya Safari Destination Guide | Destinara Travel">
+    <meta name="twitter:description" content="Kenya is the gold standard for African safaris — a land where the Great Migration thunders across the Maasai Mara, where Big Five sightings are almost guar…">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&amp;q=80&amp;auto=format&amp;fit=crop">
-  </head><body><div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
-  <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
-  <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
-  <a href="../disney.html" onclick="closeMobile()">Disney</a>
-  <div class="mobile-mega-destinations">
-  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
-  <div class="mobile-dest-regions">
-    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html" onclick="closeMobile()">Caribbean Islands</a><a href="../destinations/hawaii.html" onclick="closeMobile()">Hawaii</a><a href="../destinations/maldives.html" onclick="closeMobile()">Maldives</a><a href="../destinations/fiji.html" onclick="closeMobile()">Fiji</a><a href="../destinations/seychelles.html" onclick="closeMobile()">Seychelles</a><a href="../destinations/french-polynesia.html" onclick="closeMobile()">French Polynesia</a><a href="../destinations/bali-indonesia.html" onclick="closeMobile()">Bali, Indonesia</a></div>
-    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html" onclick="closeMobile()">Charleston, SC</a><a href="../destinations/hilton-head-sc.html" onclick="closeMobile()">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html" onclick="closeMobile()">Outer Banks, NC</a><a href="../destinations/savannah-ga.html" onclick="closeMobile()">Savannah, GA</a><a href="../destinations/smoky-mountains.html" onclick="closeMobile()">Smoky Mountains</a><a href="../destinations/asheville-nc.html" onclick="closeMobile()">Asheville, NC</a><a href="../destinations/nashville-tn.html" onclick="closeMobile()">Nashville, TN</a></div>
-    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html" onclick="closeMobile()">Alaska</a><a href="../destinations/new-york-city.html" onclick="closeMobile()">New York City</a><a href="../destinations/washington-dc.html" onclick="closeMobile()">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html" onclick="closeMobile()">Blue Ridge Parkway</a><a href="../destinations/mexico.html" onclick="closeMobile()">Mexico</a><a href="../destinations/costa-rica.html" onclick="closeMobile()">Costa Rica</a><a href="../destinations/peru.html" onclick="closeMobile()">Peru</a><a href="../destinations/patagonia.html" onclick="closeMobile()">Patagonia</a></div>
-    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html" onclick="closeMobile()">Paris, France</a><a href="../destinations/barcelona-spain.html" onclick="closeMobile()">Barcelona, Spain</a><a href="../destinations/santorini-greece.html" onclick="closeMobile()">Santorini, Greece</a><a href="../destinations/tuscany-italy.html" onclick="closeMobile()">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html" onclick="closeMobile()">Amalfi Coast</a><a href="../destinations/french-riviera.html" onclick="closeMobile()">French Riviera</a><a href="../destinations/iceland.html" onclick="closeMobile()">Iceland</a></div>
-    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html" onclick="closeMobile()">Brussels</a><a href="../destinations/budapest-christmas-market.html" onclick="closeMobile()">Budapest</a><a href="../destinations/cologne-christmas-market.html" onclick="closeMobile()">Cologne</a><a href="../destinations/nuremberg-christmas-market.html" onclick="closeMobile()">Nuremberg</a><a href="../destinations/prague-christmas-market.html" onclick="closeMobile()">Prague</a><a href="../destinations/rhine-river-germany.html" onclick="closeMobile()">Rhine River</a><a href="../destinations/salzburg-christmas-market.html" onclick="closeMobile()">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html" onclick="closeMobile()">Strasbourg</a><a href="../destinations/vienna-christmas-market.html" onclick="closeMobile()">Vienna</a></div>
-    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html" onclick="closeMobile()">Egypt</a><a href="../destinations/israel.html" onclick="closeMobile()">Israel</a><a href="../destinations/jordan.html" onclick="closeMobile()">Jordan</a><a href="../destinations/morocco.html" onclick="closeMobile()">Morocco</a><a href="../destinations/oman.html" onclick="closeMobile()">Oman</a><a href="../destinations/dubai-uae.html" onclick="closeMobile()">Dubai, UAE</a><a href="../destinations/kenya-safari.html" onclick="closeMobile()">Kenya Safari</a><a href="../destinations/south-africa.html" onclick="closeMobile()">South Africa</a><a href="../destinations/tanzania.html" onclick="closeMobile()">Tanzania</a><a href="../destinations/botswana.html" onclick="closeMobile()">Botswana</a><a href="../destinations/madagascar.html" onclick="closeMobile()">Madagascar</a></div>
-    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html" onclick="closeMobile()">Japan</a><a href="../destinations/thailand.html" onclick="closeMobile()">Thailand</a><a href="../destinations/vietnam.html" onclick="closeMobile()">Vietnam</a><a href="../destinations/india.html" onclick="closeMobile()">India</a><a href="../destinations/cambodia.html" onclick="closeMobile()">Cambodia</a><a href="../destinations/sri-lanka.html" onclick="closeMobile()">Sri Lanka</a><a href="../destinations/australia.html" onclick="closeMobile()">Australia</a><a href="../destinations/new-zealand.html" onclick="closeMobile()">New Zealand</a></div>
-  </div>
-  <a href="../destinations.html" onclick="closeMobile()" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
-</div>
-  <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
-  <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
-  <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
-  <a href="../about.html" onclick="closeMobile()">About</a>
-  <a href="../find-my-vacation.html" onclick="closeMobile()">Find &amp; Price My Vacation</a>
-</div><nav id="nav">
+  <style>
+.itin-list{display:flex;flex-direction:column;gap:1rem;max-width:840px;margin:0 auto}
+.itin-card{display:flex;gap:1.25rem;background:var(--color-white);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 15px rgba(0,0,0,0.05)}
+.itin-daynum{flex:0 0 46px;height:46px;width:46px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
+.itin-body h4{font-family:'Playfair Display',serif;color:var(--color-dark);margin-bottom:.3rem;font-size:1.1rem}
+.itin-body p{color:var(--color-text-light);line-height:1.7;font-size:.95rem}
+</style>
+
+<style>
+.itin-list{display:flex;flex-direction:column;gap:1rem;max-width:840px;margin:0 auto}
+.itin-card{display:flex;gap:1.25rem;background:var(--color-white);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 15px rgba(0,0,0,0.05)}
+.itin-daynum{flex:0 0 46px;height:46px;width:46px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
+.itin-body h4{font-family:'Playfair Display',serif;color:var(--color-dark);margin-bottom:.3rem;font-size:1.1rem}
+.itin-body p{color:var(--color-text-light);line-height:1.7;font-size:.95rem}
+.experience-card .card-content{padding:1.75rem}
+.experience-card.no-img{border-top:3px solid var(--color-accent)}
+</style>
+</head>
+    <body>
+          <nav id="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
       <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
@@ -235,7 +127,33 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
       </button>
     </div>
   </div>
-</nav><section class="hero"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&q=80&auto=format&fit=crop" alt="Kenya Safari"/><div class="hero-overlay"></div><div class="hero-content"><span class="hero-badge">Safari</span><h1>Kenya Safari</h1><p>Africa's Greatest Wildlife Spectacle</p></div></section><div class="breadcrumb"><a href="/">Home</a><span>&rsaquo;</span><a href="/destinations.html">Destinations</a><span>&rsaquo;</span><span>Kenya Safari</span></div><main class="dest-main"><p class="dest-lead">Kenya is the gold standard for African safaris — a land where the Great Migration thunders across the Maasai Mara, where Big Five sightings are almost guaranteed, and where Maasai warriors still guard their ancient traditions. From the snow-capped peak of Mount Kenya to the white sand beaches of the coast, this is a country of breathtaking diversity and profound natural beauty.</p><div class="info-cards"><div class="info-card"><div class="ic-icon">&#127757;</div><div class="ic-label">Region</div><div class="ic-value">East Africa</div></div><div class="info-card"><div class="ic-icon">&#10022;</div><div class="ic-label">Category</div><div class="ic-value">Wildlife & Safari</div></div><div class="info-card"><div class="ic-icon">&#128197;</div><div class="ic-label">Best Time</div><div class="ic-value">July–October (Migration)</div></div><div class="info-card"><div class="ic-icon">&#128176;</div><div class="ic-label">Budget</div><div class="ic-value">$300–$800/day</div></div><div class="info-card"><div class="ic-icon">&#128101;</div><div class="ic-label">Your Experts</div><div class="ic-value">Jay &amp; Elizabeth Nichols</div></div></div><section class="dest-section"><h2 class="section-title">Highlights &amp; Experiences</h2><div class="highlights-grid"><div class="hl-item"><span class="hl-icon">&#10022;</span><span>🦁 Maasai Mara — Witness the Great Migration (July–Oct) and year-round Big Five safaris in Kenya's iconic reserve.</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>🐘 Amboseli — Iconic elephant herds against the backdrop of Mount Kilimanjaro across the Tanzanian border.</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>🦒 Samburu — Rare species found only here: Grevy's zebra, reticulated giraffe, and Somali ostrich.</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>🌋 Nakuru & Naivasha — Flamingo-lined lakes in the Rift Valley with boat rides and Hell's Gate hiking.</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>🏔️ Mount Kenya — Africa's second-highest peak with trekking through moorland and alpine glaciers.</span></div><div class="hl-item"><span class="hl-icon">&#10022;</span><span>🏖️ Diani Beach — Pristine Indian Ocean coast near Mombasa with turquoise water and Swahili culture.</span></div></div></section><section class="dest-section"><h2 class="section-title">Quick Facts</h2><table class="facts-table"><tr><th>Capital</th><td>Nairobi</td></tr><tr><th>Currency</th><td>Kenyan Shilling (KES)</td></tr><tr><th>Language</th><td>Swahili & English (official)</td></tr><tr><th>Time Zone</th><td>GMT+3 (EAT)</td></tr><tr><th>Flight Time</th><td>~16–18 hrs from US East Coast</td></tr><tr><th>Entry</th><td>eTA available online before travel</td></tr></table></section><section class="dest-section"><h2 class="section-title">Why Kenya Safari?</h2><ul class="why-list"><li>Witness the Greatest Wildlife Spectacle on Earth — the Great Migration</li><li>Nearly guaranteed Big Five sightings across multiple national parks</li><li>World-class luxury tented camps and eco-lodges</li><li>Authentic Maasai culture and community tourism experiences</li><li>Combine bush and beach for an extraordinary vacation</li><li>Outstanding birding with over 1,100 recorded species</li><li>Excellent value compared to Tanzania for similar safari quality</li><li>Professional English-speaking guides with deep ecological knowledge</li></ul></section><section class="dest-section"><h2 class="section-title">Your 5-Day Itinerary</h2><div class="itin-grid"><div class="itin-day"><div class="itin-day-num">Day 1</div><div class="itin-day-content"><h4>Nairobi Arrival & City Highlights</h4><ul><li>Arrive Nairobi — check into a Westlands or Karen neighborhood hotel</li><li>Visit the Giraffe Centre to hand-feed endangered Rothschild giraffes</li><li>Tour the David Sheldrick Wildlife Trust elephant orphanage (morning only)</li><li>Dinner at Carnivore restaurant — a Nairobi institution</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 2</div><div class="itin-day-content"><h4>Fly to Maasai Mara</h4><ul><li>Morning flight to the Mara (45 minutes from Wilson Airport)</li><li>Check into luxury tented camp overlooking the plains</li><li>Afternoon game drive — lions, cheetahs, and wildebeest await</li><li>Sundowner drinks on the savannah; bush dinner under the stars</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 3</div><div class="itin-day-content"><h4>Full Day Maasai Mara</h4><ul><li>Dawn game drive for predator activity at first light</li><li>Return for breakfast; rest during the hottest midday hours</li><li>Afternoon drive to the Mara River — July–Oct: witness wildebeest crossings</li><li>Evening lecture with your guide about Maasai culture and ecology</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 4</div><div class="itin-day-content"><h4>Amboseli National Park</h4><ul><li>Morning flight or road transfer to Amboseli (4 hrs by road)</li><li>Afternoon game drive — Amboseli's large elephant herds are legendary</li><li>Photograph elephants with Kilimanjaro as the backdrop at dawn/dusk</li><li>Cultural visit to a Maasai village for traditional welcome ceremony</li></ul></div></div><div class="itin-day"><div class="itin-day-num">Day 5</div><div class="itin-day-content"><h4>Final Safari & Departure</h4><ul><li>Final sunrise game drive in Amboseli</li><li>Transfer to Nairobi for afternoon flight or coastal extension to Diani Beach</li><li>Depart with memories that will last a lifetime</li><li>Optional: Add 3–4 nights at Diani Beach on the Indian Ocean coast</li></ul></div></div></div></section><section class="dest-section"><h2 class="section-title">Insider Travel Tips</h2><div class="tips-grid"><div class="tip-card"><div class="tip-icon">📅</div><h4>Book Camps Early</h4><p>The best Mara camps sell out 12–18 months in advance for July–October migration season. Don't delay.</p></div><div class="tip-card"><div class="tip-icon">🟢</div><h4>Pack Neutral Colors</h4><p>Khaki, green, and brown blend into the bush. Avoid white and bright colors that can disturb wildlife.</p></div><div class="tip-card"><div class="tip-icon">💊</div><h4>Malaria Prevention</h4><p>Consult your doctor 4–6 weeks before travel. Most safari areas require malaria prophylaxis.</p></div><div class="tip-card"><div class="tip-icon">📷</div><h4>Bring Binoculars</h4><p>A good pair of binoculars (8x42 or 10x42) rivals a zoom lens for spotting distant wildlife.</p></div></div></section><section class="dest-section"><h2 class="section-title">When to Visit</h2><div class="seasons-grid"><div class="season-card"><div class="season-icon">🦓</div><h4>Great Migration (Jul–Oct)</h4><p>Peak season — the Mara is teeming with wildlife. Book 12+ months ahead. July–August sees dramatic river crossings.</p></div><div class="season-card"><div class="season-icon">🌧️</div><h4>Long Rains (Apr–Jun)</h4><p>Green season — lush landscapes, newborn animals, excellent birdwatching. Fewer crowds, lower rates.</p></div><div class="season-card"><div class="season-icon">☀️</div><h4>Dry Season (Jan–Mar)</h4><p>Excellent game viewing as animals gather at water sources. The Mara is at its most accessible.</p></div><div class="season-card"><div class="season-icon">🌦️</div><h4>Short Rains (Nov–Dec)</h4><p>Brief afternoon showers keep it green. Migratory birds arrive. Good value with fewer tourists.</p></div></div></section><div class="dest-cta"><h2>Ready to Plan Your Kenya Safari Journey?</h2><p>Let Jay and Elizabeth Nichols craft your perfect itinerary, from hidden gems to iconic moments.</p><a href="/#contact" class="btn-cta">Start Planning Your Trip</a><br/><a href="/destinations.html" class="back-link">&larr; Back to All Destinations</a></div></main><footer>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
+  <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
+  <a href="../disney.html" onclick="closeMobile()">Disney</a>
+  <div class="mobile-mega-destinations">
+  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
+  <div class="mobile-dest-regions">
+    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html" onclick="closeMobile()">Caribbean Islands</a><a href="../destinations/hawaii.html" onclick="closeMobile()">Hawaii</a><a href="../destinations/maldives.html" onclick="closeMobile()">Maldives</a><a href="../destinations/fiji.html" onclick="closeMobile()">Fiji</a><a href="../destinations/seychelles.html" onclick="closeMobile()">Seychelles</a><a href="../destinations/french-polynesia.html" onclick="closeMobile()">French Polynesia</a><a href="../destinations/bali-indonesia.html" onclick="closeMobile()">Bali, Indonesia</a></div>
+    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html" onclick="closeMobile()">Charleston, SC</a><a href="../destinations/hilton-head-sc.html" onclick="closeMobile()">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html" onclick="closeMobile()">Outer Banks, NC</a><a href="../destinations/savannah-ga.html" onclick="closeMobile()">Savannah, GA</a><a href="../destinations/smoky-mountains.html" onclick="closeMobile()">Smoky Mountains</a><a href="../destinations/asheville-nc.html" onclick="closeMobile()">Asheville, NC</a><a href="../destinations/nashville-tn.html" onclick="closeMobile()">Nashville, TN</a></div>
+    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html" onclick="closeMobile()">Alaska</a><a href="../destinations/new-york-city.html" onclick="closeMobile()">New York City</a><a href="../destinations/washington-dc.html" onclick="closeMobile()">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html" onclick="closeMobile()">Blue Ridge Parkway</a><a href="../destinations/mexico.html" onclick="closeMobile()">Mexico</a><a href="../destinations/costa-rica.html" onclick="closeMobile()">Costa Rica</a><a href="../destinations/peru.html" onclick="closeMobile()">Peru</a><a href="../destinations/patagonia.html" onclick="closeMobile()">Patagonia</a></div>
+    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html" onclick="closeMobile()">Paris, France</a><a href="../destinations/barcelona-spain.html" onclick="closeMobile()">Barcelona, Spain</a><a href="../destinations/santorini-greece.html" onclick="closeMobile()">Santorini, Greece</a><a href="../destinations/tuscany-italy.html" onclick="closeMobile()">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html" onclick="closeMobile()">Amalfi Coast</a><a href="../destinations/french-riviera.html" onclick="closeMobile()">French Riviera</a><a href="../destinations/iceland.html" onclick="closeMobile()">Iceland</a></div>
+    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html" onclick="closeMobile()">Brussels</a><a href="../destinations/budapest-christmas-market.html" onclick="closeMobile()">Budapest</a><a href="../destinations/cologne-christmas-market.html" onclick="closeMobile()">Cologne</a><a href="../destinations/nuremberg-christmas-market.html" onclick="closeMobile()">Nuremberg</a><a href="../destinations/prague-christmas-market.html" onclick="closeMobile()">Prague</a><a href="../destinations/rhine-river-germany.html" onclick="closeMobile()">Rhine River</a><a href="../destinations/salzburg-christmas-market.html" onclick="closeMobile()">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html" onclick="closeMobile()">Strasbourg</a><a href="../destinations/vienna-christmas-market.html" onclick="closeMobile()">Vienna</a></div>
+    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html" onclick="closeMobile()">Egypt</a><a href="../destinations/israel.html" onclick="closeMobile()">Israel</a><a href="../destinations/jordan.html" onclick="closeMobile()">Jordan</a><a href="../destinations/morocco.html" onclick="closeMobile()">Morocco</a><a href="../destinations/oman.html" onclick="closeMobile()">Oman</a><a href="../destinations/dubai-uae.html" onclick="closeMobile()">Dubai, UAE</a><a href="../destinations/kenya-safari.html" onclick="closeMobile()">Kenya Safari</a><a href="../destinations/south-africa.html" onclick="closeMobile()">South Africa</a><a href="../destinations/tanzania.html" onclick="closeMobile()">Tanzania</a><a href="../destinations/botswana.html" onclick="closeMobile()">Botswana</a><a href="../destinations/madagascar.html" onclick="closeMobile()">Madagascar</a></div>
+    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html" onclick="closeMobile()">Japan</a><a href="../destinations/thailand.html" onclick="closeMobile()">Thailand</a><a href="../destinations/vietnam.html" onclick="closeMobile()">Vietnam</a><a href="../destinations/india.html" onclick="closeMobile()">India</a><a href="../destinations/cambodia.html" onclick="closeMobile()">Cambodia</a><a href="../destinations/sri-lanka.html" onclick="closeMobile()">Sri Lanka</a><a href="../destinations/australia.html" onclick="closeMobile()">Australia</a><a href="../destinations/new-zealand.html" onclick="closeMobile()">New Zealand</a></div>
+  </div>
+  <a href="../destinations.html" onclick="closeMobile()" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
+</div>
+  <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
+  <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
+  <a href="../about.html" onclick="closeMobile()">About</a>
+  <a href="../find-my-vacation.html" onclick="closeMobile()">Find &amp; Price My Vacation</a>
+</div>/</div></section>
+        <div class="breadcrumb"><div class="container"><a href="../index.html">Home</a><span>/</span><a href="../index.html#destinations">Destinations</a><span>/</span>Kenya Safari</div></div>
+        <section class="section"><div class="container"><div class="overview-grid"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&amp;q=80&amp;auto=format&amp;fit=crop" alt="Kenya Safari" loading="lazy"><div class="overview-text"><div class="section-label">Overview</div><h3 class="section-title">Africa&#x27;s Greatest Wildlife Spectacle</h3><p>Kenya is the gold standard for African safaris — a land where the Great Migration thunders across the Maasai Mara, where Big Five sightings are almost guaranteed, and where Maasai warriors still guard their ancient traditions. From the snow-capped peak of Mount Kenya to the white sand beaches of the coast, this is a country of breathtaking diversity and profound natural beauty.</p></div></div></div></section><section class="section section-alt"><div class="container"><div class="section-label">Essential Information</div><h3 class="section-title">Quick Facts</h3><div class="facts-grid"><div class="fact-card"><div class="fact-icon">🌍</div><h4>Region</h4><p>East Africa</p></div><div class="fact-card"><div class="fact-icon">🏷️</div><h4>Category</h4><p>Wildlife &amp; Safari</p></div><div class="fact-card"><div class="fact-icon">🗓️</div><h4>Best Time</h4><p>July–October (Migration)</p></div><div class="fact-card"><div class="fact-icon">💰</div><h4>Budget</h4><p>$300–$800/day</p></div><div class="fact-card"><div class="fact-icon">🧭</div><h4>Your Experts</h4><p>Jay &amp; Elizabeth Nichols</p></div><div class="fact-card"><div class="fact-icon">🏙️</div><h4>Capital</h4><p>Nairobi</p></div><div class="fact-card"><div class="fact-icon">💵</div><h4>Currency</h4><p>Kenyan Shilling (KES)</p></div><div class="fact-card"><div class="fact-icon">🗣️</div><h4>Language</h4><p>Swahili &amp; English (official)</p></div></div></div></section><section class="section"><div class="container"><div class="section-label">Must-Do Activities</div><h3 class="section-title">Top Experiences</h3><div class="experiences-grid"><div class="experience-card no-img"><div class="card-content"><h3>Maasai Mara</h3><p>Witness the Great Migration (July–Oct) and year-round Big Five safaris in Kenya&#x27;s iconic reserve.</p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Amboseli</h3><p>Iconic elephant herds against the backdrop of Mount Kilimanjaro across the Tanzanian border.</p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Samburu</h3><p>Rare species found only here: Grevy&#x27;s zebra, reticulated giraffe, and Somali ostrich.</p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Nakuru &amp; Naivasha</h3><p>Flamingo-lined lakes in the Rift Valley with boat rides and Hell&#x27;s Gate hiking.</p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Mount Kenya</h3><p>Africa&#x27;s second-highest peak with trekking through moorland and alpine glaciers.</p></div></div><div class="experience-card no-img"><div class="card-content"><h3>Diani Beach</h3><p>Pristine Indian Ocean coast near Mombasa with turquoise water and Swahili culture.</p></div></div></div></div></section><section class="section section-dark"><div class="container"><div class="section-label">Plan Your Visit</div><h3 class="section-title">Best Time to Visit</h3><div class="seasons-grid"><div class="season-card recommended"><h4>Great Migration (Jul–Oct)</h4><p>Peak season — the Mara is teeming with wildlife. Book 12+ months ahead. July–August sees dramatic river crossings.</p></div><div class="season-card"><h4>Long Rains (Apr–Jun)</h4><p>Green season — lush landscapes, newborn animals, excellent birdwatching. Fewer crowds, lower rates.</p></div><div class="season-card"><h4>Dry Season (Jan–Mar)</h4><p>Excellent game viewing as animals gather at water sources. The Mara is at its most accessible.</p></div><div class="season-card"><h4>Short Rains (Nov–Dec)</h4><p>Brief afternoon showers keep it green. Migratory birds arrive. Good value with fewer tourists.</p></div></div></div></section><section class="section"><div class="container"><div class="section-label">Your Journey</div><h3 class="section-title">A Sample 7-Day Itinerary</h3><div class="itin-list"><div class="itin-card"><div class="itin-daynum">1</div><div class="itin-body"><h4>Arrival in Nairobi</h4><p>Arrive and retreat to an elegant garden sanctuary, where you may breakfast among giraffes before the wild beckons.</p></div></div><div class="itin-card"><div class="itin-daynum">2</div><div class="itin-body"><h4>Fly to the Maasai Mara</h4><p>A scenic flight delivers you to your luxury tented camp, with an afternoon game drive across the golden plains.</p></div></div><div class="itin-card"><div class="itin-daynum">3</div><div class="itin-body"><h4>Maasai Mara Game Drives</h4><p>Track the great cats at dawn and dusk, returning to camp for sundowners as the savanna falls quiet.</p></div></div><div class="itin-card"><div class="itin-daynum">4</div><div class="itin-body"><h4>Private Conservancy</h4><p>Venture into an exclusive conservancy for off-road tracking and a walking safari guided by Maasai trackers.</p></div></div><div class="itin-card"><div class="itin-daynum">5</div><div class="itin-body"><h4>Fly to Amboseli</h4><p>Transfer to the foot of Kilimanjaro, where great elephant herds drift beneath the mountain&#x27;s snow-capped crown.</p></div></div><div class="itin-card"><div class="itin-daynum">6</div><div class="itin-body"><h4>Amboseli Game Drives</h4><p>Spend the day among Amboseli&#x27;s elephants and birdlife, closing with a private bush dinner under the stars.</p></div></div><div class="itin-card"><div class="itin-daynum">7</div><div class="itin-body"><h4>Departure</h4><p>A final sunrise drive before your flight to Nairobi and seamless onward connection.</p></div></div></div></div></section><section class="section section-alt"><div class="container"><div class="section-label">Practical Advice</div><h3 class="section-title">Travel Tips</h3><div class="tips-grid"><div class="tip-card"><div class="tip-icon">🧭</div><h4>Book Camps Early</h4><p>The best Mara camps sell out 12–18 months in advance for July–October migration season. Don&#x27;t delay.</p></div><div class="tip-card"><div class="tip-icon">🌍</div><h4>Pack Neutral Colors</h4><p>Khaki, green, and brown blend into the bush. Avoid white and bright colors that can disturb wildlife.</p></div><div class="tip-card"><div class="tip-icon">💡</div><h4>Malaria Prevention</h4><p>Consult your doctor 4–6 weeks before travel. Most safari areas require malaria prophylaxis.</p></div><div class="tip-card"><div class="tip-icon">🧳</div><h4>Bring Binoculars</h4><p>A good pair of binoculars (8x42 or 10x42) rivals a zoom lens for spotting distant wildlife.</p></div></div></div></section><section class="section section-dark cta-section"><div class="container"><h2>Ready to Explore Kenya Safari?</h2><p>Let our travel experts craft your perfect Kenya Safari itinerary with insider access and curated experiences.</p><a href="../index.html#contact" class="btn-primary">Start Planning</a></div></section>
+        <footer>
   <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
   <div class="footer-links" aria-label="Footer navigation">
     <a href="../index.html">Home</a>
@@ -244,26 +162,9 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
     <a href="../privacy-policy.html">Privacy Policy</a>
     <a href="../about.html">About</a>
   </div>
-</footer><script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-ham && ham.addEventListener('click', () => {
-  const open = mob.classList.toggle('open');
-  ham.setAttribute('aria-expanded', open);
-});
-function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
-document.addEventListener('click', e => {
-  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
-});
-// Subtle hero parallax
-const heroBg = document.querySelector('.hero-bg');
-window.addEventListener('scroll', () => {
-  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
-}, {passive: true});
-</script><script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
+</footer>
+    <script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
+<script>document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
 <script id="dropdown-js">document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".nav-dropdown-trigger");if(t){t.addEventListener("click",function(e){if(window.innerWidth<=768){e.preventDefault();t.closest(".nav-dropdown-item").classList.toggle("open");}});}});</script>
-</body></html>
+</body>
+</html>
