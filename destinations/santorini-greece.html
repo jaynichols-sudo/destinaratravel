@@ -197,6 +197,14 @@ footer a:hover{color:var(--color-accent-light)}
   .nav-dropdown::before{display:none}
   .nav-dropdown-item.open .nav-dropdown{display:block}
 }
+.mobile-mega-destinations{padding:0}
+.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-dest-regions{display:none;padding:8px 16px 12px}
+.mobile-mega-destinations.open .mobile-dest-regions{display:block}
+.mobile-dest-region{margin-bottom:12px}
+.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
+.mobile-dest-region a:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -239,7 +247,19 @@ footer a:hover{color:var(--color-accent-light)}
   <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
   <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
   <a href="../disney.html" onclick="closeMobile()">Disney</a>
-  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <div class="mobile-mega-destinations">
+  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
+  <div class="mobile-dest-regions">
+    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html" onclick="closeMobile()">Caribbean Islands</a><a href="../destinations/hawaii.html" onclick="closeMobile()">Hawaii</a><a href="../destinations/maldives.html" onclick="closeMobile()">Maldives</a><a href="../destinations/fiji.html" onclick="closeMobile()">Fiji</a><a href="../destinations/seychelles.html" onclick="closeMobile()">Seychelles</a><a href="../destinations/french-polynesia.html" onclick="closeMobile()">French Polynesia</a><a href="../destinations/bali-indonesia.html" onclick="closeMobile()">Bali, Indonesia</a></div>
+    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html" onclick="closeMobile()">Charleston, SC</a><a href="../destinations/hilton-head-sc.html" onclick="closeMobile()">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html" onclick="closeMobile()">Outer Banks, NC</a><a href="../destinations/savannah-ga.html" onclick="closeMobile()">Savannah, GA</a><a href="../destinations/smoky-mountains.html" onclick="closeMobile()">Smoky Mountains</a><a href="../destinations/asheville-nc.html" onclick="closeMobile()">Asheville, NC</a><a href="../destinations/nashville-tn.html" onclick="closeMobile()">Nashville, TN</a></div>
+    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html" onclick="closeMobile()">Alaska</a><a href="../destinations/new-york-city.html" onclick="closeMobile()">New York City</a><a href="../destinations/washington-dc.html" onclick="closeMobile()">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html" onclick="closeMobile()">Blue Ridge Parkway</a><a href="../destinations/mexico.html" onclick="closeMobile()">Mexico</a><a href="../destinations/costa-rica.html" onclick="closeMobile()">Costa Rica</a><a href="../destinations/peru.html" onclick="closeMobile()">Peru</a><a href="../destinations/patagonia.html" onclick="closeMobile()">Patagonia</a></div>
+    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html" onclick="closeMobile()">Paris, France</a><a href="../destinations/barcelona-spain.html" onclick="closeMobile()">Barcelona, Spain</a><a href="../destinations/santorini-greece.html" onclick="closeMobile()">Santorini, Greece</a><a href="../destinations/tuscany-italy.html" onclick="closeMobile()">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html" onclick="closeMobile()">Amalfi Coast</a><a href="../destinations/french-riviera.html" onclick="closeMobile()">French Riviera</a><a href="../destinations/iceland.html" onclick="closeMobile()">Iceland</a></div>
+    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html" onclick="closeMobile()">Brussels</a><a href="../destinations/budapest-christmas-market.html" onclick="closeMobile()">Budapest</a><a href="../destinations/cologne-christmas-market.html" onclick="closeMobile()">Cologne</a><a href="../destinations/nuremberg-christmas-market.html" onclick="closeMobile()">Nuremberg</a><a href="../destinations/prague-christmas-market.html" onclick="closeMobile()">Prague</a><a href="../destinations/rhine-river-germany.html" onclick="closeMobile()">Rhine River</a><a href="../destinations/salzburg-christmas-market.html" onclick="closeMobile()">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html" onclick="closeMobile()">Strasbourg</a><a href="../destinations/vienna-christmas-market.html" onclick="closeMobile()">Vienna</a></div>
+    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html" onclick="closeMobile()">Egypt</a><a href="../destinations/israel.html" onclick="closeMobile()">Israel</a><a href="../destinations/jordan.html" onclick="closeMobile()">Jordan</a><a href="../destinations/morocco.html" onclick="closeMobile()">Morocco</a><a href="../destinations/oman.html" onclick="closeMobile()">Oman</a><a href="../destinations/dubai-uae.html" onclick="closeMobile()">Dubai, UAE</a><a href="../destinations/kenya-safari.html" onclick="closeMobile()">Kenya Safari</a><a href="../destinations/south-africa.html" onclick="closeMobile()">South Africa</a><a href="../destinations/tanzania.html" onclick="closeMobile()">Tanzania</a><a href="../destinations/botswana.html" onclick="closeMobile()">Botswana</a><a href="../destinations/madagascar.html" onclick="closeMobile()">Madagascar</a></div>
+    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html" onclick="closeMobile()">Japan</a><a href="../destinations/thailand.html" onclick="closeMobile()">Thailand</a><a href="../destinations/vietnam.html" onclick="closeMobile()">Vietnam</a><a href="../destinations/india.html" onclick="closeMobile()">India</a><a href="../destinations/cambodia.html" onclick="closeMobile()">Cambodia</a><a href="../destinations/sri-lanka.html" onclick="closeMobile()">Sri Lanka</a><a href="../destinations/australia.html" onclick="closeMobile()">Australia</a><a href="../destinations/new-zealand.html" onclick="closeMobile()">New Zealand</a></div>
+  </div>
+  <a href="../destinations.html" onclick="closeMobile()" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
+</div>
   <a href="../about.html" onclick="closeMobile()">About</a>
   <a href="../index.html#contact" onclick="closeMobile()">Plan My Trip</a>
 </div>
