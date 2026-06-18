@@ -2617,25 +2617,13 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
   </div>
 </div>
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-ham && ham.addEventListener('click', () => {
-  const open = mob.classList.toggle('open');
-  ham.setAttribute('aria-expanded', open);
-});
-function closeMobile() { mob && mob.classList.remove('open'); ham && ham.setAttribute('aria-expanded','false'); }
-document.addEventListener('click', e => {
-  if (ham && !ham.contains(e.target) && mob && !mob.contains(e.target)) closeMobile();
-});
-// Subtle hero parallax
-const heroBg = document.querySelector('.hero-bg');
-window.addEventListener('scroll', () => {
-  if (heroBg) heroBg.style.transform = 'scale(1.05) translateY(' + (window.scrollY * .08) + 'px)';
-}, {passive: true});
+// Hero parallax (nav/hamburger handled in main script above)
+(function(){
+  var heroBg = document.querySelector(".hero-bg");
+  window.addEventListener("scroll", function(){
+    if (heroBg) heroBg.style.transform = "scale(1.05) translateY(" + (window.scrollY * .08) + "px)";
+  }, {passive: true});
+})();
 </script>
 
 <script>
