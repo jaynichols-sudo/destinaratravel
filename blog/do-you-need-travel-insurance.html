@@ -91,6 +91,14 @@ footer{background:var(--color-dark);color:rgba(255,255,255,0.7);padding:3rem 2re
 footer a{color:var(--color-accent)}
 footer p{margin-top:0.5rem}
 @media(max-width:768px){.nav-links{display:none}.blog-container{padding:2rem 1.25rem}.blog-hero{height:300px}.stat-box{flex-direction:column}}
+.mobile-mega-destinations{padding:0}
+.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-dest-regions{display:none;padding:8px 16px 12px}
+.mobile-mega-destinations.open .mobile-dest-regions{display:block}
+.mobile-dest-region{margin-bottom:12px}
+.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
+.mobile-dest-region a:hover{color:#fff}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"Do You Really Need Travel Insurance?","description":"The honest advisor guide to travel insurance — what's covered, what's not, and when you absolutely need it.","image":"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80","datePublished":"2026-01-05","dateModified":"2026-02-19","author":{"@type":"Person","name":"Jay Nichols","url":"https://destinaratravel.com"},"publisher":{"@type":"Organization","name":"Destinara Travel","logo":{"@type":"ImageObject","url":"https://destinaratravel.com/destinara-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://destinaratravel.com/blog/do-you-need-travel-insurance.html"}}
@@ -187,7 +195,19 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
   <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
   <a href="../disney.html" onclick="closeMobile()">Disney</a>
-  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <div class="mobile-mega-destinations">
+  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
+  <div class="mobile-dest-regions">
+    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html" onclick="closeMobile()">Caribbean Islands</a><a href="../destinations/hawaii.html" onclick="closeMobile()">Hawaii</a><a href="../destinations/maldives.html" onclick="closeMobile()">Maldives</a><a href="../destinations/fiji.html" onclick="closeMobile()">Fiji</a><a href="../destinations/seychelles.html" onclick="closeMobile()">Seychelles</a><a href="../destinations/french-polynesia.html" onclick="closeMobile()">French Polynesia</a><a href="../destinations/bali-indonesia.html" onclick="closeMobile()">Bali, Indonesia</a></div>
+    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html" onclick="closeMobile()">Charleston, SC</a><a href="../destinations/hilton-head-sc.html" onclick="closeMobile()">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html" onclick="closeMobile()">Outer Banks, NC</a><a href="../destinations/savannah-ga.html" onclick="closeMobile()">Savannah, GA</a><a href="../destinations/smoky-mountains.html" onclick="closeMobile()">Smoky Mountains</a><a href="../destinations/asheville-nc.html" onclick="closeMobile()">Asheville, NC</a><a href="../destinations/nashville-tn.html" onclick="closeMobile()">Nashville, TN</a></div>
+    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html" onclick="closeMobile()">Alaska</a><a href="../destinations/new-york-city.html" onclick="closeMobile()">New York City</a><a href="../destinations/washington-dc.html" onclick="closeMobile()">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html" onclick="closeMobile()">Blue Ridge Parkway</a><a href="../destinations/mexico.html" onclick="closeMobile()">Mexico</a><a href="../destinations/costa-rica.html" onclick="closeMobile()">Costa Rica</a><a href="../destinations/peru.html" onclick="closeMobile()">Peru</a><a href="../destinations/patagonia.html" onclick="closeMobile()">Patagonia</a></div>
+    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html" onclick="closeMobile()">Paris, France</a><a href="../destinations/barcelona-spain.html" onclick="closeMobile()">Barcelona, Spain</a><a href="../destinations/santorini-greece.html" onclick="closeMobile()">Santorini, Greece</a><a href="../destinations/tuscany-italy.html" onclick="closeMobile()">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html" onclick="closeMobile()">Amalfi Coast</a><a href="../destinations/french-riviera.html" onclick="closeMobile()">French Riviera</a><a href="../destinations/iceland.html" onclick="closeMobile()">Iceland</a></div>
+    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html" onclick="closeMobile()">Brussels</a><a href="../destinations/budapest-christmas-market.html" onclick="closeMobile()">Budapest</a><a href="../destinations/cologne-christmas-market.html" onclick="closeMobile()">Cologne</a><a href="../destinations/nuremberg-christmas-market.html" onclick="closeMobile()">Nuremberg</a><a href="../destinations/prague-christmas-market.html" onclick="closeMobile()">Prague</a><a href="../destinations/rhine-river-germany.html" onclick="closeMobile()">Rhine River</a><a href="../destinations/salzburg-christmas-market.html" onclick="closeMobile()">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html" onclick="closeMobile()">Strasbourg</a><a href="../destinations/vienna-christmas-market.html" onclick="closeMobile()">Vienna</a></div>
+    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html" onclick="closeMobile()">Egypt</a><a href="../destinations/israel.html" onclick="closeMobile()">Israel</a><a href="../destinations/jordan.html" onclick="closeMobile()">Jordan</a><a href="../destinations/morocco.html" onclick="closeMobile()">Morocco</a><a href="../destinations/oman.html" onclick="closeMobile()">Oman</a><a href="../destinations/dubai-uae.html" onclick="closeMobile()">Dubai, UAE</a><a href="../destinations/kenya-safari.html" onclick="closeMobile()">Kenya Safari</a><a href="../destinations/south-africa.html" onclick="closeMobile()">South Africa</a><a href="../destinations/tanzania.html" onclick="closeMobile()">Tanzania</a><a href="../destinations/botswana.html" onclick="closeMobile()">Botswana</a><a href="../destinations/madagascar.html" onclick="closeMobile()">Madagascar</a></div>
+    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html" onclick="closeMobile()">Japan</a><a href="../destinations/thailand.html" onclick="closeMobile()">Thailand</a><a href="../destinations/vietnam.html" onclick="closeMobile()">Vietnam</a><a href="../destinations/india.html" onclick="closeMobile()">India</a><a href="../destinations/cambodia.html" onclick="closeMobile()">Cambodia</a><a href="../destinations/sri-lanka.html" onclick="closeMobile()">Sri Lanka</a><a href="../destinations/australia.html" onclick="closeMobile()">Australia</a><a href="../destinations/new-zealand.html" onclick="closeMobile()">New Zealand</a></div>
+  </div>
+  <a href="../destinations.html" onclick="closeMobile()" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
+</div>
   <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
   <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
   <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
@@ -336,14 +356,18 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
 </footer>
 
   <!-- COOKIE CONSENT BANNER -->
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a3a2a;color:#fff;display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1rem 2rem;gap:1rem;box-shadow:0 -2px 12px rgba(0,0,0,0.25);"><p style="font-size:0.88rem;line-height:1.5;flex:1 1 300px;">We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="/privacy-policy.html" style="color:#d4af37;text-decoration:underline;">Privacy Policy</a>.</p><button onclick="acceptCookies()" style="background:#d4af37;color:#1a3a2a;border:none;border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;">Accept</button></div>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a3a2a;color:#fff;display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1rem 2rem;gap:1rem;box-shadow:0 -2px 12px rgba(0,0,0,0.25);"><p style="font-size:0.88rem;line-height:1.5;flex:1 1 300px;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy.html" style="color:#d4af37;text-decoration:underline;">Privacy Policy</a>.</p><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.6);border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;margin-right:0.6rem;">Decline</button><button onclick="acceptCookies()" style="background:#d4af37;color:#1a3a2a;border:none;border-radius:4px;padding:0.5rem 1.4rem;font-size:0.88rem;font-weight:bold;cursor:pointer;">Accept</button></div>
   <script>
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
       document.getElementById('cookie-banner').style.display = 'none';
     }
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
     (function() {
-      if (localStorage.getItem('cookieConsent') !== 'accepted') {
+      if (!localStorage.getItem('cookieConsent')) {
         var b = document.getElementById('cookie-banner');
         b.style.display = 'flex';
       }

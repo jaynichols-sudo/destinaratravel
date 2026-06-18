@@ -179,7 +179,15 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         .nav-new-badge { display: inline-block; background: #ff6b35; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 2px 5px; border-radius: 3px; vertical-align: middle; margin-left: 4px; animation: pulse-badge 2s infinite; }
         .nav-badge { display: inline-block; background: #ff6b35; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 2px 5px; border-radius: 3px; vertical-align: middle; margin-left: 4px; }
         @keyframes pulse-badge { 0%,100%{opacity:1} 50%{opacity:0.7} }
-    </style>
+    .mobile-mega-destinations{padding:0}
+.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-dest-regions{display:none;padding:8px 16px 12px}
+.mobile-mega-destinations.open .mobile-dest-regions{display:block}
+.mobile-dest-region{margin-bottom:12px}
+.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
+.mobile-dest-region a:hover{color:#fff}
+</style>
   <style id="dropdown-css">
 
 /* ===== VACATIONS DROPDOWN ===== */
@@ -238,7 +246,19 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
   <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
   <a href="../disney.html" onclick="closeMobile()">Disney</a>
-  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <div class="mobile-mega-destinations">
+  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
+  <div class="mobile-dest-regions">
+    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html" onclick="closeMobile()">Caribbean Islands</a><a href="../destinations/hawaii.html" onclick="closeMobile()">Hawaii</a><a href="../destinations/maldives.html" onclick="closeMobile()">Maldives</a><a href="../destinations/fiji.html" onclick="closeMobile()">Fiji</a><a href="../destinations/seychelles.html" onclick="closeMobile()">Seychelles</a><a href="../destinations/french-polynesia.html" onclick="closeMobile()">French Polynesia</a><a href="../destinations/bali-indonesia.html" onclick="closeMobile()">Bali, Indonesia</a></div>
+    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html" onclick="closeMobile()">Charleston, SC</a><a href="../destinations/hilton-head-sc.html" onclick="closeMobile()">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html" onclick="closeMobile()">Outer Banks, NC</a><a href="../destinations/savannah-ga.html" onclick="closeMobile()">Savannah, GA</a><a href="../destinations/smoky-mountains.html" onclick="closeMobile()">Smoky Mountains</a><a href="../destinations/asheville-nc.html" onclick="closeMobile()">Asheville, NC</a><a href="../destinations/nashville-tn.html" onclick="closeMobile()">Nashville, TN</a></div>
+    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html" onclick="closeMobile()">Alaska</a><a href="../destinations/new-york-city.html" onclick="closeMobile()">New York City</a><a href="../destinations/washington-dc.html" onclick="closeMobile()">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html" onclick="closeMobile()">Blue Ridge Parkway</a><a href="../destinations/mexico.html" onclick="closeMobile()">Mexico</a><a href="../destinations/costa-rica.html" onclick="closeMobile()">Costa Rica</a><a href="../destinations/peru.html" onclick="closeMobile()">Peru</a><a href="../destinations/patagonia.html" onclick="closeMobile()">Patagonia</a></div>
+    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html" onclick="closeMobile()">Paris, France</a><a href="../destinations/barcelona-spain.html" onclick="closeMobile()">Barcelona, Spain</a><a href="../destinations/santorini-greece.html" onclick="closeMobile()">Santorini, Greece</a><a href="../destinations/tuscany-italy.html" onclick="closeMobile()">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html" onclick="closeMobile()">Amalfi Coast</a><a href="../destinations/french-riviera.html" onclick="closeMobile()">French Riviera</a><a href="../destinations/iceland.html" onclick="closeMobile()">Iceland</a></div>
+    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html" onclick="closeMobile()">Brussels</a><a href="../destinations/budapest-christmas-market.html" onclick="closeMobile()">Budapest</a><a href="../destinations/cologne-christmas-market.html" onclick="closeMobile()">Cologne</a><a href="../destinations/nuremberg-christmas-market.html" onclick="closeMobile()">Nuremberg</a><a href="../destinations/prague-christmas-market.html" onclick="closeMobile()">Prague</a><a href="../destinations/rhine-river-germany.html" onclick="closeMobile()">Rhine River</a><a href="../destinations/salzburg-christmas-market.html" onclick="closeMobile()">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html" onclick="closeMobile()">Strasbourg</a><a href="../destinations/vienna-christmas-market.html" onclick="closeMobile()">Vienna</a></div>
+    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html" onclick="closeMobile()">Egypt</a><a href="../destinations/israel.html" onclick="closeMobile()">Israel</a><a href="../destinations/jordan.html" onclick="closeMobile()">Jordan</a><a href="../destinations/morocco.html" onclick="closeMobile()">Morocco</a><a href="../destinations/oman.html" onclick="closeMobile()">Oman</a><a href="../destinations/dubai-uae.html" onclick="closeMobile()">Dubai, UAE</a><a href="../destinations/kenya-safari.html" onclick="closeMobile()">Kenya Safari</a><a href="../destinations/south-africa.html" onclick="closeMobile()">South Africa</a><a href="../destinations/tanzania.html" onclick="closeMobile()">Tanzania</a><a href="../destinations/botswana.html" onclick="closeMobile()">Botswana</a><a href="../destinations/madagascar.html" onclick="closeMobile()">Madagascar</a></div>
+    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html" onclick="closeMobile()">Japan</a><a href="../destinations/thailand.html" onclick="closeMobile()">Thailand</a><a href="../destinations/vietnam.html" onclick="closeMobile()">Vietnam</a><a href="../destinations/india.html" onclick="closeMobile()">India</a><a href="../destinations/cambodia.html" onclick="closeMobile()">Cambodia</a><a href="../destinations/sri-lanka.html" onclick="closeMobile()">Sri Lanka</a><a href="../destinations/australia.html" onclick="closeMobile()">Australia</a><a href="../destinations/new-zealand.html" onclick="closeMobile()">New Zealand</a></div>
+  </div>
+  <a href="../destinations.html" onclick="closeMobile()" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
+</div>
   <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
   <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
   <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
@@ -263,20 +283,20 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 1: Europe Summer 2026 - NEW -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80" alt="Colorful coastal village on the Amalfi Coast of Italy with turquoise water below" loading="eager">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" alt="Elephants crossing the savanna during an African safari at golden hour" loading="eager">
           </div>
           <div class="blog-card-body">
-            <div class="blog-category">Summer 2026</div>
-            <h2>Europe This Summer: The Best Destinations for 2026</h2>
-            <p>From the sun-drenched Amalfi Coast to Scandinavia's endless summer days, Elizabeth shares her top picks for European travel this summer — and how to avoid the crowds.</p>
+            <div class="blog-category">Safari</div>
+            <h2>Your First African Safari: A Complete Beginner's Guide</h2>
+            <p>New to safari? Our complete beginner's guide covers when to go, where to go, what to expect, and how to make your first African wildlife adventure absolutely extraordinary.</p>
             <div class="blog-meta">
-              <span>Elizabeth Nichols</span>
+              <span>Jay Nichols</span>
               <span class="dot">&bull;</span>
-              <span>May 2026</span>
+              <span>March 2026</span>
               <span class="dot">&bull;</span>
-              <span>7 min read</span>
+              <span>9 min read</span>
             </div>
-            <a href="/blog/amalfi-coast-guide.html" class="blog-read-more" aria-label="Read Europe This Summer: Best Destinations for 2026">Read Article &rarr;</a>
+            <a href="/blog/your-first-african-safari.html" class="blog-read-more" aria-label="Read Your First African Safari: A Complete Beginner's Guide">Read Article &rarr;</a>
           </div>
         </article>
 
@@ -347,7 +367,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         </div>
         <div class="blog-card-body">
           <div class="blog-category">Seasonal Travel</div>
-          <h2>How to Plan the Perfect German Christmas Market Trip</h2>
+          <h2>How to Plan the Perfect European Christmas Market Trip</h2>
           <p>From Nuremberg's centuries-old Christkindlesmarkt to Dresden's Striezelmarkt, Jay Nichols shares the best markets, when to go, where to stay, and how to experience the magic of a German holiday season.</p>
           <div class="blog-meta">
             <span>Jay Nichols</span>
@@ -356,7 +376,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
             <span class="dot">&bull;</span>
             <span>10 min read</span>
           </div>
-          <a href="/blog/planning-european-christmas-markets.html" class="blog-read-more" aria-label="Read How to Plan the Perfect German Christmas Market Trip">Read Article &rarr;</a>
+          <a href="/blog/planning-european-christmas-markets.html" class="blog-read-more" aria-label="Read How to Plan the Perfect European Christmas Market Trip">Read Article &rarr;</a>
         </div>
       </article>
 
@@ -533,7 +553,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Travel Tips</div>
-            <h2>Do You Really Need Travel Insurance? A Honest Look</h2>
+            <h2>Do You Really Need Travel Insurance? An Honest Look</h2>
             <p>Medical emergencies abroad, missed connections, lost luggage — Jay Nichols walks through exactly when travel insurance is worth every penny and when you might be over-paying for coverage you don't need.</p>
             <div class="blog-meta">
               <span>Jay Nichols</span>
@@ -611,5 +631,6 @@ function toggleBlogGrid() {
     document.getElementById('blogGridTop').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
-</script></title>
-  </head>
+</script>
+</body>
+</html>
