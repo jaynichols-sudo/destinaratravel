@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Jordan Travel Guide | Destinara Travel</title><meta name="description" content="Jordan is a Middle Eastern jewel — home to the rose-red ancient city of Petra, carved by the Nabataeans into sandstone cliffs over 2,000 years ago. Float i"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Jordan Travel Guide | Destinara Travel</title><meta name="description" content="Jordan is a Middle Eastern jewel, home to the rose-red ancient city of Petra, carved by the Nabataeans into sandstone cliffs over 2,000 years ago. Float in the Dead Sea and explore Wadi Rum."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/><style>
 /* ===== DEST PAGE BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2d2d2d;line-height:1.6}
@@ -114,6 +114,14 @@ footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:cen
   .hamburger{display:flex}
   .nav-links{display:none}
 }
+.mobile-mega-destinations{padding:0}
+.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mobile-dest-regions{display:none;padding:8px 16px 12px}
+.mobile-mega-destinations.open .mobile-dest-regions{display:block}
+.mobile-dest-region{margin-bottom:12px}
+.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
+.mobile-dest-region a:hover{color:#fff}
 </style><style>
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .4s;background:transparent}
@@ -165,11 +173,33 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   .nav-dropdown-item.open .nav-dropdown{display:block}
 }
 </style>
-</head><body><div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <link rel="canonical" href="https://destinaratravel.com/destinations/jordan.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://destinaratravel.com/destinations/jordan.html">
+    <meta property="og:title" content="Jordan Travel Guide | Destinara Travel">
+    <meta property="og:description" content="Jordan is a Middle Eastern jewel, home to the rose-red ancient city of Petra, carved by the Nabataeans into sandstone cliffs over 2,000 years ago. Float in the Dead Sea and explore Wadi Rum.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400&amp;q=80&amp;auto=format&amp;fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jordan Travel Guide | Destinara Travel">
+    <meta name="twitter:description" content="Jordan is a Middle Eastern jewel, home to the rose-red ancient city of Petra, carved by the Nabataeans into sandstone cliffs over 2,000 years ago. Float in the Dead Sea and explore Wadi Rum.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400&amp;q=80&amp;auto=format&amp;fit=crop">
+  </head><body><div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <a href="../cruises.html" onclick="closeMobile()">Cruises</a>
   <a href="../vacations.html" onclick="closeMobile()">Vacations</a>
   <a href="../disney.html" onclick="closeMobile()">Disney</a>
-  <a href="../destinations.html" onclick="closeMobile()">Destinations</a>
+  <div class="mobile-mega-destinations">
+  <span class="mobile-dest-trigger" onclick="this.closest('.mobile-mega-destinations').classList.toggle('open')">Destinations &#9660;</span>
+  <div class="mobile-dest-regions">
+    <div class="mobile-dest-region"><strong>Caribbean &amp; Islands</strong><a href="../destinations/caribbean-islands.html" onclick="closeMobile()">Caribbean Islands</a><a href="../destinations/hawaii.html" onclick="closeMobile()">Hawaii</a><a href="../destinations/maldives.html" onclick="closeMobile()">Maldives</a><a href="../destinations/fiji.html" onclick="closeMobile()">Fiji</a><a href="../destinations/seychelles.html" onclick="closeMobile()">Seychelles</a><a href="../destinations/french-polynesia.html" onclick="closeMobile()">French Polynesia</a><a href="../destinations/bali-indonesia.html" onclick="closeMobile()">Bali, Indonesia</a></div>
+    <div class="mobile-dest-region"><strong>Southeast US</strong><a href="../destinations/charleston-sc.html" onclick="closeMobile()">Charleston, SC</a><a href="../destinations/hilton-head-sc.html" onclick="closeMobile()">Hilton Head, SC</a><a href="../destinations/outer-banks-nc.html" onclick="closeMobile()">Outer Banks, NC</a><a href="../destinations/savannah-ga.html" onclick="closeMobile()">Savannah, GA</a><a href="../destinations/smoky-mountains.html" onclick="closeMobile()">Smoky Mountains</a><a href="../destinations/asheville-nc.html" onclick="closeMobile()">Asheville, NC</a><a href="../destinations/nashville-tn.html" onclick="closeMobile()">Nashville, TN</a></div>
+    <div class="mobile-dest-region"><strong>Americas</strong><a href="../destinations/alaska.html" onclick="closeMobile()">Alaska</a><a href="../destinations/new-york-city.html" onclick="closeMobile()">New York City</a><a href="../destinations/washington-dc.html" onclick="closeMobile()">Washington, DC</a><a href="../destinations/blue-ridge-parkway.html" onclick="closeMobile()">Blue Ridge Parkway</a><a href="../destinations/mexico.html" onclick="closeMobile()">Mexico</a><a href="../destinations/costa-rica.html" onclick="closeMobile()">Costa Rica</a><a href="../destinations/peru.html" onclick="closeMobile()">Peru</a><a href="../destinations/patagonia.html" onclick="closeMobile()">Patagonia</a></div>
+    <div class="mobile-dest-region"><strong>Europe</strong><a href="../destinations/paris-france.html" onclick="closeMobile()">Paris, France</a><a href="../destinations/barcelona-spain.html" onclick="closeMobile()">Barcelona, Spain</a><a href="../destinations/santorini-greece.html" onclick="closeMobile()">Santorini, Greece</a><a href="../destinations/tuscany-italy.html" onclick="closeMobile()">Tuscany, Italy</a><a href="../destinations/amalfi-coast-italy.html" onclick="closeMobile()">Amalfi Coast</a><a href="../destinations/french-riviera.html" onclick="closeMobile()">French Riviera</a><a href="../destinations/iceland.html" onclick="closeMobile()">Iceland</a></div>
+    <div class="mobile-dest-region"><strong>Christmas Markets</strong><a href="../destinations/brussels-christmas-market.html" onclick="closeMobile()">Brussels</a><a href="../destinations/budapest-christmas-market.html" onclick="closeMobile()">Budapest</a><a href="../destinations/cologne-christmas-market.html" onclick="closeMobile()">Cologne</a><a href="../destinations/nuremberg-christmas-market.html" onclick="closeMobile()">Nuremberg</a><a href="../destinations/prague-christmas-market.html" onclick="closeMobile()">Prague</a><a href="../destinations/rhine-river-germany.html" onclick="closeMobile()">Rhine River</a><a href="../destinations/salzburg-christmas-market.html" onclick="closeMobile()">Salzburg</a><a href="../destinations/strasbourg-christmas-market.html" onclick="closeMobile()">Strasbourg</a><a href="../destinations/vienna-christmas-market.html" onclick="closeMobile()">Vienna</a></div>
+    <div class="mobile-dest-region"><strong>Middle East &amp; Africa</strong><a href="../destinations/egypt.html" onclick="closeMobile()">Egypt</a><a href="../destinations/israel.html" onclick="closeMobile()">Israel</a><a href="../destinations/jordan.html" onclick="closeMobile()">Jordan</a><a href="../destinations/morocco.html" onclick="closeMobile()">Morocco</a><a href="../destinations/oman.html" onclick="closeMobile()">Oman</a><a href="../destinations/dubai-uae.html" onclick="closeMobile()">Dubai, UAE</a><a href="../destinations/kenya-safari.html" onclick="closeMobile()">Kenya Safari</a><a href="../destinations/south-africa.html" onclick="closeMobile()">South Africa</a><a href="../destinations/tanzania.html" onclick="closeMobile()">Tanzania</a><a href="../destinations/botswana.html" onclick="closeMobile()">Botswana</a><a href="../destinations/madagascar.html" onclick="closeMobile()">Madagascar</a></div>
+    <div class="mobile-dest-region"><strong>Asia &amp; Pacific</strong><a href="../destinations/japan.html" onclick="closeMobile()">Japan</a><a href="../destinations/thailand.html" onclick="closeMobile()">Thailand</a><a href="../destinations/vietnam.html" onclick="closeMobile()">Vietnam</a><a href="../destinations/india.html" onclick="closeMobile()">India</a><a href="../destinations/cambodia.html" onclick="closeMobile()">Cambodia</a><a href="../destinations/sri-lanka.html" onclick="closeMobile()">Sri Lanka</a><a href="../destinations/australia.html" onclick="closeMobile()">Australia</a><a href="../destinations/new-zealand.html" onclick="closeMobile()">New Zealand</a></div>
+  </div>
+  <a href="../destinations.html" onclick="closeMobile()" style="display:block;padding:8px 0 12px 0;font-weight:600;color:var(--color-accent,#c9a96e)">View All Destinations &rarr;</a>
+</div>
   <a href="../index.html#deals" onclick="closeMobile()">Deals</a>
   <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
   <a href="../index.html#blog" onclick="closeMobile()">Journal</a>
