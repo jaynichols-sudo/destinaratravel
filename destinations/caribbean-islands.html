@@ -161,6 +161,88 @@ footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:cen
 .nav-mega-item{position:relative}.nav-mega-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:920px;display:none;grid-template-columns:repeat(7,1fr);gap:0;padding:20px 24px 16px;background:#0a3d3d;border-top:2px solid var(--color-accent,#c9a96e);z-index:1000;box-shadow:0 8px 32px rgba(0,0,0,0.3)}.nav-mega-dropdown li{list-style:none;padding:0;margin:0}.nav-mega-heading{display:block;color:var(--color-accent,#c9a96e);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0 0 6px 0;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.12);white-space:nowrap}.nav-mega-region{padding:0 10px 0 0}.nav-mega-region a{display:block;color:rgba(255,255,255,0.8);font-size:12px;padding:2px 0;white-space:nowrap;text-decoration:none;transition:color 0.2s}.nav-mega-region a:hover{color:#fff}.nav-mega-footer{grid-column:1/-1;padding-top:10px;margin-top:8px;border-top:1px solid rgba(255,255,255,0.12)}.nav-mega-footer a{color:var(--color-accent,#c9a96e);font-size:12px;font-weight:600;text-decoration:none}.nav-mega-footer a:hover{color:#fff}.nav-mega-item:hover .nav-mega-dropdown,.nav-mega-item:focus-within .nav-mega-dropdown{display:grid}@media(max-width:1200px){.nav-mega-dropdown{width:680px;grid-template-columns:repeat(4,1fr)}}@media(max-width:768px){.nav-mega-dropdown{display:none!important}}.mobile-mega-destinations{padding:0}.mobile-dest-trigger{display:block;padding:12px 24px;color:#fff;font-size:15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08)}.mobile-dest-regions{display:none;padding:8px 16px 12px}.mobile-mega-destinations.open .mobile-dest-regions{display:block}.mobile-dest-region{margin-bottom:12px}.mobile-dest-region strong{display:block;color:var(--color-accent,#c9a96e);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}.mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 
 </style>
+
+<style>
+/* richer-template styles (auto-added) */
+.hero{position:relative;min-height:62vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-top:0}
+.hero>img,.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(26,26,46,.35),rgba(26,26,46,.7));z-index:1}
+.hero .hero-content{position:relative;z-index:2;max-width:900px;padding:6rem 2rem 3rem;color:#fff}
+.hero h1{font-family:'Playfair Display',serif;font-size:3.4rem;line-height:1.1;margin:.4rem 0;color:#fff}
+.hero .tagline,.hero .hero-tagline{font-size:1.25rem;font-weight:300;opacity:.95;max-width:640px;margin:.5rem auto 0}
+.hero .breadcrumb{margin-bottom:1rem;font-size:.85rem}
+.hero .breadcrumb a{color:rgba(255,255,255,.85);text-decoration:none}
+.hero .breadcrumb a:hover{color:#fff}
+.hero-badge,.category-badge,.badge{display:inline-block;background:#C4956B;color:#fff;padding:.4rem 1.1rem;border-radius:50px;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:1rem}
+.hero-meta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}.hero-meta-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:.5rem 1rem;border-radius:50px;font-size:.85rem;color:#fff}
+.page-content{max-width:1100px;margin:0 auto;padding:4rem 2rem}
+.intro-section{display:grid;grid-template-columns:1.6fr 1fr;gap:3rem;align-items:start;padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.intro-text .intro-lead,.intro-lead{font-family:'Playfair Display',serif;font-size:1.35rem;line-height:1.6;color:#1a1a2e;font-weight:500;margin-bottom:1.25rem}
+.intro-body,.intro-text p{color:#555;line-height:1.9;margin-bottom:1rem}
+.intro-lead{font-family:'Playfair Display',serif;font-size:1.35rem;line-height:1.6;color:#1a1a2e;font-weight:500;margin-bottom:1.25rem}
+.intro-body,.intro-body p{color:#555;line-height:1.9;margin-bottom:1rem}
+.intro-text p{color:#555;line-height:1.9;margin-bottom:1rem}
+.quick-facts{background:#F5F1EB;border-radius:14px;padding:1.75rem}
+.fact-grid{display:grid;gap:.25rem}
+.fact-item{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.fact-item:last-child{border-bottom:none}
+.fact-label{color:#8a8a8a;font-size:.78rem;text-transform:uppercase;letter-spacing:1px}
+.fact-value{font-weight:600;color:#1a1a2e;text-align:right}
+.fact-grid{display:grid;gap:.25rem}
+.fact-item{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.fact-item:last-child{border-bottom:none}
+.fact-label{color:#8a8a8a;font-size:.78rem;text-transform:uppercase;letter-spacing:1px}
+.fact-value{font-weight:600;color:#1a1a2e;text-align:right}
+.section-divider{border:none;border-top:1px solid #e7ddd0;margin:0;max-width:1100px;margin-left:auto;margin-right:auto}
+.section-header{text-align:center;max-width:760px;margin:0 auto 2.5rem}
+.section-icon{font-size:2rem;margin-bottom:.5rem}
+.section-label-text{display:block;color:#C4956B;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:.5rem}
+.section-header p,.section-intro{color:#666;line-height:1.7}
+.highlights-section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.highlights-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.highlight-card{display:flex;flex-direction:column;gap:.35rem;background:#fff;border:1px solid #eee;border-left:3px solid #C4956B;border-radius:10px;padding:1.4rem 1.6rem;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.highlight-card h3{font-family:'Playfair Display',serif;font-size:1.12rem;margin:0 0 .15rem;color:#1a1a2e;line-height:1.3}
+.highlight-card p,.highlight-text{color:#555;line-height:1.6;font-size:.95rem;margin:0}
+.highlight-card-body{flex:1}
+.highlight-bullet{color:#C4956B;font-weight:700;font-size:1.15rem;line-height:1}
+.itinerary-section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
+.day-card{display:flex;gap:1.5rem;background:#fff;border-radius:12px;padding:1.5rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.day-number{flex:0 0 46px;height:46px;width:46px;border-radius:50%;background:#0D5C5C;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Playfair Display',serif}
+.day-content{flex:1}
+.day-title{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.5rem;color:#1a1a2e}
+.day-activities{list-style:none;padding:0;margin:0}
+.day-activities li{padding:.3rem 0 .3rem 1.3rem;position:relative;color:#555;line-height:1.5}
+.day-activities li:before{content:'\2192';position:absolute;left:0;color:#C4956B}
+.tips-section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.tip-content{flex:1}.tip-title{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.35rem;color:#1a1a2e}
+.weather-section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.weather-card{background:#1a1a2e;color:#fff;border-radius:16px;padding:2.5rem}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.season-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:1.4rem;text-align:center}
+.season-name{font-family:'Playfair Display',serif;font-weight:600;margin-bottom:.4rem;color:#C4956B}
+.season-desc{font-size:.85rem;opacity:.85;line-height:1.5}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.season-item{background:#fff;border:1px solid #eee;border-radius:10px;padding:1.4rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.season-name{font-family:'Playfair Display',serif;font-weight:600;margin-bottom:.4rem;color:#0D5C5C}
+.season-desc{font-size:.85rem;color:#666;line-height:1.5}
+.cta-section{text-align:center;background:#0D5C5C;color:#fff;border-radius:16px;padding:3.5rem 2rem;max-width:1000px;margin:3.5rem auto}
+.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:2rem;margin-bottom:1rem}
+.cta-section p{opacity:.92;max-width:560px;margin:0 auto 1.75rem;line-height:1.7}
+.cta-card{max-width:640px;margin:0 auto}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-card{max-width:640px;margin:0 auto}.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-block;background:#C4956B;color:#fff;padding:1rem 2.25rem;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s}.btn-primary:hover{background:#b8895f;transform:translateY(-2px)}
+.breadcrumb-inner{max-width:1100px;margin:0 auto}
+.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:1rem;top:1rem;z-index:2000;background:#fff;padding:.5rem 1rem;border-radius:6px}
+@media(max-width:768px){
+.intro-section{grid-template-columns:1fr;gap:1.5rem;padding:2.5rem 1.25rem}
+.highlights-grid,.season-grid,.related-grid{grid-template-columns:1fr}
+.hero h1{font-size:2.2rem}.hero .hero-content{padding:5rem 1.25rem 2.5rem}
+.day-card{flex-direction:row}
+.page-content,.highlights-section,.itinerary-section,.tips-section,.weather-section,.related-section{padding-left:1.25rem;padding-right:1.25rem}
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -328,127 +410,6 @@ footer{background:#1a3a2a;color:rgba(255,255,255,.8);padding:24px;text-align:cen
     </section>
     <a href="../destinations.html" class="back-link">← Back to All Destinations</a>
   </div>
-<!-- RICH CONTENT START -->
-<p class="dest-lead">The Caribbean is not one destination — it is more than 7,000 islands, each with its own character, culture, and color. From the French-inflected elegance of St. Barths to the volcanic grandeur of St. Lucia, the turquoise flats of the Turks and Caicos to the rum-soaked rhythms of Jamaica, the Caribbean offers the full spectrum of tropical perfection. These are the islands that invented the beach vacation — and they have never stopped perfecting it.</p>
-<div class="info-cards">
-  <div class="info-card"><span class="ic-icon">🌍</span><span class="ic-label">REGION</span><span class="ic-value">Caribbean</span></div>
-  <div class="info-card"><span class="ic-icon">✦</span><span class="ic-label">CATEGORY</span><span class="ic-value">Beach, Romance & Culture</span></div>
-  <div class="info-card"><span class="ic-icon">📅</span><span class="ic-label">BEST TIME</span><span class="ic-value">December–April (dry season)</span></div>
-  <div class="info-card"><span class="ic-icon">💰</span><span class="ic-label">BUDGET</span><span class="ic-value">$300–$800/day</span></div>
-  <div class="info-card"><span class="ic-icon">👥</span><span class="ic-label">YOUR EXPERTS</span><span class="ic-value">Jay &amp; Elizabeth Nichols</span></div>
-</div>
-<section class="dest-section">
-<h2 class="section-title">Highlights &amp; Experiences</h2>
-<div class="highlights-grid">
-  <div class="hl-item"><span class="hl-icon">🏖️</span><span>Turks & Caicos — Grace Bay Beach consistently ranked the #1 beach in the world: blinding white sand, improbable turquoise water</span></div>
-  <div class="hl-item"><span class="hl-icon">🌋</span><span>St. Lucia — The Pitons rise dramatically from the sea beside one of the Caribbean's most stunning beach resorts</span></div>
-  <div class="hl-item"><span class="hl-icon">🎵</span><span>Jamaica — Bob Marley, Blue Mountain coffee, jerk chicken, Doctor's Cave Beach, and the warmth of the Jamaican people</span></div>
-  <div class="hl-item"><span class="hl-icon">🍹</span><span>Barbados — The most sophisticated island: world-class food, cricket culture, superb rum, and a perfect beach on every coast</span></div>
-  <div class="hl-item"><span class="hl-icon">🦞</span><span>St. Martin/Sint Maarten — Two nations on one island with the best restaurant scene and duty-free shopping in the Caribbean</span></div>
-  <div class="hl-item"><span class="hl-icon">⛵</span><span>BVI (British Virgin Islands) — The world's greatest sailing destination, with pristine anchorages and The Baths at Virgin Gorda</span></div>
-</div>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Quick Facts</h2>
-<table class="facts-table"><tbody>
-<tr><th>Region</th><td>Caribbean Sea & Atlantic Ocean</td></tr>
-<tr><th>Currency</th><td>Varies by island (USD widely accepted)</td></tr>
-<tr><th>Language</th><td>English, French, Spanish, Dutch, Papiamento</td></tr>
-<tr><th>Time Zone</th><td>AST (UTC−4, most islands)</td></tr>
-<tr><th>Flight Time</th><td>3–5 hrs from US East Coast</td></tr>
-<tr><th>Entry</th><td>US passport required; visa-free on most islands</td></tr>
-</tbody></table>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Why Caribbean Islands?</h2>
-<ul class="why-list">
-  <li class="why-item">The world's most stunning beaches — powder sand, crystal water, and year-round warmth unlike anywhere else</li>
-  <li class="why-item">Extraordinary diversity — each island has a distinct culture, cuisine, and character; no two are the same</li>
-  <li class="why-item">World-class diving and snorkeling — coral walls, nurse sharks, sea turtles, and stingrays in warm clear water</li>
-  <li class="why-item">Quick and easy from the US East Coast — just 3–5 hours makes a long weekend in paradise entirely possible</li>
-  <li class="why-item">All-inclusive and boutique options for every budget — the Caribbean caters to honeymooners and families equally</li>
-  <li class="why-item">Rich cultural tapestry — indigenous, African, European, and colonial history woven into music, food, and architecture</li>
-</ul>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Your 5-Day Itinerary</h2>
-<div class="itin-grid">
-<div class="itin-day">
-  <div class="itin-day-num">Day 1</div>
-  <div class="itin-day-content">
-    <h3>Turks & Caicos — Beach Perfection</h3>
-    <ul><li>Arrive Providenciales — Grace Bay Beach afternoon: the world's #1 ranked beach</li>
-      <li>Snorkeling at Bight Reef (steps from Grace Bay) — nurse sharks and eagle rays</li>
-      <li>Half-day boat excursion to uninhabited cays and pristine reefs</li>
-      <li>Dinner at Grace Bay Club or Coco Bistro under the palm trees</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 2</div>
-  <div class="itin-day-content">
-    <h3>St. Lucia — Drama & Romance</h3>
-    <ul><li>Fly to St. Lucia — check into a Piton-view resort in the Soufrière area</li>
-      <li>Drive-in volcano Sulphur Springs — the world's only drive-in volcano with mud baths</li>
-      <li>Hike the Gros Piton (guided, 3 hrs) — reward: views over the Caribbean that stop conversation</li>
-      <li>Sunset catamaran cruise between the Pitons</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 3</div>
-  <div class="itin-day-content">
-    <h3>Jamaica — Culture & Rhythm</h3>
-    <ul><li>Fly to Montego Bay or Kingston</li>
-      <li>Bob Marley Museum in Kingston or Nine Mile (his birthplace)</li>
-      <li>Blue Mountain Coffee estate tour — one of the world's finest coffees grown in lush peaks</li>
-      <li>Jerk chicken at Scotchies (authentic) and rum punch at sunset over Doctor's Cave Beach</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 4</div>
-  <div class="itin-day-content">
-    <h3>Barbados — Sophistication & Rum</h3>
-    <ul><li>Arrive Bridgetown, Barbados — one of the Caribbean's most architecturally beautiful capitals</li>
-      <li>Mount Gay Rum Distillery — world's oldest rum producer; outstanding tour and tastings</li>
-      <li>Bottom Bay or Crane Beach — the island's most dramatic beaches on the Atlantic coast</li>
-      <li>Oistins Fish Fry on Friday night — the Caribbean's best open-air seafood market-party</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 5</div>
-  <div class="itin-day-content">
-    <h3>BVI Sailing Finale</h3>
-    <ul><li>Transfer to Tortola, BVI — board a chartered sailboat for 2–3 days</li>
-      <li>The Baths, Virgin Gorda — walk through enormous granite boulders into sea caves and hidden pools</li>
-      <li>Saba Rock and the Dogs — pristine anchorages and snorkeling reefs</li>
-      <li>Jost Van Dyke — Foxy's beach bar, one of the Caribbean's most beloved rum spots</li></ul>
-  </div>
-</div>
-</div>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Insider Travel Tips</h2>
-<div class="tips-grid">
-  <div class="tip-card"><span class="tip-icon">📅</span><strong>Book December–April</strong><p>Hurricane season runs June–November. December–April is reliably dry with perfect trade-wind breezes. It's peak season — book early</p></div>
-  <div class="tip-card"><span class="tip-icon">🏝️</span><strong>Choose One Island Well</strong><p>First-timers often try to island-hop too much. Pick one or two islands and go deep — you'll have a far better experience than rushing between five</p></div>
-  <div class="tip-card"><span class="tip-icon">🩺</span><strong>Travel Insurance is Critical</strong><p>Emergency medical evacuation from the islands can cost $50,000+. Travel insurance with medical evacuation coverage is non-negotiable here</p></div>
-  <div class="tip-card"><span class="tip-icon">🤿</span><strong>Book Dive/Snorkel Operators Early</strong><p>The best operators (especially in BVI and Turks & Caicos) fill up months in advance during high season. Reserve before you depart</p></div>
-</div>
-</section>
-<section class="dest-section">
-<h2 class="section-title">When to Visit</h2>
-<div class="seasons-grid">
-  <div class="season-card"><span class="season-icon">☀️</span><strong>High Season (Dec–Apr)</strong><p>The gold standard: dry, cool trade winds, perfect blue skies. Most expensive and busiest. Book everything 6–9 months out</p></div>
-  <div class="season-card"><span class="season-icon">🌴</span><strong>Shoulder (May & Nov)</strong><p>Lower prices, fewer crowds, still excellent weather on most islands. A few tropical waves possible in November but rare</p></div>
-  <div class="season-card"><span class="season-icon">🌀</span><strong>Hurricane Season (Jun–Oct)</strong><p>Risk of storms; lower prices and nearly empty beaches. Late August–October is highest risk. Travel insurance is essential if visiting</p></div>
-</div>
-</section>
-<div class="dest-cta">
-<h2>Ready to Plan Your Caribbean Islands Journey?</h2>
-<p>Let Jay and Elizabeth Nichols craft your perfect itinerary, from hidden gems to iconic moments.</p>
-<a href="../plan-my-trip.html" class="btn-cta">Start Planning Your Trip</a>
-<a href="../destinations.html" class="back-link">&larr; Back to All Destinations</a>
-</div>
-<!-- RICH CONTENT END -->
 </main>
 <footer>
   <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>

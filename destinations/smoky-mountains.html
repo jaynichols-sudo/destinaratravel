@@ -175,6 +175,44 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   .nav-dropdown-item.open .nav-dropdown{display:block}
 }
 </style>
+
+<style>
+/* richer-template styles (auto-added) */
+.hero{position:relative;min-height:62vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-top:0}
+.hero>img,.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(26,26,46,.35),rgba(26,26,46,.7));z-index:1}
+.hero .hero-content{position:relative;z-index:2;max-width:900px;padding:6rem 2rem 3rem;color:#fff}
+.hero h1{font-family:'Playfair Display',serif;font-size:3.4rem;line-height:1.1;margin:.4rem 0;color:#fff}
+.hero .tagline,.hero .hero-tagline{font-size:1.25rem;font-weight:300;opacity:.95;max-width:640px;margin:.5rem auto 0}
+.hero .breadcrumb{margin-bottom:1rem;font-size:.85rem}
+.hero .breadcrumb a{color:rgba(255,255,255,.85);text-decoration:none}
+.hero .breadcrumb a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section-intro{color:#666;line-height:1.7;text-align:center;max-width:760px;margin:0 auto 2rem}
+.highlights-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.highlight-card{display:flex;flex-direction:column;gap:.35rem;background:#fff;border:1px solid #eee;border-left:3px solid #C4956B;border-radius:10px;padding:1.4rem 1.6rem;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.highlight-card h3{font-family:'Playfair Display',serif;font-size:1.12rem;margin:0 0 .15rem;color:#1a1a2e;line-height:1.3}
+.highlight-card p,.highlight-text{color:#555;line-height:1.6;font-size:.95rem;margin:0}
+.highlight-card-body{flex:1}
+.highlight-bullet{color:#C4956B;font-weight:700;font-size:1.15rem;line-height:1}
+.itinerary{display:grid;gap:1rem;max-width:1000px;margin:0 auto}
+.itinerary-day{display:flex;gap:1.25rem;background:#fff;border-radius:12px;padding:1.4rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.cta-section{text-align:center;background:#0D5C5C;color:#fff;border-radius:16px;padding:3.5rem 2rem;max-width:1000px;margin:3.5rem auto}
+.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:2rem;margin-bottom:1rem}
+.cta-section p{opacity:.92;max-width:560px;margin:0 auto 1.75rem;line-height:1.7}
+.cta-card{max-width:640px;margin:0 auto}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-block;background:#C4956B;color:#fff;padding:1rem 2.25rem;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s}.btn-gold:hover{background:#b8895f;transform:translateY(-2px)}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}.info-item{background:#fff;border:1px solid #eee;border-radius:10px;padding:1.25rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.icon{display:inline-block}
+@media(max-width:768px){
+.intro-section{grid-template-columns:1fr;gap:1.5rem;padding:2.5rem 1.25rem}
+.highlights-grid,.season-grid,.related-grid{grid-template-columns:1fr}
+.hero h1{font-size:2.2rem}.hero .hero-content{padding:5rem 1.25rem 2.5rem}
+.day-card{flex-direction:row}
+.page-content,.highlights-section,.itinerary-section,.tips-section,.weather-section,.related-section{padding-left:1.25rem;padding-right:1.25rem}
+}
+</style>
 </head>
 <body>
 <nav id="nav">
@@ -327,128 +365,6 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
     <p>Let Destinara Travel craft your perfect Great Smoky Mountains escape — from luxury cabin retreats to guided wilderness adventures.</p>
     <a href="../plan-my-trip.html" class="btn-gold">Plan My Smoky Mountains Trip</a>
   </div>
-<!-- RICH CONTENT START -->
-<p class="dest-lead">Great Smoky Mountains National Park is America's most-visited national park — not by accident. The ancient, mist-wrapped Appalachian ridges harbor more tree species than all of northern Europe, black bears roam freely through wildflower meadows, and at 6,643 feet Clingmans Dome looks out over a blue-hazed sea of forest that has remained wild for 300 million years. From Gatlinburg to Cades Cove, the Smokies deliver natural wonder in every season.</p>
-<div class="info-cards">
-  <div class="info-card"><span class="ic-icon">🌍</span><span class="ic-label">REGION</span><span class="ic-value">Eastern USA</span></div>
-  <div class="info-card"><span class="ic-icon">✦</span><span class="ic-label">CATEGORY</span><span class="ic-value">Nature & Family Adventure</span></div>
-  <div class="info-card"><span class="ic-icon">📅</span><span class="ic-label">BEST TIME</span><span class="ic-value">April–June (wildflowers) or October (fall foliage)</span></div>
-  <div class="info-card"><span class="ic-icon">💰</span><span class="ic-label">BUDGET</span><span class="ic-value">$120–$280/day</span></div>
-  <div class="info-card"><span class="ic-icon">👥</span><span class="ic-label">YOUR EXPERTS</span><span class="ic-value">Jay &amp; Elizabeth Nichols</span></div>
-</div>
-<section class="dest-section">
-<h2 class="section-title">Highlights &amp; Experiences</h2>
-<div class="highlights-grid">
-  <div class="hl-item"><span class="hl-icon">🐻</span><span>Wildlife Watching — One of the largest black bear populations in the eastern US, plus elk, deer, and wild turkey</span></div>
-  <div class="hl-item"><span class="hl-icon">🌸</span><span>Wildflower Season — The Southern Appalachians have more wildflower species than anywhere in North America</span></div>
-  <div class="hl-item"><span class="hl-icon">🍂</span><span>Fall Foliage — Mid-October color rivals any destination in North America — reds, golds, and amber in every direction</span></div>
-  <div class="hl-item"><span class="hl-icon">⚡</span><span>Synchronous Fireflies — A rare late-May spectacle where hundreds of fireflies flash in perfect unison</span></div>
-  <div class="hl-item"><span class="hl-icon">🏛️</span><span>Cades Cove — A historic valley with preserved 19th-century homesteads, mills, and some of the best wildlife viewing</span></div>
-  <div class="hl-item"><span class="hl-icon">🌄</span><span>Clingmans Dome — The highest point in the Smokies at 6,643 ft — a 360° view above the clouds</span></div>
-</div>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Quick Facts</h2>
-<table class="facts-table"><tbody>
-<tr><th>Location</th><td>Tennessee & North Carolina</td></tr>
-<tr><th>Annual Visitors</th><td>~12 million (most visited US national park)</td></tr>
-<tr><th>Established</th><td>1934</td></tr>
-<tr><th>Highest Point</th><td>Clingmans Dome — 6,643 ft</td></tr>
-<tr><th>Entry</th><td>Free — no entry fee</td></tr>
-<tr><th>Notable Towns</th><td>Gatlinburg, Pigeon Forge, Cherokee</td></tr>
-</tbody></table>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Why Great Smoky Mountains?</h2>
-<ul class="why-list">
-  <li class="why-item">America's most-visited national park — beloved for good reason: accessible, spectacular, and free to enter</li>
-  <li class="why-item">More tree species than all of northern Europe combined — an ancient biodiversity hotspot</li>
-  <li class="why-item">Ideal family destination — easy trails, wildlife sightings, kid-friendly towns, and cabin rentals for all budgets</li>
-  <li class="why-item">Spring wildflowers and synchronous fireflies rank among the most extraordinary natural events in North America</li>
-  <li class="why-item">Combines perfectly with Asheville, NC — one of the South's most vibrant arts, food, and music cities</li>
-  <li class="why-item">Year-round magic — no season disappoints. Winter snowscapes and frosty ridges are genuinely spectacular</li>
-</ul>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Your 5-Day Itinerary</h2>
-<div class="itin-grid">
-<div class="itin-day">
-  <div class="itin-day-num">Day 1</div>
-  <div class="itin-day-content">
-    <h3>Arrive Gatlinburg & Cades Cove</h3>
-    <ul><li>Arrive in Gatlinburg — the park's classic gateway town</li>
-      <li>Cades Cove loop road (11-mile drive) — best wildlife viewing in the park: bears, deer, elk at dawn or dusk</li>
-      <li>Abrams Falls Trail — 5-mile round trip to a stunning 20-foot waterfall</li>
-      <li>Dinner in Gatlinburg — browse the strip and find a moonshine tasting room</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 2</div>
-  <div class="itin-day-content">
-    <h3>Laurel Falls & Chimney Tops</h3>
-    <ul><li>Laurel Falls Trail — most popular in the park: paved 2.6-mile round trip to a two-tiered waterfall</li>
-      <li>Chimney Tops Picnic Area for lunch with great valley views</li>
-      <li>Roaring Fork Motor Nature Trail — one-lane loop through old-growth forest and historic cabins</li>
-      <li>Sunset at Newfound Gap Overlook — the park's most dramatic viewpoint</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 3</div>
-  <div class="itin-day-content">
-    <h3>Clingmans Dome & Deep Creek</h3>
-    <ul><li>Clingmans Dome early morning — drive to the top, walk the half-mile ramp to the observation tower at 6,643 ft</li>
-      <li>Alum Cave Trail — geological wonderland with unique cave-like rock formations</li>
-      <li>Cherokee, NC side of the park — Museum of the Cherokee Indian and Oconaluftee Village</li>
-      <li>Deep Creek area — three waterfalls in a 4-mile easy loop</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 4</div>
-  <div class="itin-day-content">
-    <h3>Cataloochee & Elk</h3>
-    <ul><li>Cataloochee Valley — see the reintroduced elk herd (60+ animals) at dawn or dusk</li>
-      <li>Self-guided historic buildings tour in Cataloochee</li>
-      <li>Afternoon at leisure — cabin porch time or second wildlife drive at Cades Cove</li>
-      <li>Pigeon Forge: Dollywood if traveling with kids</li></ul>
-  </div>
-</div>
-<div class="itin-day">
-  <div class="itin-day-num">Day 5</div>
-  <div class="itin-day-content">
-    <h3>Mountain Farm Museum & Departure</h3>
-    <ul><li>Oconaluftee Visitor Center and Mountain Farm Museum — living history log homestead</li>
-      <li>Mingus Mill — operating 19th-century grist mill powered by a water-driven turbine</li>
-      <li>Hike to Andrews Bald — one of two natural balds in the park with sweeping 360° views</li>
-      <li>Depart via Asheville, NC — one hour from the park</li></ul>
-  </div>
-</div>
-</div>
-</section>
-<section class="dest-section">
-<h2 class="section-title">Insider Travel Tips</h2>
-<div class="tips-grid">
-  <div class="tip-card"><span class="tip-icon">🚗</span><strong>Arrive Early or Late</strong><p>The park gets 12 million visitors a year — roads and parking can be brutal 10am–4pm. Rise early or plan hikes that start before 8am</p></div>
-  <div class="tip-card"><span class="tip-icon">🐻</span><strong>Bear Safety</strong><p>Bears are common and habituated to humans. Never approach, never feed, always store food in bear boxes or your trunk. Keep 50 yards of distance</p></div>
-  <div class="tip-card"><span class="tip-icon">⛺</span><strong>Book Camping Months Out</strong><p>Elkmont, Cades Cove, and Smokemont campgrounds book out 6 months in advance for peak spring and fall weekends. Plan early</p></div>
-  <div class="tip-card"><span class="tip-icon">🌸</span><strong>Check Wildflower Hotline</strong><p>The park runs a Wildflower Pilgrimage in late April — one of the best events in Appalachia. Visit smokymountains.org for bloom timing</p></div>
-</div>
-</section>
-<section class="dest-section">
-<h2 class="section-title">When to Visit</h2>
-<div class="seasons-grid">
-  <div class="season-card"><span class="season-icon">🌸</span><strong>Spring (Apr–Jun)</strong><p>Wildflowers peak mid-April through May. Synchronous fireflies in late May/early June — lottery required for the viewing area</p></div>
-  <div class="season-card"><span class="season-icon">☀️</span><strong>Summer (Jul–Aug)</strong><p>School groups and peak crowds. Hot in the valleys but cool at elevation. Excellent hiking if you start early</p></div>
-  <div class="season-card"><span class="season-icon">🍂</span><strong>Fall (Sep–Oct)</strong><p>The most beautiful season — peak foliage typically October 10–25. Busiest time of year; book accommodations 6 months out</p></div>
-  <div class="season-card"><span class="season-icon">❄️</span><strong>Winter (Nov–Mar)</strong><p>Peaceful, uncrowded, and sometimes spectacular with snow on the ridges. Many facilities close but main roads and trails stay open</p></div>
-</div>
-</section>
-<div class="dest-cta">
-<h2>Ready to Plan Your Great Smoky Mountains Journey?</h2>
-<p>Let Jay and Elizabeth Nichols craft your perfect itinerary, from hidden gems to iconic moments.</p>
-<a href="../plan-my-trip.html" class="btn-cta">Start Planning Your Trip</a>
-<a href="../destinations.html" class="back-link">&larr; Back to All Destinations</a>
-</div>
-<!-- RICH CONTENT END -->
 </main>
 <footer>
   <p>© 2026 Destinara Travel — Jay &amp; Elizabeth Nichols — Greensboro, NC</p>
