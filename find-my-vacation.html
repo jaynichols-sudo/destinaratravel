@@ -834,6 +834,7 @@ const loadingMessages = [
 ];
 let msgIdx = 0, msgInterval;
 function runEstimate() {
+  if(typeof gtag==="function"){gtag("event","estimate_completed",{tool:"find_my_vacation"});}
 const destination = document.getElementById('destination').value.trim();
     const departDate = document.getElementById('departDate').value;const returnDate = document.getElementById('returnDate').value;
 let duration = '7 days';
@@ -1162,6 +1163,7 @@ function dismissToast() {
 }
 
 function estimateFromWidget() {
+  if(typeof gtag==="function"){gtag("event","estimate_completed",{tool:"find_my_vacation"});}
   dismissToast();
   if (_widgetContext) {
     const interestsEl = document.getElementById('notes');
