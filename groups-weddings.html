@@ -896,7 +896,7 @@ function closeMobile() {
 
 // CURSOR GLOW
 const glow = document.getElementById('cursorGlow');
-if (window.innerWidth > 768) {
+if (glow && window.innerWidth > 768) {
   document.addEventListener('mousemove', e => {
     glow.style.left = e.clientX + 'px';
     glow.style.top = e.clientY + 'px';
