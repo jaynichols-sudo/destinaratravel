@@ -476,4 +476,46 @@
           <changefreq>monthly</changefreq>
           <priority>0.6</priority>
     </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/amalfi-coast-guide.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/charleston-sc-guide.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/costa-rica-adventure.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/mardi-gras-new-orleans.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/santorini-guide.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/blog/your-first-african-safari.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://destinaratravel.com/find-my-vacation.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+    </url>
 </urlset>
