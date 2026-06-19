@@ -429,12 +429,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://destinaratravel.com/trip-estimator.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://destinaratravel.com/blog/alaska-cruise-guide.html</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -525,4 +519,10 @@
   <url><loc>https://destinaratravel.com/consultation.html</loc><lastmod>2026-06-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://destinaratravel.com/reviews.html</loc><lastmod>2026-06-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://destinaratravel.com/gallery.html</loc><lastmod>2026-06-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url>
+          <loc>https://destinaratravel.com/gift-cards.html</loc>
+          <lastmod>2026-06-19</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
 </urlset>
