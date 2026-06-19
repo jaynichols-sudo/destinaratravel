@@ -1,0 +1,27 @@
+name: Site Update v2
+
+# Run manually from the Actions tab → "Site Update v2" → "Run workflow".
+# Adds gift cards page, FlexPay financing, WhatsApp bubble, favicon, and QA fixes.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  site-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Run site updater
+        run: python3 .github/scripts/site_update_v2.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add gift cards, FlexPay financing, WhatsApp bubble + QA fixes" || echo "Nothing to commit"
+          git push
