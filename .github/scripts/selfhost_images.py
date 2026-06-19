@@ -12,6 +12,7 @@ which then commits the downloaded images + rewritten HTML in a single commit.
 """
 import re, os, glob, hashlib, urllib.request, html
 
+SITE = 'https://destinaratravel.com'
 os.makedirs('assets/img', exist_ok=True)
 files = glob.glob('**/*.html', recursive=True)
 
@@ -49,12 +50,18 @@ rewritten = 0
 for f in files:
     s = open(f, encoding='utf-8').read()
     original = s
-    for u, local in mapping.items():
-        s = s.replace(u, local)
+    # Replace LONGEST URLs first so a shorter URL that is a prefix of a longer
+    # one can never corrupt the longer reference (e.g. leaving "&q=80" dangling).
+    for u in sorted(mapping, key=len, reverse=True):
+        s = s.replace(u, mapping[u])
+    # Social-meta and JSON-LD image fields must be ABSOLUTE URLs, not relative
+    # paths, or scrapers (Facebook/Twitter/iMessage) and search engines reject them.
+    s = s.replace('content="/assets/img/', f'content="{SITE}/assets/img/')
+    s = s.replace('"image":"/assets/img/', f'"image":"{SITE}/assets/img/')
     if s != original:
         open(f, 'w', encoding='utf-8').write(s)
         rewritten += 1
 
 print(f'HTML files rewritten: {rewritten}')
-print(f'Images downloaded into assets/img/ : {len(mapping)} mapped')
+print(f'Images mapped: {len(mapping)}')
 print('Done. The site now serves images from your own repo, not Unsplash.')
