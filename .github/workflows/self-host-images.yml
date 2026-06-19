@@ -1,0 +1,28 @@
+name: Self-host images
+
+# Run manually from the Actions tab → "Self-host images" → "Run workflow".
+# Downloads every Unsplash image the site uses into assets/img/, rewrites the
+# HTML to point at those local copies, and commits the result in one step.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  self-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Download Unsplash images and repoint HTML
+        run: python3 .github/scripts/selfhost_images.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Self-host Unsplash images (download + repoint)" || echo "Nothing to commit"
+          git push
