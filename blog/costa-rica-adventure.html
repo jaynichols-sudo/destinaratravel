@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Costa Rica Adventure Travel Guide | Destinara Travel</title>
@@ -128,12 +131,20 @@
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
 </style>
+<style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Costa Rica Adventure Travel Guide", "description": "Cloud forests, active volcanoes, sea turtle nesting beaches — our Costa Rica adventure guide covers the best wildlife, zip-lining, and eco-lodge experiences.", "image": "https://images.unsplash.com/photo-1698871741610-11e817f934e3?auto=format&fit=crop&w=1600&q=80", "author": {"@type": "Organization", "name": "Destinara Travel", "url": "https://destinaratravel.com"}, "publisher": {"@type": "Organization", "name": "Destinara Travel", "logo": {"@type": "ImageObject", "url": "https://destinaratravel.com/destinara-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://destinaratravel.com/blog/costa-rica-adventure.html"}, "inLanguage": "en-US"}</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 
 <nav class="main-nav" id="mainNav">
   <a href="../index.html" class="nav-logo">
-    <img src="../destinara-logo.png" alt="Destinara Travel" />
+    <img src="../destinara-logo.png" alt="Destinara Travel" / decoding="async" loading="lazy">
     <span>Destinara Travel</span>
   </a>
   <ul class="nav-links">
@@ -268,7 +279,7 @@
   </article>
 </main>
 
-<section class="cta-band">
+<section id="main-content" class="cta-band">
   <h2>Ready to Experience Pura Vida?</h2>
   <p>Our advisors can design the perfect Costa Rica itinerary — from wildlife lodges in Corcovado to surfing on the Pacific coast.</p>
   <a href="../find-my-vacation.html">Start Planning</a>

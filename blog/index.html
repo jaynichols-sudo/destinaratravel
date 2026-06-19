@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="theme-color" content="#0D5C5C">
@@ -208,13 +211,20 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
   .nav-dropdown-item.open .nav-dropdown{display:block}
 }
 </style>
+<style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
 </head>
   <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 
     <nav id="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -273,14 +283,14 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
     <p>Destination guides, packing tips, travel trends, and luxury journey ideas from Jay &amp; Elizabeth Nichols.</p>
   </header>
   
-  <section class="blog-grid-section">
+  <section id="main-content" class="blog-grid-section">
     <div class="container">
         <div class="section-label">Latest Articles</div>
         <h2 class="section-title">Stories from the Road</h2>
         <div class="blog-grid" id="blogGridTop">
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80" alt="Cruise ship sailing the Mediterranean at sunset" loading="eager">
+            <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80" alt="Cruise ship sailing the Mediterranean at sunset" loading="eager" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Cruise Guide</div>
@@ -298,7 +308,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         </article>
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80" alt="Colorful Amalfi Coast village above turquoise water" loading="eager">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80" alt="Colorful Amalfi Coast village above turquoise water" loading="eager" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Summer 2026</div>
@@ -319,7 +329,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 1: Europe Summer 2026 - NEW -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" alt="Elephants crossing the savanna during an African safari at golden hour" loading="eager">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" alt="Elephants crossing the savanna during an African safari at golden hour" loading="eager" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Safari</div>
@@ -339,7 +349,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 2: Summer Cruise Tips 2026 - NEW -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80" alt="Luxury cruise ship sailing at sunset on calm turquoise Mediterranean waters" loading="eager">
+            <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80" alt="Luxury cruise ship sailing at sunset on calm turquoise Mediterranean waters" loading="eager" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Cruise Travel</div>
@@ -359,7 +369,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 1: Honeymoon Destinations -->
       <article class="blog-card">
         <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Overwater bungalows at a tropical resort for honeymooners" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Overwater bungalows at a tropical resort for honeymooners" loading="lazy" decoding="async">
         </div>
         <div class="blog-card-body">
           <div class="blog-category">Romance &amp; Honeymoons</div>
@@ -379,7 +389,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
       <!-- Article 2: River vs Ocean Cruises -->
       <article class="blog-card">
         <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1554254648-2d58a1bc3fd5?w=800&q=80" alt="Luxury cruise ship sailing at golden hour on calm ocean waters" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1554254648-2d58a1bc3fd5?w=800&q=80" alt="Luxury cruise ship sailing at golden hour on calm ocean waters" loading="lazy" decoding="async">
         </div>
         <div class="blog-card-body">
           <div class="blog-category">Cruise Travel</div>
@@ -399,7 +409,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
       <!-- Article 3: European Christmas Markets -->
       <article class="blog-card">
         <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1544212415-8e3d2a27a944?w=800&q=80" alt="Festive European Christmas market with glowing lights and stalls" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1544212415-8e3d2a27a944?w=800&q=80" alt="Festive European Christmas market with glowing lights and stalls" loading="lazy" decoding="async">
         </div>
         <div class="blog-card-body">
           <div class="blog-category">Seasonal Travel</div>
@@ -425,7 +435,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 4: Charleston SC -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1619892127776-08a763bfe34c?w=800&q=80" alt="Historic pastel row houses on Rainbow Row in Charleston, South Carolina" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1619892127776-08a763bfe34c?w=800&q=80" alt="Historic pastel row houses on Rainbow Row in Charleston, South Carolina" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Southeast Getaways</div>
@@ -445,7 +455,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 5: Mardi Gras -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1703145217874-47c91be335e0?w=800&q=80" alt="Colorful Mardi Gras parade floats and beads in New Orleans" loading="eager">
+            <img src="https://images.unsplash.com/photo-1703145217874-47c91be335e0?w=800&q=80" alt="Colorful Mardi Gras parade floats and beads in New Orleans" loading="eager" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Festivals &amp; Events</div>
@@ -465,7 +475,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 6: Santorini -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80" alt="White-washed buildings and blue domed churches overlooking the Aegean Sea in Santorini" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80" alt="White-washed buildings and blue domed churches overlooking the Aegean Sea in Santorini" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Destinations</div>
@@ -485,7 +495,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 7: Disney Cruise -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1511316695145-4992006ffddb?w=800&q=80" alt="Turquoise Caribbean waters and tropical coastline — a Disney Cruise destination" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1511316695145-4992006ffddb?w=800&q=80" alt="Turquoise Caribbean waters and tropical coastline — a Disney Cruise destination" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Family Travel</div>
@@ -505,7 +515,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 8: Alaska Cruise -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=800&q=80" alt="Dramatic Alaskan mountain wilderness with glacial river and dense pine forest" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=800&q=80" alt="Dramatic Alaskan mountain wilderness with glacial river and dense pine forest" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Cruise Travel</div>
@@ -525,7 +535,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 9: Japan Cherry Blossoms -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Stunning tunnel of cherry blossom trees illuminated at night over a Japanese canal" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Stunning tunnel of cherry blossom trees illuminated at night over a Japanese canal" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Destinations</div>
@@ -545,7 +555,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 10: Costa Rica -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1698871741610-11e817f934e3?w=800&q=80" alt="Lush Costa Rica rainforest with misty waterfalls and tropical wildlife" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1698871741610-11e817f934e3?w=800&q=80" alt="Lush Costa Rica rainforest with misty waterfalls and tropical wildlife" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Adventure Travel</div>
@@ -565,7 +575,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 11: Amalfi Coast -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1583844056361-4418a8f2a985?w=800&q=80" alt="Colorful cliffside villages and azure waters along the Amalfi Coast, Italy" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1583844056361-4418a8f2a985?w=800&q=80" alt="Colorful cliffside villages and azure waters along the Amalfi Coast, Italy" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Destinations</div>
@@ -585,7 +595,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
         <!-- Article 12: Travel Insurance -->
         <article class="blog-card">
           <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=800&q=80" alt="Traveler reviewing travel insurance documents before a trip" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=800&q=80" alt="Traveler reviewing travel insurance documents before a trip" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-body">
             <div class="blog-category">Travel Tips</div>

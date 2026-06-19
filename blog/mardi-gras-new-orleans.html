@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0D5C5C">
@@ -80,12 +83,20 @@
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
 </style>
+<style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Mardi Gras in New Orleans: Do It Right", "description": "Mardi Gras in New Orleans is the greatest free show on earth. Jay Nichols shares the best parades, neighborhoods, and food — and how to do it right.", "image": "https://images.unsplash.com/photo-1703145217874-47c91be335e0?w=1400&q=80", "author": {"@type": "Organization", "name": "Destinara Travel", "url": "https://destinaratravel.com"}, "publisher": {"@type": "Organization", "name": "Destinara Travel", "logo": {"@type": "ImageObject", "url": "https://destinaratravel.com/destinara-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://destinaratravel.com/blog/mardi-gras-new-orleans.html"}, "inLanguage": "en-US"}</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <nav id="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40">
+      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" decoding="async" loading="lazy">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -235,7 +246,7 @@
 </article>
 </main>
 
-<section class="cta-band">
+<section id="main-content" class="cta-band">
   <div style="max-width:600px;margin:0 auto">
     <h2>Ready to Experience Mardi Gras?</h2>
     <p>Let Jay &amp; Elizabeth handle every detail — hotel, restaurant reservations, parade strategy, and all the local knowledge that makes the difference between a great trip and a frustrating one.</p>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0D5C5C">
@@ -81,12 +84,20 @@
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
 </style>
+<style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Charleston, SC: The South's Most Charming City", "description": "Charleston, SC is one of America's most charming luxury getaways. Elizabeth Nichols shares the best neighborhoods, restaurants, hotels, and hidden gems.", "image": "https://images.unsplash.com/photo-1619892127776-08a763bfe34c?w=1400&q=80", "author": {"@type": "Organization", "name": "Destinara Travel", "url": "https://destinaratravel.com"}, "publisher": {"@type": "Organization", "name": "Destinara Travel", "logo": {"@type": "ImageObject", "url": "https://destinaratravel.com/destinara-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://destinaratravel.com/blog/charleston-sc-guide.html"}, "inLanguage": "en-US"}</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <nav id="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40">
+      <img src="../destinara-logo.png" alt="Destinara" width="40" height="40" decoding="async" loading="lazy">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -236,7 +247,7 @@
 </article>
 </main>
 
-<section class="cta-band">
+<section id="main-content" class="cta-band">
   <div style="max-width:600px;margin:0 auto">
     <h2>Ready to Experience Charleston?</h2>
     <p>Let Jay &amp; Elizabeth plan every detail — from the perfect hotel to dinner reservations at the best tables in the city.</p>
