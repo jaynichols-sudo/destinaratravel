@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -188,14 +191,19 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
           }
-</style><style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style></head>
+</style><style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style><style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+</head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:9999;padding:1rem;background:var(--color-primary);color:#fff;text-decoration:none;border-radius:0 0 8px 0">Skip to main content</a>
 
 <nav id="nav">
   <div class="nav-inner">
     <a href="./index.html" class="nav-logo">
-      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -373,7 +381,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
           </div>
         </div>
         <div>
-          <img src="jay-nichols.jpg" alt="Jay and Elizabeth Nichols, co-founders of Destinara Travel" style="width:100%;border-radius:20px;object-fit:cover;max-height:500px" loading="lazy">
+          <img src="jay-nichols.jpg" alt="Jay and Elizabeth Nichols, co-founders of Destinara Travel" style="width:100%;border-radius:20px;object-fit:cover;max-height:500px" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -387,7 +395,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
       <p class="section-subtitle">With decades of combined experience and a genuine passion for travel, Jay and Elizabeth bring unmatched expertise and personal care to every client relationship.</p>
       <div class="team-grid">
         <div class="team-card">
-          <img src="elizabeth-nichols.jpg" alt="Elizabeth Nichols, Co-Founder and Travel Advisor at Destinara Travel" loading="lazy" width="400" height="320">
+          <img src="elizabeth-nichols.jpg" alt="Elizabeth Nichols, Co-Founder and Travel Advisor at Destinara Travel" loading="lazy" width="400" height="320" decoding="async">
           <div class="team-card-body">
             <h3>Elizabeth Nichols</h3>
             <div class="role">Co-Founder &amp; Travel Advisor</div>
@@ -396,7 +404,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
           </div>
         </div>
         <div class="team-card">
-          <img src="jay-nichols.jpg" alt="Jay Nichols, Co-Founder and Travel Advisor at Destinara Travel" loading="lazy" width="400" height="320">
+          <img src="jay-nichols.jpg" alt="Jay Nichols, Co-Founder and Travel Advisor at Destinara Travel" loading="lazy" width="400" height="320" decoding="async">
           <div class="team-card-body">
             <h3>Jay Nichols</h3>
             <div class="role">Co-Founder &amp; Travel Advisor</div>

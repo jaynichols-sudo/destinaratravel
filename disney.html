@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0D5C5C">
@@ -730,12 +733,19 @@ section{padding:100px 0}
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
           }
-</style><style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style></head>
+</style><style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style><style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+</head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <nav id="nav">
   <div class="nav-inner">
     <a href="./index.html" class="nav-logo">
-      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -775,6 +785,7 @@ section{padding:100px 0}
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <a href="./cruises.html" onclick="closeMobile()">Cruises</a>
   <a href="./vacations.html" onclick="closeMobile()">Vacations</a>
@@ -833,7 +844,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1707342617132-582a6bda20ff?w=800&q=80" alt="Disney Cruise Line ship sailing" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1707342617132-582a6bda20ff?w=800&q=80" alt="Disney Cruise Line ship sailing" loading="lazy" decoding="async">
     <span class="disney-card-badge">FLAGSHIP</span>
     </div>
     <div class="disney-card-content">
@@ -847,7 +858,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1707342614540-023ae9b375c6?w=800&q=80" alt="Disney Cruise Line funnel with the Mickey Mouse logo" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1707342614540-023ae9b375c6?w=800&q=80" alt="Disney Cruise Line funnel with the Mickey Mouse logo" loading="lazy" decoding="async">
     <span class="disney-card-badge">NEWEST</span>
     </div>
     <div class="disney-card-content">
@@ -861,7 +872,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1579467299604-55d903a6d06e?w=800&q=80" alt="The Disney Dream cruise ship" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1579467299604-55d903a6d06e?w=800&q=80" alt="The Disney Dream cruise ship" loading="lazy" decoding="async">
     <span class="disney-card-badge">CLASSIC</span>
     </div>
     <div class="disney-card-content">
@@ -875,7 +886,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="Castaway Cay island" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="Castaway Cay island" loading="lazy" decoding="async">
     <span class="disney-card-badge">PRIVATE ISLAND</span>
     </div>
     <div class="disney-card-content">
@@ -889,7 +900,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Caribbean cruise destination" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Caribbean cruise destination" loading="lazy" decoding="async">
     <span class="disney-card-badge">ITINERARIES</span>
     </div>
     <div class="disney-card-content">
@@ -903,7 +914,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600" alt="Disney cruise dining" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600" alt="Disney cruise dining" loading="lazy" decoding="async">
     <span class="disney-card-badge">ONBOARD</span>
     </div>
     <div class="disney-card-content">
@@ -930,7 +941,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=600" alt="Magic Kingdom castle" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=600" alt="Magic Kingdom castle" loading="lazy" decoding="async">
     <span class="disney-card-badge">ICONIC</span>
     </div>
     <div class="disney-card-content">
@@ -944,7 +955,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1575285113814-f770cb8c796e?w=600" alt="EPCOT" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1575285113814-f770cb8c796e?w=600" alt="EPCOT" loading="lazy" decoding="async">
     <span class="disney-card-badge">INNOVATION</span>
     </div>
     <div class="disney-card-content">
@@ -958,7 +969,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=600" alt="Hollywood Studios" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=600" alt="Hollywood Studios" loading="lazy" decoding="async">
     <span class="disney-card-badge">THRILLS</span>
     </div>
     <div class="disney-card-content">
@@ -972,7 +983,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?w=600" alt="Animal Kingdom" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?w=600" alt="Animal Kingdom" loading="lazy" decoding="async">
     <span class="disney-card-badge">NATURE</span>
     </div>
     <div class="disney-card-content">
@@ -986,7 +997,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600" alt="Disney resort pool" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600" alt="Disney resort pool" loading="lazy" decoding="async">
     <span class="disney-card-badge">RESORTS</span>
     </div>
     <div class="disney-card-content">
@@ -1000,7 +1011,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1723524993962-0234edebe0cf?w=600" alt="Disney water park" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1723524993962-0234edebe0cf?w=600" alt="Disney water park" loading="lazy" decoding="async">
     <span class="disney-card-badge">WATER PARKS</span>
     </div>
     <div class="disney-card-content">
@@ -1027,7 +1038,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=600" alt="Disneyland Sleeping Beauty Castle" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=600" alt="Disneyland Sleeping Beauty Castle" loading="lazy" decoding="async">
     <span class="disney-card-badge">ORIGINAL</span>
     </div>
     <div class="disney-card-content">
@@ -1041,7 +1052,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?w=600" alt="Disney California Adventure" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?w=600" alt="Disney California Adventure" loading="lazy" decoding="async">
     <span class="disney-card-badge">ADVENTURE</span>
     </div>
     <div class="disney-card-content">
@@ -1055,7 +1066,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600" alt="Disneyland Resort hotel" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600" alt="Disneyland Resort hotel" loading="lazy" decoding="async">
     <span class="disney-card-badge">STAY</span>
     </div>
     <div class="disney-card-content">
@@ -1081,7 +1092,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600" alt="Tokyo Disneyland" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600" alt="Tokyo Disneyland" loading="lazy" decoding="async">
     <span class="disney-card-badge">JAPAN</span>
     </div>
     <div class="disney-card-content">
@@ -1095,7 +1106,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=600" alt="Disneyland Paris" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=600" alt="Disneyland Paris" loading="lazy" decoding="async">
     <span class="disney-card-badge">FRANCE</span>
     </div>
     <div class="disney-card-content">
@@ -1109,7 +1120,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=600" alt="Hong Kong Disneyland" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=600" alt="Hong Kong Disneyland" loading="lazy" decoding="async">
     <span class="disney-card-badge">ASIA</span>
     </div>
     <div class="disney-card-content">
@@ -1136,7 +1147,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1507876466758-bc54f384809c?w=600" alt="Aulani resort Hawaii" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1507876466758-bc54f384809c?w=600" alt="Aulani resort Hawaii" loading="lazy" decoding="async">
     <span class="disney-card-badge">RESORT</span>
     </div>
     <div class="disney-card-content">
@@ -1150,7 +1161,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600" alt="Hawaii ocean activities" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600" alt="Hawaii ocean activities" loading="lazy" decoding="async">
     <span class="disney-card-badge">EXPERIENCES</span>
     </div>
     <div class="disney-card-content">
@@ -1164,7 +1175,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600" alt="Hawaii family vacation" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600" alt="Hawaii family vacation" loading="lazy" decoding="async">
     <span class="disney-card-badge">DVC</span>
     </div>
     <div class="disney-card-content">
@@ -1190,7 +1201,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600" alt="Italy guided tour" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600" alt="Italy guided tour" loading="lazy" decoding="async">
     <span class="disney-card-badge">EUROPE</span>
     </div>
     <div class="disney-card-content">
@@ -1204,7 +1215,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600" alt="African safari adventure" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600" alt="African safari adventure" loading="lazy" decoding="async">
     <span class="disney-card-badge">AFRICA & ASIA</span>
     </div>
     <div class="disney-card-content">
@@ -1218,7 +1229,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1502920514313-52581002a659?w=600" alt="Disney river cruise" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1502920514313-52581002a659?w=600" alt="Disney river cruise" loading="lazy" decoding="async">
     <span class="disney-card-badge">RIVER CRUISE</span>
     </div>
     <div class="disney-card-content">
@@ -1244,7 +1255,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600" alt="Disney vacation club resort" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600" alt="Disney vacation club resort" loading="lazy" decoding="async">
     <span class="disney-card-badge">DVC</span>
     </div>
     <div class="disney-card-content">
@@ -1258,7 +1269,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" alt="DVC vacation planning" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" alt="DVC vacation planning" loading="lazy" decoding="async">
     <span class="disney-card-badge">OWNERSHIP</span>
     </div>
     <div class="disney-card-content">
@@ -1272,7 +1283,7 @@ section{padding:100px 0}
 
     <div class="disney-card">
     <div class="disney-card-img">
-    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600" alt="DVC rental" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600" alt="DVC rental" loading="lazy" decoding="async">
     <span class="disney-card-badge">RENTALS</span>
     </div>
     <div class="disney-card-content">

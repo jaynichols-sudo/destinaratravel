@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plan My Trip &amp; Budget | Destinara Travel</title>
@@ -214,14 +217,19 @@ footer a{color:var(--color-accent);text-decoration:none;}
 .mobile-dest-region a{display:block;color:rgba(255,255,255,0.8);font-size:13px;padding:3px 0;text-decoration:none}
 .mobile-dest-region a:hover{color:#fff}
 </style>
-<style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style></head>
+<style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style><style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+</head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav id="nav">
   <div class="nav-inner">
     <a href="./index.html" class="nav-logo">
-      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">

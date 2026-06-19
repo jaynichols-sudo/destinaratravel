@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0D5C5C">
@@ -686,12 +689,19 @@ section{padding:100px 0}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is booking with Destinara different from booking online?","acceptedAnswer":{"@type":"Answer","text":"When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities."}},{"@type":"Question","name":"Do you charge a fee for your services?","acceptedAnswer":{"@type":"Answer","text":"Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost."}},{"@type":"Question","name":"Can I still earn hotel loyalty points when booking through you?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits."}},{"@type":"Question","name":"How far in advance should I book my trip?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking 6-12 months in advance for peak-season destinations, cruises, and popular resort stays."}},{"@type":"Question","name":"Do you offer travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage."}}]}
 </script>
-<style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style></head>
+<style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style><style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+</head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <nav id="nav">
   <div class="nav-inner">
     <a href="./index.html" class="nav-logo">
-      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -843,7 +853,7 @@ section{padding:100px 0}
 </div>
 
 
-<section class="page-hero" style="background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);padding:120px 0 60px;text-align:center">
+<section id="main-content" class="page-hero" style="background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);padding:120px 0 60px;text-align:center">
 <div class="container">
 <p class="section-label" style="color:var(--color-accent)">🌎 Dream Destinations Worldwide</p>
 <h1 style="font-family:var(--font-display);font-size:2.8rem;color:var(--color-white);margin:10px 0">Our Destinations</h1>
@@ -950,19 +960,19 @@ section{padding:100px 0}
 </div>
 <div class="dest-cards reveal-right">
 <div id="caribbean" class="dest-card" data-dest="Caribbean" onclick="window.location='destinations/caribbean-islands.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
-<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80" alt="Caribbean" loading="lazy"></div>
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=80" alt="Caribbean" loading="lazy" decoding="async"></div>
 <div><h4>Caribbean Islands</h4><p>Crystal waters & white sand beaches</p><span class="tag">Popular</span></div>
 </div>
 <div class="dest-card" data-dest="Mediterranean" onclick="window.location='destinations/santorini-greece.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
-<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=200&q=80" alt="Mediterranean" loading="lazy"></div>
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=200&q=80" alt="Mediterranean" loading="lazy" decoding="async"></div>
 <div><h4>Mediterranean</h4><p>Ancient history meets coastal charm</p><span class="tag">Cruise</span></div>
 </div>
 <div class="dest-card" data-dest="Southeast Asia" onclick="window.location='destinations/thailand.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
-<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=80" alt="Southeast Asia" loading="lazy"></div>
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=80" alt="Southeast Asia" loading="lazy" decoding="async"></div>
 <div><h4>Southeast Asia</h4><p>Temples, beaches & vibrant culture</p><span class="tag">Adventure</span></div>
 </div>
 <div id="alaska" class="dest-card" data-dest="Alaska" onclick="window.location='destinations/alaska.html'" style="cursor:pointer" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
-<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=200&q=80" alt="Alaska" loading="lazy"></div>
+<div class="dest-card-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=200&q=80" alt="Alaska" loading="lazy" decoding="async"></div>
 <div><h4>Alaska</h4><p>Glaciers, wildlife & wilderness</p><span class="tag">Expedition</span></div>
 </div>
 </div>
@@ -997,19 +1007,19 @@ section{padding:100px 0}
             <div class="se-category-label">Coastal Escapes</div>
             <div class="se-grid">
               <a href="destinations/charleston-sc.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1588007129936-5b7754628cd3?w=600&q=80" alt="Rainbow Row historic pastel houses Charleston SC" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1588007129936-5b7754628cd3?w=600&q=80" alt="Rainbow Row historic pastel houses Charleston SC" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Charleston, SC</div><div class="se-card-tag">Rainbow Row, cobblestone streets &amp; Lowcountry cuisine</div></div>
               </a>
               <a href="destinations/hilton-head-sc.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Hilton Head SC pristine Atlantic beach" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Hilton Head SC pristine Atlantic beach" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Hilton Head, SC</div><div class="se-card-tag">World-class golf, pristine Atlantic beaches &amp; scenic bike paths</div></div>
               </a>
               <a href="destinations/outer-banks-nc.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1629729025310-765af060ab9e?w=600&q=80" alt="Cape Hatteras Lighthouse Outer Banks North Carolina" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1629729025310-765af060ab9e?w=600&q=80" alt="Cape Hatteras Lighthouse Outer Banks North Carolina" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Outer Banks, NC</div><div class="se-card-tag">Wild barrier islands, Cape Hatteras Lighthouse &amp; Wright Brothers history</div></div>
               </a>
               <a href="destinations/savannah-ga.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1667869373373-2237060cb446?w=600&q=80" alt="Forsyth Park fountain and Spanish moss Savannah Georgia" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1667869373373-2237060cb446?w=600&q=80" alt="Forsyth Park fountain and Spanish moss Savannah Georgia" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Savannah, GA</div><div class="se-card-tag">Spanish moss, antebellum squares &amp; America's most walkable city</div></div>
               </a>
             </div>
@@ -1018,19 +1028,19 @@ section{padding:100px 0}
             <div class="se-category-label">Historic Cities &amp; Culture</div>
             <div class="se-grid">
               <a href="destinations/nashville-tn.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1674340480502-acf2fe1ef1d3?w=600&q=80" alt="Nashville Tennessee Broadway honky-tonk neon lights at night" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1674340480502-acf2fe1ef1d3?w=600&q=80" alt="Nashville Tennessee Broadway honky-tonk neon lights at night" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Nashville, TN</div><div class="se-card-tag">Live music capital, honky-tonks &amp; world-class hot chicken</div></div>
               </a>
               <a href="destinations/washington-dc.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=600&q=80" alt="Washington DC cherry blossoms Tidal Basin Washington Monument spring" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=600&q=80" alt="Washington DC cherry blossoms Tidal Basin Washington Monument spring" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Washington, D.C.</div><div class="se-card-tag">Free world-class museums, iconic monuments &amp; cherry blossoms</div></div>
               </a>
               <a href="destinations/new-york-city.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80" alt="New York City Manhattan skyline aerial view" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80" alt="New York City Manhattan skyline aerial view" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">New York City, NY</div><div class="se-card-tag">The city that never sleeps — culture, food &amp; iconic skyline</div></div>
               </a>
               <a href="destinations/asheville-nc.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1666387681397-0c98be7f9a1e?w=600&q=80" alt="Asheville NC downtown arts district buildings and street" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1666387681397-0c98be7f9a1e?w=600&q=80" alt="Asheville NC downtown arts district buildings and street" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Asheville, NC</div><div class="se-card-tag">Craft breweries, vibrant arts scene &amp; gateway to the Blue Ridge</div></div>
               </a>
             </div>
@@ -1039,11 +1049,11 @@ section{padding:100px 0}
             <div class="se-category-label">Mountain Retreats</div>
             <div class="se-grid">
               <a href="destinations/smoky-mountains.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80" alt="Great Smoky Mountains misty forest morning Tennessee" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80" alt="Great Smoky Mountains misty forest morning Tennessee" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Smoky Mountains, TN/NC</div><div class="se-card-tag">America's most-visited national park — waterfalls, wildlife &amp; fall color</div></div>
               </a>
               <a href="destinations/blue-ridge-parkway.html" class="se-card">
-                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1573144793527-bf872f679c18?w=600&q=80" alt="Blue Ridge Parkway autumn foliage mountain road overlook" loading="lazy"></div>
+                <div class="se-card-img-wrap"><img src="https://images.unsplash.com/photo-1573144793527-bf872f679c18?w=600&q=80" alt="Blue Ridge Parkway autumn foliage mountain road overlook" loading="lazy" decoding="async"></div>
                 <div class="se-card-body"><div class="se-card-name">Blue Ridge Parkway, VA/NC</div><div class="se-card-tag">469 miles of breathtaking mountain scenery &amp; blazing fall foliage</div></div>
               </a>
             </div>
@@ -1060,35 +1070,35 @@ section{padding:100px 0}
         <p class="section-subtitle reveal">Experience the magic of the holidays at Europe's most enchanting Christmas markets</p>
         <div class="browse-dest-grid reveal">
           <a href="destinations/brussels-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=400&q=80" alt="Brussels Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=400&q=80" alt="Brussels Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Brussels Christmas Market</div>
           </a>
           <a href="destinations/budapest-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1541343672885-9be56236302a?w=400&q=80" alt="Budapest Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1541343672885-9be56236302a?w=400&q=80" alt="Budapest Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Budapest Christmas Market</div>
           </a>
           <a href="destinations/cologne-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=400&q=80" alt="Cologne Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=400&q=80" alt="Cologne Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Cologne Christmas Market</div>
           </a>
           <a href="destinations/nuremberg-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=400&q=80" alt="Nuremberg Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?w=400&q=80" alt="Nuremberg Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Nuremberg Christmas Market</div>
           </a>
           <a href="destinations/prague-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1513805959324-96eb66ca8713?w=400&q=80" alt="Prague Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1513805959324-96eb66ca8713?w=400&q=80" alt="Prague Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Prague Christmas Market</div>
           </a>
           <a href="destinations/salzburg-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=400&q=80" alt="Salzburg Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=400&q=80" alt="Salzburg Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Salzburg Christmas Market</div>
           </a>
           <a href="destinations/strasbourg-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=400&q=80" alt="Strasbourg Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=400&q=80" alt="Strasbourg Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Strasbourg Christmas Market</div>
           </a>
           <a href="destinations/vienna-christmas-market.html" class="browse-dest-card">
-            <img src="https://images.unsplash.com/photo-1609856878074-cf31e21ccb6b?w=400&q=80" alt="Vienna Christmas Market" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1609856878074-cf31e21ccb6b?w=400&q=80" alt="Vienna Christmas Market" loading="lazy" decoding="async">
             <div class="browse-dest-name">Vienna Christmas Market</div>
           </a>
         </div>
@@ -1251,7 +1261,7 @@ section{padding:100px 0}
 <div class="why-grid">
 <div class="why-visual reveal-left">
 <div class="why-img">
-<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel Planning" loading="lazy">
+<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel Planning" loading="lazy" decoding="async">
 </div>
 <div class="why-float-card card-1">
 <div class="num">20+</div>

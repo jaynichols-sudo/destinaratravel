@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
@@ -826,6 +830,11 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is booking with Destinara different from booking online?","acceptedAnswer":{"@type":"Answer","text":"When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities."}},{"@type":"Question","name":"Do you charge a fee for your services?","acceptedAnswer":{"@type":"Answer","text":"Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost."}},{"@type":"Question","name":"Can I still earn hotel loyalty points when booking through you?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits."}},{"@type":"Question","name":"How far in advance should I book my trip?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking 6-12 months in advance for peak-season destinations, cruises, and popular resort stays."}},{"@type":"Question","name":"Do you offer travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage."}}]}
 </script>
+<style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -835,7 +844,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <!-- PAGE LOADER -->
 <div class="page-loader" id="pageLoader">
 <div class="loader-content">
-<img loading="eager" src="destinara-logo.png" alt="Destinara" style="height:120px;width:auto;margin-bottom:20px;">
+<img loading="eager" src="destinara-logo.png" alt="Destinara" style="height:120px;width:auto;margin-bottom:20px;" decoding="async">
 <div class="loader-logo">DESTINARA</div>
 <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
@@ -845,7 +854,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <nav id="nav">
   <div class="nav-inner">
     <a href="./index.html" class="nav-logo">
-      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -916,15 +925,15 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
     <section class="hero" id="hero">
 <div class="hero-bg">
 <div class="hero-bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1719607526486-96f27a995fcc?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1528732533941-ffd7083d5dfe?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1543385426-191664295b58?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1525635569544-610f9540664a?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1738762932370-468a90e0ff68?w=1920&q=80')"></div>
-<div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1610878180933-123728745d22?w=1920&q=80')"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1719607526486-96f27a995fcc?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1528732533941-ffd7083d5dfe?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1543385426-191664295b58?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1525635569544-610f9540664a?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1738762932370-468a90e0ff68?w=1920&q=80"></div>
+<div class="hero-bg-slide" data-bg="https://images.unsplash.com/photo-1610878180933-123728745d22?w=1920&q=80"></div>
 </div>
 <div class="hero-overlay"></div>
 <div class="hero-particles" id="heroParticles"></div>
@@ -1042,7 +1051,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <div class="services-grid">
 <div class="service-card reveal" style="transition-delay:0.1s">
 <div class="service-card-img">
-<img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&q=80" alt="Luxury Cruise" loading="lazy">
+<img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&q=80" alt="Luxury Cruise" loading="lazy" decoding="async">
 </div>
 <div class="service-card-body">
 <div class="service-card-icon">
@@ -1055,7 +1064,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 </div>
 <div class="service-card reveal" style="transition-delay:0.2s">
 <div class="service-card-img">
-<img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80" alt="Hotels and Resorts" loading="lazy">
+<img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80" alt="Hotels and Resorts" loading="lazy" decoding="async">
 </div>
 <div class="service-card-body">
 <div class="service-card-icon">
@@ -1068,7 +1077,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 </div>
 <div class="service-card reveal" style="transition-delay:0.3s">
 <div class="service-card-img">
-<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Group Travel" loading="lazy">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Group Travel" loading="lazy" decoding="async">
 </div>
 <div class="service-card-body">
 <div class="service-card-icon">
@@ -1127,56 +1136,56 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <button class="dest-tab" data-continent="middle-east">Middle East</button>
 </div>
 <div class="dest-cards-grid dest-content-panel active" data-panel="americas">
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Caribbean Islands"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&h=400&fit=crop" alt="Caribbean Islands"><div class="dest-exp-overlay"><h3>Caribbean Islands</h3><p>Crystal waters &amp; white sand beaches</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Alaska"><img loading="lazy" src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=600&h=400&fit=crop" alt="Alaska"><div class="dest-exp-overlay"><h3>Alaska</h3><p>Glaciers, wildlife &amp; wilderness</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Hawaii"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop" alt="Hawaii"><div class="dest-exp-overlay"><h3>Hawaii</h3><p>Tropical paradise &amp; volcanic beauty</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Costa Rica"><img loading="lazy" src="https://images.unsplash.com/photo-1611222566512-cb8dd8e689e5?w=600&h=400&fit=crop" alt="Costa Rica"><div class="dest-exp-overlay"><h3>Costa Rica</h3><p>Rainforests, volcanoes &amp; beaches</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Mexico"><img loading="lazy" src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=600&h=400&fit=crop" alt="Mexico"><div class="dest-exp-overlay"><h3>Mexico</h3><p>Ancient ruins, beaches &amp; cuisine</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Patagonia"><img loading="lazy" src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=400&fit=crop" alt="Patagonia"><div class="dest-exp-overlay"><h3>Patagonia</h3><p>Epic glaciers &amp; mountain trails</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Peru"><img loading="lazy" src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=600&h=400&fit=crop" alt="Peru"><div class="dest-exp-overlay"><h3>Peru</h3><p>Machu Picchu &amp; Andean wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="New York City"><img loading="lazy" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&h=400&fit=crop" alt="New York City"><div class="dest-exp-overlay"><h3>New York City</h3><p>The city that never sleeps</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Caribbean Islands"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&h=400&fit=crop" alt="Caribbean Islands" decoding="async"><div class="dest-exp-overlay"><h3>Caribbean Islands</h3><p>Crystal waters &amp; white sand beaches</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Alaska"><img loading="lazy" src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=600&h=400&fit=crop" alt="Alaska" decoding="async"><div class="dest-exp-overlay"><h3>Alaska</h3><p>Glaciers, wildlife &amp; wilderness</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Hawaii"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop" alt="Hawaii" decoding="async"><div class="dest-exp-overlay"><h3>Hawaii</h3><p>Tropical paradise &amp; volcanic beauty</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Costa Rica"><img loading="lazy" src="https://images.unsplash.com/photo-1611222566512-cb8dd8e689e5?w=600&h=400&fit=crop" alt="Costa Rica" decoding="async"><div class="dest-exp-overlay"><h3>Costa Rica</h3><p>Rainforests, volcanoes &amp; beaches</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Mexico"><img loading="lazy" src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=600&h=400&fit=crop" alt="Mexico" decoding="async"><div class="dest-exp-overlay"><h3>Mexico</h3><p>Ancient ruins, beaches &amp; cuisine</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Patagonia"><img loading="lazy" src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=400&fit=crop" alt="Patagonia" decoding="async"><div class="dest-exp-overlay"><h3>Patagonia</h3><p>Epic glaciers &amp; mountain trails</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Peru"><img loading="lazy" src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=600&h=400&fit=crop" alt="Peru" decoding="async"><div class="dest-exp-overlay"><h3>Peru</h3><p>Machu Picchu &amp; Andean wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="New York City"><img loading="lazy" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&h=400&fit=crop" alt="New York City" decoding="async"><div class="dest-exp-overlay"><h3>New York City</h3><p>The city that never sleeps</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="europe">
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Santorini, Greece"><img loading="lazy" src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&h=400&fit=crop" alt="Santorini, Greece"><div class="dest-exp-overlay"><h3>Santorini, Greece</h3><p>Iconic sunsets &amp; whitewashed villages</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Amalfi Coast, Italy"><img loading="lazy" src="https://images.unsplash.com/photo-1583844056361-4418a8f2a985?w=600&h=400&fit=crop" alt="Amalfi Coast, Italy"><div class="dest-exp-overlay"><h3>Amalfi Coast, Italy</h3><p>Cliffside villages &amp; Italian charm</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Paris, France"><img loading="lazy" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop" alt="Paris, France"><div class="dest-exp-overlay"><h3>Paris, France</h3><p>City of light, art &amp; gastronomy</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Rhine River, Germany"><img loading="lazy" src="https://images.unsplash.com/photo-1654612675707-99e37dc45e6b?w=600&h=400&fit=crop" alt="Rhine River, Germany"><div class="dest-exp-overlay"><h3>Rhine River, Germany</h3><p>Castles, vineyards &amp; river cruises</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="French Riviera"><img loading="lazy" src="https://images.unsplash.com/photo-1692022695030-81fb90d05928?w=600&h=400&fit=crop" alt="French Riviera"><div class="dest-exp-overlay"><h3>French Riviera</h3><p>Glamorous coastline &amp; azure waters</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Tuscany, Italy"><img loading="lazy" src="https://images.unsplash.com/photo-1759955392586-3ab03e4285ef?w=600&h=400&fit=crop" alt="Tuscany, Italy"><div class="dest-exp-overlay"><h3>Tuscany, Italy</h3><p>Rolling hills, wine &amp; renaissance art</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Iceland"><img loading="lazy" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&h=400&fit=crop" alt="Iceland"><div class="dest-exp-overlay"><h3>Iceland</h3><p>Northern lights &amp; otherworldly landscapes</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Barcelona, Spain"><img loading="lazy" src="https://images.unsplash.com/photo-1650964827770-421afa7960ac?w=600&h=400&fit=crop" alt="Barcelona, Spain"><div class="dest-exp-overlay"><h3>Barcelona, Spain</h3><p>Architecture, tapas &amp; vibrant nightlife</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Santorini, Greece"><img loading="lazy" src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&h=400&fit=crop" alt="Santorini, Greece" decoding="async"><div class="dest-exp-overlay"><h3>Santorini, Greece</h3><p>Iconic sunsets &amp; whitewashed villages</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Amalfi Coast, Italy"><img loading="lazy" src="https://images.unsplash.com/photo-1583844056361-4418a8f2a985?w=600&h=400&fit=crop" alt="Amalfi Coast, Italy" decoding="async"><div class="dest-exp-overlay"><h3>Amalfi Coast, Italy</h3><p>Cliffside villages &amp; Italian charm</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Paris, France"><img loading="lazy" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop" alt="Paris, France" decoding="async"><div class="dest-exp-overlay"><h3>Paris, France</h3><p>City of light, art &amp; gastronomy</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Rhine River, Germany"><img loading="lazy" src="https://images.unsplash.com/photo-1654612675707-99e37dc45e6b?w=600&h=400&fit=crop" alt="Rhine River, Germany" decoding="async"><div class="dest-exp-overlay"><h3>Rhine River, Germany</h3><p>Castles, vineyards &amp; river cruises</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="French Riviera"><img loading="lazy" src="https://images.unsplash.com/photo-1692022695030-81fb90d05928?w=600&h=400&fit=crop" alt="French Riviera" decoding="async"><div class="dest-exp-overlay"><h3>French Riviera</h3><p>Glamorous coastline &amp; azure waters</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Tuscany, Italy"><img loading="lazy" src="https://images.unsplash.com/photo-1759955392586-3ab03e4285ef?w=600&h=400&fit=crop" alt="Tuscany, Italy" decoding="async"><div class="dest-exp-overlay"><h3>Tuscany, Italy</h3><p>Rolling hills, wine &amp; renaissance art</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Iceland"><img loading="lazy" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&h=400&fit=crop" alt="Iceland" decoding="async"><div class="dest-exp-overlay"><h3>Iceland</h3><p>Northern lights &amp; otherworldly landscapes</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Barcelona, Spain"><img loading="lazy" src="https://images.unsplash.com/photo-1650964827770-421afa7960ac?w=600&h=400&fit=crop" alt="Barcelona, Spain" decoding="async"><div class="dest-exp-overlay"><h3>Barcelona, Spain</h3><p>Architecture, tapas &amp; vibrant nightlife</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="asia">
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Bali, Indonesia"><img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop" alt="Bali, Indonesia"><div class="dest-exp-overlay"><h3>Bali, Indonesia</h3><p>Temples, rice terraces &amp; spiritual retreats</p><span class="dest-exp-tag tag-wellness">Wellness</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Japan"><img loading="lazy" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop" alt="Japan"><div class="dest-exp-overlay"><h3>Japan</h3><p>Ancient traditions meet futuristic cities</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Thailand"><img loading="lazy" src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=600&h=400&fit=crop" alt="Thailand"><div class="dest-exp-overlay"><h3>Thailand</h3><p>Golden temples, street food &amp; islands</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Maldives"><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&h=400&fit=crop" alt="Maldives"><div class="dest-exp-overlay"><h3>Maldives</h3><p>Overwater villas &amp; pristine coral reefs</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Vietnam"><img loading="lazy" src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&h=400&fit=crop" alt="Vietnam"><div class="dest-exp-overlay"><h3>Vietnam</h3><p>Ha Long Bay, lantern towns &amp; cuisine</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Sri Lanka"><img loading="lazy" src="https://images.unsplash.com/photo-1663784025074-49e9e7f11f62?w=600&h=400&fit=crop" alt="Sri Lanka"><div class="dest-exp-overlay"><h3>Sri Lanka</h3><p>Tea plantations, safaris &amp; ancient cities</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="India"><img loading="lazy" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&h=400&fit=crop" alt="India"><div class="dest-exp-overlay"><h3>India</h3><p>Taj Mahal, palaces &amp; vibrant culture</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Cambodia"><img loading="lazy" src="https://images.unsplash.com/photo-1504639650150-bf773680d8c3?w=600&h=400&fit=crop" alt="Cambodia"><div class="dest-exp-overlay"><h3>Cambodia</h3><p>Angkor Wat &amp; Khmer heritage</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Bali, Indonesia"><img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop" alt="Bali, Indonesia" decoding="async"><div class="dest-exp-overlay"><h3>Bali, Indonesia</h3><p>Temples, rice terraces &amp; spiritual retreats</p><span class="dest-exp-tag tag-wellness">Wellness</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Japan"><img loading="lazy" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop" alt="Japan" decoding="async"><div class="dest-exp-overlay"><h3>Japan</h3><p>Ancient traditions meet futuristic cities</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Thailand"><img loading="lazy" src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=600&h=400&fit=crop" alt="Thailand" decoding="async"><div class="dest-exp-overlay"><h3>Thailand</h3><p>Golden temples, street food &amp; islands</p><span class="dest-exp-tag tag-popular">Popular</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Maldives"><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&h=400&fit=crop" alt="Maldives" decoding="async"><div class="dest-exp-overlay"><h3>Maldives</h3><p>Overwater villas &amp; pristine coral reefs</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Vietnam"><img loading="lazy" src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&h=400&fit=crop" alt="Vietnam" decoding="async"><div class="dest-exp-overlay"><h3>Vietnam</h3><p>Ha Long Bay, lantern towns &amp; cuisine</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Sri Lanka"><img loading="lazy" src="https://images.unsplash.com/photo-1663784025074-49e9e7f11f62?w=600&h=400&fit=crop" alt="Sri Lanka" decoding="async"><div class="dest-exp-overlay"><h3>Sri Lanka</h3><p>Tea plantations, safaris &amp; ancient cities</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="India"><img loading="lazy" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&h=400&fit=crop" alt="India" decoding="async"><div class="dest-exp-overlay"><h3>India</h3><p>Taj Mahal, palaces &amp; vibrant culture</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Cambodia"><img loading="lazy" src="https://images.unsplash.com/photo-1504639650150-bf773680d8c3?w=600&h=400&fit=crop" alt="Cambodia" decoding="async"><div class="dest-exp-overlay"><h3>Cambodia</h3><p>Angkor Wat &amp; Khmer heritage</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="africa">
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Kenya Safari"><img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop" alt="Kenya Safari"><div class="dest-exp-overlay"><h3>Kenya Safari</h3><p>The Big Five &amp; Masai Mara</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="South Africa"><img loading="lazy" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&h=400&fit=crop" alt="South Africa"><div class="dest-exp-overlay"><h3>South Africa</h3><p>Cape Town, wine country &amp; wildlife</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Morocco"><img loading="lazy" src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&h=400&fit=crop" alt="Morocco"><div class="dest-exp-overlay"><h3>Morocco</h3><p>Medinas, Sahara dunes &amp; spice markets</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Tanzania"><img loading="lazy" src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&h=400&fit=crop" alt="Tanzania"><div class="dest-exp-overlay"><h3>Tanzania</h3><p>Serengeti, Kilimanjaro &amp; Zanzibar</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Egypt"><img loading="lazy" src="https://images.unsplash.com/photo-1600520611035-84157ad4084d?w=600&h=400&fit=crop" alt="Egypt"><div class="dest-exp-overlay"><h3>Egypt</h3><p>Pyramids, Nile cruises &amp; ancient wonders</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Madagascar"><img loading="lazy" src="https://images.unsplash.com/photo-1659944984855-776187144baf?w=600&h=400&fit=crop" alt="Madagascar"><div class="dest-exp-overlay"><h3>Madagascar</h3><p>Unique wildlife &amp; baobab forests</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Seychelles"><img loading="lazy" src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600&h=400&fit=crop" alt="Seychelles"><div class="dest-exp-overlay"><h3>Seychelles</h3><p>Pristine beaches &amp; island luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Botswana"><img loading="lazy" src="https://images.unsplash.com/photo-1559417050-039d66224d3d?w=600&h=400&fit=crop" alt="Botswana"><div class="dest-exp-overlay"><h3>Botswana</h3><p>Okavango Delta &amp; exclusive safaris</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Kenya Safari"><img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop" alt="Kenya Safari" decoding="async"><div class="dest-exp-overlay"><h3>Kenya Safari</h3><p>The Big Five &amp; Masai Mara</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="South Africa"><img loading="lazy" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&h=400&fit=crop" alt="South Africa" decoding="async"><div class="dest-exp-overlay"><h3>South Africa</h3><p>Cape Town, wine country &amp; wildlife</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Morocco"><img loading="lazy" src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&h=400&fit=crop" alt="Morocco" decoding="async"><div class="dest-exp-overlay"><h3>Morocco</h3><p>Medinas, Sahara dunes &amp; spice markets</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Tanzania"><img loading="lazy" src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&h=400&fit=crop" alt="Tanzania" decoding="async"><div class="dest-exp-overlay"><h3>Tanzania</h3><p>Serengeti, Kilimanjaro &amp; Zanzibar</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Egypt"><img loading="lazy" src="https://images.unsplash.com/photo-1600520611035-84157ad4084d?w=600&h=400&fit=crop" alt="Egypt" decoding="async"><div class="dest-exp-overlay"><h3>Egypt</h3><p>Pyramids, Nile cruises &amp; ancient wonders</p><span class="dest-exp-tag tag-cruise">Cruise</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Madagascar"><img loading="lazy" src="https://images.unsplash.com/photo-1659944984855-776187144baf?w=600&h=400&fit=crop" alt="Madagascar" decoding="async"><div class="dest-exp-overlay"><h3>Madagascar</h3><p>Unique wildlife &amp; baobab forests</p><span class="dest-exp-tag tag-expedition">Expedition</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Seychelles"><img loading="lazy" src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600&h=400&fit=crop" alt="Seychelles" decoding="async"><div class="dest-exp-overlay"><h3>Seychelles</h3><p>Pristine beaches &amp; island luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Botswana"><img loading="lazy" src="https://images.unsplash.com/photo-1559417050-039d66224d3d?w=600&h=400&fit=crop" alt="Botswana" decoding="async"><div class="dest-exp-overlay"><h3>Botswana</h3><p>Okavango Delta &amp; exclusive safaris</p><span class="dest-exp-tag tag-safari">Safari</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="oceania">
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Australia"><img loading="lazy" src="https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?w=600&h=400&fit=crop" alt="Australia"><div class="dest-exp-overlay"><h3>Australia</h3><p>Great Barrier Reef, Sydney &amp; outback</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="New Zealand"><img loading="lazy" src="https://images.unsplash.com/photo-1591640040362-f55d95a6b2bc?w=600&h=400&fit=crop" alt="New Zealand"><div class="dest-exp-overlay"><h3>New Zealand</h3><p>Fjords, mountains &amp; Hobbiton</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Fiji"><img loading="lazy" src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&h=400&fit=crop" alt="Fiji"><div class="dest-exp-overlay"><h3>Fiji</h3><p>Tropical islands &amp; crystal lagoons</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="French Polynesia"><img loading="lazy" src="https://images.unsplash.com/photo-1738762932370-468a90e0ff68?w=600&h=400&fit=crop" alt="French Polynesia"><div class="dest-exp-overlay"><h3>French Polynesia</h3><p>Bora Bora, Tahiti &amp; overwater luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Australia"><img loading="lazy" src="https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?w=600&h=400&fit=crop" alt="Australia" decoding="async"><div class="dest-exp-overlay"><h3>Australia</h3><p>Great Barrier Reef, Sydney &amp; outback</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="New Zealand"><img loading="lazy" src="https://images.unsplash.com/photo-1591640040362-f55d95a6b2bc?w=600&h=400&fit=crop" alt="New Zealand" decoding="async"><div class="dest-exp-overlay"><h3>New Zealand</h3><p>Fjords, mountains &amp; Hobbiton</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Fiji"><img loading="lazy" src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&h=400&fit=crop" alt="Fiji" decoding="async"><div class="dest-exp-overlay"><h3>Fiji</h3><p>Tropical islands &amp; crystal lagoons</p><span class="dest-exp-tag tag-romance">Romance</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="French Polynesia"><img loading="lazy" src="https://images.unsplash.com/photo-1738762932370-468a90e0ff68?w=600&h=400&fit=crop" alt="French Polynesia" decoding="async"><div class="dest-exp-overlay"><h3>French Polynesia</h3><p>Bora Bora, Tahiti &amp; overwater luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
 </div>
 <div class="dest-cards-grid dest-content-panel" data-panel="middle-east">
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Dubai, UAE"><img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop" alt="Dubai, UAE"><div class="dest-exp-overlay"><h3>Dubai, UAE</h3><p>Futuristic skyline &amp; desert luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Jordan"><img loading="lazy" src="https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=600&h=400&fit=crop" alt="Jordan"><div class="dest-exp-overlay"><h3>Jordan</h3><p>Petra, Dead Sea &amp; ancient wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Oman"><img loading="lazy" src="https://images.unsplash.com/photo-1700919816978-82de9d9474f4?w=600&h=400&fit=crop" alt="Oman"><div class="dest-exp-overlay"><h3>Oman</h3><p>Dramatic fjords, forts &amp; desert camps</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
-<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Israel"><img loading="lazy" src="https://images.unsplash.com/photo-1529079875474-0a66a1f176d0?w=600&h=400&fit=crop" alt="Israel"><div class="dest-exp-overlay"><h3>Israel</h3><p>Holy sites, Tel Aviv &amp; culinary scene</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Dubai, UAE"><img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop" alt="Dubai, UAE" decoding="async"><div class="dest-exp-overlay"><h3>Dubai, UAE</h3><p>Futuristic skyline &amp; desert luxury</p><span class="dest-exp-tag tag-luxury">Luxury</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Jordan"><img loading="lazy" src="https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=600&h=400&fit=crop" alt="Jordan" decoding="async"><div class="dest-exp-overlay"><h3>Jordan</h3><p>Petra, Dead Sea &amp; ancient wonders</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Oman"><img loading="lazy" src="https://images.unsplash.com/photo-1700919816978-82de9d9474f4?w=600&h=400&fit=crop" alt="Oman" decoding="async"><div class="dest-exp-overlay"><h3>Oman</h3><p>Dramatic fjords, forts &amp; desert camps</p><span class="dest-exp-tag tag-adventure">Adventure</span></div></div>
+<div class="dest-exp-card reveal-scale" role="link" tabindex="0" aria-label="Israel"><img loading="lazy" src="https://images.unsplash.com/photo-1529079875474-0a66a1f176d0?w=600&h=400&fit=crop" alt="Israel" decoding="async"><div class="dest-exp-overlay"><h3>Israel</h3><p>Holy sites, Tel Aviv &amp; culinary scene</p><span class="dest-exp-tag tag-culture">Culture</span></div></div>
 </div>
 </div>
 </section>
@@ -1360,18 +1369,18 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <p class="section-subtitle reveal" style="color:rgba(255,255,255,0.6)">A glimpse into the extraordinary journeys we&#39;ve crafted. Scroll through moments captured by our travelers.</p>
 </div>
 <div class="gallery-scroll" style="padding-left:max(24px,calc((100vw - 1200px)/2))">
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=500&h=600&fit=crop" alt="Santorini Sunset, Greece"><div class="gallery-item-overlay"><p>Santorini Sunset, Greece</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=500&h=600&fit=crop" alt="Mediterranean Cruise"><div class="gallery-item-overlay"><p>Mediterranean Cruise</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=600&fit=crop" alt="Kenya Safari Adventure"><div class="gallery-item-overlay"><p>Kenya Safari Adventure</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&h=600&fit=crop" alt="Bali Temple, Indonesia"><div class="gallery-item-overlay"><p>Bali Temple, Indonesia</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=600&fit=crop" alt="Dubai Skyline, UAE"><div class="gallery-item-overlay"><p>Dubai Skyline, UAE</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=500&h=600&fit=crop" alt="Glacier Bay, Alaska"><div class="gallery-item-overlay"><p>Glacier Bay, Alaska</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1583844056361-4418a8f2a985?w=500&h=600&fit=crop" alt="Amalfi Coast, Italy"><div class="gallery-item-overlay"><p>Amalfi Coast, Italy</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=500&h=600&fit=crop" alt="Overwater Villa, Maldives"><div class="gallery-item-overlay"><p>Overwater Villa, Maldives</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500&h=600&fit=crop" alt="Kyoto, Japan"><div class="gallery-item-overlay"><p>Kyoto, Japan</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1591640040362-f55d95a6b2bc?w=500&h=600&fit=crop" alt="Milford Sound, New Zealand"><div class="gallery-item-overlay"><p>Milford Sound, New Zealand</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=500&h=600&fit=crop" alt="Caribbean Paradise"><div class="gallery-item-overlay"><p>Caribbean Paradise</p></div></div>
-<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=500&h=600&fit=crop" alt="Marrakech, Morocco"><div class="gallery-item-overlay"><p>Marrakech, Morocco</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=500&h=600&fit=crop" alt="Santorini Sunset, Greece" decoding="async"><div class="gallery-item-overlay"><p>Santorini Sunset, Greece</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=500&h=600&fit=crop" alt="Mediterranean Cruise" decoding="async"><div class="gallery-item-overlay"><p>Mediterranean Cruise</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&h=600&fit=crop" alt="Kenya Safari Adventure" decoding="async"><div class="gallery-item-overlay"><p>Kenya Safari Adventure</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&h=600&fit=crop" alt="Bali Temple, Indonesia" decoding="async"><div class="gallery-item-overlay"><p>Bali Temple, Indonesia</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=600&fit=crop" alt="Dubai Skyline, UAE" decoding="async"><div class="gallery-item-overlay"><p>Dubai Skyline, UAE</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=500&h=600&fit=crop" alt="Glacier Bay, Alaska" decoding="async"><div class="gallery-item-overlay"><p>Glacier Bay, Alaska</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1583844056361-4418a8f2a985?w=500&h=600&fit=crop" alt="Amalfi Coast, Italy" decoding="async"><div class="gallery-item-overlay"><p>Amalfi Coast, Italy</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=500&h=600&fit=crop" alt="Overwater Villa, Maldives" decoding="async"><div class="gallery-item-overlay"><p>Overwater Villa, Maldives</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500&h=600&fit=crop" alt="Kyoto, Japan" decoding="async"><div class="gallery-item-overlay"><p>Kyoto, Japan</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1591640040362-f55d95a6b2bc?w=500&h=600&fit=crop" alt="Milford Sound, New Zealand" decoding="async"><div class="gallery-item-overlay"><p>Milford Sound, New Zealand</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=500&h=600&fit=crop" alt="Caribbean Paradise" decoding="async"><div class="gallery-item-overlay"><p>Caribbean Paradise</p></div></div>
+<div class="gallery-item" role="button" tabindex="0" aria-label="Open photo in lightbox"><img loading="lazy" src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=500&h=600&fit=crop" alt="Marrakech, Morocco" decoding="async"><div class="gallery-item-overlay"><p>Marrakech, Morocco</p></div></div>
 </div>
 </section>
     <section class="tools-section" id="travel-tools">
@@ -1460,7 +1469,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <div class="team-grid">
 <div class="team-card reveal" style="transition-delay:0.1s">
 <div class="team-card-img">
-<img src="elizabeth-nichols.jpg" alt="Elizabeth Nichols" loading="lazy">
+<img src="elizabeth-nichols.jpg" alt="Elizabeth Nichols" loading="lazy" decoding="async">
 </div>
 <div class="team-card-info">
 <h3>Elizabeth Nichols</h3>
@@ -1470,7 +1479,7 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 </div>
 <div class="team-card reveal" style="transition-delay:0.2s">
 <div class="team-card-img">
-<img src="jay-nichols.jpg" alt="Jay Nichols" loading="lazy">
+<img src="jay-nichols.jpg" alt="Jay Nichols" loading="lazy" decoding="async">
 </div>
 <div class="team-card-info">
 <h3>Jay Nichols</h3>
@@ -2002,10 +2011,13 @@ function animateHero() {
 // HERO SLIDESHOW
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-bg-slide');
+function loadSlide(i){var s=slides[i]; if(s && s.dataset && s.dataset.bg){ s.style.backgroundImage="url('"+s.dataset.bg+"')"; delete s.dataset.bg; }}
+loadSlide(0); loadSlide(1);
 setInterval(() => { if(slides.length===0)return;
   slides[currentSlide].classList.remove('active');
   currentSlide = (currentSlide + 1) % slides.length;
   slides[currentSlide].classList.add('active');
+  loadSlide((currentSlide + 1) % slides.length);
 }, 5000);
 
 // PARTICLES
@@ -2547,7 +2559,7 @@ document.querySelectorAll('.map-pin-link').forEach(pin => {
 <div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo lightbox">
   <button id="lightbox-close" aria-label="Close lightbox">&times;</button>
   <button class="lb-nav" id="lb-prev" aria-label="Previous photo">&#8592;</button>
-  <img id="lightbox-img" src="" alt="" loading="lazy">
+  <img id="lightbox-img" src="" alt="" loading="lazy" decoding="async">
   <div id="lightbox-caption"></div>
   <div id="lb-counter"></div>
   <button class="lb-nav" id="lb-next" aria-label="Next photo">&#8594;</button>

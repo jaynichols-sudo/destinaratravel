@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0D5C5C">
@@ -734,12 +737,19 @@ section{padding:100px 0}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is booking with Destinara different from booking online?","acceptedAnswer":{"@type":"Answer","text":"When you book through Destinara, you get a dedicated travel advisor who handles every detail. We have access to exclusive deals, complimentary upgrades, resort credits, and VIP amenities."}},{"@type":"Question","name":"Do you charge a fee for your services?","acceptedAnswer":{"@type":"Answer","text":"Our planning fees vary depending on the complexity of your trip. Many of our cruise and resort bookings include our services at no additional cost."}},{"@type":"Question","name":"Can I still earn hotel loyalty points when booking through you?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! We are loyalty-points friendly. You can continue to earn and redeem your existing hotel loyalty points, airline miles, and elite status benefits."}},{"@type":"Question","name":"How far in advance should I book my trip?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking 6-12 months in advance for peak-season destinations, cruises, and popular resort stays."}},{"@type":"Question","name":"Do you offer travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, we strongly recommend travel insurance for all trips and can help you select the right coverage."}}]}
 </script>
-<style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style></head>
+<style>.nav-links>li>a,.nav-dropdown-trigger,.nav-cta,.nav-links a{white-space:nowrap}</style><style>
+:focus-visible{outline:3px solid var(--color-accent,#C4956B);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
+.skip-link:focus{left:0}
+</style>
+</head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <nav id="nav">
   <div class="nav-inner">
     <a href="./index.html" class="nav-logo">
-      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager">
+      <img src="./destinara-logo.png" alt="Destinara" width="40" height="40" loading="eager" decoding="async">
       <span class="nav-logo-text">Destinara Travel</span>
     </a>
     <ul class="nav-links">
@@ -803,7 +813,7 @@ section{padding:100px 0}
   <a href="./find-my-vacation.html" onclick="closeMobile()">Find &amp; Price My Vacation</a>
 </div>
 
-<section class="page-hero" style="background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);padding:120px 0 60px;text-align:center">
+<section id="main-content" class="page-hero" style="background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);padding:120px 0 60px;text-align:center">
 <div class="container">
 <p class="section-label" style="color:var(--color-accent)">🌍 Curated Land Experiences Worldwide</p>
 <h1 style="font-family:var(--font-display);font-size:2.8rem;color:var(--color-white);margin:10px 0">Land Vacations</h1>
@@ -827,7 +837,7 @@ section{padding:100px 0}
     <div class="land-card-grid">
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=360&fit=crop" alt="Luxury resort pool" loading="lazy"><span class="card-badge">Luxury</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=360&fit=crop" alt="Luxury resort pool" loading="lazy" decoding="async"><span class="card-badge">Luxury</span></div>
     <div class="land-card-body">
     <h4>All-Inclusive Luxury Resorts</h4>
     <p class="card-tagline">Everything Included, Nothing Compromised</p>
@@ -838,7 +848,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=360&fit=crop" alt="Boutique hotel room" loading="lazy"><span class="card-badge">Boutique</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=360&fit=crop" alt="Boutique hotel room" loading="lazy" decoding="async"><span class="card-badge">Boutique</span></div>
     <div class="land-card-body">
     <h4>Boutique & Design Hotels</h4>
     <p class="card-tagline">Unique Stays with Character</p>
@@ -849,7 +859,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=360&fit=crop" alt="Five star hotel" loading="lazy"><span class="card-badge">5-Star</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=360&fit=crop" alt="Five star hotel" loading="lazy" decoding="async"><span class="card-badge">5-Star</span></div>
     <div class="land-card-body">
     <h4>Five-Star Hotel Collections</h4>
     <p class="card-tagline">The World's Finest Addresses</p>
@@ -860,7 +870,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&h=360&fit=crop" alt="Overwater bungalow" loading="lazy"><span class="card-badge">Iconic</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&h=360&fit=crop" alt="Overwater bungalow" loading="lazy" decoding="async"><span class="card-badge">Iconic</span></div>
     <div class="land-card-body">
     <h4>Overwater & Private Villas</h4>
     <p class="card-tagline">Your Own Slice of Paradise</p>
@@ -871,7 +881,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=360&fit=crop" alt="Family resort" loading="lazy"><span class="card-badge">Family</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=360&fit=crop" alt="Family resort" loading="lazy" decoding="async"><span class="card-badge">Family</span></div>
     <div class="land-card-body">
     <h4>Family-Friendly Resorts</h4>
     <p class="card-tagline">Memories for Every Generation</p>
@@ -882,7 +892,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&h=360&fit=crop" alt="Adults only resort" loading="lazy"><span class="card-badge">Adults Only</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&h=360&fit=crop" alt="Adults only resort" loading="lazy" decoding="async"><span class="card-badge">Adults Only</span></div>
     <div class="land-card-body">
     <h4>Adults-Only Escapes</h4>
     <p class="card-tagline">Refined Relaxation, No Interruptions</p>
@@ -905,7 +915,7 @@ section{padding:100px 0}
     <div class="land-card-grid">
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=360&fit=crop" alt="Mountain trekking" loading="lazy"><span class="card-badge">Trekking</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=360&fit=crop" alt="Mountain trekking" loading="lazy" decoding="async"><span class="card-badge">Trekking</span></div>
     <div class="land-card-body">
     <h4>Mountain Treks & Hiking</h4>
     <p class="card-tagline">Conquer Peaks, Discover Yourself</p>
@@ -916,7 +926,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=360&fit=crop" alt="Scuba diving" loading="lazy"><span class="card-badge">Diving</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=360&fit=crop" alt="Scuba diving" loading="lazy" decoding="async"><span class="card-badge">Diving</span></div>
     <div class="land-card-body">
     <h4>Scuba Diving & Snorkeling</h4>
     <p class="card-tagline">Explore the World Beneath the Waves</p>
@@ -927,7 +937,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=360&fit=crop" alt="Safari adventure" loading="lazy"><span class="card-badge">Safari</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=360&fit=crop" alt="Safari adventure" loading="lazy" decoding="async"><span class="card-badge">Safari</span></div>
     <div class="land-card-body">
     <h4>Safari & Wildlife Adventures</h4>
     <p class="card-tagline">Face to Face with the Wild</p>
@@ -938,7 +948,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=600&h=360&fit=crop" alt="Northern lights" loading="lazy"><span class="card-badge">Expedition</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=600&h=360&fit=crop" alt="Northern lights" loading="lazy" decoding="async"><span class="card-badge">Expedition</span></div>
     <div class="land-card-body">
     <h4>Polar & Arctic Adventures</h4>
     <p class="card-tagline">Journey to the Ends of the Earth</p>
@@ -949,7 +959,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&h=360&fit=crop" alt="Cycling through countryside" loading="lazy"><span class="card-badge">Active</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&h=360&fit=crop" alt="Cycling through countryside" loading="lazy" decoding="async"><span class="card-badge">Active</span></div>
     <div class="land-card-body">
     <h4>Cycling & Active Journeys</h4>
     <p class="card-tagline">Pedal Through Paradise</p>
@@ -960,7 +970,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1517931524326-bdd55a541177?w=600&h=360&fit=crop" alt="White water rafting" loading="lazy"><span class="card-badge">Thrill</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1517931524326-bdd55a541177?w=600&h=360&fit=crop" alt="White water rafting" loading="lazy" decoding="async"><span class="card-badge">Thrill</span></div>
     <div class="land-card-body">
     <h4>Extreme & Adrenaline Trips</h4>
     <p class="card-tagline">Push Your Limits</p>
@@ -983,7 +993,7 @@ section{padding:100px 0}
     <div class="land-card-grid">
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=360&fit=crop" alt="Spa treatment" loading="lazy"><span class="card-badge">Spa</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=360&fit=crop" alt="Spa treatment" loading="lazy" decoding="async"><span class="card-badge">Spa</span></div>
     <div class="land-card-body">
     <h4>Luxury Spa Resorts</h4>
     <p class="card-tagline">Total Renewal in Paradise</p>
@@ -994,7 +1004,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop" alt="Yoga retreat" loading="lazy"><span class="card-badge">Yoga</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=360&fit=crop" alt="Yoga retreat" loading="lazy" decoding="async"><span class="card-badge">Yoga</span></div>
     <div class="land-card-body">
     <h4>Yoga & Meditation Retreats</h4>
     <p class="card-tagline">Find Your Inner Peace</p>
@@ -1005,7 +1015,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?w=600&h=360&fit=crop" alt="Thermal baths" loading="lazy"><span class="card-badge">Thermal</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?w=600&h=360&fit=crop" alt="Thermal baths" loading="lazy" decoding="async"><span class="card-badge">Thermal</span></div>
     <div class="land-card-body">
     <h4>Thermal Baths & Hot Springs</h4>
     <p class="card-tagline">Nature's Healing Waters</p>
@@ -1016,7 +1026,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=360&fit=crop" alt="Fitness retreat" loading="lazy"><span class="card-badge">Fitness</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=360&fit=crop" alt="Fitness retreat" loading="lazy" decoding="async"><span class="card-badge">Fitness</span></div>
     <div class="land-card-body">
     <h4>Fitness & Detox Programs</h4>
     <p class="card-tagline">Reset, Recharge, Transform</p>
@@ -1039,7 +1049,7 @@ section{padding:100px 0}
     <div class="land-card-grid">
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=360&fit=crop" alt="Santorini sunset" loading="lazy"><span class="card-badge">Honeymoon</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=360&fit=crop" alt="Santorini sunset" loading="lazy" decoding="async"><span class="card-badge">Honeymoon</span></div>
     <div class="land-card-body">
     <h4>Classic Honeymoon Escapes</h4>
     <p class="card-tagline">Begin Your Forever in Paradise</p>
@@ -1051,7 +1061,7 @@ section{padding:100px 0}
 
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=600&h=360&fit=crop" alt="Anniversary trip" loading="lazy"><span class="card-badge">Anniversary</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=600&h=360&fit=crop" alt="Anniversary trip" loading="lazy" decoding="async"><span class="card-badge">Anniversary</span></div>
     <div class="land-card-body">
     <h4>Anniversary & Milestone Trips</h4>
     <p class="card-tagline">Celebrate Your Love Story</p>
@@ -1074,7 +1084,7 @@ section{padding:100px 0}
     <div class="land-card-grid">
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Culinary experience" loading="lazy"><span class="card-badge">Culinary</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop" alt="Culinary experience" loading="lazy" decoding="async"><span class="card-badge">Culinary</span></div>
     <div class="land-card-body">
     <h4>Food & Wine Experiences</h4>
     <p class="card-tagline">Taste the World, One Dish at a Time</p>
@@ -1085,7 +1095,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&q=80" alt="Ancient temple" loading="lazy"><span class="card-badge">History</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&q=80" alt="Ancient temple" loading="lazy" decoding="async"><span class="card-badge">History</span></div>
     <div class="land-card-body">
     <h4>Historical & Archaeological Tours</h4>
     <p class="card-tagline">Walk Through Millennia of History</p>
@@ -1096,7 +1106,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&h=360&fit=crop" alt="Wine tasting" loading="lazy"><span class="card-badge">Wine</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&h=360&fit=crop" alt="Wine tasting" loading="lazy" decoding="async"><span class="card-badge">Wine</span></div>
     <div class="land-card-body">
     <h4>Wine Country Getaways</h4>
     <p class="card-tagline">Sip, Savor, and Stay</p>
@@ -1107,7 +1117,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=360&fit=crop" alt="Japan temple" loading="lazy"><span class="card-badge">Immersive</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=360&fit=crop" alt="Japan temple" loading="lazy" decoding="async"><span class="card-badge">Immersive</span></div>
     <div class="land-card-body">
     <h4>Immersive Cultural Stays</h4>
     <p class="card-tagline">Live Like a Local, Travel Like a Guest</p>
@@ -1130,7 +1140,7 @@ section{padding:100px 0}
     <div class="land-card-grid">
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=360&fit=crop" alt="Family reunion" loading="lazy"><span class="card-badge">Family</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=360&fit=crop" alt="Family reunion" loading="lazy" decoding="async"><span class="card-badge">Family</span></div>
     <div class="land-card-body">
     <h4>Multi-Generational Family Trips</h4>
     <p class="card-tagline">Three Generations, One Incredible Journey</p>
@@ -1141,7 +1151,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=360&fit=crop" alt="Corporate retreat" loading="lazy"><span class="card-badge">Corporate</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=360&fit=crop" alt="Corporate retreat" loading="lazy" decoding="async"><span class="card-badge">Corporate</span></div>
     <div class="land-card-body">
     <h4>Corporate Retreats & Incentive Travel</h4>
     <p class="card-tagline">Elevate Your Team</p>
@@ -1152,7 +1162,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=600&h=360&fit=crop" alt="Solo traveler" loading="lazy"><span class="card-badge">Solo</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=600&h=360&fit=crop" alt="Solo traveler" loading="lazy" decoding="async"><span class="card-badge">Solo</span></div>
     <div class="land-card-body">
     <h4>Solo Travel Experiences</h4>
     <p class="card-tagline">Your Journey, Your Rules</p>
@@ -1163,7 +1173,7 @@ section{padding:100px 0}
     </div>
 
     <div class="land-card">
-    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=360&fit=crop" alt="Friends celebration" loading="lazy"><span class="card-badge">Celebrations</span></div>
+    <div class="land-card-img"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=360&fit=crop" alt="Friends celebration" loading="lazy" decoding="async"><span class="card-badge">Celebrations</span></div>
     <div class="land-card-body">
     <h4>Friends Getaways & Celebrations</h4>
     <p class="card-tagline">Your Crew, Your Adventure</p>
