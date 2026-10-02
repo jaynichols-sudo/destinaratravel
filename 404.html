@@ -120,6 +120,7 @@
 .skip-link:focus{left:0}
 </style>
 <style>.nav-phone{display:inline-flex;align-items:center;gap:6px;color:var(--color-primary,#0D5C5C);font-weight:600;text-decoration:none;font-size:.92rem;margin-right:10px;white-space:nowrap}.nav-phone:hover{color:var(--color-accent,#C4956B)}@media(max-width:768px){.nav-phone{font-size:0;gap:0}.nav-phone span{font-size:1.25rem}}</style>
+<style id="nav-fit">@media (min-width:769px){.nav-inner{max-width:1340px!important;gap:20px!important}.nav-links{gap:2px!important;justify-content:center;min-width:0}.nav-links>li>a{padding:8px 10px!important;font-size:.86rem!important;white-space:nowrap}.nav-links>li>a.nav-cta{padding:9px 15px!important;margin:0 3px}.nav-phone{font-size:0!important;gap:0!important;margin-right:6px!important}.nav-phone span{font-size:1.25rem}}@media (min-width:769px) and (max-width:1279px){.nav-links{display:none!important}.hamburger{display:flex!important}}</style>
 </head>
   <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -154,7 +155,7 @@
                               </ul>ul>
                     </li>
                       <li><a href="./find-my-vacation.html" class="nav-cta">Find &amp; Price My Vacation</a>a></li>
-                      <li><a href="./index.html#deals">Deals</a>a></li>
+                      <li><a href="./index.html#deals">Seasonal Picks</a>a></li>
                       <li><a href="/reviews.html">Reviews</a>a></li>
                       <li><a href="./index.html#blog">Journal</a>a></li>
                       <li><a href="./about.html">About</a>a></li>
@@ -195,7 +196,7 @@
                 </ul>
         </li>
           <li><a href="./find-my-vacation.html">Find &amp; Price My Vacation</a>a></li>
-          <li><a href="./index.html#deals">Deals</a>a></li>
+          <li><a href="./index.html#deals">Seasonal Picks</a>a></li>
           <li><a href="/reviews.html">Reviews</a>a></li>
           <li><a href="./index.html#blog">Journal</a>a></li>
           <li><a href="./about.html">About</a>a></li>
@@ -220,7 +221,7 @@
                                               <a href="/vacations">Vacations</a>a>
                                               <a href="/disney">Disney</a>a>
                                               <a href="/destinations">Destinations</a>a>
-                                              <a href="/#deals">Deals</a>a>
+                                              <a href="/#deals">Seasonal Picks</a>a>
                                               <a href="/#contact">Get a Quote</a>a>
                               </div>div>
                   </div>div>
@@ -262,6 +263,8 @@
           </li>
     </ul></span></span>
                     </li></li>
-  </body>
+  <style id="nav-menu-fix-css">.mobile-menu.navfix-open{display:flex!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}body.navfix-lock #nav,body.navfix-lock nav#nav{z-index:1100!important}</style>
+<script id="nav-menu-fix">(function(){function init(){var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');if(!h||!m||h.getAttribute('data-navfix'))return;h.setAttribute('data-navfix','1');var want=false,orig=window.closeMobile;function apply(){m.style.display='';['open','active','navfix-open'].forEach(function(c){m.classList.toggle(c,want)});h.classList.toggle('active',want);h.setAttribute('aria-expanded',want?'true':'false');document.body.classList.toggle('navfix-lock',want);document.body.style.overflow=want?'hidden':''}h.addEventListener('click',function(){want=!want;setTimeout(apply,0)});window.closeMobile=function(){want=false;apply();if(typeof orig==='function'&&orig!==window.closeMobile){try{orig()}catch(e){}}};m.addEventListener('click',function(e){if(e.target.closest('a[href]')&&!e.target.closest('.mobile-dest-trigger')){want=false;setTimeout(apply,0)}});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&want){want=false;apply()}});window.addEventListener('resize',function(){if(want&&window.innerWidth>1279){want=false;apply()}})}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{init()}})();</script>
+</body>
       </style></title>
   </head>
