@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="preload" as="image" href="/assets/img/photo-1507525428034-b723cf961d3e-a7a8a0bd.jpg">
+<link rel="preload" as="image" href="/assets/img/photo-1583844056361-4418a8f2a985-b716d9a6.jpg">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -175,6 +175,7 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
 .hero-bg{position:absolute;inset:0}
 .hero-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease-in-out}
 .hero-bg-slide.active{opacity:1}
+
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,46,0.7) 0%,rgba(15,118,110,0.3) 100%)}
 .hero-content{position:relative;z-index:2;max-width:800px;padding-top:80px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);padding:8px 20px;border-radius:50px;margin-bottom:24px;opacity:0;transform:translateY(30px)}
@@ -191,6 +192,14 @@ nav.scrolled .hamburger span{background:var(--color-dark)}
 .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;animation:float 3s ease-in-out infinite}
 .hero-scroll .mouse{width:24px;height:38px;border:2px solid rgba(255,255,255,0.4);border-radius:12px;position:relative}
 .hero-scroll .mouse::after{content:'';position:absolute;top:8px;left:50%;width:3px;height:8px;background:rgba(255,255,255,0.6);border-radius:3px;transform:translateX(-50%);animation:scrollWheel 2s infinite}
+.hero-news-short{display:none}
+.hero-loc{position:absolute;left:24px;bottom:28px;z-index:3;display:inline-flex;align-items:center;gap:6px;max-width:calc(100% - 48px);padding:7px 14px;border-radius:999px;background:rgba(10,30,30,0.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:.82rem;letter-spacing:.3px;text-decoration:none;transition:opacity .6s ease}
+a.hero-loc[href]:hover{background:rgba(196,149,107,0.85)}
+.hero-loc.fade{opacity:0}
+.hero-news{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding:8px 16px 8px 8px;border-radius:999px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;line-height:1.35;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hero-news:hover{background:rgba(196,149,107,0.35)}
+.hero-news-tag{background:var(--color-accent,#C4956B);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+@media(max-width:768px){.hero-loc{left:16px;bottom:16px;font-size:.75rem;padding:6px 12px}.hero-news{font-size:.8rem;flex-wrap:nowrap;gap:8px}.hero-scroll{display:none}.hero-content{padding-left:20px!important;padding-right:20px!important}.hero-news-long{display:none}.hero-news-short{display:inline}}
 @keyframes scrollWheel{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(12px)}}
 @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
 
@@ -926,20 +935,26 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <main id="main-content">
     <section class="hero" id="hero">
 <div class="hero-bg">
-<div class="hero-bg-slide active" style="background-image:url('/assets/img/photo-1507525428034-b723cf961d3e-a7a8a0bd.jpg')"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1476514525535-07fb3b4ae5f1-a021b084.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1469474968028-56623f02e42e-9dc32d24.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1599640842225-85d111c60e6b-626f3e55.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1719607526486-96f27a995fcc-56c88be4.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1528732533941-ffd7083d5dfe-b1bca483.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1543385426-191664295b58-4f27c999.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1525635569544-610f9540664a-87c31bd6.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1738762932370-468a90e0ff68-058af9e6.jpg"></div>
-<div class="hero-bg-slide" data-bg="/assets/img/photo-1610878180933-123728745d22-35d7ee0d.jpg"></div>
+<div class="hero-bg-slide active" data-loc="Positano, Amalfi Coast, Italy" style="background-image:url('/assets/img/photo-1583844056361-4418a8f2a985-b716d9a6.jpg')"></div>
+<div class="hero-bg-slide" data-loc="Ulun Danu Beratan Temple, Bali" data-link="/nyawa-villas-bali.html" data-bg="/assets/img/photo-1537996194471-e657df975ab4-f60f75d6.jpg"></div>
+<div class="hero-bg-slide" data-loc="Oia, Santorini, Greece" data-bg="/assets/img/photo-1719607526486-96f27a995fcc-56c88be4.jpg"></div>
+<div class="hero-bg-slide" data-loc="Bora Bora, French Polynesia" data-bg="/assets/img/photo-1738762932370-468a90e0ff68-058af9e6.jpg"></div>
+<div class="hero-bg-slide" data-loc="Mount Fuji, Japan" data-bg="/assets/img/photo-1525635569544-610f9540664a-87c31bd6.jpg"></div>
+<div class="hero-bg-slide" data-loc="Lago di Braies, Dolomites, Italy" data-bg="/assets/img/photo-1476514525535-07fb3b4ae5f1-a021b084.jpg"></div>
+<div class="hero-bg-slide" data-loc="The Maldives" data-bg="/assets/img/photo-1573843981267-be1999ff37cd-44d0e363.jpg"></div>
+<div class="hero-bg-slide" data-loc="Machu Picchu, Peru" data-bg="/assets/img/photo-1543385426-191664295b58-4f27c999.jpg"></div>
+<div class="hero-bg-slide" data-loc="Christmas Market, Vienna, Austria" data-bg="/assets/img/photo-1764145467543-1e5a9167d526-d06ad051.jpg"></div>
+<div class="hero-bg-slide" data-loc="Pont Alexandre III, Paris, France" data-bg="/assets/img/photo-1499856871958-5b9627545d1a-0b1c7a6b.jpg"></div>
+<div class="hero-bg-slide" data-loc="Milford Sound, New Zealand" data-bg="/assets/img/photo-1591640040362-f55d95a6b2bc-cb72812b.jpg"></div>
+<div class="hero-bg-slide" data-loc="Pyramids of Giza, Egypt" data-bg="/assets/img/photo-1600520611035-84157ad4084d-b17db36c.jpg"></div>
+<div class="hero-bg-slide" data-loc="Moraine Lake, Banff, Canada" data-bg="/assets/img/photo-1610878180933-123728745d22-35d7ee0d.jpg"></div>
+<div class="hero-bg-slide" data-loc="Dubai, United Arab Emirates" data-bg="/assets/img/photo-1512453979798-5ea266f8880c-db93ad75.jpg"></div>
 </div>
 <div class="hero-overlay"></div>
+<a class="hero-loc" id="heroLoc" aria-live="polite"><span aria-hidden="true">&#128205;</span> <span id="heroLocText">Positano, Amalfi Coast, Italy</span></a>
 <div class="hero-particles" id="heroParticles"></div>
 <div class="container hero-content">
+<a href="/nyawa-villas-bali.html" class="hero-news"><span class="hero-news-tag">New</span> <span class="hero-news-long">We&rsquo;re now one of very few partners for Nyawa Villas, Bali</span><span class="hero-news-short">Now partnering with Nyawa Villas, Bali</span> <span aria-hidden="true">&#8594;</span></a>
 <div class="hero-badge"><span>&#9992; Curated Journeys Await</span></div>
 <h1>Journey Beyond <br>the <span class="accent">Ordinary</span></h1>
 <p>Experience the world through Destinara's expertly curated travel experiences. From luxury cruises to boutique resorts, we craft unforgettable journeys tailored to you.</p>
@@ -973,6 +988,8 @@ a.calendar-card{display:block;text-decoration:none;color:inherit}
 <div class="ticker-divider"></div>
 </div>
 </div>
+<!-- NYAWA PARTNERSHIP -->
+<section id="nyawa" aria-label="Nyawa Villas Bali partnership" style="padding:72px 0;background:linear-gradient(135deg,#0a4444,var(--color-primary,#0D5C5C))"><div class="container"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px;align-items:center"><div style="border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.3);aspect-ratio:4/3"><img src="/assets/img/photo-1537996194471-e657df975ab4-f60f75d6.jpg" alt="Ulun Danu Beratan Temple in Bali, Indonesia" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover"></div><div><p style="color:var(--color-accent,#C4956B);font-weight:700;letter-spacing:1px;font-size:.8rem;text-transform:uppercase;margin:0 0 8px">&#10022; Announcing &middot; New Partnership</p><h2 style="font-family:var(--font-display);color:#fff;font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.15;margin:0 0 14px">Nyawa Private Retreat Villas, Bali</h2><p style="color:rgba(255,255,255,0.85);line-height:1.65;margin:0 0 16px">Destinara is now one of <strong style="color:#fff">very few partners</strong> representing Nyawa: just four private, adults-focused villas between the rice fields and a private river near Canggu and Tanah Lot, designed with a nervous system specialist to help you truly rest. Book through us and your stay includes:</p><ul style="list-style:none;padding:0;margin:0 0 24px"><li style="display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:rgba(255,255,255,0.9);line-height:1.45"><span aria-hidden="true">&#128176;</span><span>Discounted partner rates</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:rgba(255,255,255,0.9);line-height:1.45"><span aria-hidden="true">&#129489;&#8205;&#127859;</span><span>A private chef in your villa</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:rgba(255,255,255,0.9);line-height:1.45"><span aria-hidden="true">&#128757;</span><span>Transportation by car or scooter</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:rgba(255,255,255,0.9);line-height:1.45"><span aria-hidden="true">&#129729;</span><span>Self-guided nervous system rest</span></li></ul><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="/nyawa-villas-bali.html" style="display:inline-block;background:var(--color-accent,#C4956B);color:#fff;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none">Discover Nyawa &#8594;</a><a href="/consultation.html" style="display:inline-block;border:1px solid rgba(255,255,255,0.7);color:#fff;padding:13px 24px;border-radius:30px;font-weight:600;text-decoration:none">Check My Dates</a></div></div></div></div></section>
 <!-- SERVICES -->
 
 <!-- ACCREDITATIONS -->
@@ -1913,7 +1930,9 @@ setInterval(() => { if(slides.length===0)return;
   currentSlide = (currentSlide + 1) % slides.length;
   slides[currentSlide].classList.add('active');
   loadSlide((currentSlide + 1) % slides.length);
+  setHeroLoc(slides[currentSlide]);
 }, 5000);
+function setHeroLoc(sl){var el=document.getElementById('heroLoc'),tx=document.getElementById('heroLocText');if(!el||!tx||!sl)return;el.classList.add('fade');setTimeout(function(){tx.textContent=sl.dataset.loc||'';if(sl.dataset.link){el.setAttribute('href',sl.dataset.link);el.setAttribute('title','Stay at Nyawa Villas, Bali');tx.textContent=(sl.dataset.loc||'')+' \u00b7 Stay at Nyawa \u2192';}else{el.removeAttribute('href');el.removeAttribute('title');}el.style.display=sl.dataset.loc?'':'none';el.classList.remove('fade');},400);}
 
 // PARTICLES
 const particlesContainer = document.getElementById('heroParticles');
