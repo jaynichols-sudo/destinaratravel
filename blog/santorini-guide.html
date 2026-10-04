@@ -81,6 +81,10 @@
     .article-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.4rem; }
     .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.65rem; color: var(--navy); margin: 2.5rem 0 1rem; }
+    .article-body > h3, .article-body .faq h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin: 1.75rem 0 0.6rem; }
+    .article-body > ul { padding-left: 1.3rem; margin-bottom: 1.4rem; }
+    .article-body > ul li { font-size: 1rem; line-height: 1.75; margin-bottom: 0.45rem; }
+    @media (max-width: 600px) { .article-body { padding: 2.5rem 1.25rem; } .highlights { padding: 1.2rem 1.2rem; } }
 
     /* STAT ROW */
     .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
@@ -126,6 +130,7 @@
       max-width: 760px; margin: 0 auto; padding: 2rem 2rem 3rem;
       border-top: 1px solid #e8e4dc;
     }
+    nav.article-nav{position:static!important;top:auto!important;width:auto!important;height:auto!important;background:none!important;box-shadow:none!important;backdrop-filter:none!important;z-index:auto!important}
     .article-nav a { text-decoration: none; color: var(--navy); font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
     .article-nav a:hover { color: var(--gold); }
     .article-nav .placeholder { flex: 1; }
@@ -146,7 +151,7 @@
 .skip-link{position:absolute;left:-9999px;top:0;z-index:2000;background:var(--color-primary,#0D5C5C);color:#fff;padding:10px 16px;border-radius:0 0 6px 0;text-decoration:none;font:600 14px/1 Inter,sans-serif}
 .skip-link:focus{left:0}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Santorini, Greece: The Complete Island Guide", "description": "From the blue-domed churches of Oia to the volcanic beaches of Perivolos, our complete guide to Santorini covers where to stay, what to do, and when to visit.", "image": "/assets/img/photo-1613395877344-13d4a8e0d49e-0055037b.jpg", "author": {"@type": "Organization", "name": "Destinara Travel", "url": "https://destinaratravel.com"}, "publisher": {"@type": "Organization", "name": "Destinara Travel", "logo": {"@type": "ImageObject", "url": "https://destinaratravel.com/destinara-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://destinaratravel.com/blog/santorini-guide.html"}, "inLanguage": "en-US"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Santorini, Greece: The Complete Island Guide", "description": "From the blue-domed churches of Oia to the volcanic beaches of Perivolos, our complete guide to Santorini covers where to stay, what to do, and when to visit.", "image": "/assets/img/photo-1613395877344-13d4a8e0d49e-0055037b.jpg", "author": {"@type": "Organization", "name": "Destinara Travel", "url": "https://destinaratravel.com"}, "publisher": {"@type": "Organization", "name": "Destinara Travel", "logo": {"@type": "ImageObject", "url": "https://destinaratravel.com/destinara-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://destinaratravel.com/blog/santorini-guide.html"}, "inLanguage": "en-US", "dateModified": "2026-10-04"}</script>
 <style>.nav-phone{display:inline-flex;align-items:center;gap:6px;color:var(--color-primary,#0D5C5C);font-weight:600;text-decoration:none;font-size:.92rem;margin-right:10px;white-space:nowrap}.nav-phone:hover{color:var(--color-accent,#C4956B)}@media(max-width:768px){.nav-phone{font-size:0;gap:0}.nav-phone span{font-size:1.25rem}}</style>
 <style id="nav-fit">@media (min-width:769px){.nav-inner{max-width:1340px!important;gap:20px!important}.nav-links{gap:2px!important;justify-content:center;min-width:0}.nav-links>li>a{padding:8px 10px!important;font-size:.86rem!important;white-space:nowrap}.nav-links>li>a.nav-cta{padding:9px 15px!important;margin:0 3px}.nav-phone{font-size:0!important;gap:0!important;margin-right:6px!important}.nav-phone span{font-size:1.25rem}}@media (min-width:769px) and (max-width:1279px){.nav-links{display:none!important}.hamburger{display:flex!important}}</style>
 </head>
@@ -200,9 +205,9 @@
     <div class="byline">
       <span>By Elizabeth Nichols</span>
       <span class="sep">|</span>
-      <span>June 2025</span>
+      <span>Updated October 2026</span>
       <span class="sep">|</span>
-      <span>10 min read</span>
+      <span>15 min read</span>
     </div>
   </div>
 </header>
@@ -213,7 +218,7 @@
     <p>I've been to Santorini three times now, and each visit has taught me something new about how to experience it well. The key isn't just knowing what to see — it's knowing <em>when</em> to see it, where to stay, and which crowds to avoid. This guide is everything I wish I'd known on my first trip.</p>
 
     <div class="stat-row">
-      <div class="stat-card"><div class="stat-num">76</div><div class="stat-label">Square miles</div></div>
+      <div class="stat-card"><div class="stat-num">28</div><div class="stat-label">Square miles</div></div>
       <div class="stat-card"><div class="stat-num">2M+</div><div class="stat-label">Annual visitors</div></div>
       <div class="stat-card"><div class="stat-num">3,500+</div><div class="stat-label">Years of history</div></div>
     </div>
@@ -226,6 +231,19 @@
     <div class="tip-box">
       <div class="tip-label">Advisor Tip — Elizabeth Nichols</div>
       <p>If your heart is set on the famous Oia sunset, arrive at least 90 minutes early in peak season — the viewing spots fill completely. In shoulder season (May or September), 30 minutes is usually enough. The Firostefani section of the caldera path offers equally spectacular sunsets with far smaller crowds.</p>
+    </div>
+
+    <div class="highlights">
+      <h3>Santorini Month by Month</h3>
+      <ul>
+        <li><strong>November–March</strong> — Many caldera hotels and restaurants close for the winter. Quiet and atmospheric, but not a pool-and-beach season.</li>
+        <li><strong>April</strong> — The season opens as hotels reopen. Pleasant for walking and sightseeing; the sea is still cool.</li>
+        <li><strong>May</strong> — Warm days, wildflowers and manageable crowds. One of the best months for the Fira-to-Oia hike.</li>
+        <li><strong>June</strong> — The longest days of the year and a warming sea. Demand builds quickly toward summer.</li>
+        <li><strong>July &amp; August</strong> — Hottest and busiest. The strong summer meltemi winds can make boat trips choppy and occasionally disrupt ferries.</li>
+        <li><strong>September</strong> — The sea is at its warmest and crowds start to ease. A favorite for honeymoons.</li>
+        <li><strong>October</strong> — Shoulder-season calm and better value. Early October can still be warm enough to swim; some places close as the month ends.</li>
+      </ul>
     </div>
 
     <span class="section-num">02 — The Villages</span>
@@ -248,7 +266,7 @@
 
     <span class="section-num">03 — Where to Stay</span>
     <h2>Accommodation: What to Know Before You Book</h2>
-    <p>Santorini accommodation falls into a few distinct categories, and your choice matters enormously. The iconic cave hotels carved into the caldera cliffs are extraordinary — many feature private plunge pools that seem to float over the water thousands of feet below. These properties book out 8–12 months in advance for peak season and command premium prices, but they deliver an experience unlike anywhere else in the world.</p>
+    <p>Santorini accommodation falls into a few distinct categories, and your choice matters enormously. The iconic cave hotels carved into the caldera cliffs are extraordinary — many feature private plunge pools that seem to float over the water hundreds of feet below. These properties book out 8–12 months in advance for peak season and command premium prices, but they deliver an experience unlike anywhere else in the world.</p>
     <p>If a cave hotel isn't in the budget, look for caldera-view properties in Imerovigli or Fira that offer shared infinity pools overlooking the water. The view is nearly as spectacular at a fraction of the price. For beach-focused travelers, the villages of Perissa and Perivolos on the southeastern coast offer good-value hotels steps from Santorini's distinctive black sand beaches.</p>
 
     <div class="tip-box">
@@ -283,6 +301,71 @@
     <div class="tip-box">
       <div class="tip-label">Getting There &amp; Around</div>
       <p>Santorini (JTR) has direct international flights from many European hubs in summer, and connects to Athens (ATH) with multiple daily flights (~45 min). High-speed ferries from Athens' Piraeus port take 5–8 hours depending on route. On the island, renting an ATV or small car is the most flexible way to explore — the bus system is good for the main caldera route but limited for beaches and wineries.</p>
+    </div>
+
+    <span class="section-num">06 — Before You Go</span>
+    <h2>Entry Rules and Island Fees to Know</h2>
+    <p>A few rules have changed in recent years, so here's what American travelers should know as of October 2026.</p>
+    <ul>
+      <li><strong>Passports:</strong> U.S. citizens can visit Greece without a visa for up to 90 days. Your passport needs at least three months' validity beyond your planned departure date.</li>
+      <li><strong>Europe's Entry/Exit System (EES):</strong> Since October 12, 2025, the EU has been phasing in a digital border system that records non-EU travelers' fingerprints and a facial photo on entry. Allow a little extra time at passport control on your first arrival in Europe.</li>
+      <li><strong>ETIAS:</strong> The EU's separate online travel authorization for visa-exempt visitors, including Americans, has been scheduled to begin in the last quarter of 2026. Check its status before you travel; once it's live, you'll apply online before departure.</li>
+      <li><strong>Cruise passenger fee:</strong> Since July 2025, Greece has charged cruise passengers a per-person fee for each island port call. For Santorini and Mykonos, it's €20 from June through September, €12 in April, May and October, and €4 from November through March. Cruise lines typically bill it to your onboard account.</li>
+      <li><strong>Hotel climate resilience fee:</strong> Greek hotels collect a per-room, per-night fee that rises with the hotel's star rating and is higher from April through October. It's usually paid locally at checkout rather than included in your rate.</li>
+      <li><strong>Driving:</strong> If you plan to rent a car or ATV, the U.S. Embassy in Greece says American visitors must carry an International Driving Permit along with a valid U.S. license. AAA issues them in the U.S.</li>
+    </ul>
+
+    <span class="section-num">07 — Sample Itinerary</span>
+    <h2>Santorini in Three to Five Days</h2>
+    <p>Three full days covers the essentials; four or five lets you slow down and add a beach day. Here's how we'd pace it.</p>
+    <h3>Day 1: Arrive and Settle Into the Caldera</h3>
+    <p>Arrange a private transfer from the airport or port to your hotel, then spend the afternoon by the pool. For your first sunset, skip the Oia crush and watch from your terrace or the caldera path in Firostefani or Imerovigli, followed by dinner in Fira or Imerovigli.</p>
+    <h3>Day 2: History and Wine</h3>
+    <p>Visit the excavations at Akrotiri in the morning, stop at the Red Beach viewpoint nearby, then spend the afternoon tasting Assyrtiko at one or two wineries. End the day in hilltop Pyrgos for a quieter sunset.</p>
+    <h3>Day 3: Sail the Caldera</h3>
+    <p>Spend the day on a catamaran: swim at the hot springs, walk the volcanic landscape of Nea Kameni, and stop at beaches you can only reach by sea. Sunset sailings are especially popular, so book this one early.</p>
+    <h3>Day 4: Hike to Oia</h3>
+    <p>Start early on the caldera path from Fira to Oia, aiming to reach Oia before the day crowds. Explore its lanes in the morning light, then head back for a slow afternoon.</p>
+    <h3>Day 5: Black-Sand Beaches</h3>
+    <p>Trade cliffs for the coast at Perissa or Perivolos, or climb to the ruins of Ancient Thera on the ridge above Kamari. Then catch your flight or ferry to the next island.</p>
+    <p>Only have three days? Combine the hike and wineries on one day and keep the sailing day — it's the one experience guests rarely want to cut.</p>
+
+    <span class="section-num">08 — Practical Tips</span>
+    <h2>What We Tell Every Santorini Traveler</h2>
+    <ul>
+      <li><strong>Expect stairs.</strong> Many caldera hotels are reached by long flights of steps. If mobility is a concern, ask how many steps lie between the road and your room before you book.</li>
+      <li><strong>Pack shoes with grip.</strong> Whitewashed paths and volcanic stone can be slippery and uneven. Water shoes help on pebbly beaches.</li>
+      <li><strong>Pre-book transfers and drivers.</strong> Taxis are limited in peak season, and a private driver makes winery evenings far easier.</li>
+      <li><strong>Plan around cruise traffic.</strong> On busy cruise days, Oia and Fira are most crowded from late morning through the afternoon. Explore early or late, and spend the middle of the day at the beach, the pool or a winery.</li>
+      <li><strong>Respect the sun and wind.</strong> There's little shade on the caldera path, and summer winds can be strong. Bring a hat, sunscreen and a light layer for evenings.</li>
+      <li><strong>Protect the trip.</strong> Ferries and boat tours can be affected by weather, and caldera hotels often require large deposits. We start with Faye, our preferred insurance partner, and also compare Allianz — our <a href="do-you-need-travel-insurance.html">travel insurance guide</a> explains why.</li>
+    </ul>
+
+    <span class="section-num">09 — When to Book</span>
+    <h2>Your Santorini Booking Timeline</h2>
+    <p>For June through September, reserve caldera cave hotels 8–12 months ahead, especially if you want a private plunge pool or a specific room category. Shoulder-season trips in May and October can often come together six to nine months out. Once your hotel is set, book your catamaran day, your sunset dinner reservation and island-hopping flights or ferries, and apply for your International Driving Permit a few weeks before departure if you'll be driving.</p>
+    <p>Arriving by ship instead? Our <a href="mediterranean-cruise-ports.html">Mediterranean cruise ports guide</a> covers how to make the most of a port day. For more inspiration, visit our <a href="../destinations/santorini-greece.html">Santorini destination guide</a>, or <a href="/consultation.html">book a complimentary consultation</a> and we'll design your Greece itinerary together.</p>
+
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>How many days do you need in Santorini?</h3>
+      <p>Three to four days covers the highlights. Five works well if you want a true rest with a beach day built in. Beyond that, we usually suggest adding Athens or another island.</p>
+
+      <h3>Where should first-time visitors stay?</h3>
+      <p>Imerovigli is our favorite balance of views and calm, Oia is the most romantic and the most crowded, and Fira is the most practical. Beach towns like Perissa and Perivolos are better value but trade away the caldera view.</p>
+
+      <h3>Is it worth visiting Santorini on a cruise?</h3>
+      <p>A port day gives you a taste, but you'll arrive with the crowds and leave before sunset, and you'll pay Greece's cruise passenger fee for each call. If Santorini is a dream destination, staying at least two nights is a completely different experience.</p>
+
+      <h3>Can you swim in Santorini?</h3>
+      <p>Yes. The beaches are black or red volcanic sand and pebbles rather than soft white sand, and the caldera's best swimming spots are reached by boat. The water is warmest from late summer into early fall.</p>
+
+      <h3>Do I need to rent a car?</h3>
+      <p>Not if you're staying on the caldera and booking tours with transfers. If you do drive, you'll need an International Driving Permit, and parking in Oia and Fira can be very difficult in summer.</p>
+
+      <h3>Is Santorini good for a honeymoon?</h3>
+      <p>It's one of the classics. Late May, June and September offer the best mix of weather and calm. See our <a href="/honeymoons.html">honeymoon planning page</a> for more ideas.</p>
     </div>
   </article>
 </main>
